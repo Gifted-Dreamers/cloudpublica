@@ -155,9 +155,48 @@
     .diagram-figure {
       margin: 2.5rem 0;
     }
-    .diagram-figure img {
+    .diagram-figure .diagram-container {
+      max-height: 600px;
+      overflow: hidden;
+      position: relative;
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    .diagram-figure .diagram-container::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(transparent, #0a1218);
+      pointer-events: none;
+    }
+    .diagram-figure .diagram-container.expanded {
+      max-height: none;
+    }
+    .diagram-figure .diagram-container.expanded::after {
+      display: none;
+    }
+    .diagram-figure img {
+      width: 100%;
+      display: block;
+    }
+    .diagram-figure .expand-btn {
+      display: block;
+      text-align: center;
+      padding: 0.5rem;
+      color: #38c1e0;
+      font-size: 0.875rem;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-top: none;
+      border-radius: 0 0 0.5rem 0.5rem;
+      background: rgba(255,255,255,0.03);
+    }
+    .diagram-figure .expand-btn:hover {
+      background: rgba(56,193,224,0.1);
     }
     .diagram-figure figcaption {
       color: rgba(255,255,255,0.5);
@@ -301,9 +340,10 @@
 
         <!-- Diagram: Seven Pillars -->
         <figure class="diagram-figure">
-          <div class="overflow-x-auto">
-            <img src="/assets/diagrams/diagram-seven-pillars.png" alt="The Seven Pillars: How individually legal systems connect into surveillance infrastructure" class="w-full" loading="lazy">
+          <div class="diagram-container" onclick="this.classList.toggle('expanded'); this.nextElementSibling.textContent = this.classList.contains('expanded') ? 'Click to collapse' : 'Click to expand diagram'">
+            <img src="/assets/diagrams/diagram-seven-pillars.png" alt="The Seven Pillars: How individually legal systems connect into surveillance infrastructure" loading="lazy">
           </div>
+          <span class="expand-btn" onclick="this.previousElementSibling.click()">Click to expand diagram</span>
           <figcaption>The Seven Pillars: How individually legal systems connect into surveillance infrastructure</figcaption>
         </figure>
 
@@ -535,9 +575,10 @@
 
         <!-- Diagram: Assembled Profile -->
         <figure class="diagram-figure">
-          <div class="overflow-x-auto">
-            <img src="/assets/diagrams/diagram-assembled-profile.png" alt="The Assembled Profile: No single warrant covers the picture" class="w-full" loading="lazy">
+          <div class="diagram-container" onclick="this.classList.toggle('expanded'); this.nextElementSibling.textContent = this.classList.contains('expanded') ? 'Click to collapse' : 'Click to expand diagram'">
+            <img src="/assets/diagrams/diagram-assembled-profile.png" alt="The Assembled Profile: No single warrant covers the picture" loading="lazy">
           </div>
+          <span class="expand-btn" onclick="this.previousElementSibling.click()">Click to expand diagram</span>
           <figcaption>The Assembled Profile: No single warrant covers the picture</figcaption>
         </figure>
 
@@ -672,9 +713,10 @@
 
         <!-- Diagram: Financial Fragility -->
         <figure class="diagram-figure">
-          <div class="overflow-x-auto">
-            <img src="/assets/diagrams/diagram-financial-fragility.png" alt="Financial Fragility Cascade: War costs meet structural debt" class="w-full" loading="lazy">
+          <div class="diagram-container" onclick="this.classList.toggle('expanded'); this.nextElementSibling.textContent = this.classList.contains('expanded') ? 'Click to collapse' : 'Click to expand diagram'">
+            <img src="/assets/diagrams/diagram-financial-fragility.png" alt="Financial Fragility Cascade: War costs meet structural debt" loading="lazy">
           </div>
+          <span class="expand-btn" onclick="this.previousElementSibling.click()">Click to expand diagram</span>
           <figcaption>Financial Fragility Cascade: War costs meet structural debt</figcaption>
         </figure>
 
@@ -822,9 +864,10 @@
 
         <!-- Diagram: Apollo-Epstein Network -->
         <figure class="diagram-figure">
-          <div class="overflow-x-auto">
-            <img src="/assets/diagrams/diagram-apollo-epstein-network.png" alt="Apollo-Epstein-Board of Peace Network: Financial leverage meets foreign policy" class="w-full" loading="lazy">
+          <div class="diagram-container" onclick="this.classList.toggle('expanded'); this.nextElementSibling.textContent = this.classList.contains('expanded') ? 'Click to collapse' : 'Click to expand diagram'">
+            <img src="/assets/diagrams/diagram-apollo-epstein-network.png" alt="Apollo-Epstein-Board of Peace Network: Financial leverage meets foreign policy" loading="lazy">
           </div>
+          <span class="expand-btn" onclick="this.previousElementSibling.click()">Click to expand diagram</span>
           <figcaption>Apollo-Epstein-Board of Peace Network: Financial leverage meets foreign policy</figcaption>
         </figure>
 
@@ -955,9 +998,10 @@
 
         <!-- Diagram: Timeline -->
         <figure class="diagram-figure">
-          <div class="overflow-x-auto">
-            <img src="/assets/diagrams/diagram-timeline.png" alt="Federal Consolidation Timeline: January 2025 — November 2026" class="w-full" loading="lazy">
+          <div class="diagram-container" onclick="this.classList.toggle('expanded'); this.nextElementSibling.textContent = this.classList.contains('expanded') ? 'Click to collapse' : 'Click to expand diagram'">
+            <img src="/assets/diagrams/diagram-timeline.png" alt="Federal Consolidation Timeline: January 2025 — November 2026" loading="lazy">
           </div>
+          <span class="expand-btn" onclick="this.previousElementSibling.click()">Click to expand diagram</span>
           <figcaption>Federal Consolidation Timeline: January 2025 &mdash; November 2026</figcaption>
         </figure>
 
