@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tools Already Exist to Make Power Visible &mdash; Cloud Publica</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="A curated list of 60+ free, open-source tools for transparency and accountability — from financial crime investigation to conflict monitoring, democratic oversight, AI security, decentralized communication, OSINT, personal counter-surveillance, and environmental justice.">
+  <meta name="keywords" content="OSINT, open source intelligence, transparency tools, accountability, investigation, conflict monitoring, democratic oversight, media literacy, environmental monitoring, Meadows leverage points, information flows">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Tools Already Exist to Make Power Visible">
+  <meta property="og:description" content="60+ free tools for investigation, conflict monitoring, democratic oversight, AI security, and accountability. The list nobody compiled — until now.">
+  <meta property="og:url" content="https://cloudpublica.org/article/open-source-transparency-tools.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://cloudpublica.org/assets/img/hero-transparency.jpg">
+  <meta property="article:published_time" content="2026-03-08">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Tools Already Exist to Make Power Visible">
+  <meta name="twitter:description" content="60+ free tools for investigation, conflict monitoring, democratic oversight, AI security, and accountability.">
+  <meta name="twitter:image" content="https://cloudpublica.org/assets/img/hero-transparency.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cp-teal': '#206795',
+            'cp-cyan': '#38c1e0',
+            'cp-dark': '#1a3347',
+            'cp-muted': '#5a7a8f',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter (async) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for article content -->
+  <style>
+    .content-area table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .content-area table thead th {
+      background-color: #206795;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .content-area table tbody td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #1a3347;
+    }
+    .content-area table tbody tr:nth-child(even) {
+      background-color: #1a2a38;
+    }
+    .content-area table tbody tr:hover {
+      background-color: #1e3044;
+    }
+    .content-area blockquote {
+      border-left: 4px solid #38c1e0;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background-color: #152230;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    .content-area a {
+      color: #38c1e0;
+      text-decoration: none;
+    }
+    .content-area a:hover {
+      text-decoration: underline;
+      color: #38c1e0;
+    }
+    .content-area ul, .content-area ol {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .content-area ul li {
+      list-style-type: disc;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    .content-area ol li {
+      list-style-type: decimal;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    .content-area hr {
+      border: none;
+      border-top: 2px solid #1a3347;
+      margin: 2.5rem 0;
+    }
+    .content-area p {
+      margin-bottom: 1.25rem;
+    }
+    .pullquote {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #38c1e0;
+      line-height: 1.5;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 2px solid #1a3347;
+      border-bottom: 2px solid #1a3347;
+      margin: 2.5rem 0;
+    }
+    .tool-card {
+      border-left: 4px solid #38c1e0;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      background: linear-gradient(135deg, #1a2a38 0%, #152230 100%);
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .tool-card .tool-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #38c1e0;
+      margin-bottom: 0.25rem;
+    }
+    .tool-card .tool-url {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #38c1e0;
+      margin-bottom: 0.5rem;
+    }
+    .tool-card .tool-desc {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      line-height: 1.7;
+    }
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .category-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0;
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Tools Already Exist to Make Power Visible",
+    "datePublished": "2026-03-08",
+    "author": {
+      "@type": "Organization",
+      "name": "Cloud Publica"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Gifted Dreamers, Inc.",
+      "url": "https://gifteddreamers.org/GRUHP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cloudpublica.org/assets/img/favicon.png"
+      }
+    },
+    "description": "A curated list of 60+ free, open-source tools for transparency and accountability — from financial crime investigation to conflict monitoring, democratic oversight, AI security, decentralized communication, OSINT, personal counter-surveillance, and environmental justice.",
+    "mainEntityOfPage": "https://cloudpublica.org/article/open-source-transparency-tools.html"
+  }
+  </script>
+
+<!-- build:config {"nav":"investigations"} -->
+</head>
+
+<body class="bg-[#0a1218] text-white font-sans antialiased">
+<!-- build:nav -->
+
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-[#0f1a24] border-b border-[#1a3347]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <ol class="flex items-center space-x-2 text-sm text-gray-400">
+        <li><a href="/" class="hover:text-[#38c1e0] transition-colors">Home</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li><a href="/investigations.html" class="hover:text-[#38c1e0] transition-colors">Investigations</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li class="text-gray-300 font-medium">The Tools Already Exist to Make Power Visible</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main class="py-10 md:py-16">
+    <article class="max-w-4xl mx-auto px-4">
+
+      <!-- Article Header -->
+      <header class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-block bg-cp-teal/10 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
+          <time datetime="2026-03-08" class="text-sm text-gray-400">March 8, 2026</time>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+          The Tools Already Exist to Make Power Visible
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 leading-relaxed">
+          60+ free, open-source tools for investigation, conflict monitoring, democratic oversight, AI security, decentralized communication, OSINT, personal counter-surveillance, and accountability. Nobody compiled the list &mdash; until now.
+        </p>
+      </header>
+
+      <figure class="mb-10">
+        <picture>
+          <source srcset="/blog/hero-open-source-transparency-tools-640w.webp" media="(max-width: 768px)" type="image/webp">
+          <source srcset="/blog/hero-open-source-transparency-tools-1280w.webp" type="image/webp">
+          <img src="/blog/hero-open-source-transparency-tools.jpg" alt="A dark control room illuminated by multiple screens displaying data visualizations, network graphs, and world maps — transparency tools making hidden information visible" class="w-full rounded-lg shadow-md" width="1280" height="720" loading="eager">
+        </picture>
+      </figure>
+
+      <figure class="mb-10">
+        <video autoplay muted loop playsinline class="w-full rounded-lg shadow-md" width="1280" height="720" aria-label="Animation of screens lighting up with data visualizations">
+          <source src="/blog/hero-open-source-transparency-tools.mp4" type="video/mp4">
+        </video>
+      </figure>
+
+      <!-- Article Body -->
+      <div class="content-area prose prose-lg max-w-none text-gray-200 leading-relaxed">
+
+        <!-- SECTION 1: THE FRAMEWORK -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Why Information Changes Everything</h2>
+
+        <p>
+          Donella Meadows, the systems scientist who gave us the concept of <em>leverage points</em>, identified twelve places where you can intervene in a complex system. Most activism &mdash; most politics, most media &mdash; operates at the lowest-leverage points: arguing about numbers, tweaking parameters, fighting over budgets. The interventions that actually transform systems happen higher up.
+        </p>
+
+        <p>
+          Leverage point #6 is <strong>Information Flows</strong>: who knows what, who can see what, who can verify what.
+        </p>
+
+        <p>
+          Meadows' most powerful example: In 1986, the US government required companies to report what toxic chemicals they released into the environment. No fines. No new regulations. Just information &mdash; made public. Within years, toxic emissions dropped 40%.
+        </p>
+
+        <div class="pullquote">
+          Making power visible changes how power operates &mdash; even without enforcement. Sunlight is not just a disinfectant. It is a structural intervention.
+        </div>
+
+        <p>
+          This principle is why <a href="/blog/5gw-research.html">fifth-generation warfare targets information flows first</a>. It's why <a href="/blog/data-privacy-sovereignty-best-practices.html">data sovereignty matters</a>. It's why our <a href="/blog/atx-ice-activity.html">ICE activity tracking</a> follows the same logic as the Toxic Release Inventory: make the system's behavior visible so people can respond.
+        </p>
+
+        <p>
+          What follows is a curated list of tools that do exactly this. Every one is free, open-source, or community-maintained. Every one takes something that was previously opaque &mdash; financial networks, military operations, congressional votes, media framing, ecological damage, police conduct &mdash; and makes it publicly navigable.
+        </p>
+
+        <p>
+          Nobody had to pass a law requiring these tools to exist. Nobody had to get permission. People saw that power was hiding in opacity and built instruments of visibility.
+        </p>
+
+        <hr>
+
+        <!-- SECTION 2: INVESTIGATION TOOLS -->
+        <div class="category-header">
+          <div class="category-icon bg-red-100 text-red-700">&#128269;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Investigation &amp; Financial Network Analysis</h2>
+        </div>
+        <p>Tools for surfacing hidden relationships in financial crime, corporate ownership, and political money.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">OpenPlanter</div>
+          <div class="tool-url"><a href="https://github.com/ShinMegamiBoson/OpenPlanter" target="_blank" rel="noopener noreferrer">github.com/ShinMegamiBoson/OpenPlanter</a></div>
+          <div class="tool-desc">Autonomous AI investigation agent that recursively analyzes corporate registries, campaign finance, lobbying disclosures, and sanctions data. Builds live knowledge graphs with transparent reasoning trails showing <em>why</em> two entities are connected, not just that they are. Open-source (Tauri + Python).</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">OCCRP Aleph / OpenAleph</div>
+          <div class="tool-url"><a href="https://aleph.occrp.org" target="_blank" rel="noopener noreferrer">aleph.occrp.org</a></div>
+          <div class="tool-desc">4.5 billion records across corporate registries, leaked documents, and government filings. Used by 24,000+ investigative journalists worldwide. The open-source fork (<a href="https://openaleph.org" target="_blank" rel="noopener noreferrer">OpenAleph</a>) is maintained by the Data and Research Center.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">SomaliScan Epstein Index</div>
+          <div class="tool-url"><a href="https://www.somaliscan.com/investigation/epstein-index" target="_blank" rel="noopener noreferrer">somaliscan.com/investigation/epstein-index</a></div>
+          <div class="tool-desc">Graph database cross-referencing 3.5 million DOJ pages against PPP loans (11.4M records), FEC contributions (58M records), and federal grants (23.9M records). Its Pathfinder tool traces connection paths between any two entities &mdash; making the negative space between documents navigable.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Epstein Suite</div>
+          <div class="tool-url"><a href="https://epsteinsuite.com" target="_blank" rel="noopener noreferrer">epsteinsuite.com</a></div>
+          <div class="tool-desc">212,000+ documents with a "Six Degrees" tool that finds connection paths between any two people through emails, flights, and co-mentions. Financial forensics tracking $36 trillion in extracted transactions. Free, volunteer-maintained.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Epstein Exposed</div>
+          <div class="tool-url"><a href="https://epsteinexposed.com" target="_blank" rel="noopener noreferrer">epsteinexposed.com</a></div>
+          <div class="tool-desc">2.1 million documents, 51,254 mapped connections, interactive relationship network graphs. Community investigation boards for collaborative research. Maintained by a single developer, ad-free.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Jmail.world</div>
+          <div class="tool-url"><a href="https://jmail.world" target="_blank" rel="noopener noreferrer">jmail.world</a></div>
+          <div class="tool-desc">Epstein's released emails in a Gmail-like interface, flight manifests, Amazon orders, and an AI-generated wiki grounding each article in primary source documents. Also includes <a href="https://jmail.world/wiki" target="_blank" rel="noopener noreferrer">JWiki</a> and <a href="https://jmail.world/jefftube" target="_blank" rel="noopener noreferrer">JeffTube</a>.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">EpsteinSearch.info</div>
+          <div class="tool-url"><a href="https://epsteinsearch.info" target="_blank" rel="noopener noreferrer">epsteinsearch.info</a></div>
+          <div class="tool-desc">Full-text search across 2.5 million declassified documents with connection mapping. Independent, free, ad-free, open-source.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">JeffreyOS</div>
+          <div class="tool-url"><a href="https://jeffreyos.pages.dev" target="_blank" rel="noopener noreferrer">jeffreyos.pages.dev</a> &middot; <a href="https://github.com/muneebwanee/JeffreyOS" target="_blank" rel="noopener noreferrer">source</a></div>
+          <div class="tool-desc">Open-source browser-based OS simulation that presents Epstein documents as an interactive narrative. An experiment in making archives experientially navigable rather than just searchable. AGPL-3.0 license.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">LittleSis</div>
+          <div class="tool-url"><a href="https://littlesis.org" target="_blank" rel="noopener noreferrer">littlesis.org</a></div>
+          <div class="tool-desc">Community-maintained database mapping relationships between powerful people and organizations &mdash; politicians, executives, lobbyists, and their financial ties. A "reverse Who's Who" for tracking elite networks.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">OpenSecrets</div>
+          <div class="tool-url"><a href="https://opensecrets.org" target="_blank" rel="noopener noreferrer">opensecrets.org</a></div>
+          <div class="tool-desc">Tracks campaign finance, lobbying, and dark money in US politics. Organization profiles compile contribution and lobbying history for thousands of corporations, trade associations, and advocacy groups.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">FollowTheMoney</div>
+          <div class="tool-url"><a href="https://followthemoney.org" target="_blank" rel="noopener noreferrer">followthemoney.org</a></div>
+          <div class="tool-desc">State-level campaign finance data across all 50 US states. Search by donor, candidate, or industry to see who funds state politics.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">OpenCorporates</div>
+          <div class="tool-url"><a href="https://opencorporates.com" target="_blank" rel="noopener noreferrer">opencorporates.com</a></div>
+          <div class="tool-desc">The largest open database of corporate information in the world: 200+ million companies from 145+ jurisdictions. Free API for querying corporate registries, officer data, and filings.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">SilenceDidThis</div>
+          <div class="tool-url"><a href="https://silencedidthis.com" target="_blank" rel="noopener noreferrer">silencedidthis.com</a></div>
+          <div class="tool-desc">Searchable database of Epstein-related media files with metadata, GPS coordinates, locations, and creation dates. Primary-source archive for cross-referencing visual evidence against documents and timelines. CC BY 4.0 licensed.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Courier Newsroom Epstein Files Database</div>
+          <div class="tool-url"><a href="https://couriernewsroom.com/news/epstein-files-database/" target="_blank" rel="noopener noreferrer">couriernewsroom.com/news/epstein-files-database</a></div>
+          <div class="tool-desc">Searchable database of Congressional and DOJ Epstein documents, built using Google Pinpoint's OCR. Makes machine-readable text across thousands of scanned government documents navigable by keyword.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Distributed Denial of Secrets (DDoSecrets)</div>
+          <div class="tool-url"><a href="https://ddosecrets.org" target="_blank" rel="noopener noreferrer">ddosecrets.org</a></div>
+          <div class="tool-desc">Nonprofit transparency collective that publishes leaked and publicly available datasets in the public interest. Source for Epstein's Yahoo email archives and other large-scale document releases used by investigative journalists worldwide.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Google Pinpoint</div>
+          <div class="tool-url"><a href="https://journaliststudio.google.com/pinpoint/about/" target="_blank" rel="noopener noreferrer">journaliststudio.google.com/pinpoint</a></div>
+          <div class="tool-desc">Free AI research tool for journalists. Uses OCR to make scanned documents machine-readable and Gemini models for audio transcription. Upload thousands of PDFs and search across them instantly. Used by The Guardian and BBC for document investigations.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION 3: CONFLICT MONITORING -->
+        <div class="category-header">
+          <div class="category-icon bg-orange-100 text-orange-700">&#127758;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Conflict Monitoring &amp; Military Accountability</h2>
+        </div>
+        <p>Tools for making military operations, their costs, and their consequences visible in real time.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">World Monitor</div>
+          <div class="tool-url"><a href="https://www.worldmonitor.app" target="_blank" rel="noopener noreferrer">worldmonitor.app</a></div>
+          <div class="tool-desc">Open-source real-time OSINT dashboard aggregating 435+ sources across 45 map layers: military aviation, maritime surveillance, earthquakes, protests, power outages, markets. Used by 2M+ people in 190+ countries. Free. <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Open source on GitHub</a>.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Bamqam (formerly UsvsIran)</div>
+          <div class="tool-url"><a href="https://bamqam.com" target="_blank" rel="noopener noreferrer">bamqam.com</a></div>
+          <div class="tool-desc">Real-time CENTCOM theater dashboard tracking satellites, aircraft (ADS-B), vessels (AIS), GPS jamming, SAM rings, and military bases. Live situational awareness for the Middle East theater.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">World in Conflict</div>
+          <div class="tool-url"><a href="https://www.glideslope.ai/worldinconflict/" target="_blank" rel="noopener noreferrer">glideslope.ai/worldinconflict</a></div>
+          <div class="tool-desc">AI-powered geopolitical intelligence map with severity-rated conflict and economic events, filterable by type and time window. Connected to market analysis briefings.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Iran Cost Ticker</div>
+          <div class="tool-url"><a href="https://iran-cost-ticker.com" target="_blank" rel="noopener noreferrer">iran-cost-ticker.com</a></div>
+          <div class="tool-desc">Live counter of US taxpayer spending on Iran operations (est. $1B/day since Feb 28, 2026). Includes munitions cost analysis, stockpile depletion projections, casualty figures, and gas price impact. Makes the financial reality of war impossible to abstract away.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">WorldView / Spatial Intelligence</div>
+          <div class="tool-url"><a href="https://www.spatialintelligence.ai/p/i-built-a-spy-satellite-simulator" target="_blank" rel="noopener noreferrer">spatialintelligence.ai</a></div>
+          <div class="tool-desc">Browser-based satellite simulator with night vision, thermal imaging, live aircraft tracking, and satellite orbits. The creator, Bilawal Sidhu, frames public data access as "sousveillance" &mdash; turning surveillance tools around as instruments of democratic accountability.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Iran Battle Map</div>
+          <div class="tool-url"><a href="https://iranbattlemap.com" target="_blank" rel="noopener noreferrer">iranbattlemap.com</a></div>
+          <div class="tool-desc">Interactive tactical mapping with strike tracking, flight path visualization, event timelines, and organizational charts. Retro military display aesthetic.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Monitor the Situation</div>
+          <div class="tool-url"><a href="https://monitorthesituation.org/" target="_blank" rel="noopener noreferrer">monitorthesituation.org</a></div>
+          <div class="tool-desc">OSINT military aircraft monitoring platform tracking military aviation activity using publicly available data. Provides real-time situational awareness through open-source intelligence methods.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION 4: DEMOCRATIC TRANSPARENCY -->
+        <div class="category-header">
+          <div class="category-icon bg-blue-100 text-blue-700">&#127963;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Democratic Transparency</h2>
+        </div>
+        <p>Tools for making the behavior of elected officials and government institutions visible.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">Suffragium</div>
+          <div class="tool-url"><a href="https://suffragium.com" target="_blank" rel="noopener noreferrer">suffragium.com</a></div>
+          <div class="tool-desc">Congressional transparency platform: bill tracking, AI-generated daily Congressional Record summaries, voting statistics and party loyalty metrics for all 535 members of the 119th Congress (2025&ndash;2026).</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">MuckRock</div>
+          <div class="tool-url"><a href="https://www.muckrock.com" target="_blank" rel="noopener noreferrer">muckrock.com</a></div>
+          <div class="tool-desc">Files, tracks, and publishes FOIA and public records requests at federal, state, and local levels. Also maintains <strong>DocumentCloud</strong> for analyzing and publishing primary source documents. Open source.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">USAspending.gov</div>
+          <div class="tool-url"><a href="https://www.usaspending.gov" target="_blank" rel="noopener noreferrer">usaspending.gov</a></div>
+          <div class="tool-desc">Official federal spending open data portal. Tracks every contract, grant, loan, and federal financial transaction under the DATA Act. Fully open-source on GitHub.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">OpenSpending</div>
+          <div class="tool-url"><a href="https://www.openspending.org" target="_blank" rel="noopener noreferrer">openspending.org</a></div>
+          <div class="tool-desc">Global platform from the Open Knowledge Foundation for searching, visualizing, and analyzing government fiscal data from countries worldwide.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Alaveteli</div>
+          <div class="tool-url"><a href="https://alaveteli.org" target="_blank" rel="noopener noreferrer">alaveteli.org</a></div>
+          <div class="tool-desc">Open-source platform for running Freedom of Information request sites in any country and language. Deployed in 25+ countries. Powers <a href="https://www.whatdotheyknow.com" target="_blank" rel="noopener noreferrer">WhatDoTheyKnow.com</a> in the UK.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION 5: MEDIA LITERACY -->
+        <div class="category-header">
+          <div class="category-icon bg-purple-100 text-purple-700">&#128240;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Media Literacy &amp; Disinformation Detection</h2>
+        </div>
+        <p>Tools for making narrative manipulation visible &mdash; essential in an era of <a href="/blog/5gw-research.html">fifth-generation warfare</a>.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">Ground News</div>
+          <div class="tool-url"><a href="https://ground.news" target="_blank" rel="noopener noreferrer">ground.news</a></div>
+          <div class="tool-desc">Shows how different outlets frame the same story, with media bias ratings, ownership/factuality data, and a "Blindspot" feature for underreported stories. Browser extension and mobile apps available.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">GDELT Project</div>
+          <div class="tool-url"><a href="https://www.gdeltproject.org" target="_blank" rel="noopener noreferrer">gdeltproject.org</a></div>
+          <div class="tool-desc">Monitors world news in 100+ languages every 15 minutes, with archives back to 1979. Used for tracking narrative spread, contested imagery, and coordinated influence campaigns. Free on Google BigQuery.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Bellingcat Online Investigation Toolkit</div>
+          <div class="tool-url"><a href="https://bellingcat.gitbook.io/toolkit" target="_blank" rel="noopener noreferrer">bellingcat.gitbook.io/toolkit</a></div>
+          <div class="tool-desc">Community-maintained catalog of OSINT tools organized by category: satellite imagery, social media, transportation, archiving, verification. The starting point for any open-source investigation.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">BotSlayer &amp; OSoMe Tools</div>
+          <div class="tool-url"><a href="https://osome.iu.edu/resources/open-source" target="_blank" rel="noopener noreferrer">osome.iu.edu</a></div>
+          <div class="tool-desc">Indiana University's Observatory on Social Media maintains open-source tools for detecting coordinated bot-driven manipulation, including <strong>BotSlayer-CE</strong> and <strong>Coordiscope</strong> for visualizing inauthentic coordinated behavior.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION 6: ENVIRONMENTAL -->
+        <div class="category-header">
+          <div class="category-icon bg-green-100 text-green-700">&#127793;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Environmental Monitoring</h2>
+        </div>
+        <p>Tools for making ecological damage visible &mdash; following the exact principle of the Toxic Release Inventory.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">Global Forest Watch</div>
+          <div class="tool-url"><a href="https://www.globalforestwatch.org" target="_blank" rel="noopener noreferrer">globalforestwatch.org</a></div>
+          <div class="tool-desc">Real-time deforestation alerts with 20+ years of tree cover loss data and fire alerts updated daily via satellite. Free, from the World Resources Institute.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">OpenAQ</div>
+          <div class="tool-url"><a href="https://openaq.org" target="_blank" rel="noopener noreferrer">openaq.org</a></div>
+          <div class="tool-desc">Real-time and historical air quality data from 30,000+ government monitoring stations worldwide. Free REST API covering PM2.5, PM10, SO2, NO2, and ozone.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Climate Watch</div>
+          <div class="tool-url"><a href="https://www.climatewatchdata.org" target="_blank" rel="noopener noreferrer">climatewatchdata.org</a></div>
+          <div class="tool-desc">150 years of greenhouse gas emissions by country, sector, and gas. Tracks national climate commitments and net-zero targets. Open-source on GitHub.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION 7: ACCOUNTABILITY -->
+        <div class="category-header">
+          <div class="category-icon bg-gray-200 text-gray-700">&#128737;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Police &amp; Government Accountability</h2>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">OpenOversight</div>
+          <div class="tool-url"><a href="https://openoversight.lucyparsonslabs.com" target="_blank" rel="noopener noreferrer">openoversight.lucyparsonslabs.com</a></div>
+          <div class="tool-desc">Searchable database of law enforcement officers built from FOIA requests, public records, and crowdsourced photos. Currently covers departments in Chicago, NYC, and the San Francisco Bay Area. Open-source.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Open Supply Hub</div>
+          <div class="tool-url"><a href="https://opensupplyhub.org" target="_blank" rel="noopener noreferrer">opensupplyhub.org</a></div>
+          <div class="tool-desc">Maps 100,000+ production facilities across global supply chains. Used by unions, brands, and NGOs to identify labor rights violations and forced labor risks. Free and open data.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION 8: START HERE -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Where to Start</h2>
+
+        <p>Thirty tools is overwhelming. Here's how to pick based on what you care about:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>If you want to...</th>
+                <th>Start here</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Follow the money</strong> in politics</td>
+                <td><a href="https://opensecrets.org" target="_blank" rel="noopener noreferrer">OpenSecrets</a> + <a href="https://littlesis.org" target="_blank" rel="noopener noreferrer">LittleSis</a></td>
+              </tr>
+              <tr>
+                <td><strong>Investigate corporate networks</strong></td>
+                <td><a href="https://aleph.occrp.org" target="_blank" rel="noopener noreferrer">OCCRP Aleph</a> + <a href="https://opencorporates.com" target="_blank" rel="noopener noreferrer">OpenCorporates</a></td>
+              </tr>
+              <tr>
+                <td><strong>Track conflicts</strong> in real time</td>
+                <td><a href="https://www.worldmonitor.app" target="_blank" rel="noopener noreferrer">World Monitor</a></td>
+              </tr>
+              <tr>
+                <td><strong>Understand media bias</strong></td>
+                <td><a href="https://ground.news" target="_blank" rel="noopener noreferrer">Ground News</a></td>
+              </tr>
+              <tr>
+                <td><strong>File public records requests</strong></td>
+                <td><a href="https://www.muckrock.com" target="_blank" rel="noopener noreferrer">MuckRock</a></td>
+              </tr>
+              <tr>
+                <td><strong>Monitor deforestation or air quality</strong></td>
+                <td><a href="https://www.globalforestwatch.org" target="_blank" rel="noopener noreferrer">Global Forest Watch</a> + <a href="https://openaq.org" target="_blank" rel="noopener noreferrer">OpenAQ</a></td>
+              </tr>
+              <tr>
+                <td><strong>Track congressional votes</strong></td>
+                <td><a href="https://suffragium.com" target="_blank" rel="noopener noreferrer">Suffragium</a></td>
+              </tr>
+              <tr>
+                <td><strong>Research Epstein primary sources</strong></td>
+                <td><a href="https://jmail.world" target="_blank" rel="noopener noreferrer">Jmail</a> + <a href="https://silencedidthis.com" target="_blank" rel="noopener noreferrer">SilenceDidThis</a> + <a href="https://www.somaliscan.com/investigation/epstein-index" target="_blank" rel="noopener noreferrer">SomaliScan</a></td>
+              </tr>
+              <tr>
+                <td><strong>Learn OSINT investigation</strong></td>
+                <td><a href="https://bellingcat.gitbook.io/toolkit" target="_blank" rel="noopener noreferrer">Bellingcat Toolkit</a></td>
+              </tr>
+              <tr>
+                <td><strong>Detect cell-site simulators</strong></td>
+                <td><a href="https://github.com/EFForg/rayhunter" target="_blank" rel="noopener noreferrer">Rayhunter</a> (EFF, $20 hardware)</td>
+              </tr>
+              <tr>
+                <td><strong>Secure AI agent infrastructure</strong></td>
+                <td><a href="https://github.com/cisco/mcp-scanner" target="_blank" rel="noopener noreferrer">Cisco MCP Scanner</a> + <a href="https://github.com/cisco/a2a-scanner" target="_blank" rel="noopener noreferrer">A2A Scanner</a></td>
+              </tr>
+              <tr>
+                <td><strong>Build offline resilience</strong></td>
+                <td><a href="https://offline.directory" target="_blank" rel="noopener noreferrer">Offline Directory</a> + <a href="https://unsigned.io/rnode" target="_blank" rel="noopener noreferrer">RNode</a></td>
+              </tr>
+              <tr>
+                <td><strong>Track ICE contracts</strong></td>
+                <td><a href="https://micahflee.github.io" target="_blank" rel="noopener noreferrer">ICE Contracts Explorer</a></td>
+              </tr>
+              <tr>
+                <td><strong>Map critical infrastructure</strong></td>
+                <td><a href="https://openinframap.org" target="_blank" rel="noopener noreferrer">Open Infrastructure Map</a> + <a href="https://gridline.world" target="_blank" rel="noopener noreferrer">Gridline World</a></td>
+              </tr>
+              <tr>
+                <td><strong>Build decentralized communication</strong></td>
+                <td><a href="https://reticulum.network" target="_blank" rel="noopener noreferrer">Reticulum</a> + <a href="https://github.com/markqvist/Sideband" target="_blank" rel="noopener noreferrer">Sideband</a></td>
+              </tr>
+              <tr>
+                <td><strong>Run automated OSINT collection</strong></td>
+                <td><a href="https://github.com/smicallef/spiderfoot" target="_blank" rel="noopener noreferrer">SpiderFoot</a> + <a href="https://www.shodan.io" target="_blank" rel="noopener noreferrer">Shodan</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <!-- SECTION: INVESTIGATION ADDITIONS (March 12, 2026 update) -->
+        <div class="category-header">
+          <div class="category-icon bg-red-100 text-red-700">&#128200;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Government Accountability &amp; Contract Tracking</h2>
+        </div>
+        <p>Tools for tracking government contracts, congressional behavior, and enforcement patterns &mdash; added March 12, 2026.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">CongressWatch</div>
+          <div class="tool-url"><a href="https://congresswatch.vercel.app" target="_blank" rel="noopener noreferrer">congresswatch.vercel.app</a></div>
+          <div class="tool-desc">Open-source government accountability dashboard. Tracks net worth vs. salary for every member of Congress, PAC contributions, SEC filings, and generates anomaly scores (1&ndash;100) for unusual financial patterns. Data from Congress.gov, FEC.gov, and SEC EDGAR. CSV/JSON export for researchers.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">ICE Contracts Explorer</div>
+          <div class="tool-url"><a href="https://micahflee.github.io" target="_blank" rel="noopener noreferrer">micahflee.github.io</a></div>
+          <div class="tool-desc">Built by journalist Micah Lee using DDoSecrets data from the DHS Office of Industry Partnership (released March 1, 2026). Geographic visualization of ICE contracts filterable by program, state, and amount. Makes the enforcement infrastructure&rsquo;s financial footprint navigable.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Epstein Dataset (HuggingFace)</div>
+          <div class="tool-url"><a href="https://huggingface.co/datasets/kabasshouse/epstein-data" target="_blank" rel="noopener noreferrer">huggingface.co/datasets/kabasshouse/epstein-data</a></div>
+          <div class="tool-desc">1.42 million OCR&rsquo;d documents, 10.6 million named entities, 49,700 financial transactions, 2.1 million vector embeddings (768-dimension Gemini). 5,700 curated documents tiered from NUCLEAR to SUPPORTING. DuckDB queryable. CC-BY-4.0 license. The most comprehensive machine-readable Epstein archive available.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION: CONFLICT & INFRASTRUCTURE ADDITIONS -->
+        <div class="category-header">
+          <div class="category-icon bg-orange-100 text-orange-700">&#127760;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Intelligence &amp; Infrastructure Mapping</h2>
+        </div>
+        <p>Multi-layer OSINT dashboards and infrastructure maps for situational awareness &mdash; added March 12, 2026.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">Gridline World</div>
+          <div class="tool-url"><a href="https://gridline.world" target="_blank" rel="noopener noreferrer">gridline.world</a></div>
+          <div class="tool-desc">Free OSINT intelligence dashboard with 30+ data layers: GDELT events, NASA FIRMS fire data, USGS earthquakes, NOAA weather, AIS vessel tracking, nuclear facilities, undersea infrastructure, and military installations. Pro tier ($9 AUD/month) adds satellite imagery. The most comprehensive free multi-layer situational awareness tool available.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">SSEC Sentinel</div>
+          <div class="tool-url"><a href="https://ssec-sentinel.vercel.app" target="_blank" rel="noopener noreferrer">ssec-sentinel.vercel.app</a></div>
+          <div class="tool-desc">Decentralized emergency intelligence platform combining ACLED conflict data, OpenSky aviation tracking, military base locations, and HDX humanitarian data. Includes emergency radio streaming and crisis helplines. Built for real-time crisis awareness when centralized channels are compromised or unavailable.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Open Infrastructure Map</div>
+          <div class="tool-url"><a href="https://openinframap.org" target="_blank" rel="noopener noreferrer">openinframap.org</a></div>
+          <div class="tool-desc">Maps 7 million km of power lines, 1 million substations, 125,000 power plants, 3,500 datacenters, and 600,000 telecom masts worldwide. Built on OpenStreetMap data with a GeoJSON API for programmatic access. Makes critical infrastructure visible &mdash; essential for understanding vulnerability to both physical and cyber threats.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION: AI & AGENTIC SECURITY -->
+        <div class="category-header">
+          <div class="category-icon bg-indigo-100 text-indigo-700">&#129302;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">AI &amp; Agentic Security</h2>
+        </div>
+        <p>As AI agents gain authority to execute code, access databases, and act on behalf of humans, the security of the &ldquo;connective tissue&rdquo; &mdash; the protocols, tools, and skills that connect AI to the world &mdash; becomes critical infrastructure. These tools make that attack surface visible. Context: Cisco&rsquo;s <em>State of AI Security 2026</em> found that 26% of 31,000 agent skills contained at least one vulnerability, and multi-turn jailbreak attacks succeed 92.78% of the time against open-weight models.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">Cisco MCP Scanner</div>
+          <div class="tool-url"><a href="https://github.com/cisco/mcp-scanner" target="_blank" rel="noopener noreferrer">github.com/cisco/mcp-scanner</a></div>
+          <div class="tool-desc">Open-source security scanner for Model Context Protocol (MCP) servers. Three scanning engines purpose-built to identify malicious code and discreet threats in MCP tools, prompts, and resources. Detects suspicious patterns and known threats before MCP servers are integrated into broader AI systems. Integrates with Cisco AI Defense for comprehensive evaluation.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Cisco A2A Scanner</div>
+          <div class="tool-url"><a href="https://github.com/cisco/a2a-scanner" target="_blank" rel="noopener noreferrer">github.com/cisco/a2a-scanner</a></div>
+          <div class="tool-desc">Open-source security framework for Agent-to-Agent (A2A) communication. Validates agentic identities and inspects communications for threats that traditional API security tools would miss &mdash; agentic impersonation, prompt injection via Agent Cards, capability inflation. Five detection engines: pattern matching, protocol validation, behavioral analysis, endpoint analysis, and LLM-based semantic interpretation.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Cisco Agentic Skill Scanner</div>
+          <div class="tool-url"><a href="https://github.com/cisco/skill-scanner" target="_blank" rel="noopener noreferrer">github.com/cisco/skill-scanner</a></div>
+          <div class="tool-desc">Scans Claude Skills and OpenAI Codex skill files for threats and untrusted behavior embedded in descriptions, metadata, or implementation. Built after Cisco researchers demonstrated that the viral OpenClaw agent&rsquo;s skills executed data exfiltration instructions. Skills are local file packages &mdash; and should not be trusted by default, even when highly rated on public registries.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">SecureDrop WEBCAT</div>
+          <div class="tool-url"><a href="https://securedrop.org/webcat" target="_blank" rel="noopener noreferrer">securedrop.org/webcat</a></div>
+          <div class="tool-desc">Browser extension that verifies website code integrity via signed manifests. Protects against server-side compromise by checking that the code served to your browser matches what the site operator intended. Supports Tor and .onion sites. Alpha release from the Freedom of the Press Foundation.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION: PERSONAL SECURITY & COMMUNICATION -->
+        <div class="category-header">
+          <div class="category-icon bg-yellow-100 text-yellow-700">&#128225;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Personal Security &amp; Resilient Communication</h2>
+        </div>
+        <p>Tools for detecting surveillance at the personal level, communicating when infrastructure is compromised, and maintaining digital autonomy. These operate at the individual layer that our <a href="/blog/psychology-of-authoritarian-control.html">psychology of authoritarian control</a> research identifies as the first target of coercive systems.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">Rayhunter</div>
+          <div class="tool-url"><a href="https://github.com/EFForg/rayhunter" target="_blank" rel="noopener noreferrer">github.com/EFForg/rayhunter</a></div>
+          <div class="tool-desc">Open-source cell-site simulator (IMSI catcher / Stingray) detector from the Electronic Frontier Foundation. Runs on a $20 Orbic mobile hotspot. Green = safe, red = potential threat. Detects the fake cell towers that law enforcement and intelligence agencies use to intercept phone communications and track location. The most accessible personal counter-surveillance tool available.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">RNode</div>
+          <div class="tool-url"><a href="https://unsigned.io/rnode" target="_blank" rel="noopener noreferrer">unsigned.io/rnode</a></div>
+          <div class="tool-desc">Open-source digital radio transceiver for LoRa frequencies (433/868/915 MHz, 2.4 GHz). Achieves 100+ km line-of-sight range. Works with the Reticulum cryptographic networking stack for encrypted, decentralized communication that doesn&rsquo;t depend on cell towers, ISPs, or internet infrastructure. 3D-printable cases. Build your own mesh network.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Offline Directory</div>
+          <div class="tool-url"><a href="https://offline.directory" target="_blank" rel="noopener noreferrer">offline.directory</a></div>
+          <div class="tool-desc">Curated catalog of 90+ offline-capable applications across 13 categories. Pre-built resilience kits: Home Resilience, Privacy &amp; Security, Offline AI, Off-Grid Communication, and Knowledge Library. Everything you need to maintain capability when connectivity is lost &mdash; whether by disaster, infrastructure failure, or deliberate shutdown.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Reclaim Control</div>
+          <div class="tool-url"><a href="https://reclaimcontrol.tech" target="_blank" rel="noopener noreferrer">reclaimcontrol.tech</a></div>
+          <div class="tool-desc">Grassroots digital independence movement with alternative technology recommendations and practical guides for reducing dependence on surveilled platforms. Monthly #StopTheScroll campaign. Makes the transition from extraction-dependent to sovereignty-oriented technology concrete and actionable.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION: DECENTRALIZED COMMUNICATION -->
+        <div class="category-header">
+          <div class="category-icon bg-teal-100 text-teal-700">&#128752;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">Decentralized Communication</h2>
+        </div>
+        <p>Networking stacks and clients that operate without centralized infrastructure. When ISPs, cell towers, or platforms are compromised or shut down, these tools maintain the ability to communicate &mdash; added March 12, 2026.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">Reticulum</div>
+          <div class="tool-url"><a href="https://reticulum.network" target="_blank" rel="noopener noreferrer">reticulum.network</a></div>
+          <div class="tool-desc">Full cryptographic networking stack that treats all physical transports &mdash; LoRa, Wi-Fi, Ethernet, serial, TCP/IP &mdash; as interchangeable. Hardware-agnostic, origin-obscured, with cryptographic identity that requires no centralized assignment. Created by Mark Qvist (<a href="https://unsigned.io" target="_blank" rel="noopener noreferrer">unsigned.io</a>). Cannot be shut down by any centralized actor because there is no central point to shut down. Open-source on <a href="https://github.com/markqvist/Reticulum" target="_blank" rel="noopener noreferrer">GitHub</a>.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Sideband</div>
+          <div class="tool-url"><a href="https://github.com/markqvist/Sideband" target="_blank" rel="noopener noreferrer">github.com/markqvist/Sideband</a></div>
+          <div class="tool-desc">Mobile client for the Reticulum network. Encrypted messaging, file transfer, and voice over any available transport &mdash; LoRa radio, local Wi-Fi, or internet. Runs on Android and Linux. No accounts, no servers, no phone number required.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Mesh Chat</div>
+          <div class="tool-url"><a href="https://github.com/markqvist/Reticulum" target="_blank" rel="noopener noreferrer">github.com/markqvist/Reticulum</a></div>
+          <div class="tool-desc">Desktop chat client for the Reticulum networking stack. Group and direct messaging over decentralized mesh networks without any centralized infrastructure dependency.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Nomad Network</div>
+          <div class="tool-url"><a href="https://github.com/markqvist/NomadNetwork" target="_blank" rel="noopener noreferrer">github.com/markqvist/NomadNetwork</a></div>
+          <div class="tool-desc">Terminal-based communicator and page browser for the Reticulum stack. Supports encrypted messaging, file sharing, and hosting of simple pages over mesh networks. Designed for low-bandwidth, high-resilience scenarios.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">RNode</div>
+          <div class="tool-url"><a href="https://unsigned.io/rnode" target="_blank" rel="noopener noreferrer">unsigned.io/rnode</a></div>
+          <div class="tool-desc">Reticulum-compatible hardware firmware with a web-based flasher for supported LoRa devices. Turns commodity radio hardware into encrypted mesh network nodes. 100+ km line-of-sight range. The physical layer for communication that doesn&rsquo;t depend on any infrastructure you don&rsquo;t control.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">ATAK (Android Tactical Awareness Kit)</div>
+          <div class="tool-url"><a href="https://github.com/deptofdefense/AndroidTacticalAssaultKit-CIV" target="_blank" rel="noopener noreferrer">github.com/deptofdefense/AndroidTacticalAssaultKit-CIV</a></div>
+          <div class="tool-desc">Open-source tactical mapping and situational awareness platform, originally developed for the U.S. Department of Defense. Now demonstrated running over Reticulum for fully decentralized operation &mdash; military-grade situational awareness on sovereign infrastructure without centralized servers or commercial networks.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION: OSINT & INVESTIGATION -->
+        <div class="category-header">
+          <div class="category-icon bg-purple-100 text-purple-700">&#128373;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">OSINT &amp; Investigation</h2>
+        </div>
+        <p>Automated open-source intelligence collection, relationship visualization, breach monitoring, and internet-connected device discovery &mdash; added March 12, 2026.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">SpiderFoot</div>
+          <div class="tool-url"><a href="https://github.com/smicallef/spiderfoot" target="_blank" rel="noopener noreferrer">github.com/smicallef/spiderfoot</a></div>
+          <div class="tool-desc">Automated OSINT collection and reconnaissance tool with 200+ modules. Queries DNS, WHOIS, social media, breach databases, dark web, and dozens of other data sources. Builds relationship graphs from any starting point &mdash; domain, IP, email, name, phone number. Open-source, self-hosted.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Maltego</div>
+          <div class="tool-url"><a href="https://www.maltego.com" target="_blank" rel="noopener noreferrer">maltego.com</a></div>
+          <div class="tool-desc">Relationship visualization and link analysis platform used by investigators, journalists, and law enforcement. Maps connections between people, companies, domains, emails, and infrastructure. Commercial product with a free Community Edition (Maltego CE) that provides core graph analysis capabilities.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Shodan</div>
+          <div class="tool-url"><a href="https://www.shodan.io" target="_blank" rel="noopener noreferrer">shodan.io</a></div>
+          <div class="tool-desc">Search engine for internet-connected devices. Indexes servers, webcams, industrial control systems, IoT devices, and infrastructure worldwide. Essential for understanding what is exposed and visible on any network. Free tier available; used by security researchers and journalists to identify vulnerable systems.</div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">DeHashed</div>
+          <div class="tool-url"><a href="https://dehashed.com" target="_blank" rel="noopener noreferrer">dehashed.com</a></div>
+          <div class="tool-desc">Breach monitoring and leaked credential search engine. Alerts when email addresses, usernames, or domains appear in data breaches. Used for personal security awareness and organizational exposure assessment. Subscription-based with free search.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION: AI GOVERNANCE -->
+        <div class="category-header">
+          <div class="category-icon bg-emerald-100 text-emerald-700">&#127963;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">AI Governance</h2>
+        </div>
+        <p>Frameworks and policy instruments for governing AI systems as operational actors rather than passive tools &mdash; added March 12, 2026.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">Singapore IMDA Model AI Governance Framework for Agentic AI</div>
+          <div class="tool-url"><a href="https://www.imda.gov.sg" target="_blank" rel="noopener noreferrer">imda.gov.sg</a></div>
+          <div class="tool-desc">The first government framework that treats AI agents as &ldquo;operational actors&rdquo; requiring traceable organizational identity. Published by Singapore&rsquo;s Infocomm Media Development Authority. Establishes that when AI systems act autonomously &mdash; making decisions, executing tasks, interacting with other systems &mdash; they need governance structures analogous to those applied to human employees: clear accountability chains, audit trails, and organizational responsibility for outcomes.</div>
+        </div>
+
+        <hr>
+
+        <!-- SECTION 9: THE PRINCIPLE -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Principle Behind the Tools</h2>
+
+        <p>
+          Every tool on this list follows the same logic: <strong>information flow as structural intervention.</strong> Nobody had to pass a law requiring them to exist. Nobody had to get permission. People saw that power was hiding in opacity and built instruments of visibility.
+        </p>
+
+        <p>
+          This is the same principle behind our <a href="/blog/atx-ice-activity.html">ICE activity tracking for Austin</a> and <a href="/blog/mn-ice-activity.html">Minneapolis</a>. The same principle behind our <a href="/blog/ai-surveillance-countermeasures.html">surveillance countermeasures research</a>. The same principle behind our <a href="/blog/data-privacy-sovereignty-best-practices.html">data sovereignty guides</a>: when you make the system's behavior visible, people can respond. When you keep it hidden, they can't.
+        </p>
+
+        <p>
+          Meadows understood something that most activists miss: you don't always need to <em>fight</em> a system to change it. Sometimes you just need to make it visible. The rest follows.
+        </p>
+
+        <blockquote>
+          <p>"There is a systematic tendency on the part of human beings to avoid accountability for their own decisions. That's why there are so few feedback loops in the structures of most systems."</p>
+          <p>&mdash; Donella Meadows, <em>Leverage Points: Places to Intervene in a System</em> (1999)</p>
+        </blockquote>
+
+        <p>
+          These tools are the feedback loops that were missing. They exist because people built them. They work because information, once visible, changes how everyone behaves &mdash; the watched and the watchers alike.
+        </p>
+
+        <p>
+          If you know of tools we've missed &mdash; especially for supply chain transparency, labor rights monitoring, or environmental justice &mdash; <a href="/#contact-form">send them our way</a>. This list should be as complete as we can make it.
+        </p>
+
+        <hr>
+
+        <section class="mt-10 p-6 bg-[#152230] rounded-lg border border-[#1a3347]">
+          <h3 class="text-lg font-bold text-white mb-2">Related Reading</h3>
+          <ul>
+            <li><a href="/blog/psychology-of-authoritarian-control.html">The Psychology of Authoritarian Control: From Cults to Cognitive Warfare</a></li>
+            <li><a href="/blog/5gw-research.html">Fifth-Generation Warfare: The Invisible War Already Underway</a></li>
+            <li><a href="/blog/data-privacy-sovereignty-best-practices.html">Data Privacy &amp; Sovereignty Best Practices (Feb 2026)</a></li>
+            <li><a href="/blog/ai-surveillance-countermeasures.html">Defeating Facial Recognition in an AI Surveillance Era</a></li>
+            <li><a href="/blog/connecting-isolated-voices.html">How Isolated People Find Each Other</a></li>
+            <li><a href="/blog/atx-ice-activity.html">ICE Activity Within a 2-Hour Radius of Austin, TX</a></li>
+          </ul>
+        </section>
+
+      </div><!-- /.content-area -->
+    </article>
+  </main>
+
+<!-- build:footer -->
+<!-- build:scripts -->
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Not Crazy. Here Are the Words for What You're Feeling. &mdash; Cloud Publica</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="If you know something is deeply wrong but can't name it — this is for you. A guide to finding the words for what you're feeling, understanding why you feel stuck, and discovering that you're not alone.">
+  <meta name="keywords" content="resilience, systems thinking, naming feelings, collective action, agency, hope, community, paradigm shift, learned helplessness, mutual aid">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="You're Not Crazy. Here Are the Words for What You're Feeling.">
+  <meta property="og:description" content="If you know something is deeply wrong but can't name it — this is for you. A guide to finding the words, understanding why you feel stuck, and discovering you're not alone.">
+  <meta property="og:url" content="https://cloudpublica.org/research/naming-what-you-feel.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://cloudpublica.org/assets/img/hero-naming.jpg">
+  <meta property="article:published_time" content="2026-03-07">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="You're Not Crazy. Here Are the Words for What You're Feeling.">
+  <meta name="twitter:description" content="If you know something is deeply wrong but can't name it — this is for you.">
+  <meta name="twitter:image" content="https://cloudpublica.org/assets/img/hero-naming.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon.png">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cp-teal': '#206795',
+            'cp-cyan': '#38c1e0',
+            'cp-dark': '#1a3347',
+            'cp-muted': '#5a7a8f',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter (async) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for article content -->
+  <style>
+    .content-area table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .content-area table thead th {
+      background-color: #206795;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .content-area table tbody td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .content-area table tbody tr:nth-child(even) {
+      background-color: rgba(32,103,149,0.1);
+    }
+    .content-area table tbody tr:hover {
+      background-color: rgba(56,193,224,0.1);
+    }
+    .content-area blockquote {
+      border-left: 4px solid #38c1e0;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background-color: rgba(26,51,71,0.5);
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    .content-area a {
+      color: #38c1e0;
+      text-decoration: none;
+    }
+    .content-area a:hover {
+      text-decoration: underline;
+      color: #38c1e0;
+    }
+    .content-area ul, .content-area ol {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .content-area ul li {
+      list-style-type: disc;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    .content-area ol li {
+      list-style-type: decimal;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    .content-area hr {
+      border: none;
+      border-top: 2px solid rgba(255,255,255,0.1);
+      margin: 2.5rem 0;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0;
+    }
+    .feeling-card {
+      border-left: 4px solid #38c1e0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      background: linear-gradient(135deg, rgba(32,103,149,0.15) 0%, rgba(26,51,71,0.3) 100%);
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .feeling-card .feeling-quote {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #38c1e0;
+      margin-bottom: 0.5rem;
+    }
+    .feeling-card .feeling-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #38c1e0;
+      margin-bottom: 0.5rem;
+    }
+    .feeling-card .feeling-explain {
+      font-size: 0.95rem;
+      color: #c0c8d0;
+      line-height: 1.7;
+    }
+    .content-area p {
+      margin-bottom: 1.25rem;
+    }
+    .pullquote {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #38c1e0;
+      line-height: 1.5;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 2px solid rgba(255,255,255,0.1);
+      border-bottom: 2px solid rgba(255,255,255,0.1);
+      margin: 2.5rem 0;
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "You're Not Crazy. Here Are the Words for What You're Feeling.",
+    "datePublished": "2026-03-07",
+    "author": {
+      "@type": "Organization",
+      "name": "Cloud Publica"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Gifted Dreamers, Inc.",
+      "url": "https://gifteddreamers.org/GRUHP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cloudpublica.org/assets/img/favicon.png"
+      }
+    },
+    "description": "If you know something is deeply wrong but can't name it — this is for you. A guide to finding the words for what you're feeling, understanding why you feel stuck, and discovering that you're not alone.",
+    "mainEntityOfPage": "https://cloudpublica.org/research/naming-what-you-feel.html"
+  }
+  </script>
+
+  <!-- build:config {"nav":"research"} -->
+</head>
+
+<body class="bg-[#0a1218] text-white font-sans antialiased">
+
+<!-- build:nav -->
+
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-[#1a3347] border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <ol class="flex items-center space-x-2 text-sm text-gray-400">
+        <li><a href="/" class="hover:text-[#38c1e0] transition-colors">Home</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li><a href="/research/" class="hover:text-[#38c1e0] transition-colors">Research</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li class="text-gray-200 font-medium truncate">Naming What You Feel</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main class="py-10 md:py-16">
+    <article class="max-w-4xl mx-auto px-4">
+
+      <!-- Article Header -->
+      <header class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-block bg-cp-teal/20 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
+          <time datetime="2026-03-07" class="text-sm text-gray-400">March 7, 2026</time>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+          You're Not Crazy. Here Are the Words for What You're Feeling.
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+          If you know something is deeply wrong but can't quite name it &mdash; if you feel stuck between grief and action, between knowing too much and not knowing what to do &mdash; this is for you. You're not alone. And there are words for this.
+        </p>
+      </header>
+
+      <figure class="mb-10">
+        <picture>
+          <source srcset="/blog/hero-naming-what-you-feel-640w.webp" media="(max-width: 768px)" type="image/webp">
+          <source srcset="/blog/hero-naming-what-you-feel-1280w.webp" type="image/webp">
+          <img src="/blog/hero-naming-what-you-feel.jpg" alt="Person sitting by a window at dawn, light beginning to come through, hands wrapped around a warm cup — the quiet moment before deciding to get up and try again" class="w-full rounded-lg shadow-md" width="1280" height="720" loading="eager">
+        </picture>
+      </figure>
+
+      <!-- Article Body -->
+      <div class="content-area prose prose-lg max-w-none text-gray-300 leading-relaxed">
+
+        <!-- SECTION 1: VALIDATION -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">This Is Real. What You're Feeling Makes Sense.</h2>
+
+        <p>
+          Maybe you're reading this at 2am. Maybe you've been doomscrolling and something in your chest hasn't unclenched in months. Maybe you tried to explain what you're feeling to someone you love and the words came out wrong, or not at all. Maybe you said "I'm fine" again today and meant "I don't know how to describe the shape of what I'm carrying."
+        </p>
+
+        <p>
+          Here's the first thing you need to hear: <strong>what you're feeling is not a personal failing.</strong> It's not anxiety you can meditate away. It's not a problem with your attitude. The weight you're carrying has a source, and that source is not you.
+        </p>
+
+        <p>
+          Neuroscience research shows that when we can name a feeling precisely, our brain's threat-response system literally calms down. Psychologist Dan Siegel calls this <strong>"name it to tame it"</strong> &mdash; the act of finding the right word for an emotion activates the prefrontal cortex and dampens the amygdala. The word doesn't fix the problem. But it gives you a handle. It moves you from drowning in a feeling to standing beside it.
+        </p>
+
+        <p>
+          So let's try something. Below are the things people have been telling us they feel. If you see yourself in any of these, you're not crazy. You're paying attention.
+        </p>
+
+        <hr>
+
+        <!-- SECTION 2: NAMING -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Words You've Been Looking For</h2>
+
+        <p>
+          Each of these starts with what you might say out loud &mdash; the raw version. Then comes the structural name: what systems thinkers and researchers call it. These aren't just academic labels. They're proof that what you're experiencing is <em>documented, shared, and understood</em>. You are not imagining this.
+        </p>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"I can't afford anything anymore."</div>
+          <div class="feeling-name">Parameter failure</div>
+          <div class="feeling-explain">The numbers &mdash; wages, prices, taxes &mdash; have been adjusted to serve the powerful. When groceries cost more and your paycheck buys less, that's not inflation happening to you randomly. The parameters of the system have been set against your interests. You're not bad with money. The math was changed.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"I have no cushion. One bad month and I'm done."</div>
+          <div class="feeling-name">Buffer depletion</div>
+          <div class="feeling-explain">Buffers are the reserves &mdash; savings, sick days, institutional safety nets &mdash; that absorb shock. When 60% of Americans live paycheck to paycheck, when federal agencies lose hundreds of thousands of workers overnight, the system's capacity to catch anyone has been deliberately drained. You're not fragile. Your buffers were taken.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"My phone is listening. I don't trust anything digital anymore."</div>
+          <div class="feeling-name">Hostile infrastructure</div>
+          <div class="feeling-explain">The digital tools you depend on &mdash; your phone, your email, your AI assistant &mdash; were built to serve someone else's interests. Courts have ruled AI chats have no legal privilege. Facial recognition is deployed at borders. The infrastructure of daily life has been turned against the people who use it. Your distrust is rational.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"Nothing works fast enough. I voted. I donated. I called. Nothing changed."</div>
+          <div class="feeling-name">Asymmetric delays</div>
+          <div class="feeling-explain">The time between democratic action and system response is enormous &mdash; and getting longer. Meanwhile, harm happens overnight: a worker fired by algorithm, a court order defied, a community raided at dawn. <strong>Fast destruction, slow correction.</strong> That's not a bug. It's the architecture. Your frustration is the correct response to a system designed to exhaust you.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"The courts can't stop this. Nobody's being held accountable."</div>
+          <div class="feeling-name">Feedback loop failure</div>
+          <div class="feeling-explain">Courts, elections, oversight agencies, the press &mdash; these are supposed to be self-correcting mechanisms. When they're systematically weakened or ignored, the system loses its ability to check itself. A federal judge in February 2026 said he was "not aware of another occasion in the history of the United States" where a court had to threaten contempt again and again to force the government to comply. If accountability feels broken, it's because the mechanisms of accountability are being deliberately dismantled.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"Things keep getting worse and I can't figure out why."</div>
+          <div class="feeling-name">Runaway concentration</div>
+          <div class="feeling-explain">Wealth concentrates into political power, which writes rules that concentrate more wealth. Surveillance data collected for one purpose gets used for another, which justifies collecting more. These are positive feedback loops &mdash; self-reinforcing cycles that accelerate. The feeling that things are speeding up isn't paranoia. It's pattern recognition.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"I can't tell what's real anymore."</div>
+          <div class="feeling-name">Information flow capture</div>
+          <div class="feeling-explain">Public information is being choked &mdash; press attacked, FOIA requests stonewalled, agency websites scrubbed &mdash; while private data is harvested at scale. The people in power are simultaneously increasing their own information access and decreasing yours. Your confusion is manufactured. Deliberately.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"The rules don't apply to them. Only to us."</div>
+          <div class="feeling-name">Impunity</div>
+          <div class="feeling-explain">Power operates without consequence while rules are enforced asymmetrically. Executive orders used as props while constitutional limits are violated. The <em>form</em> of law without its <em>substance</em>. You're not being cynical. You're seeing clearly.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"Nobody's coming to save us."</div>
+          <div class="feeling-name">Self-organization suppression</div>
+          <div class="feeling-explain">When the system punishes experimentation, surveils organizing, and targets anyone who builds alternatives, it is destroying the conditions for new structures to emerge. But here's the thing the system doesn't want you to know: <strong>people are building anyway.</strong> Mutual aid networks, community defense, know-your-rights trainings in living rooms, social strikes &mdash; self-organization is happening under pressure, right now, in your neighborhood. The system can suppress it. It cannot stop it.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"What are we even fighting for?"</div>
+          <div class="feeling-name">Goal displacement</div>
+          <div class="feeling-explain">When a system's stated goals (security, efficiency, freedom) diverge from its actual goals (power preservation, wealth concentration), people lose the thread. The fight feels pointless because the goals have been swapped. Naming this is the first step to articulating what you actually want instead.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"Everything I believed was wrong."</div>
+          <div class="feeling-name">Paradigm collapse</div>
+          <div class="feeling-explain">The unstated assumptions that made the system feel legitimate &mdash; that the arc of history bends toward justice, that institutions would hold, that playing by the rules would be enough &mdash; are visibly failing. This isn't disillusionment. It's <strong>seeing more clearly.</strong> And it hurts, because it means the ground you built your life on was partly mythological. Grief for a world that maybe never quite existed the way you believed it did &mdash; that's real grief. It deserves to be honored, not dismissed.</div>
+        </div>
+
+        <div class="feeling-card">
+          <div class="feeling-quote">"I'm paralyzed. I don't know where to start."</div>
+          <div class="feeling-name">Paradigm rigidity</div>
+          <div class="feeling-explain">The inability to act without a totalizing theory. Waiting for the "right answer" before doing anything. Research on learned helplessness shows this is <strong>neurological, not moral</strong> &mdash; the brain's anxiety-regulation mechanisms shut down under sustained, uncontrollable stress. You're not lazy. Your nervous system is in shutdown mode because it has been overwhelmed. The way out isn't to think harder. It's to move smaller.</div>
+        </div>
+
+        <div class="pullquote">
+          "The grief you feel about the world is evidence of how much you care.<br>That's not weakness. That's the entry point."
+        </div>
+
+        <hr>
+
+        <!-- SECTION 3: YOU'RE NOT ALONE -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">You Are Not Alone in This</h2>
+
+        <p>
+          Not metaphorically. <em>Actually.</em>
+        </p>
+
+        <p>
+          If you're reading this, you're probably someone who lies awake at night thinking about things most people avoid. You probably feel like you're carrying knowledge that you can't put down and can't share, because the people around you either don't see it yet or have decided not to look. You probably wonder sometimes if you're the problem.
+        </p>
+
+        <p>
+          You're not the problem. And there are more people who feel exactly what you feel than you've been led to believe.
+        </p>
+
+        <p>
+          Sociologist &Eacute;mile Durkheim described something he called <strong>collective effervescence</strong> &mdash; the moment when people recognize they share an experience, especially an intense or difficult one, and something shifts. The private burden becomes communal. This is not just comfort. It is genuinely energizing. It is the feeling underneath every movement that has ever changed anything: <em>we see the same thing, and we are going to do something about it together.</em>
+        </p>
+
+        <p>
+          The system depends on your isolation. It depends on you believing you are the only one awake at 2am, the only one who noticed, the only one who cares. <strong>That belief is the most effective tool of control there is.</strong> Not surveillance. Not censorship. Loneliness. The manufactured conviction that you are alone.
+        </p>
+
+        <p>
+          You are not alone.
+        </p>
+
+        <hr>
+
+        <!-- SECTION 4: AGENCY -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">What You Can Actually Do</h2>
+
+        <p>
+          Writer Rebecca Solnit reminds us that hope is not optimism. Hope lives in uncertainty &mdash; and uncertainty means the outcome is not fixed. The future is genuinely open. "We can't know what will happen. That's not a reason for despair &mdash; it's the exact condition that makes your action matter."
+        </p>
+
+        <p>
+          Joanna Macy, who has spent decades studying how people move from paralysis to action, offers a simple framework: <strong>we are allowed to grieve and still go forward. These are not opposites.</strong> Grief for what is being lost, and commitment to what can still be built &mdash; these live in the same heart, at the same time.
+        </p>
+
+        <p>
+          adrienne maree brown writes: "What happens between you and one other person is a rehearsal for the world you want." Change doesn't need to be massive to be real. The small shifts you make in how you show up &mdash; those compound.
+        </p>
+
+        <p>
+          So here is not a ten-step plan. Here is what is actually within your reach:
+        </p>
+
+        <ul>
+          <li><strong>Name it.</strong> You just did, by reading this far. You now have words for what you're carrying. Use them. Say them out loud to someone you trust. "I think what I'm feeling is paradigm collapse" might sound strange, but it beats "I don't know what's wrong with me."</li>
+          <li><strong>Find your people.</strong> Not allies in the abstract. Actual humans in your neighborhood, your workplace, your congregation, your group chat. The ones who will show up. The ones who are also awake at 2am. You probably already know who they are.</li>
+          <li><strong>Start smaller than you think you should.</strong> Your nervous system is in protection mode. Don't fight that. Honor it. One conversation. One meeting. One small act of care for someone near you. The mycelium theory of change: what grows underground, invisibly, is what eventually transforms the forest floor.</li>
+          <li><strong>Protect yourself.</strong> Learn about <a href="/blog/data-privacy-sovereignty-best-practices.html">data sovereignty</a>. Understand <a href="/blog/ai-chat-legal-risks.html">the legal risks of your digital life</a>. Build your <a href="/blog/emergency-preparedness-guide.html">emergency buffers</a>. These aren't paranoid acts. They're the equivalent of putting on your own oxygen mask first.</li>
+          <li><strong>Refuse the premise that you have to fix everything alone.</strong> You don't need to be a lawyer, an activist, or a tech person. You need to be a human who cares and who shows up. That is enough. That is more than enough.</li>
+          <li><strong>Let grief and hope coexist.</strong> You don't have to choose. The grief is proof of love. The hope is proof of vision. Carry both.</li>
+        </ul>
+
+        <div class="pullquote">
+          "How do I go from reading a blog post at 2am with my heart racing<br>to actually being part of something?"<br>
+          <span class="text-lg font-medium text-gray-400">You just started.</span>
+        </div>
+
+        <hr>
+
+        <!-- SECTION 5: THE BIGGER PICTURE -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Why Naming This Matters</h2>
+
+        <p>
+          Systems thinker Donella Meadows spent her career studying where to intervene in complex systems. Her insight: most activism and most political debate operate at the lowest-leverage points &mdash; arguing over numbers, tweaking parameters, fighting about this policy or that policy. Meanwhile, the system's actual dysfunction lives at the highest-leverage points: who has information, who writes the rules, whether people can self-organize, what the system is actually optimized for, and what assumptions we hold about how the world works.
+        </p>
+
+        <p>
+          The words above &mdash; parameter failure, buffer depletion, hostile infrastructure, asymmetric delays, feedback loop failure, runaway concentration, information flow capture, impunity, self-organization suppression, goal displacement, paradigm collapse, paradigm rigidity &mdash; are not just vocabulary. <strong>They are a map.</strong> They show you that what feels like personal chaos is structural. They show you where the system is actually broken. And they show you where intervention actually matters.
+        </p>
+
+        <p>
+          Most people get stuck at "raise the minimum wage" or "vote them out in 2028." Those matter. But the changes that actually transform systems happen when people change <em>who has information</em>, change <em>who writes the rules</em>, enable <em>self-organization</em>, redefine <em>what we're optimizing for</em>, and shift the <em>underlying story about how the world works</em>.
+        </p>
+
+        <p>
+          That's what you're doing when you name the problem. You're not just processing your feelings. You're shifting the paradigm. You're giving language to something millions of people feel but couldn't articulate. And language is how movements begin.
+        </p>
+
+        <blockquote>
+          <p><strong>Name the paradigm that's failing. Name the goal that should replace it. The rest follows.</strong></p>
+        </blockquote>
+
+        <hr>
+
+        <!-- SECTION 6: CLOSING -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">A Final Word</h2>
+
+        <p>
+          If you found yourself in these words &mdash; if something unclenched even slightly &mdash; share this with someone who needs it. Not as homework. As an act of solidarity. As a way of saying: <em>I see you. I feel it too. We're going to figure this out.</em>
+        </p>
+
+        <p>
+          The word that ties it all together is <strong>agency</strong>. The crisis we're living through is fundamentally a crisis of agency &mdash; the systematic erosion of people's ability to act on their own behalf. Everything on this site exists to restore that agency, one person, one family, one neighborhood at a time.
+        </p>
+
+        <p>
+          You're reading this because something in you hasn't given up. That something is not naive. It's not foolish. It's the most important thing about you.
+        </p>
+
+        <p>
+          Keep going.
+        </p>
+
+        <hr>
+
+        <!-- FURTHER READING -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Keep Reading</h2>
+
+        <ul>
+          <li><a href="/blog/rebuilding-resilience.html">Rebuilding Resilience: Frameworks for Personal and Community Recovery</a> &mdash; the research behind community and personal resilience</li>
+          <li><a href="/blog/emergency-preparedness-guide.html">Comprehensive Emergency Preparedness Guide for 2026</a> &mdash; practical steps for building your buffers</li>
+          <li><a href="/blog/data-privacy-sovereignty-best-practices.html">Data Privacy &amp; Sovereignty Best Practices</a> &mdash; protecting yourself in a hostile infrastructure</li>
+          <li><a href="/blog/ai-chat-legal-risks.html">Your AI Chats Can Be Used Against You</a> &mdash; what you need to know about digital privacy in 2026</li>
+          <li><a href="/blog/5gw-research.html">Fifth-Generation Warfare: The Invisible War</a> &mdash; understanding how information capture works</li>
+        </ul>
+
+        <!-- Sources -->
+        <section class="footnotes-section" aria-label="Sources" style="font-size: 0.875rem; border-top: 2px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin-top: 3rem;">
+          <h2 class="text-lg font-bold text-white mb-4">Frameworks and Sources</h2>
+          <ul>
+            <li>Donella Meadows, <a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/" target="_blank" rel="noopener noreferrer">"Leverage Points: Places to Intervene in a System"</a> (1999)</li>
+            <li>Dan Siegel, <em>The Whole-Brain Child</em> &mdash; "name it to tame it" framework for affect labeling</li>
+            <li>Rebecca Solnit, <em>Hope in the Dark: Untold Histories, Wild Possibilities</em> (2004, updated 2016)</li>
+            <li>Joanna Macy &amp; Chris Johnstone, <em>Active Hope: How to Face the Mess We're in Without Going Crazy</em> (2012, revised 2022)</li>
+            <li>adrienne maree brown, <em>Emergent Strategy: Shaping Change, Shaping Worlds</em> (2017)</li>
+            <li>&Eacute;mile Durkheim, <em>The Elementary Forms of Religious Life</em> (1912) &mdash; collective effervescence</li>
+            <li>ADAA research on learned helplessness and neurological responses to sustained stress</li>
+            <li>Carnegie Endowment &amp; Protect Democracy reports on democratic backsliding (2025&ndash;2026)</li>
+            <li>Cloud Publica systems analysis synthesized from Paradigm meeting notes, current events research, and resilience frameworks (March 2026)</li>
+          </ul>
+        </section>
+
+      </div><!-- /.content-area -->
+    </article>
+  </main>
+
+<!-- build:footer -->
+<!-- build:scripts -->
+</body>
+</html>

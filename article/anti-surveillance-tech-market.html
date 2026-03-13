@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anti-Surveillance Technology & Wearables: Market Analysis — Cloud Publica</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="An in-depth analysis of anti-surveillance technology and wearables, covering the facial recognition market, counter-surveillance techniques, key players, regulatory landscape, and strategic opportunities for builders and investors.">
+  <meta name="keywords" content="anti-surveillance, facial recognition, counter-surveillance, wearables, privacy, adversarial fashion, IR blocking, market analysis">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Anti-Surveillance Technology & Wearables: Market Analysis — Cloud Publica">
+  <meta property="og:description" content="An in-depth analysis of the surveillance landscape, market sizes, key players, regulatory impact, and strategic opportunities in the growing counter-surveillance industry.">
+  <meta property="og:url" content="https://cloudpublica.org/article/anti-surveillance-tech-market.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://cloudpublica.org/assets/img/hero-anti-surveillance.jpg">
+  <meta property="article:published_time" content="2026-02-09">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anti-Surveillance Technology & Wearables: Market Analysis — Cloud Publica">
+  <meta name="twitter:description" content="An in-depth analysis of the surveillance landscape, counter-surveillance techniques, market sizes, and strategic opportunities.">
+  <meta name="twitter:image" content="https://cloudpublica.org/assets/img/hero-anti-surveillance.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+
+  <!-- DNS Prefetch -->
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cp-teal': '#206795',
+            'cp-cyan': '#38c1e0',
+            'cp-dark': '#1a3347',
+            'cp-muted': '#5a7a8f',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter (async) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for article content -->
+  <style>
+    /* Tables */
+    .content-area table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .content-area table thead th {
+      background-color: #206795;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .content-area table tbody td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #1e3a4f;
+    }
+    .content-area table tbody tr:nth-child(even) {
+      background-color: #0d1a24;
+    }
+    .content-area table tbody tr:hover {
+      background-color: #122230;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0;
+    }
+
+    /* Blockquotes */
+    .content-area blockquote {
+      border-left: 4px solid #38c1e0;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background-color: #0d1a24;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    /* Links */
+    .content-area a {
+      color: #38c1e0;
+      text-decoration: none;
+    }
+    .content-area a:hover {
+      text-decoration: underline;
+      color: #2ba8c5;
+    }
+
+    /* Lists */
+    .content-area ul, .content-area ol {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .content-area ul li {
+      list-style-type: disc;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    .content-area ol li {
+      list-style-type: decimal;
+      margin-bottom: 0.75rem;
+      line-height: 1.7;
+    }
+    .content-area ul ul {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footnote references (superscript) */
+    .fn-ref {
+      font-size: 0.75em;
+      vertical-align: super;
+      line-height: 0;
+      color: #38c1e0;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0 1px;
+    }
+    .fn-ref:hover {
+      color: #2ba8c5;
+      text-decoration: underline;
+    }
+
+    /* Footnotes section */
+    .footnotes-section {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      border-top: 2px solid #1e3a4f;
+      padding-top: 1.5rem;
+      margin-top: 3rem;
+    }
+    .footnotes-section li {
+      margin-bottom: 0.5rem;
+      color: #94a3b8;
+    }
+    .footnotes-section a {
+      color: #38c1e0;
+      word-break: break-all;
+    }
+    .footnotes-section a:hover {
+      text-decoration: underline;
+    }
+    .fn-back {
+      color: #38c1e0;
+      text-decoration: none;
+      margin-left: 0.25rem;
+      font-size: 0.85em;
+    }
+    .fn-back:hover {
+      text-decoration: underline;
+    }
+
+    /* Source reference list */
+    .source-list h4 {
+      color: #206795;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .source-list ul {
+      padding-left: 1.25rem;
+    }
+    .source-list li {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .source-list a {
+      color: #38c1e0;
+      word-break: break-all;
+    }
+    .source-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section dividers */
+    .content-area hr {
+      border: none;
+      border-top: 1px solid #1e3a4f;
+      margin: 2.5rem 0;
+    }
+
+    /* Headings within content */
+    .content-area h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #e2e8f0;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #206795;
+    }
+    .content-area h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .content-area h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .content-area p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Anti-Surveillance Technology & Wearables: Threats, Countermeasures, and Market Opportunities",
+    "datePublished": "2026-02-09",
+    "description": "An in-depth analysis of anti-surveillance technology and wearables, covering the facial recognition market, counter-surveillance techniques, key players, regulatory landscape, and strategic opportunities.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Gifted Dreamers, Inc.",
+      "url": "https://cloudpublica.org"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cloudpublica.org/article/anti-surveillance-tech-market.html"
+    }
+  }
+  </script>
+
+  <!-- build:config {"nav":"investigations"} -->
+</head>
+
+<body class="bg-[#0a1218] text-white font-sans antialiased">
+
+<!-- build:nav -->
+
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-[#0d1a24] border-b border-[#1e3a4f]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <ol class="flex items-center space-x-2 text-sm text-gray-400">
+        <li><a href="/" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.home">Home</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li><a href="/investigations.html" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.investigations">Investigations</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li class="text-gray-300 font-medium truncate">Anti-Surveillance Market Analysis</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main class="py-10 md:py-16">
+    <article class="max-w-4xl mx-auto px-4">
+
+      <header class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-block bg-cp-teal/10 text-cp-teal text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Technology &amp; Privacy</span>
+          <time datetime="2026-02-09" class="text-sm text-gray-400">February 9, 2026</time>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-100 leading-tight mb-6" data-i18n="blog.market.title">
+          Anti-Surveillance Technology &amp; Wearables: Threats, Countermeasures, and Market Opportunities
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed" data-i18n="blog.market.subtitle">
+          An in-depth analysis of the surveillance landscape, market sizes, key players, regulatory impact, and strategic opportunities in the growing counter-surveillance industry.
+        </p>
+      </header>
+
+      <figure class="mb-10">
+        <picture>
+          <source srcset="/assets/img/hero-anti-surveillance-640w.webp" media="(max-width: 768px)" type="image/webp">
+          <source srcset="/assets/img/hero-anti-surveillance-1280w.webp" type="image/webp">
+          <img src="/assets/img/hero-anti-surveillance.jpg" alt="Anti-surveillance technology and wearables market analysis" class="w-full rounded-lg shadow-md" width="1280" height="720" loading="eager">
+        </picture>
+      </figure>
+
+      <!-- Article Body -->
+      <div class="content-area prose prose-lg max-w-none text-gray-200 leading-relaxed">
+
+      <!-- Section 1: The Surveillance Context -->
+      <h2 id="section-1" data-i18n="blog.market.h2_1">1. The Surveillance Context</h2>
+
+      <p data-i18n="blog.market.p1">Facial recognition and AI-enhanced video surveillance have moved from niche tools to default infrastructure in many cities and war zones. The global facial recognition market is projected to grow from about <strong>$9.3B in 2025</strong> to <strong>$36.75B by 2035</strong> (~14.7% CAGR), driven by security, finance, retail, and government use cases. AI in video surveillance is smaller in absolute size but growing faster, from <strong>$3.9B in 2024</strong> to <strong>$12.46B by 2030</strong> (~21.3% CAGR).<a href="#fn1" id="fnref1" class="fn-ref">[1]</a><a href="#fn2" id="fnref2" class="fn-ref">[2]</a><a href="#fn3" id="fnref3" class="fn-ref">[3]</a></p>
+
+      <p data-i18n="blog.market.p2">Surveillance cameras themselves form a massive installed base: the global surveillance camera market was around <strong>$43.56B in 2025</strong> and is forecast to exceed <strong>$62B by 2029</strong>, reflecting both new deployments and upgrades to higher-resolution, AI-capable devices. Military drone markets, increasingly integrating computer vision and biometrics, are estimated at roughly <strong>$47B in 2025</strong> and projected to grow at high single-digit CAGRs through 2030.<a href="#fn4" id="fnref4" class="fn-ref">[4]</a><a href="#fn5" id="fnref5" class="fn-ref">[5]</a><a href="#fn6" id="fnref6" class="fn-ref">[6]</a><a href="#fn7" id="fnref7" class="fn-ref">[7]</a></p>
+
+      <p data-i18n="blog.market.p3">This growth creates a corresponding need for <strong>counter-surveillance</strong> tools -- especially in conflict zones (e.g., Gaza, Ukraine) where drones, checkpoints, and mass camera deployments are used to track and target individuals.<a href="#fn8" id="fnref8" class="fn-ref">[8]</a><a href="#fn9" id="fnref9" class="fn-ref">[9]</a><a href="#fn10" id="fnref10" class="fn-ref">[10]</a></p>
+
+      <hr>
+
+      <!-- Section 2: How Facial Recognition Works -->
+      <h2 id="section-2" data-i18n="blog.market.h2_2">2. How Facial Recognition Works (and Where It Can Be Broken)</h2>
+
+      <p data-i18n="blog.market.p4">Modern facial recognition typically follows three steps:</p>
+
+      <ol>
+        <li data-i18n="blog.market.li1"><strong>Detection</strong> -- Determine that a face is present in an image or video.</li>
+        <li data-i18n="blog.market.li2"><strong>Feature extraction</strong> -- Convert facial landmarks (eye distance, jawline, nose, etc.) into a numerical representation or "embedding."</li>
+        <li data-i18n="blog.market.li3"><strong>Matching</strong> -- Compare that embedding to a database of known faces.</li>
+      </ol>
+
+      <p data-i18n="blog.market.p5">Most consumer and city-scale systems use RGB + near-IR cameras, often with IR illuminators for night vision; some (like Face ID) use structured light or depth sensors, and higher-end military systems may also incorporate thermal imagery.<a href="#fn11" id="fnref11" class="fn-ref">[11]</a><a href="#fn12" id="fnref12" class="fn-ref">[12]</a></p>
+
+      <p data-i18n="blog.market.p6">Countermeasures work by:</p>
+
+      <ul>
+        <li data-i18n="blog.market.li4">Preventing <strong>detection</strong> (camera fails to see a face at all).</li>
+        <li data-i18n="blog.market.li5">Corrupting <strong>feature extraction</strong> (geometry/texture appears non-human or heavily distorted).</li>
+        <li data-i18n="blog.market.li6">Confusing <strong>matching</strong> (embedding no longer matches any enrollment images).</li>
+      </ul>
+
+      <p data-i18n="blog.market.p7">Because algorithms and sensors vary, <strong>no single defense works everywhere</strong>; the most realistic approach is layered and context-specific.</p>
+
+      <hr>
+
+      <!-- Section 3: Existing Anti-Surveillance Techniques and Wearables -->
+      <h2 id="section-3" data-i18n="blog.market.h2_3">3. Existing Anti-Surveillance Techniques and Wearables</h2>
+
+      <!-- 3.1 -->
+      <h3 id="section-3-1" data-i18n="blog.market.h3_1">3.1 Makeup and Face Art (CV Dazzle)</h3>
+
+      <p data-i18n="blog.market.p8"><strong>CV Dazzle</strong>, created by artist Adam Harvey, is a style of makeup and hairstyling designed to break face detection (not just recognition). It uses:</p>
+
+      <ul>
+        <li data-i18n="blog.market.li7">High-contrast shapes (light vs dark) applied asymmetrically.</li>
+        <li data-i18n="blog.market.li8">Heavy blocking of the <strong>nose bridge</strong> and one eye region.</li>
+        <li data-i18n="blog.market.li9">Straight lines and geometric fragments that disrupt the normal face contour.<a href="#fn13" id="fnref13" class="fn-ref">[13]</a><a href="#fn14" id="fnref14" class="fn-ref">[14]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p9">These designs can prevent older detectors (like Haar cascades in OpenCV) from registering a face at all. However:</p>
+
+      <ul>
+        <li data-i18n="blog.market.li10">Modern deep-learning detectors are more robust, and some can still detect faces under heavy makeup.</li>
+        <li data-i18n="blog.market.li11">CV Dazzle is visually extreme and may attract human attention in sensitive contexts.<a href="#fn15" id="fnref15" class="fn-ref">[15]</a><a href="#fn13b" class="fn-ref">[13]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p10"><strong>Use cases</strong>: Protests, artistic/cultural events, situations where standing out visually is acceptable.</p>
+
+      <hr>
+
+      <!-- 3.2 -->
+      <h3 id="section-3-2" data-i18n="blog.market.h3_2">3.2 Adversarial Clothing and Patterns</h3>
+
+      <p data-i18n="blog.market.p11">Adversarial fashion embeds patterns that exploit weaknesses in computer vision models, especially object/person detectors like YOLO.</p>
+
+      <h4 id="capable" data-i18n="blog.market.h4_1">Cap_able (Italy)</h4>
+
+      <p data-i18n="blog.market.p12">Cap_able produces knitted sweaters, pants, dresses, and now printed T-shirts with patterns generated by adversarial algorithms.<a href="#fn16" id="fnref16" class="fn-ref">[16]</a><a href="#fn17" id="fnref17" class="fn-ref">[17]</a></p>
+
+      <ul>
+        <li data-i18n="blog.market.li12">Patterns are designed so YOLO (a popular detection model) classifies the wearer as an animal (e.g., dog, zebra) instead of "person."<a href="#fn18" id="fnref18" class="fn-ref">[18]</a><a href="#fn16b" class="fn-ref">[16]</a></li>
+        <li data-i18n="blog.market.li13">Garment designs are tested against YOLO and adjusted to maximize "misclassification confidence."<a href="#fn16c" class="fn-ref">[16]</a></li>
+        <li data-i18n="blog.market.li14">Patterns operate at the <strong>pixel level</strong>, and the team emphasizes that they work regardless of skin tone, addressing bias in FRT.<a href="#fn19" id="fnref19" class="fn-ref">[19]</a><a href="#fn16d" class="fn-ref">[16]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p13">Limitations:</p>
+
+      <ul>
+        <li data-i18n="blog.market.li15">Protection is strongest when the <strong>whole body</strong> is visible; if only the face is framed, recognition can still occur.<a href="#fn16e" class="fn-ref">[16]</a></li>
+        <li data-i18n="blog.market.li16">Independent tests by biometric vendors (e.g., NTechLab) have shown that some production FRT systems can still detect faces wearing Cap_able garments.<a href="#fn20" id="fnref20" class="fn-ref">[20]</a></li>
+        <li data-i18n="blog.market.li17">Effectiveness is model-specific and may degrade as algorithms evolve.</li>
+      </ul>
+
+      <p data-i18n="blog.market.p14">Mozilla's 2025 review of antisurveillance fashion confirms that Cap_able's garments can evade specific camera detection setups but not all pose-detection systems.<a href="#fn21" id="fnref21" class="fn-ref">[21]</a></p>
+
+      <h4 id="antiai" data-i18n="blog.market.h4_2">AntiAI Clothing &amp; Yelo Pomelo</h4>
+
+      <p data-i18n="blog.market.p15">Mozilla tested multiple off-the-shelf adversarial garments from <strong>AntiAI Clothing</strong> and <strong>Yelo Pomelo</strong> (sold via Etsy) using an Imou consumer security camera configured to send "human detected" alerts.<a href="#fn22" id="fnref22" class="fn-ref">[22]</a><a href="#fn21b" class="fn-ref">[21]</a></p>
+
+      <ul>
+        <li data-i18n="blog.market.li18">All AntiAI and Yelo Pomelo garments tested successfully prevented the camera from triggering a human-detection alert when the wearer walked across the field of view.<a href="#fn21c" class="fn-ref">[21]</a></li>
+        <li data-i18n="blog.market.li19">However, the same garments did not fool a separate ML model trained for pose estimation via Google's Teachable Machine.<a href="#fn21d" class="fn-ref">[21]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p16">This highlights the <strong>model-specific</strong> nature of adversarial defenses: a T-shirt can fool one AI camera but not another with different training data or objectives.</p>
+
+      <hr>
+
+      <!-- 3.3 -->
+      <h3 id="section-3-3" data-i18n="blog.market.h3_3">3.3 IR LED Hats, Hoodies, and &ldquo;Privacy Visors&rdquo;</h3>
+
+      <p data-i18n="blog.market.p17">Infrared-based defenses exploit the fact that many cameras use near-IR light for night vision and facial mapping.</p>
+
+      <ul>
+        <li data-i18n="blog.market.li20"><strong>Unidentified Halo</strong>: A baseball cap lined with 22 near-IR LEDs that project a halo of IR light around the wearer's head. Tests with Google Cloud Vision showed that faces became undetectable when the cap was on; without it, standard face detection and even emotion recognition worked normally.<a href="#fn23" id="fnref23" class="fn-ref">[23]</a></li>
+        <li data-i18n="blog.market.li21"><strong>Camera Shy Hoodie</strong> (Mac Pierce): A hoodie with high-power IR LEDs embedded around the hood and shoulders. When powered, the LEDs overwhelm camera sensors at night, causing the face/upper body to appear as bright flare or to disappear entirely, while remaining invisible to the human eye.<a href="#fn24" id="fnref24" class="fn-ref">[24]</a></li>
+        <li data-i18n="blog.market.li22">Japanese research prototypes of <strong>privacy visors</strong> use low-power IR LEDs around the frame to wash out the eye region in camera images while remaining unobtrusive to people.<a href="#fn11b" class="fn-ref">[11]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p18">Constraints:</p>
+
+      <ul>
+        <li data-i18n="blog.market.li23">Many daytime cameras include IR-cut filters, reducing the impact of IR flooding in bright conditions.</li>
+        <li data-i18n="blog.market.li24">Power/battery life and heat management can be issues for wearable IR arrays.</li>
+        <li data-i18n="blog.market.li25">In some jurisdictions, actively interfering with cameras might have legal implications.</li>
+      </ul>
+
+      <hr>
+
+      <!-- 3.4 -->
+      <h3 id="section-3-4" data-i18n="blog.market.h3_4">3.4 Reflective / IR-Blocking Glasses</h3>
+
+      <p data-i18n="blog.market.p19"><strong>Reflectacles</strong> and <strong>Zenni ID Guard</strong> exemplify anti-FRT eyewear.</p>
+
+      <h4 id="reflectacles" data-i18n="blog.market.h4_3">Reflectacles</h4>
+
+      <p data-i18n="blog.market.p20">Reflectacles frames use retroreflective materials and IR-absorbing or IR-reflective lenses.<a href="#fn25" id="fnref25" class="fn-ref">[25]</a><a href="#fn26" id="fnref26" class="fn-ref">[26]</a></p>
+
+      <ul>
+        <li data-i18n="blog.market.li26">Tests reported by PCMag and Mozilla show that Reflectacles can prevent <strong>Face ID</strong> and Windows Hello from successfully authenticating, and block some FRT systems from capturing usable eye-region data.<a href="#fn27" id="fnref27" class="fn-ref">[27]</a><a href="#fn21e" class="fn-ref">[21]</a></li>
+        <li data-i18n="blog.market.li27">In Mozilla's Imou camera tests, Reflectacles did <strong>not</strong> prevent the camera from sending a "human detected" alert -- but they did disable phone/computer biometric logins.<a href="#fn21f" class="fn-ref">[21]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p21">These glasses are effective at <strong>protecting biometric authentication</strong> (phone/PC login, some ID gates) rather than hiding the entire body from detection.</p>
+
+      <h4 id="zenni" data-i18n="blog.market.h4_4">Zenni ID Guard</h4>
+
+      <p data-i18n="blog.market.p22">In July 2025, Zenni Optical launched <strong>ID Guard</strong>, a near-IR-reflecting lens coating available on standard prescription lenses and EyeQLenz.<a href="#fn28" id="fnref28" class="fn-ref">[28]</a><a href="#fn29" id="fnref29" class="fn-ref">[29]</a><a href="#fn30" id="fnref30" class="fn-ref">[30]</a></p>
+
+      <ul>
+        <li data-i18n="blog.market.li28">ID Guard reflects <strong>up to ~80%</strong> of near-infrared light in the 700--1,000 nm range, the same band used by many facial recognition systems and IR illuminators.<a href="#fn29b" class="fn-ref">[29]</a><a href="#fn30b" class="fn-ref">[30]</a><a href="#fn28b" class="fn-ref">[28]</a></li>
+        <li data-i18n="blog.market.li29">The coating shows as a subtle iridescent pink sheen but maintains optical clarity.<a href="#fn28c" class="fn-ref">[28]</a></li>
+        <li data-i18n="blog.market.li30">Zenni warns that the coating may interfere with consumer-facing IR-based systems like Apple Face ID and Windows Hello, which is effectively proof that it disrupts IR mapping.<a href="#fn29c" class="fn-ref">[29]</a><a href="#fn28d" class="fn-ref">[28]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p23">This is a key mainstream signal: anti-surveillance features are now being embedded into mass-market eyewear, with pricing similar to other premium coatings.</p>
+
+      <hr>
+
+      <!-- 3.5 -->
+      <h3 id="section-3-5" data-i18n="blog.market.h3_5">3.5 Anti-Flash / Anti-Paparazzi Scarves</h3>
+
+      <p data-i18n="blog.market.p24">The <strong>ISHU</strong> scarf uses a matrix of hemispherical glass crystals (retroreflective microbeads) that bounce flash and IR light back into camera sensors.<a href="#fn31" id="fnref31" class="fn-ref">[31]</a><a href="#fn32" id="fnref32" class="fn-ref">[32]</a><a href="#fn33" id="fnref33" class="fn-ref">[33]</a></p>
+
+      <ul>
+        <li data-i18n="blog.market.li31">With flash photography, the wearer's face appears dark while the scarf area is overexposed, rendering the person unidentifiable in many cases.<a href="#fn33b" class="fn-ref">[33]</a></li>
+        <li data-i18n="blog.market.li32">It also affects some IR-based night shots where IR illumination is used.</li>
+      </ul>
+
+      <p data-i18n="blog.market.p25">Limitations:</p>
+
+      <ul>
+        <li data-i18n="blog.market.li33">Least effective in daylight or when flash/IR illuminators aren't used.</li>
+        <li data-i18n="blog.market.li34">Positioned today as a luxury fashion item rather than a scalable security product.</li>
+      </ul>
+
+      <hr>
+
+      <!-- 3.6 -->
+      <h3 id="section-3-6" data-i18n="blog.market.h3_6">3.6 Physical Masks and Identity Obfuscation</h3>
+
+      <ul>
+        <li data-i18n="blog.market.li35"><strong>URME Surveillance Mask</strong>: An artist-made, realistic 3D mask of Leo Selvaggio's face, which was shown to cause Facebook's automatic tagging to identify the wearer as Selvaggio. This effectively performs "identity substitution" rather than invisibility.<a href="#fn34" id="fnref34" class="fn-ref">[34]</a><a href="#fn35" id="fnref35" class="fn-ref">[35]</a></li>
+        <li data-i18n="blog.market.li36"><strong>Simple medical masks + sunglasses</strong>: Studies and vendor reports show that surgical masks can reduce FRT accuracy from ~95% to ~70%, though specialized algorithms have improved masked-face recognition significantly.<a href="#fn36" id="fnref36" class="fn-ref">[36]</a><a href="#fn37" id="fnref37" class="fn-ref">[37]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p26">In some conflict regions, widespread mask wearing or culturally normal face coverings (e.g., scarves, niqab) create large pockets where FRT is less reliable but still not fully defeated.</p>
+
+      <hr>
+
+      <!-- 3.7 -->
+      <h3 id="section-3-7" data-i18n="blog.market.h3_7">3.7 Anti-Thermal / Anti-Drone Garments</h3>
+
+      <p data-i18n="blog.market.p27">Thermal cameras detect heat, not visible features, and are widely used on drones and border surveillance.</p>
+
+      <ul>
+        <li data-i18n="blog.market.li37"><strong>Stealth Wear</strong> (Adam Harvey): Prototypes of silver-coated, metallized fabric hoodies and burqas that reflect body heat, making the wearer significantly less visible to thermal imaging.<a href="#fn38" id="fnref38" class="fn-ref">[38]</a><a href="#fn11c" class="fn-ref">[11]</a></li>
+        <li data-i18n="blog.market.li38"><strong>Intermat Defense "Phantom of War"</strong> and similar ghillie suits: Military multispectral camo that reduces visibility across near-IR, SWIR, MWIR, and LWIR bands, specifically to defeat drone and sniper thermal optics.<a href="#fn39" id="fnref39" class="fn-ref">[39]</a></li>
+        <li data-i18n="blog.market.li39"><strong>Commercial anti-thermal suits</strong> (e.g., Detective Store, ProApto): Specialized cloaks and suits designed to reduce thermal signature below human baseline.<a href="#fn40" id="fnref40" class="fn-ref">[40]</a><a href="#fn41" id="fnref41" class="fn-ref">[41]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p28">These products remain expensive and heavy, and are targeted at military and professional users rather than civilians.</p>
+
+      <hr>
+
+      <!-- Section 4: Gaps and Future Concepts -->
+      <h2 id="section-4" data-i18n="blog.market.h2_4">4. Gaps and Future Concepts</h2>
+
+      <p data-i18n="blog.market.p29">Several powerful anti-surveillance concepts are not yet widely commercialized:</p>
+
+      <ol>
+        <li data-i18n="blog.market.li40">
+          <strong>Anti-gait recognition footwear</strong><br>
+          Gait recognition can identify individuals based on walking patterns, which are hard to disguise. No mainstream product alters gait signatures deliberately. A shoe or insole that introduces controlled randomness into stride length, heel strike, and cadence could disrupt gait models.<a href="#fn42" id="fnref42" class="fn-ref">[42]</a>
+        </li>
+        <li data-i18n="blog.market.li41">
+          <strong>Dynamic adversarial fabrics</strong><br>
+          Current adversarial patterns are static (printed or knitted). E-ink or flexible OLED textiles that change patterns in real time based on detected cameras or lighting conditions could adapt to new algorithms on the fly.
+        </li>
+        <li data-i18n="blog.market.li42">
+          <strong>Ear/face-shape spoofing accessories</strong><br>
+          Some forensic/biometric systems use ear shape and skull contours as identifiers. Over-ear shells or headbands with irregular 3D geometries could perturb these measurements but no dedicated consumer product exists.<a href="#fn43" id="fnref43" class="fn-ref">[43]</a>
+        </li>
+        <li data-i18n="blog.market.li43">
+          <strong>Active thermal signature shaping</strong><br>
+          Most anti-thermal clothing is passive (insulation/reflective layers). Wearables with small heating elements could project decoy patterns, making a person appear as multiple non-human heat sources, confusing drone targeting models.
+        </li>
+        <li data-i18n="blog.market.li44">
+          <strong>Integrated multi-spectral "privacy armor"</strong><br>
+          A consumer-grade jacket or poncho combining: adversarial visual patterns, IR LEDs, retroreflective zones, and thermal masking layers doesn't exist yet but would be highly valuable for journalists and activists.
+        </li>
+        <li data-i18n="blog.market.li45">
+          <strong>Voice and audio biometric jammers</strong><br>
+          As systems increasingly combine facial recognition with voiceprints, a neckband or wearable microphone array that injects ultrasonic or shaped noise into recorded audio could prevent voice identification without audibly disturbing nearby people.
+        </li>
+        <li data-i18n="blog.market.li46">
+          <strong>Faceprint poisoning services</strong><br>
+          Tools like <strong>Fawkes</strong> and <strong>Glaze</strong> perturb images before upload so they poison training data; Fawkes has garnered hundreds of thousands of downloads and academic coverage. A commercial, user-friendly service that automates this across all social platforms is an obvious opportunity.<a href="#fn44" id="fnref44" class="fn-ref">[44]</a><a href="#fn45" id="fnref45" class="fn-ref">[45]</a><a href="#fn46" id="fnref46" class="fn-ref">[46]</a>
+        </li>
+      </ol>
+
+      <hr>
+
+      <!-- Section 5: Market Overview -->
+      <h2 id="section-5" data-i18n="blog.market.h2_5">5. Market Overview: Anti-Surveillance Tech &amp; Wearables</h2>
+
+      <h3 id="section-5-1" data-i18n="blog.market.h3_8">5.1 Market Sizes and Growth</h3>
+
+      <p data-i18n="blog.market.p30">Key related markets:</p>
+
+      <ul>
+        <li data-i18n="blog.market.li47"><strong>Wearable technology</strong>: ~$84.5B in 2025, projected to <strong>$176.77B by 2030</strong> (~15.9% CAGR), including smartwatches, AR glasses, and fitness trackers.<a href="#fn47" id="fnref47" class="fn-ref">[47]</a><a href="#fn48" id="fnref48" class="fn-ref">[48]</a><a href="#fn49" id="fnref49" class="fn-ref">[49]</a></li>
+        <li data-i18n="blog.market.li48"><strong>Counter-surveillance market</strong>: ~$6.48B in 2024, projected to about <strong>$12B by 2033</strong> (8.1% CAGR), dominated by TSCM equipment and corporate/government services.<a href="#fn50" id="fnref50" class="fn-ref">[50]</a><a href="#fn51" id="fnref51" class="fn-ref">[51]</a></li>
+        <li data-i18n="blog.market.li49"><strong>AI in video surveillance</strong>: $3.9B (2024) &rarr; $12.46B (2030), fastest growing segment at 21.3% CAGR.<a href="#fn2b" class="fn-ref">[2]</a><a href="#fn52" id="fnref52" class="fn-ref">[52]</a></li>
+        <li data-i18n="blog.market.li50"><strong>Military drones</strong>: tens of billions annually, with continued growth through 2030.<a href="#fn6b" class="fn-ref">[6]</a><a href="#fn53" id="fnref53" class="fn-ref">[53]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p31">There is <strong>no standalone line item</strong> yet for "anti-facial-recognition wearables" in major research reports. Given the underlying markets, even a 0.5--1% penetration into the broader wearable tech space would represent several hundred million dollars annually by 2030.</p>
+
+      <hr>
+
+      <!-- Section 6: Key Players and Signals -->
+      <h2 id="section-6" data-i18n="blog.market.h2_6">6. Key Players and Signals</h2>
+
+      <ul>
+        <li data-i18n="blog.market.li51"><strong>Cap_able</strong> -- Italian startup focused on adversarial fashion, tested against YOLO; small team (~6 people), incubated at PoliHub and I3P.<a href="#fn54" id="fnref54" class="fn-ref">[54]</a><a href="#fn19b" class="fn-ref">[19]</a><a href="#fn16f" class="fn-ref">[16]</a></li>
+        <li data-i18n="blog.market.li52"><strong>Reflectacles</strong> -- Chicago-based independent eyewear maker, known for IR-reflective and IR-absorbing frames; raised modest crowdfunding and earned significant media attention.<a href="#fn26b" class="fn-ref">[26]</a><a href="#fn25b" class="fn-ref">[25]</a></li>
+        <li data-i18n="blog.market.li53"><strong>AntiAI Clothing &amp; Yelo Pomelo</strong> -- Micro-brands on Etsy, validated in Mozilla's antisurveillance fashion tests as effective against specific consumer AI cameras.<a href="#fn22b" class="fn-ref">[22]</a><a href="#fn21g" class="fn-ref">[21]</a></li>
+        <li data-i18n="blog.market.li54"><strong>Zenni Optical</strong> -- Major online eyewear retailer; the launch of <strong>ID Guard</strong> indicates anti-FRT as a mass-market feature, not just niche activism.<a href="#fn30c" class="fn-ref">[30]</a><a href="#fn28e" class="fn-ref">[28]</a><a href="#fn29d" class="fn-ref">[29]</a></li>
+        <li data-i18n="blog.market.li55"><strong>ISHU</strong> -- Luxury anti-flash fashion brand with celebrity adoption.<a href="#fn55" id="fnref55" class="fn-ref">[55]</a><a href="#fn31b" class="fn-ref">[31]</a><a href="#fn33c" class="fn-ref">[33]</a></li>
+        <li data-i18n="blog.market.li56"><strong>Fawkes / Glaze</strong> -- Academic tools from UChicago that gained substantial real-world use, showing appetite for digital solutions.<a href="#fn45b" class="fn-ref">[45]</a><a href="#fn46b" class="fn-ref">[46]</a><a href="#fn44b" class="fn-ref">[44]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p32">These actors collectively demonstrate that <strong>demand is real but fragmented</strong>, and there is room for larger players to consolidate and professionalize the space.</p>
+
+      <hr>
+
+      <!-- Section 7: Demand Drivers and Consumer Attitudes -->
+      <h2 id="section-7" data-i18n="blog.market.h2_7">7. Demand Drivers and Consumer Attitudes</h2>
+
+      <ul>
+        <li data-i18n="blog.market.li57">A 2026 Clutch study found <strong>74% of wearable tech users are concerned about data privacy</strong> and <strong>69% would consider switching devices</strong> over privacy or data issues.<a href="#fn56" id="fnref56" class="fn-ref">[56]</a><a href="#fn57" id="fnref57" class="fn-ref">[57]</a></li>
+        <li data-i18n="blog.market.li58">A systematic review in <em>npj Digital Medicine</em> highlights privacy as one of the top concerns around consumer wearables and health data, calling for stronger privacy-preserving designs.<a href="#fn58" id="fnref58" class="fn-ref">[58]</a><a href="#fn59" id="fnref59" class="fn-ref">[59]</a><a href="#fn60" id="fnref60" class="fn-ref">[60]</a></li>
+        <li data-i18n="blog.market.li59">Privacy/security VC interest is robust: security and privacy companies attracted around <strong>$18B of venture funding in 2025</strong>, a 3-year high, with early-stage rounds particularly strong.<a href="#fn61" id="fnref61" class="fn-ref">[61]</a><a href="#fn62" id="fnref62" class="fn-ref">[62]</a><a href="#fn63" id="fnref63" class="fn-ref">[63]</a></li>
+        <li data-i18n="blog.market.li60">Anti-FRT fashion is starting to appear in mainstream outlets such as CNN and Mozilla's feature &ldquo;How to Disappear: The Rise of Anti-Surveillance Fashion,&rdquo; which documents increasing visibility for adversarial fashion designers.<a href="#fn64" id="fnref64" class="fn-ref">[64]</a><a href="#fn65" id="fnref65" class="fn-ref">[65]</a><a href="#fn66" id="fnref66" class="fn-ref">[66]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p33">These trends suggest that <strong>privacy can be a selling point</strong>, especially if integrated into existing product categories (glasses, clothing) with minimal behavior change for users.</p>
+
+      <hr>
+
+      <!-- Section 8: Regulatory Landscape -->
+      <h2 id="section-8" data-i18n="blog.market.h2_8">8. Regulatory Landscape and Its Impact</h2>
+
+      <ul>
+        <li data-i18n="blog.market.li61"><strong>EU AI Act</strong> bans certain uses of real-time biometric identification in public spaces and prohibits indiscriminate scraping of facial images from the internet or CCTV feeds for database building.<a href="#fn67" id="fnref67" class="fn-ref">[67]</a><a href="#fn68" id="fnref68" class="fn-ref">[68]</a><a href="#fn69" id="fnref69" class="fn-ref">[69]</a></li>
+        <li data-i18n="blog.market.li62">Multiple U.S. cities (e.g., San Francisco, Boston, Portland) have banned police use of facial recognition, and federal legislation (H.R. 3782) has been introduced to restrict federal use of FRT for identity verification.<a href="#fn70" id="fnref70" class="fn-ref">[70]</a><a href="#fn71" id="fnref71" class="fn-ref">[71]</a><a href="#fn72" id="fnref72" class="fn-ref">[72]</a></li>
+        <li data-i18n="blog.market.li63">Legal analyses warn that the current patchwork of regulations leaves gaps, particularly around private-sector surveillance (retail, workplaces), but the direction of travel is toward <strong>higher scrutiny and explicit biometric rules</strong>.<a href="#fn72b" class="fn-ref">[72]</a><a href="#fn73" id="fnref73" class="fn-ref">[73]</a><a href="#fn74" id="fnref74" class="fn-ref">[74]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p34">For the anti-surveillance market, regulation acts as <strong>validation</strong>: it signals that biometrics are high-stakes enough to warrant strict rules, which in turn increases user awareness and demand for self-help tools.</p>
+
+      <hr>
+
+      <!-- Section 9: Strategic Opportunities -->
+      <h2 id="section-9" data-i18n="blog.market.h2_9">9. Strategic Opportunities for Builders and Investors</h2>
+
+      <ol>
+        <li data-i18n="blog.market.li64">
+          <strong>Mass-Market Eyewear with Privacy Coatings</strong><br>
+          Follow Zenni's move by integrating IR-blocking or reflective coatings into everyday prescription glasses and sunglasses, marketed as an optional privacy upgrade. Potential for licensing technology to large optical chains.<a href="#fn30d" class="fn-ref">[30]</a><a href="#fn28f" class="fn-ref">[28]</a><a href="#fn29e" class="fn-ref">[29]</a>
+        </li>
+        <li data-i18n="blog.market.li65">
+          <strong>Affordable Adversarial Apparel Lines</strong><br>
+          Move from high-end knitwear (Cap_able) to scalable printed garments. Offer SDKs or pattern libraries for fashion brands to license adversarial designs.<a href="#fn20b" class="fn-ref">[20]</a><a href="#fn16g" class="fn-ref">[16]</a>
+        </li>
+        <li data-i18n="blog.market.li66">
+          <strong>Civilian Anti-Drone / Anti-Thermal Gear</strong><br>
+          Adapt military-grade thermal camouflage into simpler, lower-cost ponchos or scarves suitable for journalists, aid workers, and civilians in high-risk regions.<a href="#fn41b" class="fn-ref">[41]</a><a href="#fn38b" class="fn-ref">[38]</a><a href="#fn39b" class="fn-ref">[39]</a>
+        </li>
+        <li data-i18n="blog.market.li67">
+          <strong>Digital Faceprint Management</strong><br>
+          Commercialize tools like Fawkes/Glaze into an easy, always-on service (apps, browser extensions, APIs) that automatically perturbs photos and even video frames before sharing.<a href="#fn75" id="fnref75" class="fn-ref">[75]</a><a href="#fn44c" class="fn-ref">[44]</a><a href="#fn45c" class="fn-ref">[45]</a>
+        </li>
+        <li data-i18n="blog.market.li68">
+          <strong>Anti-Gait and Multi-Biometric Solutions</strong><br>
+          Innovate products targeting gait, voice, and ear/face-shape recognition -- areas currently underserved but likely to grow as surveillance systems diversify modalities.<a href="#fn37b" class="fn-ref">[37]</a><a href="#fn42b" class="fn-ref">[42]</a><a href="#fn43b" class="fn-ref">[43]</a>
+        </li>
+        <li data-i18n="blog.market.li69">
+          <strong>Enterprise Solutions for NGOs and Newsrooms</strong><br>
+          Package anti-surveillance gear and digital tools for organizations that protect at-risk populations (journalists, activists, human rights defenders), bundling training + hardware + software.
+        </li>
+      </ol>
+
+      <hr>
+
+      <!-- Section 10: Practical Guidance for Individuals -->
+      <h2 id="section-10" data-i18n="blog.market.h2_10">10. Practical Guidance for Individuals (Layered Defense)</h2>
+
+      <p data-i18n="blog.market.p35">In practice, individuals can combine multiple low-friction measures:</p>
+
+      <ul>
+        <li data-i18n="blog.market.li70"><strong>Baseline</strong>: Neutral, non-distinctive clothing; common medical mask; wide-brim hat or hoodie; large-frame sunglasses.</li>
+        <li data-i18n="blog.market.li71"><strong>If possible</strong>: IR-blocking glasses (Reflectacles or Zenni ID Guard) to disrupt device logins and some FRT systems.<a href="#fn28g" class="fn-ref">[28]</a><a href="#fn30e" class="fn-ref">[30]</a><a href="#fn21h" class="fn-ref">[21]</a></li>
+        <li data-i18n="blog.market.li72"><strong>In high-risk urban environments</strong>: Adversarial pattern shirt/hoodie under a coat for situations where your torso is visible to cameras, plus occasional CV Dazzle-style makeup when conspicuousness is acceptable.<a href="#fn13c" class="fn-ref">[13]</a><a href="#fn16h" class="fn-ref">[16]</a><a href="#fn21i" class="fn-ref">[21]</a></li>
+        <li data-i18n="blog.market.li73"><strong>Against night-vision cameras</strong>: IR LED cap/hoodie or reflective scarf (ISHU-style) to interfere with IR-based surveillance and flash photography.<a href="#fn23b" class="fn-ref">[23]</a><a href="#fn24b" class="fn-ref">[24]</a><a href="#fn33d" class="fn-ref">[33]</a></li>
+      </ul>
+
+      <p data-i18n="blog.market.p36">No approach is perfect, but layered defenses significantly raise the cost and reduce the reliability of automated tracking.</p>
+
+      <hr>
+
+      <!-- ============================================ -->
+      <!-- SOURCE URLS (Reference List)                 -->
+      <!-- ============================================ -->
+      <h2 id="source-urls" data-i18n="blog.market.sources">Source URLs</h2>
+
+      <div class="source-list">
+
+        <h4 data-i18n="blog.market.src_h4_1">Anti-surveillance fashion &amp; products</h4>
+        <ul>
+          <li>Mozilla antisurveillance fashion tests (AntiAI, Yelo Pomelo, Reflectacles, Cap_able): <a href="https://www.mozillafoundation.org/en/nothing-personal/anti-surveillance-fashion-privacy-review/" target="_blank" rel="noopener noreferrer">mozillafoundation.org/.../anti-surveillance-fashion-privacy-review</a></li>
+          <li>Mozilla feature -- "How to Disappear: The Rise of Anti-Surveillance Fashion": <a href="https://www.mozillafoundation.org/en/nothing-personal/anti-surveillance-fashion-privacy-ai/" target="_blank" rel="noopener noreferrer">mozillafoundation.org/.../anti-surveillance-fashion-privacy-ai</a></li>
+          <li>Cap_able adversarial fashion feature (Cone Magazine): <a href="https://conemagazine.com/culture/capable-adversarial-fashion-ai-privacy-surveillance/" target="_blank" rel="noopener noreferrer">conemagazine.com/.../capable-adversarial-fashion-ai-privacy-surveillance</a></li>
+          <li>Cap_able official site: <a href="https://www.capable.design" target="_blank" rel="noopener noreferrer">capable.design</a></li>
+          <li>Biometric Update critique of adversarial fashion: <a href="https://www.biometricupdate.com/202302/designers-take-on-facial-recognition-with-adversarial-fashion" target="_blank" rel="noopener noreferrer">biometricupdate.com/.../designers-take-on-facial-recognition-with-adversarial-fashion</a></li>
+          <li>Adam Harvey's CV Dazzle: <a href="https://adam.harvey.studio/cvdazzle/" target="_blank" rel="noopener noreferrer">adam.harvey.studio/cvdazzle</a></li>
+          <li>Adam Harvey's HyperFace: <a href="https://adam.harvey.studio/hyperface/" target="_blank" rel="noopener noreferrer">adam.harvey.studio/hyperface</a></li>
+          <li>ISHU anti-flash scarf: <a href="https://digitalsynopsis.com/design/ishu-scarf-flash-photos-invisibile-anti-paparazzi/" target="_blank" rel="noopener noreferrer">digitalsynopsis.com/.../ishu-scarf-flash-photos</a> | <a href="https://theishu.com/products/the-ishu" target="_blank" rel="noopener noreferrer">theishu.com</a></li>
+          <li>Reflectacles overview: <a href="https://www.pcmag.com/news/shield-your-face-from-facial-recognition-with-reflectacles" target="_blank" rel="noopener noreferrer">pcmag.com</a> | <a href="https://www.biometricupdate.com/201909/reflectacles-develops-eyewear-to-bypass-facial-recognition-systems" target="_blank" rel="noopener noreferrer">biometricupdate.com</a></li>
+          <li>Camera Shy Hoodie: <a href="https://www.macpierce.com/the-camera-shy-hoodie" target="_blank" rel="noopener noreferrer">macpierce.com/the-camera-shy-hoodie</a></li>
+          <li>Unidentified Halo IR hat: <a href="https://beccaricks.space/Unidentified-Halo" target="_blank" rel="noopener noreferrer">beccaricks.space/Unidentified-Halo</a></li>
+          <li>URME anti-surveillance mask: <a href="https://www.cnet.com/culture/urme-anti-surveillance-mask-lets-you-pass-as-someone-else/" target="_blank" rel="noopener noreferrer">cnet.com/.../urme-anti-surveillance-mask</a></li>
+        </ul>
+
+        <h4 data-i18n="blog.market.src_h4_2">IR-blocking eyewear</h4>
+        <ul>
+          <li>Zenni ID Guard launch: <a href="https://www.optometricmanagement.com/news/2025/zenni-optical-launches-infrared-blocking-lens-coating/" target="_blank" rel="noopener noreferrer">optometricmanagement.com</a></li>
+          <li>Zenni EyeQLenz: <a href="https://www.zennioptical.com/eyeqlenz" target="_blank" rel="noopener noreferrer">zennioptical.com/eyeqlenz</a></li>
+          <li>IDTechWire coverage: <a href="https://idtechwire.com/zenni-optical-launches-lens-coating-to-thwart-facial-recognition-amid-growing-biometric-surveillance/" target="_blank" rel="noopener noreferrer">idtechwire.com</a></li>
+        </ul>
+
+        <h4 data-i18n="blog.market.src_h4_3">Thermal / anti-drone</h4>
+        <ul>
+          <li>Anti-thermal clothing: <a href="https://www.detective-store.com/anti-thermal-imaging-clothing-undetectable-for-thermal-imaging-and-night-vision-universal-size-3" target="_blank" rel="noopener noreferrer">detective-store.com</a></li>
+          <li>ProApto thermal camouflage: <a href="https://www.proapto-camouflage.com/thermal-camouflage" target="_blank" rel="noopener noreferrer">proapto-camouflage.com</a></li>
+          <li>Intermat "Phantom of War" stealth cloak: <a href="https://intermatdefense.com/phandom-of-war" target="_blank" rel="noopener noreferrer">intermatdefense.com</a></li>
+        </ul>
+
+        <h4 data-i18n="blog.market.src_h4_4">Markets &amp; stats</h4>
+        <ul>
+          <li>Facial recognition market: <a href="https://www.precedenceresearch.com/facial-recognition-market" target="_blank" rel="noopener noreferrer">precedenceresearch.com</a></li>
+          <li>AI in video surveillance: <a href="https://www.marketsandmarkets.com/Market-Reports/ai-in-video-surveillance-market-84216922.html" target="_blank" rel="noopener noreferrer">marketsandmarkets.com</a> | <a href="https://www.prnewswire.com/news-releases/ai-in-video-surveillance-market-worth-12-46-billion-by-2030---exclusive-report-by-marketsandmarkets-301998710.html" target="_blank" rel="noopener noreferrer">prnewswire.com</a></li>
+          <li>Surveillance camera market: <a href="https://www.researchandmarkets.com/reports/5954590/surveillance-camera-market-report" target="_blank" rel="noopener noreferrer">researchandmarkets.com</a> | <a href="https://www.mordorintelligence.com/industry-reports/surveillance-camera-market" target="_blank" rel="noopener noreferrer">mordorintelligence.com</a></li>
+          <li>Wearable technology market: <a href="https://www.prnewswire.com/news-releases/wearable-technology-market-worth-176-77-billion-by-2030---exclusive-report-by-marketsandmarkets-302039991.html" target="_blank" rel="noopener noreferrer">prnewswire.com</a> | <a href="https://www.fortunebusinessinsights.com/wearable-technology-market-106000" target="_blank" rel="noopener noreferrer">fortunebusinessinsights.com</a></li>
+          <li>Counter-surveillance market: <a href="https://dataintelo.com/report/counter-surveillance-market" target="_blank" rel="noopener noreferrer">dataintelo.com</a> | <a href="https://navistratanalytics.com/report_store/technical-surveillance-countermeasures-tscm-market/" target="_blank" rel="noopener noreferrer">navistratanalytics.com</a></li>
+        </ul>
+
+        <h4 data-i18n="blog.market.src_h4_5">Consumer attitudes &amp; privacy</h4>
+        <ul>
+          <li>Wearable users' privacy concerns (Clutch): <a href="https://clutch.co/press-releases/wearable-technology-adoption-survey" target="_blank" rel="noopener noreferrer">clutch.co (survey)</a> | <a href="https://clutch.co/resources/wearable-technology-adoption-data-privacy" target="_blank" rel="noopener noreferrer">clutch.co (data privacy)</a></li>
+          <li>Privacy in consumer wearable technologies (systematic review): <a href="https://www.nature.com/articles/s41746-025-01757-1" target="_blank" rel="noopener noreferrer">nature.com</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12167361/" target="_blank" rel="noopener noreferrer">pmc.ncbi.nlm.nih.gov</a></li>
+        </ul>
+
+        <h4 data-i18n="blog.market.src_h4_6">Regulation</h4>
+        <ul>
+          <li>EU AI Act (biometrics &amp; prohibited practices): <a href="https://www.europarl.europa.eu/news/en/press-room/20240308IPR19015/artificial-intelligence-act-meps-adopt-landmark-law" target="_blank" rel="noopener noreferrer">europarl.europa.eu</a> | <a href="https://artificialintelligenceact.eu/article/5/" target="_blank" rel="noopener noreferrer">artificialintelligenceact.eu</a> | <a href="https://iapp.org/news/a/biometrics-in-the-eu-navigating-the-gdpr-ai-act/" target="_blank" rel="noopener noreferrer">iapp.org</a></li>
+          <li>Facial recognition bans: <a href="https://innotechtoday.com/13-cities-where-police-are-banned-from-using-facial-recognition-tech/" target="_blank" rel="noopener noreferrer">innotechtoday.com</a></li>
+          <li>Federal legislation H.R. 3782: <a href="https://www.congress.gov/bill/119th-congress/house-bill/3782" target="_blank" rel="noopener noreferrer">congress.gov</a></li>
+          <li>Legal analysis: <a href="https://privacyinternational.org/long-read/5682/toward-regulation-addressing-legal-void-facial-recognition-technology" target="_blank" rel="noopener noreferrer">privacyinternational.org</a></li>
+        </ul>
+
+        <h4 data-i18n="blog.market.src_h4_7">Digital tools</h4>
+        <ul>
+          <li>Fawkes &amp; related UChicago work: <a href="https://sandlab.cs.uchicago.edu/fawkes/" target="_blank" rel="noopener noreferrer">sandlab.cs.uchicago.edu/fawkes</a> | <a href="https://www.builtinchicago.org/articles/uchicago-tool-hides-facial-recognition-fawkes" target="_blank" rel="noopener noreferrer">builtinchicago.org</a> | <a href="https://news.uchicago.edu/story/new-tool-protect-yourself-against-facial-recognition-software" target="_blank" rel="noopener noreferrer">news.uchicago.edu</a></li>
+        </ul>
+
+      </div>
+
+      <!-- ============================================ -->
+      <!-- FOOTNOTES                                    -->
+      <!-- ============================================ -->
+      <div class="footnotes-section" id="footnotes">
+        <h3 class="text-lg font-bold text-gray-200 mb-4" data-i18n="blog.market.footnotes">Footnotes</h3>
+        <ol class="list-decimal pl-6 space-y-1">
+          <li id="fn1"><a href="https://www.precedenceresearch.com/facial-recognition-market" target="_blank" rel="noopener noreferrer">Precedence Research: Facial Recognition Market</a> <a href="#fnref1" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn2"><a href="https://www.prnewswire.com/news-releases/ai-in-video-surveillance-market-worth-12-46-billion-by-2030---exclusive-report-by-marketsandmarkets-302336942.html" target="_blank" rel="noopener noreferrer">PRNewswire: AI in Video Surveillance Market</a> <a href="#fnref2" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn3"><a href="https://www.grandviewresearch.com/industry-analysis/artificial-intelligence-ai-video-surveillance-market-report" target="_blank" rel="noopener noreferrer">Grand View Research: AI Video Surveillance Market</a> <a href="#fnref3" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn4"><a href="https://www.researchandmarkets.com/reports/5954590/surveillance-camera-market-report" target="_blank" rel="noopener noreferrer">Research and Markets: Surveillance Camera Market</a> <a href="#fnref4" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn5"><a href="https://www.mordorintelligence.com/industry-reports/surveillance-camera-market" target="_blank" rel="noopener noreferrer">Mordor Intelligence: Surveillance Camera Market</a> <a href="#fnref5" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn6"><a href="https://www.grandviewresearch.com/industry-analysis/military-drone-market-report" target="_blank" rel="noopener noreferrer">Grand View Research: Military Drone Market</a> <a href="#fnref6" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn7"><a href="https://www.researchandmarkets.com/report/military-drone" target="_blank" rel="noopener noreferrer">Research and Markets: Military Drone Report</a> <a href="#fnref7" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn8"><a href="https://lieber.westpoint.edu/israels-use-ai-dss-facial-recognition-technology-erosion-civilian-protection-gaza/" target="_blank" rel="noopener noreferrer">Lieber Institute: Israel's Use of AI/FRT in Gaza</a> <a href="#fnref8" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn9"><a href="https://www.nytimes.com/2024/03/27/technology/israel-facial-recognition-gaza.html" target="_blank" rel="noopener noreferrer">NYT: Israel Facial Recognition in Gaza</a> <a href="#fnref9" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn10"><a href="http://international-review.icrc.org/articles/the-use-of-facial-recognition-for-targeting-under-international-law-928" target="_blank" rel="noopener noreferrer">ICRC: Facial Recognition for Targeting Under International Law</a> <a href="#fnref10" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn11"><a href="https://www.stratecta.exchange/fashion-that-can-beat-facial-recognition-systems/" target="_blank" rel="noopener noreferrer">Stratecta: Fashion That Can Beat Facial Recognition</a> <a href="#fnref11" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn12"><a href="https://dl.acm.org/doi/fullHtml/10.1145/3647750.3647771" target="_blank" rel="noopener noreferrer">ACM Digital Library: Facial Recognition Technical Analysis</a> <a href="#fnref12" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn13"><a href="https://adam.harvey.studio/cvdazzle/" target="_blank" rel="noopener noreferrer">Adam Harvey: CV Dazzle</a> <a href="#fnref13" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn14"><a href="https://intothegloss.com/2020/06/cv-dazzle-protest-makeup/" target="_blank" rel="noopener noreferrer">Into The Gloss: CV Dazzle Protest Makeup</a> <a href="#fnref14" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn15"><a href="https://lataco.com/anti-surveillance-makeup" target="_blank" rel="noopener noreferrer">L.A. Taco: Anti-Surveillance Makeup</a> <a href="#fnref15" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn16"><a href="https://conemagazine.com/culture/capable-adversarial-fashion-ai-privacy-surveillance/" target="_blank" rel="noopener noreferrer">Cone Magazine: Cap_able Adversarial Fashion</a> <a href="#fnref16" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn17"><a href="https://www.capable.design" target="_blank" rel="noopener noreferrer">Cap_able Official Site</a> <a href="#fnref17" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn18"><a href="https://www.businessinsider.com/facial-recognition-cameras-sweater-protect-privacy-data-trick-fool-clothes-2023-2" target="_blank" rel="noopener noreferrer">Business Insider: Facial Recognition vs. Adversarial Sweaters</a> <a href="#fnref18" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn19"><a href="https://www.fondazionecrt.it/en/broadcasting-talents/algorithm-rachele-didero-wear/" target="_blank" rel="noopener noreferrer">Fondazione CRT: Rachele Didero / Cap_able</a> <a href="#fnref19" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn20"><a href="https://www.biometricupdate.com/202302/designers-take-on-facial-recognition-with-adversarial-fashion" target="_blank" rel="noopener noreferrer">Biometric Update: Designers vs. Facial Recognition</a> <a href="#fnref20" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn21"><a href="https://www.mozillafoundation.org/en/nothing-personal/anti-surveillance-fashion-privacy-review/" target="_blank" rel="noopener noreferrer">Mozilla: Anti-Surveillance Fashion Privacy Review</a> <a href="#fnref21" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn22"><a href="https://antiai.biz" target="_blank" rel="noopener noreferrer">AntiAI Clothing</a> <a href="#fnref22" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn23"><a href="https://beccaricks.space/Unidentified-Halo" target="_blank" rel="noopener noreferrer">Becca Ricks: Unidentified Halo</a> <a href="#fnref23" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn24"><a href="https://www.macpierce.com/the-camera-shy-hoodie" target="_blank" rel="noopener noreferrer">Mac Pierce: Camera Shy Hoodie</a> <a href="#fnref24" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn25"><a href="https://www.biometricupdate.com/201909/reflectacles-develops-eyewear-to-bypass-facial-recognition-systems" target="_blank" rel="noopener noreferrer">Biometric Update: Reflectacles Eyewear</a> <a href="#fnref25" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn26"><a href="https://www.chicagotribune.com/2020/04/17/as-the-use-of-facial-recognition-rises-so-do-privacy-concerns-these-chicago-made-glasses-are-designed-to-block-the-technology/" target="_blank" rel="noopener noreferrer">Chicago Tribune: Reflectacles</a> <a href="#fnref26" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn27"><a href="https://www.pcmag.com/news/shield-your-face-from-facial-recognition-with-reflectacles" target="_blank" rel="noopener noreferrer">PCMag: Reflectacles Review</a> <a href="#fnref27" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn28"><a href="https://www.optometricmanagement.com/news/2025/zenni-optical-launches-infrared-blocking-lens-coating/" target="_blank" rel="noopener noreferrer">Optometric Management: Zenni ID Guard Launch</a> <a href="#fnref28" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn29"><a href="https://idtechwire.com/zenni-optical-launches-lens-coating-to-thwart-facial-recognition-amid-growing-biometric-surveillance/" target="_blank" rel="noopener noreferrer">IDTechWire: Zenni vs. Biometric Surveillance</a> <a href="#fnref29" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn30"><a href="https://www.zennioptical.com/eyeqlenz" target="_blank" rel="noopener noreferrer">Zenni Optical: EyeQLenz</a> <a href="#fnref30" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn31"><a href="https://digitalsynopsis.com/design/ishu-scarf-flash-photos-invisibile-anti-paparazzi/" target="_blank" rel="noopener noreferrer">Digital Synopsis: ISHU Anti-Flash Scarf</a> <a href="#fnref31" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn32"><a href="https://theishu.com/products/the-ishu" target="_blank" rel="noopener noreferrer">The ISHU Official Product Page</a> <a href="#fnref32" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn33"><a href="https://petapixel.com/2016/07/01/anti-paparazzi-scarf-makes-flash-photography-impossible/" target="_blank" rel="noopener noreferrer">PetaPixel: Anti-Paparazzi Scarf</a> <a href="#fnref33" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn34"><a href="https://www.cnet.com/culture/urme-anti-surveillance-mask-lets-you-pass-as-someone-else/" target="_blank" rel="noopener noreferrer">CNET: URME Anti-Surveillance Mask</a> <a href="#fnref34" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn35"><a href="https://www.instagram.com/p/DKSoUl8O33r/?hl=en" target="_blank" rel="noopener noreferrer">URME Mask (Instagram)</a> <a href="#fnref35" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn36"><a href="https://facia.ai/blog/mask-attack-in-facial-recognition-key-insights-to-fortify-facial-identification-systems/" target="_blank" rel="noopener noreferrer">Facia.ai: Mask Attack in Facial Recognition</a> <a href="#fnref36" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn37"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9183764/" target="_blank" rel="noopener noreferrer">PMC: Masked Face Recognition Study</a> <a href="#fnref37" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn38"><a href="https://www.npr.org/sections/alltechconsidered/2017/03/13/520021384/covert-fashion-provides-camouflage-against-surveillance-software" target="_blank" rel="noopener noreferrer">NPR: Covert Fashion vs. Surveillance</a> <a href="#fnref38" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn39"><a href="https://intermatdefense.com/phandom-of-war" target="_blank" rel="noopener noreferrer">Intermat Defense: Phantom of War</a> <a href="#fnref39" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn40"><a href="https://www.detective-store.com/anti-thermal-imaging-clothing-undetectable-for-thermal-imaging-and-night-vision-universal-size-3310.html/10979" target="_blank" rel="noopener noreferrer">Detective Store: Anti-Thermal Clothing</a> <a href="#fnref40" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn41"><a href="https://www.proapto-camouflage.com/thermal-camouflage" target="_blank" rel="noopener noreferrer">ProApto: Thermal Camouflage</a> <a href="#fnref41" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn42"><a href="https://citysecuritymagazine.com/security-management/gait-recognition-identification-tool/" target="_blank" rel="noopener noreferrer">City Security Magazine: Gait Recognition</a> <a href="#fnref42" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn43"><a href="https://www.osint.uk/content/from-gait-to-gaze-advanced-facial-recognition-and-biometric-tools" target="_blank" rel="noopener noreferrer">OSINT UK: Advanced Biometric Tools</a> <a href="#fnref43" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn44"><a href="https://sandlab.cs.uchicago.edu/fawkes/" target="_blank" rel="noopener noreferrer">UChicago SAND Lab: Fawkes</a> <a href="#fnref44" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn45"><a href="https://www.builtinchicago.org/articles/uchicago-tool-hides-facial-recognition-fawkes" target="_blank" rel="noopener noreferrer">Built In Chicago: Fawkes Tool</a> <a href="#fnref45" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn46"><a href="https://news.uchicago.edu/story/uchicago-scientists-develop-new-tool-protect-artists-ai-mimicry" target="_blank" rel="noopener noreferrer">UChicago News: Glaze Tool</a> <a href="#fnref46" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn47"><a href="https://www.prnewswire.com/news-releases/wearable-technology-market-worth-176-77-billion-by-2030---exclusive-report-by-marketsandmarkets-302665254.html" target="_blank" rel="noopener noreferrer">PRNewswire: Wearable Technology Market</a> <a href="#fnref47" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn48"><a href="https://www.marketsandmarkets.com/Market-Reports/wearable-electronics-market-983.html" target="_blank" rel="noopener noreferrer">MarketsandMarkets: Wearable Electronics</a> <a href="#fnref48" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn49"><a href="https://www.fortunebusinessinsights.com/wearable-technology-market-106000" target="_blank" rel="noopener noreferrer">Fortune Business Insights: Wearable Technology</a> <a href="#fnref49" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn50"><a href="https://dataintelo.com/report/counter-surveillance-market" target="_blank" rel="noopener noreferrer">DataIntelo: Counter-Surveillance Market</a> <a href="#fnref50" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn51"><a href="https://navistratanalytics.com/report_store/technical-surveillance-countermeasures-tscm-market/" target="_blank" rel="noopener noreferrer">NaviStrat Analytics: TSCM Market</a> <a href="#fnref51" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn52"><a href="https://www.marketsandmarkets.com/Market-Reports/ai-in-video-surveillance-market-84216922.html" target="_blank" rel="noopener noreferrer">MarketsandMarkets: AI in Video Surveillance</a> <a href="#fnref52" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn53"><a href="https://finance.yahoo.com/news/military-drones-industry-report-2026-144400786.html" target="_blank" rel="noopener noreferrer">Yahoo Finance: Military Drones Report</a> <a href="#fnref53" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn54"><a href="https://www.f6s.com/capable-adversarial-knitted-fashion" target="_blank" rel="noopener noreferrer">F6S: Cap_able Profile</a> <a href="#fnref54" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn55"><a href="https://theishu.com" target="_blank" rel="noopener noreferrer">The ISHU Official Site</a> <a href="#fnref55" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn56"><a href="https://clutch.co/press-releases/wearable-technology-adoption-survey" target="_blank" rel="noopener noreferrer">Clutch: Wearable Technology Adoption Survey</a> <a href="#fnref56" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn57"><a href="https://clutch.co/resources/wearable-technology-adoption-data-privacy" target="_blank" rel="noopener noreferrer">Clutch: Wearable Technology Data Privacy</a> <a href="#fnref57" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn58"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12167361/" target="_blank" rel="noopener noreferrer">PMC: Privacy in Consumer Wearables</a> <a href="#fnref58" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn59"><a href="https://www.nature.com/articles/s41746-025-01757-1" target="_blank" rel="noopener noreferrer">npj Digital Medicine: Wearable Privacy Review</a> <a href="#fnref59" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn60"><a href="https://mhealth.jmir.org/2025/1/e59199" target="_blank" rel="noopener noreferrer">JMIR mHealth: Wearable Privacy</a> <a href="#fnref60" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn61"><a href="https://news.crunchbase.com/venture/cybersecurity-startup-investment-up-ye-2025/" target="_blank" rel="noopener noreferrer">Crunchbase: Cybersecurity Startup Investment 2025</a> <a href="#fnref61" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn62"><a href="https://theaieconomy.substack.com/p/ai-vc-2025-bay-area-concentration" target="_blank" rel="noopener noreferrer">The AI Economy: VC Trends 2025</a> <a href="#fnref62" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn63"><a href="https://www.seedtable.com/investors-privacy-and-security" target="_blank" rel="noopener noreferrer">Seedtable: Privacy &amp; Security Investors</a> <a href="#fnref63" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn64"><a href="https://www.mozillafoundation.org/en/nothing-personal/anti-surveillance-fashion-privacy-ai/" target="_blank" rel="noopener noreferrer">Mozilla: How to Disappear</a> <a href="#fnref64" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn65"><a href="https://www.linkedin.com/posts/bourreelam_how-to-disappear-the-rise-of-anti-surveillance-activity-7399117254422069248-PW64" target="_blank" rel="noopener noreferrer">LinkedIn: Anti-Surveillance Fashion Post</a> <a href="#fnref65" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn66"><a href="https://www.cnn.com/2023/01/16/tech/facial-recognition-fashion" target="_blank" rel="noopener noreferrer">CNN: Facial Recognition Fashion</a> <a href="#fnref66" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn67"><a href="https://www.europarl.europa.eu/news/en/press-room/20240308IPR19015/artificial-intelligence-act-meps-adopt-landmark-law" target="_blank" rel="noopener noreferrer">European Parliament: AI Act Adopted</a> <a href="#fnref67" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn68"><a href="https://artificialintelligenceact.eu/article/5/" target="_blank" rel="noopener noreferrer">AI Act EU: Article 5 (Prohibited Practices)</a> <a href="#fnref68" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn69"><a href="https://iapp.org/news/a/biometrics-in-the-eu-navigating-the-gdpr-ai-act" target="_blank" rel="noopener noreferrer">IAPP: Biometrics in the EU</a> <a href="#fnref69" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn70"><a href="https://innotechtoday.com/13-cities-where-police-are-banned-from-using-facial-recognition-tech/" target="_blank" rel="noopener noreferrer">InnoTech Today: Cities Banning Facial Recognition</a> <a href="#fnref70" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn71"><a href="https://www.congress.gov/bill/119th-congress/house-bill/3782" target="_blank" rel="noopener noreferrer">Congress.gov: H.R. 3782</a> <a href="#fnref71" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn72"><a href="http://privacyinternational.org/long-read/5682/toward-regulation-addressing-legal-void-facial-recognition-technology" target="_blank" rel="noopener noreferrer">Privacy International: Legal Void of FRT</a> <a href="#fnref72" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn73"><a href="https://www.mayerbrown.com/en/insights/publications/2026/01/global-privacy-watchlist" target="_blank" rel="noopener noreferrer">Mayer Brown: Global Privacy Watchlist 2026</a> <a href="#fnref73" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn74"><a href="https://www.bakerdonelson.com/analyzing-the-eu-artificial-intelligence-act-spotlight-on-biometrics" target="_blank" rel="noopener noreferrer">Baker Donelson: EU AI Act &amp; Biometrics</a> <a href="#fnref74" class="fn-back" title="Back to text">&uarr;</a></li>
+          <li id="fn75"><a href="https://news.uchicago.edu/story/new-tool-protect-yourself-against-facial-recognition-software" target="_blank" rel="noopener noreferrer">UChicago News: Facial Recognition Protection Tool</a> <a href="#fnref75" class="fn-back" title="Back to text">&uarr;</a></li>
+        </ol>
+      </div>
+
+      </div><!-- /content-area -->
+    </article>
+  </main>
+
+<!-- build:footer -->
+<!-- ============================================ -->
+  <!-- ============================================ -->
+<!-- build:scripts -->
+</body>
+</html>

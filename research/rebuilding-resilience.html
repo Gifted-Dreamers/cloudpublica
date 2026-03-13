@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebuilding Resilience: Frameworks, Metrics, and Research for Communities and Individuals &mdash; Cloud Publica</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="A research compilation on community and personal resilience, covering conceptual overviews, neighborhood resilience frameworks, quantitative indices, psychological resilience scales, and a comparison of community versus personal approaches.">
+  <meta name="keywords" content="resilience, community resilience, personal resilience, neighborhood resilience, resilience frameworks, resilience metrics, psychological resilience, disaster resilience, social capital">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rebuilding Resilience: Frameworks, Metrics, and Research &mdash; Cloud Publica">
+  <meta property="og:description" content="A research compilation on community and personal resilience frameworks, quantitative indices, psychological scales, and practical approaches for neighborhoods and individuals.">
+  <meta property="og:url" content="https://cloudpublica.org/research/rebuilding-resilience.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://cloudpublica.org/assets/img/hero-resilience.jpg">
+  <meta property="article:published_time" content="2026-02-10">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rebuilding Resilience: Frameworks, Metrics, and Research &mdash; Cloud Publica">
+  <meta name="twitter:description" content="Research compilation on community and personal resilience: conceptual overviews, frameworks, quantitative indices, and psychological scales.">
+  <meta name="twitter:image" content="https://cloudpublica.org/assets/img/hero-resilience.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon.png">
+
+  <!-- DNS Prefetch -->
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cp-teal': '#206795',
+            'cp-cyan': '#38c1e0',
+            'cp-dark': '#1a3347',
+            'cp-muted': '#5a7a8f',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter (async) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for article content -->
+  <style>
+    /* Tables */
+    .content-area table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .content-area table thead th {
+      background-color: #206795;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .content-area table tbody td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .content-area table tbody tr:nth-child(even) {
+      background-color: rgba(32,103,149,0.1);
+    }
+    .content-area table tbody tr:hover {
+      background-color: rgba(56,193,224,0.1);
+    }
+
+    /* Blockquotes */
+    .content-area blockquote {
+      border-left: 4px solid #38c1e0;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background-color: rgba(26,51,71,0.5);
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    /* Links */
+    .content-area a {
+      color: #38c1e0;
+      text-decoration: none;
+    }
+    .content-area a:hover {
+      text-decoration: underline;
+      color: #38c1e0;
+    }
+
+    /* Lists */
+    .content-area ul, .content-area ol {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .content-area ul li {
+      list-style-type: disc;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    .content-area ol li {
+      list-style-type: decimal;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    /* Footnote references (superscript in text) */
+    .content-area sup a.fn-ref {
+      font-size: 0.75em;
+      color: #38c1e0;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0 1px;
+    }
+    .content-area sup a.fn-ref:hover {
+      text-decoration: underline;
+      color: #38c1e0;
+    }
+
+    /* Footnotes section */
+    .footnotes-section {
+      font-size: 0.875rem;
+      border-top: 2px solid rgba(255,255,255,0.15);
+      padding-top: 1.5rem;
+      margin-top: 3rem;
+    }
+    .footnotes-section ol {
+      padding-left: 1.5rem;
+    }
+    .footnotes-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .footnotes-section li a {
+      color: #38c1e0;
+      word-break: break-all;
+    }
+    .footnotes-section li a:hover {
+      color: #38c1e0;
+      text-decoration: underline;
+    }
+    .footnotes-section .fn-back {
+      color: #38c1e0;
+      text-decoration: none;
+      margin-left: 0.25rem;
+      font-size: 0.85em;
+    }
+    .footnotes-section .fn-back:hover {
+      color: #38c1e0;
+    }
+
+    /* Table overflow wrapper */
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0;
+    }
+
+    /* Section dividers */
+    .content-area hr {
+      border: none;
+      border-top: 2px solid rgba(255,255,255,0.15);
+      margin: 2.5rem 0;
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Rebuilding Resilience: Frameworks, Metrics, and Research for Communities and Individuals",
+    "datePublished": "2026-02-10",
+    "author": {
+      "@type": "Organization",
+      "name": "Cloud Publica"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Gifted Dreamers, Inc.",
+      "url": "https://gifteddreamers.org/GRUHP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cloudpublica.org/assets/img/favicon.png"
+      }
+    },
+    "description": "A research compilation on community and personal resilience, covering conceptual overviews, neighborhood resilience frameworks, quantitative indices, psychological resilience scales, and a comparison of community versus personal approaches.",
+    "mainEntityOfPage": "https://cloudpublica.org/research/rebuilding-resilience.html"
+  }
+  </script>
+
+<!-- build:config {"nav":"research"} -->
+</head>
+
+<body class="bg-[#0a1218] text-white font-sans antialiased">
+
+<!-- build:nav -->
+
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-cp-dark/80 backdrop-blur border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <ol class="flex items-center space-x-2 text-sm text-cp-muted">
+        <li><a href="/" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.home">Home</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li><a href="/research/" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.research">Research</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li class="text-white font-medium truncate" data-i18n="breadcrumb.resilience">Rebuilding Resilience</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- ARTICLE                                      -->
+  <!-- ============================================ -->
+  <main class="py-10 md:py-16">
+    <article class="max-w-4xl mx-auto px-4">
+
+      <!-- Article Header -->
+      <header class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-block bg-cp-teal/20 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide" data-i18n="blog.category.research">Research &amp; Frameworks</span>
+          <time datetime="2026-02-10" class="text-sm text-cp-muted">February 10, 2026</time>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6" data-i18n="blog.resilience.title">
+          Rebuilding Resilience: Frameworks, Metrics, and Research for Communities and Individuals
+        </h1>
+        <p class="text-lg md:text-xl text-cp-muted leading-relaxed" data-i18n="blog.resil.subtitle">
+          A research compilation covering conceptual overviews, neighborhood-level frameworks, quantitative indices, and psychological resilience scales&mdash;tools for understanding, measuring, and strengthening resilience at every level.
+        </p>
+      </header>
+      <figure class="mb-10">
+        <picture>
+          <source srcset="/blog/hero-rebuilding-resilience-640w.webp" media="(max-width: 768px)" type="image/webp">
+          <source srcset="/blog/hero-rebuilding-resilience-1280w.webp" type="image/webp">
+          <img src="/blog/hero-rebuilding-resilience.jpg" alt="Green seedling growing through cracked earth in morning sunlight" class="w-full rounded-lg shadow-md" width="1280" height="720" loading="eager">
+        </picture>
+      </figure>
+
+
+      <!-- Article Body -->
+      <div class="content-area prose prose-lg max-w-none text-gray-300 leading-relaxed">
+
+        <p data-i18n="blog.resil.p1">
+          Resilience is used in several overlapping ways: as the capacity to withstand shocks, the dynamic process of adapting over time, and the outcomes that signal successful recovery or transformation. It helps to explicitly distinguish personal psychological resilience from community or neighborhood resilience, and then borrow concrete frameworks and metrics from each.<sup><a href="#fn1" id="fnref1" class="fn-ref">[1]</a></sup><sup><a href="#fn2" id="fnref2" class="fn-ref">[2]</a></sup><sup><a href="#fn3" id="fnref3" class="fn-ref">[3]</a></sup><sup><a href="#fn4" id="fnref4" class="fn-ref">[4]</a></sup>
+        </p>
+
+        <hr>
+
+        <!-- BIG-PICTURE CONCEPTUAL OVERVIEWS -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.resilience.h2.conceptual">Big-Picture Conceptual Overviews</h2>
+
+        <p data-i18n="blog.resil.p2">
+          <strong>What Do We Mean by &ldquo;Community Resilience&rdquo;? A Systematic Literature Review of How It Is Defined and Measured</strong><br>
+          Patel, S.S. et al. (2017) &mdash; <a href="https://currents.plos.org/disasters/article/what-do-we-mean-by-community-resilience-a-systematic-literature-review-of-how-it-is-defined-measured/" target="_blank" rel="noopener noreferrer">PLOS Currents Disasters</a><br>
+          Synthesizes dozens of definitions and frameworks for community resilience, identifies common elements (local knowledge, networks, communication, governance, health), and discusses implications for practice and measurement.<sup><a href="#fn2" id="fnref2b" class="fn-ref">[2]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p3">
+          <strong>Resilience as Pathway Diversity: Linking Systems, Individual and Societal Resilience</strong><br>
+          Lade, S.J. et al. (2019) &mdash; <a href="https://arxiv.org/abs/1911.02294" target="_blank" rel="noopener noreferrer">arXiv</a><br>
+          Proposes resilience as &ldquo;pathway diversity&rdquo; in social&ndash;ecological systems, giving language to talk about resilience as multiple possible futures rather than simply &ldquo;bouncing back.&rdquo;<sup><a href="#fn4" id="fnref4b" class="fn-ref">[4]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p4">
+          <strong>Community Resilience: A Multidisciplinary Exploration for Inclusive Frameworks</strong><br>
+          (2024) &mdash; <a href="https://www.sciencedirect.com/science/article/pii/S2772741624000085" target="_blank" rel="noopener noreferrer">ScienceDirect</a><br>
+          Provides an updated multidisciplinary review, clustering community resilience work into key themes (infrastructure, social capital, governance, equity), useful to structure essay sections and program design.<sup><a href="#fn5" id="fnref5" class="fn-ref">[5]</a></sup>
+        </p>
+
+        <hr>
+
+        <!-- COMMUNITY AND NEIGHBORHOOD RESILIENCE FRAMEWORKS -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.resilience.h2.community">Community and Neighborhood Resilience Frameworks</h2>
+
+        <p data-i18n="blog.resil.p5">
+          <strong>EnRiCH Community Resilience Framework for High-Risk Populations</strong><br>
+          O&rsquo;Sullivan, T.L. et al. (2014) &mdash; <a href="https://currents.plos.org/disasters/article/the-enrich-community-resilience-framework-for-high-risk-populations/" target="_blank" rel="noopener noreferrer">PLOS Currents Disasters</a><br>
+          Puts &ldquo;adaptive capacity&rdquo; at the center, surrounded by four strategic areas (leadership, asset/resource management, awareness/communication, connectedness/engagement) driven by empowerment, innovation, and collaboration; helpful for describing levers neighborhoods can actually pull.<sup><a href="#fn6" id="fnref6" class="fn-ref">[6]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p6">
+          <strong>IFRC Framework for Community Resilience</strong><br>
+          International Federation of Red Cross and Red Crescent Societies (2014) &mdash; <a href="https://www.ifrc.org/sites/default/files/IFRC-Framework-for-Community-Resilience-EN-LR.pdf" target="_blank" rel="noopener noreferrer">PDF</a><br>
+          Practice-oriented framework showing how to support communities to self-mobilize, strengthen local organizations, and link everyday well-being work to disaster resilience.<sup><a href="#fn7" id="fnref7" class="fn-ref">[7]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p7">
+          <strong>Creating the Conditions for Community Resilience</strong><br>
+          <a href="https://doaj.org/article/336d60f2387247cd8b5ae1b20c6661f1" target="_blank" rel="noopener noreferrer">DOAJ (open access)</a><br>
+          Develops a conceptual framework summarizing common requirements for community resilience (e.g., social capital, inclusive governance, local capabilities), giving language for &ldquo;upstream&rdquo; neighborhood work beyond emergency planning.<sup><a href="#fn8" id="fnref8" class="fn-ref">[8]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p8">
+          <strong>Community Resilience to Pandemics: An Assessment Framework Integrating Social, Built and Natural Environments</strong><br>
+          (2022) &mdash; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9375855/" target="_blank" rel="noopener noreferrer">Europe PMC</a><br>
+          Offers a concrete, indicator-based framework for assessing pandemic resilience at community scale, illustrating how to operationalize &ldquo;resilience&rdquo; in terms of environment, health systems, and social factors.<sup><a href="#fn9" id="fnref9" class="fn-ref">[9]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p9">
+          <strong>Community Resilience to Disasters: Measuring and Improving Community Resilience</strong><br>
+          De Iuliis, M. et al. (2022) &mdash; <a href="https://arxiv.org/abs/2204.04335" target="_blank" rel="noopener noreferrer">arXiv</a><br>
+          Uses the PEOPLES framework (Population, Environmental, Organized governmental services, Physical infrastructure, Lifestyle, Economic, Social&ndash;cultural) with fuzzy logic to quantify resilience, useful as an example of making resilience computable.<sup><a href="#fn10" id="fnref10" class="fn-ref">[10]</a></sup>
+        </p>
+
+        <hr>
+
+        <!-- QUANTITATIVE INDICES AND METRICS -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.resilience.h2.metrics">Quantitative Indices and Metrics</h2>
+
+        <p data-i18n="blog.resil.p10">
+          <strong>A Value-Focused Thinking Approach to Measure Community Sustainable Resilience</strong><br>
+          Suresh, R. et al. (2024) &mdash; <a href="https://arxiv.org/abs/2408.00901" target="_blank" rel="noopener noreferrer">arXiv</a><br>
+          Builds an objectives hierarchy and indicators across social, economic, infrastructure, and environmental dimensions; reviews existing indices like the Community Disaster Resilience Index and Resilience Capacity Index, which can be referenced as examples of composite &ldquo;resilience scores.&rdquo;<sup><a href="#fn11" id="fnref11" class="fn-ref">[11]</a></sup><sup><a href="#fn3" id="fnref3b" class="fn-ref">[3]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p11">
+          <strong>Deep Learning-Driven Community Resilience Rating Based on Social&ndash;Ecological&ndash;Technological Systems</strong><br>
+          (Resili-Net, 2023) &mdash; <a href="https://arxiv.org/pdf/2311.01661.pdf" target="_blank" rel="noopener noreferrer">arXiv</a><br>
+          Develops a machine-learning rating system for urban resilience using features like infrastructure robustness, facility access, and social conditions, showing how newer work uses big data to map resilience across neighborhoods.<sup><a href="#fn12" id="fnref12" class="fn-ref">[12]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p12">
+          <strong>Development and Validation of a Community Resilience Scale for Youth</strong><br>
+          Silva, S.M. et al. (2022) &mdash; <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0269027" target="_blank" rel="noopener noreferrer">PLOS ONE</a><br>
+          Provides a psychometrically validated survey to assess youths&rsquo; perception of community resilience; a good example of &ldquo;bottom-up&rdquo; measurement grounded in lived experience.<sup><a href="#fn13" id="fnref13" class="fn-ref">[13]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p13">
+          <strong>Community Resilience to Pandemics</strong> (above) and <strong>Social Resources and Community Resilience in the Wake of Disasters</strong><br>
+          Cagney, K.A. et al. (2016) &mdash; <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0160824" target="_blank" rel="noopener noreferrer">PLOS ONE</a><br>
+          Introduces the Resilience Activation Framework, focusing on how access to social resources (formal and informal support) activates resilience capacities; useful for making &ldquo;social infrastructure&rdquo; measurable.<sup><a href="#fn14" id="fnref14" class="fn-ref">[14]</a></sup><sup><a href="#fn15" id="fnref15" class="fn-ref">[15]</a></sup>
+        </p>
+
+        <hr>
+
+        <!-- PERSONAL PSYCHOLOGICAL RESILIENCE -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.resilience.h2.personal">Personal Psychological Resilience: Frameworks and Scales</h2>
+
+        <p data-i18n="blog.resil.p14">
+          <strong>Resilience Resources, Coping Strategies and Positive Adaptation</strong><br>
+          Fullerton, D.J. et al. (2021) &mdash; <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0246000" target="_blank" rel="noopener noreferrer">PLOS ONE</a><br>
+          Integrates several theoretical models (e.g., resilience as dynamic process) and tests a path model linking resilience resources, coping strategies, and outcomes; helpful for writing about mechanisms rather than traits.<sup><a href="#fn1" id="fnref1b" class="fn-ref">[1]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p15">
+          <strong>Conceptualizing and Measuring Psychological Resilience: What Can We Learn from Existing Models?</strong><br>
+          (review article) &mdash; <a href="https://www.sciencedirect.com/science/article/pii/S0732118X22000046" target="_blank" rel="noopener noreferrer">ScienceDirect</a><br>
+          Argues for defining psychological resilience in terms of dynamic responses to stressors and reviews measurement approaches, including outcome-based and process-based metrics.<sup><a href="#fn16" id="fnref16" class="fn-ref">[16]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p16">
+          <strong>A Conceptual Framework for the Neurobiological Study of Resilience</strong><br>
+          Kalisch, R. et al. (2015) &mdash; <a href="https://www.biorxiv.org/lookup/external-ref?access_num=10.1017%2FS0140525X1400082X&amp;link_type=DOI" target="_blank" rel="noopener noreferrer">bioRxiv/PubMed</a><br>
+          Proposes how to quantify resilience as relatively preserved mental health under stress, with implications for how to think about &ldquo;resilience as outcome&rdquo; in longitudinal terms.<sup><a href="#fn17" id="fnref17" class="fn-ref">[17]</a></sup>
+        </p>
+
+        <p data-i18n="blog.resil.p17">
+          <strong>The ART of Resilience: A Theoretical Bridge Across Approaches</strong><br>
+          Frontiers in Psychology (2025) &mdash; <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2025.1556047/full" target="_blank" rel="noopener noreferrer">Frontiers</a><br>
+          Introduces the ART framework (Acknowledgment of resources, Reframing stressors, Tailoring responses) as a practical, process-oriented model that can be translated into everyday practices for individuals and groups.<sup><a href="#fn18" id="fnref18" class="fn-ref">[18]</a></sup>
+        </p>
+
+        <hr>
+
+        <!-- COMPARISON TABLE -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.resilience.h2.comparison">Community vs Personal Resilience: A Quick Comparison</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="blog.resil.th1">Aspect</th>
+                <th data-i18n="blog.resil.th2">Community / Neighborhood Resilience</th>
+                <th data-i18n="blog.resil.th3">Personal Resilience</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="blog.resil.td1"><strong>Core idea</strong></td>
+                <td data-i18n="blog.resil.td2">Collective capacity to withstand, adapt, recover, and transform.<sup><a href="#fn2" id="fnref2c" class="fn-ref">[2]</a></sup><sup><a href="#fn6" id="fnref6b" class="fn-ref">[6]</a></sup></td>
+                <td data-i18n="blog.resil.td3">Individual&rsquo;s dynamic ability to maintain or regain functioning under stress.<sup><a href="#fn1" id="fnref1c" class="fn-ref">[1]</a></sup><sup><a href="#fn16" id="fnref16b" class="fn-ref">[16]</a></sup></td>
+              </tr>
+              <tr>
+                <td data-i18n="blog.resil.td4"><strong>Typical frameworks</strong></td>
+                <td data-i18n="blog.resil.td5">EnRiCH; IFRC; Resilience Activation; PEOPLES; pandemic resilience models.<sup><a href="#fn6" id="fnref6c" class="fn-ref">[6]</a></sup><sup><a href="#fn7" id="fnref7b" class="fn-ref">[7]</a></sup><sup><a href="#fn15" id="fnref15b" class="fn-ref">[15]</a></sup><sup><a href="#fn10" id="fnref10b" class="fn-ref">[10]</a></sup><sup><a href="#fn9" id="fnref9b" class="fn-ref">[9]</a></sup></td>
+                <td data-i18n="blog.resil.td6">ART framework; resilience resources models; neurobiological resilience.<sup><a href="#fn18" id="fnref18b" class="fn-ref">[18]</a></sup><sup><a href="#fn1" id="fnref1d" class="fn-ref">[1]</a></sup><sup><a href="#fn17" id="fnref17b" class="fn-ref">[17]</a></sup></td>
+              </tr>
+              <tr>
+                <td data-i18n="blog.resil.td7"><strong>Common metrics</strong></td>
+                <td data-i18n="blog.resil.td8">Indices across social, economic, infrastructure, environmental, governance dimensions.<sup><a href="#fn11" id="fnref11b" class="fn-ref">[11]</a></sup><sup><a href="#fn3" id="fnref3c" class="fn-ref">[3]</a></sup><sup><a href="#fn9" id="fnref9c" class="fn-ref">[9]</a></sup></td>
+                <td data-i18n="blog.resil.td9">Scales like CD-RISC variants, coping patterns, mental health outcomes over time.<sup><a href="#fn1" id="fnref1e" class="fn-ref">[1]</a></sup><sup><a href="#fn16" id="fnref16c" class="fn-ref">[16]</a></sup></td>
+              </tr>
+              <tr>
+                <td data-i18n="blog.resil.td10"><strong>Levers for change</strong></td>
+                <td data-i18n="blog.resil.td11">Strengthening local networks, leadership, services, built environment, equity.<sup><a href="#fn6" id="fnref6d" class="fn-ref">[6]</a></sup><sup><a href="#fn8" id="fnref8b" class="fn-ref">[8]</a></sup><sup><a href="#fn7" id="fnref7c" class="fn-ref">[7]</a></sup></td>
+                <td data-i18n="blog.resil.td12">Building coping skills, reframing, social support use, meaning-making.<sup><a href="#fn1" id="fnref1f" class="fn-ref">[1]</a></sup><sup><a href="#fn18" id="fnref18c" class="fn-ref">[18]</a></sup></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <p data-i18n="blog.resil.p18">
+          These pieces should give you: (1) language for different meanings of &ldquo;resilience&rdquo;; (2) specific neighborhood-level frameworks you can narrate through stories or local examples; and (3) validated metrics you can reference or adapt into informal &ldquo;resilience audits&rdquo; for readers.
+        </p>
+
+        <!-- Footnotes -->
+        <section class="footnotes-section" aria-label="Footnotes">
+          <h2 class="text-lg font-bold text-white mb-4">Sources</h2>
+          <ol>
+            <li id="fn1">
+              <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0246000" target="_blank" rel="noopener noreferrer">Fullerton, D.J. et al. &mdash; Resilience Resources, Coping Strategies and Positive Adaptation (PLOS ONE, 2021)</a>
+              <a href="#fnref1" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn2">
+              <a href="https://currents.plos.org/disasters/article/what-do-we-mean-by-community-resilience-a-systematic-literature-review-of-how-it-is-defined-in-the-literature/" target="_blank" rel="noopener noreferrer">Patel, S.S. et al. &mdash; What Do We Mean by &ldquo;Community Resilience&rdquo;? (PLOS Currents Disasters, 2017)</a>
+              <a href="#fnref2" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn3">
+              <a href="https://arxiv.org/abs/2408.00901" target="_blank" rel="noopener noreferrer">Suresh, R. et al. &mdash; A Value-Focused Thinking Approach to Measure Community Sustainable Resilience (arXiv, 2024)</a>
+              <a href="#fnref3" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn4">
+              <a href="https://arxiv.org/pdf/1911.02294.pdf" target="_blank" rel="noopener noreferrer">Lade, S.J. et al. &mdash; Resilience as Pathway Diversity (arXiv, 2019)</a>
+              <a href="#fnref4" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn5">
+              <a href="https://www.sciencedirect.com/science/article/pii/S2772741624000085" target="_blank" rel="noopener noreferrer">Community Resilience: A Multidisciplinary Exploration for Inclusive Frameworks (ScienceDirect, 2024)</a>
+              <a href="#fnref5" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn6">
+              <a href="https://currents.plos.org/disasters/article/the-enrich-community-resilience-framework-for-high-risk-populations/" target="_blank" rel="noopener noreferrer">O&rsquo;Sullivan, T.L. et al. &mdash; EnRiCH Community Resilience Framework (PLOS Currents Disasters, 2014)</a>
+              <a href="#fnref6" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn7">
+              <a href="https://www.ifrc.org/sites/default/files/IFRC-Framework-for-Community-Resilience-EN-LR.pdf" target="_blank" rel="noopener noreferrer">IFRC Framework for Community Resilience (2014)</a>
+              <a href="#fnref7" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn8">
+              <a href="https://doaj.org/article/336d60f2387247cd8b5ae1b20c6661f1" target="_blank" rel="noopener noreferrer">Creating the Conditions for Community Resilience (DOAJ)</a>
+              <a href="#fnref8" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn9">
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9375855/" target="_blank" rel="noopener noreferrer">Community Resilience to Pandemics: An Assessment Framework (Europe PMC, 2022)</a>
+              <a href="#fnref9" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn10">
+              <a href="https://arxiv.org/abs/2204.04335" target="_blank" rel="noopener noreferrer">De Iuliis, M. et al. &mdash; Community Resilience to Disasters: Measuring and Improving (arXiv, 2022)</a>
+              <a href="#fnref10" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn11">
+              <a href="https://www.arxiv.org/pdf/2408.00901.pdf" target="_blank" rel="noopener noreferrer">Suresh, R. et al. &mdash; Value-Focused Thinking Approach (arXiv PDF, 2024)</a>
+              <a href="#fnref11" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn12">
+              <a href="https://arxiv.org/pdf/2311.01661.pdf" target="_blank" rel="noopener noreferrer">Resili-Net &mdash; Deep Learning-Driven Community Resilience Rating (arXiv, 2023)</a>
+              <a href="#fnref12" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn13">
+              <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0269027" target="_blank" rel="noopener noreferrer">Silva, S.M. et al. &mdash; Community Resilience Scale for Youth (PLOS ONE, 2022)</a>
+              <a href="#fnref13" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn14">
+              <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0160824" target="_blank" rel="noopener noreferrer">Cagney, K.A. et al. &mdash; Social Resources and Community Resilience (PLOS ONE, 2016)</a>
+              <a href="#fnref14" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn15">
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4247807/" target="_blank" rel="noopener noreferrer">Resilience Activation Framework (PMC, 2014)</a>
+              <a href="#fnref15" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn16">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0732118X22000046" target="_blank" rel="noopener noreferrer">Conceptualizing and Measuring Psychological Resilience (ScienceDirect)</a>
+              <a href="#fnref16" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn17">
+              <a href="https://www.biorxiv.org/lookup/external-ref?access_num=10.1017%2FS0140525X1400082X&amp;link_type=DOI" target="_blank" rel="noopener noreferrer">Kalisch, R. et al. &mdash; Conceptual Framework for Neurobiological Study of Resilience (2015)</a>
+              <a href="#fnref17" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn18">
+              <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1556047/full" target="_blank" rel="noopener noreferrer">The ART of Resilience: A Theoretical Bridge Across Approaches (Frontiers in Psychology, 2025)</a>
+              <a href="#fnref18" class="fn-back" title="Back to reference">&uarr;</a>
+            </li>
+            <li id="fn19">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/39715248/" target="_blank" rel="noopener noreferrer">PubMed 39715248</a>
+            </li>
+            <li id="fn20">
+              <a href="https://pdfs.semanticscholar.org/13e0/1b1a6de147729214576f6569bf738b1628eb.pdf" target="_blank" rel="noopener noreferrer">Semantic Scholar &mdash; Resilience Study (PDF)</a>
+            </li>
+            <li id="fn21">
+              <a href="https://arxiv.org/pdf/2411.08015.pdf" target="_blank" rel="noopener noreferrer">arXiv 2411.08015</a>
+            </li>
+            <li id="fn22">
+              <a href="https://pdfs.semanticscholar.org/44a4/106c3a029a7967bb661889c12c64c88b5df0.pdf" target="_blank" rel="noopener noreferrer">Semantic Scholar &mdash; Resilience Research (PDF)</a>
+            </li>
+            <li id="fn23">
+              <a href="https://arxiv.org/html/2511.12798v1" target="_blank" rel="noopener noreferrer">arXiv 2511.12798v1</a>
+            </li>
+            <li id="fn24">
+              <a href="https://pdfs.semanticscholar.org/c574/892434ad7c45aa98caf1a3a2a89ae0eaf1c7.pdf" target="_blank" rel="noopener noreferrer">Semantic Scholar &mdash; Community Resilience (PDF)</a>
+            </li>
+            <li id="fn25">
+              <a href="https://arxiv.org/pdf/2306.08795.pdf" target="_blank" rel="noopener noreferrer">arXiv 2306.08795</a>
+            </li>
+            <li id="fn26">
+              <a href="https://arxiv.org/pdf/1803.07650.pdf" target="_blank" rel="noopener noreferrer">arXiv 1803.07650</a>
+            </li>
+            <li id="fn27">
+              <a href="https://arxiv.org/html/2506.12795v1" target="_blank" rel="noopener noreferrer">arXiv 2506.12795v1</a>
+            </li>
+            <li id="fn28">
+              <a href="https://www.build-resilience.org/community-resilience-framework.php" target="_blank" rel="noopener noreferrer">Build Resilience &mdash; Community Resilience Framework</a>
+            </li>
+            <li id="fn29">
+              <a href="https://ccr.publichealth.gwu.edu" target="_blank" rel="noopener noreferrer">GWU Center for Community Resilience</a>
+            </li>
+            <li id="fn30">
+              <a href="https://aspr.hhs.gov/at-risk/Pages/community_resilience.aspx" target="_blank" rel="noopener noreferrer">ASPR &mdash; Community Resilience (HHS)</a>
+            </li>
+            <li id="fn31">
+              <a href="https://communityscience.com/news-media/blog/putting-community-into-community-resilience/" target="_blank" rel="noopener noreferrer">Community Science &mdash; Putting Community into Community Resilience</a>
+            </li>
+            <li id="fn32">
+              <a href="https://www.nature.com/articles/s44220-025-00479-3" target="_blank" rel="noopener noreferrer">Nature &mdash; Resilience Research (2025)</a>
+            </li>
+            <li id="fn33">
+              <a href="https://www.communitycommons.org/entities/42b3fc73-ade3-45ea-bc11-b848cd4d5ad1" target="_blank" rel="noopener noreferrer">Community Commons &mdash; Resilience Resource</a>
+            </li>
+            <li id="fn34">
+              <a href="https://www.vumc.org/faculty/sites/default/files/Resilience%20Theories.pdf" target="_blank" rel="noopener noreferrer">VUMC &mdash; Resilience Theories (PDF)</a>
+            </li>
+            <li id="fn35">
+              <a href="https://www.sg.ethz.ch/publications/2022/schweitzer2022modeling-social-resilience/2301.00183.pdf" target="_blank" rel="noopener noreferrer">ETH Zurich &mdash; Modeling Social Resilience (PDF)</a>
+            </li>
+            <li id="fn36">
+              <a href="https://rclss.com/pij/article/view/350" target="_blank" rel="noopener noreferrer">RCLSS &mdash; Resilience Article</a>
+            </li>
+          </ol>
+        </section>
+
+      </div><!-- /.content-area -->
+    </article>
+  </main>
+
+<!-- build:footer -->
+<!-- ============================================ -->
+  <!-- ============================================ -->
+<!-- build:scripts -->
+</body>
+</html>

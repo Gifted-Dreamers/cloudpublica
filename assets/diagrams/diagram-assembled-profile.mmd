@@ -1,0 +1,86 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1a1a2e', 'lineColor': '#666', 'fontSize': '13px'}}}%%
+flowchart TD
+    CENTER["EVERY AMERICAN\n\nNo single warrant covers\nthe assembled picture.\nNo court reviewed it.\nNo oversight body monitors it."]
+
+    SSA["SSA NUMIDENT\n300M+ records\non unsecured cloud"]
+    SSA_OUT["WHO YOU ARE\nName, SSN, birth data,\nparents' names,\nfamily relationships"]
+
+    IRS["IRS / IDRS\nUnified API via\nDOGE + Palantir"]
+    IRS_OUT["WHERE YOU WORK\nIncome, employer, banking,\nbrokerage accounts,\nmedical expenses, tax preparer"]
+
+    VOTER["State Voter Rolls\n18M from TX alone\n26 states via SAVE"]
+    VOTER_OUT["HOW YOU VOTE\nParty affiliation,\nvoting history,\nregistration address"]
+
+    BROKER["Data Brokers\nWebblock ($5M),\ncommercial vendors"]
+    BROKER_OUT["WHERE YOU GO\nReal-time location,\nmovement patterns,\ngeofencing data"]
+
+    MED["Medicaid/CMS +\nISO Claim Search"]
+    MED_OUT["YOUR HEALTH\n80M patient records,\n1.8B insurance claims,\n58M medical bills"]
+
+    SS["Selective Service\nAutomatic registration\nvia DOGE access"]
+    SS_OUT["DRAFT ELIGIBLE?\nEvery male 18-25\nautomatically registered"]
+
+    SAVE["SAVE Tool\nDeployed in\n26 states"]
+    SAVE_OUT["CITIZENSHIP STATUS\nFlags legitimate voters\nas noncitizens —\nmistake rate unknown"]
+
+    LEAK["Seized Databases\nLeakBase: Operation Leak\nMar 3-4, 2026"]
+    LEAK_OUT["YOUR PASSWORDS\nAND SEARCHES\n142K accounts, 215K+ messages,\n100s of millions of credentials"]
+
+    ICE["ICE Tools\nCelebrite ($11M)\nGraphite ($2M)"]
+    ICE_OUT["YOUR PHONE CONTENTS\nDeleted messages, photos,\ncontacts, app data,\nbrowsing history"]
+
+    %% Connections with legal mechanisms
+    SSA -->|"DOGE employee access\nNo security oversight\nNo access tracking"| SSA_OUT
+    SSA_OUT --> CENTER
+
+    IRS -->|"Interagency data sharing\nDOGE unified API\n15+ lawsuits pending"| IRS_OUT
+    IRS_OUT --> CENTER
+
+    VOTER -->|"DOJ request to states\nVoter Data Agreement\nwith advocacy group"| VOTER_OUT
+    VOTER_OUT --> CENTER
+
+    BROKER -->|"Commercial purchase\nNo warrant required\nData broker exception"| BROKER_OUT
+    BROKER_OUT --> CENTER
+
+    MED -->|"Interagency agreement\nDHS data sharing\nNo patient consent"| MED_OUT
+    MED_OUT --> CENTER
+
+    SS -->|"DOGE database access\nAutomatic registration\nNo opt-out"| SS_OUT
+    SS_OUT --> CENTER
+
+    SAVE -->|"Federal verification tool\nStates opt in voluntarily\n26 states participating"| SAVE_OUT
+    SAVE_OUT --> CENTER
+
+    LEAK -->|"Evidence seizure\nNo warrant for\ndata subjects"| LEAK_OUT
+    LEAK_OUT --> CENTER
+
+    ICE -->|"Border search exception\nNo warrant within\n100 miles of border\n14,899 devices/quarter"| ICE_OUT
+    ICE_OUT --> CENTER
+
+    %% No Warrant Box
+    NOWARRANT["NO SINGLE WARRANT\nCOVERS THIS PICTURE\n\nEach database has its own\nlegal basis. The capability\nis in the connections.\n\nMechanisms used:\n- Interagency agreements\n- Data broker purchases\n- Border search exception\n- Evidence seizure\n- Commercial contracts\n- State voluntary sharing\n- DOGE employee access"]
+
+    CENTER -.-> NOWARRANT
+
+    %% Styles
+    style CENTER fill:#8b0000,stroke:#cc0000,color:#fff,font-weight:bold,font-size:16px
+    style NOWARRANT fill:#1a1a1a,stroke:#ff4444,color:#fff,stroke-width:3px
+
+    style SSA fill:#4a0000,stroke:#8b0000,color:#fff
+    style SSA_OUT fill:#6b1010,stroke:#8b0000,color:#fff
+    style IRS fill:#4a0000,stroke:#8b0000,color:#fff
+    style IRS_OUT fill:#6b1010,stroke:#8b0000,color:#fff
+    style VOTER fill:#4a0000,stroke:#8b0000,color:#fff
+    style VOTER_OUT fill:#6b1010,stroke:#8b0000,color:#fff
+    style BROKER fill:#4a0000,stroke:#8b0000,color:#fff
+    style BROKER_OUT fill:#6b1010,stroke:#8b0000,color:#fff
+    style MED fill:#4a0000,stroke:#8b0000,color:#fff
+    style MED_OUT fill:#6b1010,stroke:#8b0000,color:#fff
+    style SS fill:#4a0000,stroke:#8b0000,color:#fff
+    style SS_OUT fill:#6b1010,stroke:#8b0000,color:#fff
+    style SAVE fill:#4a0000,stroke:#8b0000,color:#fff
+    style SAVE_OUT fill:#6b1010,stroke:#8b0000,color:#fff
+    style LEAK fill:#4a0000,stroke:#8b0000,color:#fff
+    style LEAK_OUT fill:#6b1010,stroke:#8b0000,color:#fff
+    style ICE fill:#4a0000,stroke:#8b0000,color:#fff
+    style ICE_OUT fill:#6b1010,stroke:#8b0000,color:#fff

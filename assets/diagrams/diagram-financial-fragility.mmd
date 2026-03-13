@@ -1,0 +1,73 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1a1a2e', 'lineColor': '#666', 'fontSize': '13px'}}}%%
+flowchart TD
+    WAR["IRAN WAR<br>Day 13 — $13B+ cost<br>$1B/day Pentagon estimate<br>7 US soldiers dead<br>1,348+ Iranian civilians killed"]
+
+    subgraph ENERGY["ENERGY SHOCK"]
+        direction LR
+        OIL["WTI Crude: $90.90<br>+12% single session"]
+        LNG["Qatar Ras Laffan<br>shutdown — 20% of<br>global LNG offline"]
+        HORMUZ["Strait of Hormuz<br>ship insurance: 12x increase"]
+        RARE["16 tons rare earths<br>vaporized in first week<br>China controls supply"]
+    end
+
+    subgraph DEBT["STRUCTURAL DEBT"]
+        direction LR
+        NATL["US national debt<br>$38.88 trillion<br>+$8B/day"]
+        INT["Interest payments<br>crossed $1 trillion/year<br>for first time"]
+        CORP["$5 trillion corporate<br>debt rolling over into<br>higher-rate environment"]
+        ZOMBIE["1 in 5 Russell 3000<br>companies cannot<br>service debt from income"]
+    end
+
+    subgraph CREDIT["CREDIT FRAGILITY"]
+        direction LR
+        PRIV["Private credit: $1.8T<br>Blue Owl OBDC II:<br>200% surge in redemptions"]
+        BBB["50%+ investment-grade<br>bonds rated BBB<br>one notch from junk"]
+        ISM["ISM Prices Paid: 70.5<br>Highest since June 2022"]
+    end
+
+    subgraph SPARE["NO CUSHION"]
+        direction LR
+        SPARE_OIL["Global spare oil capacity<br>2M barrels/day<br>2% of consumption<br>vs 5% in 2008"]
+        IRAN_SALVO["Iran first salvo:<br>770+ ballistic missiles<br>900+ drones"]
+    end
+
+    WAR --> ENERGY
+    WAR --> SPARE
+    ENERGY --> DEBT
+    DEBT --> CREDIT
+    SPARE --> ENERGY
+
+    CONVERGENCE["CONVERGENCE POINT<br><br>War costs + energy shock +<br>debt service + credit fragility<br>= cascading fiscal stress<br>during active military operations<br>in 3+ countries simultaneously"]
+
+    CREDIT --> CONVERGENCE
+    ENERGY --> CONVERGENCE
+
+    RUSSIA["RUSSIA BENEFITS<br>30-day oil sanctions waiver<br>'Real winner' of Iran war<br>Witkoff coached Ushakov<br>on how to pitch Trump"]
+
+    CONVERGENCE -.-> RUSSIA
+
+    %% Styles
+    style WAR fill:#8b0000,stroke:#cc0000,color:#fff,font-weight:bold
+    style CONVERGENCE fill:#4a0000,stroke:#cc0000,color:#fff,font-weight:bold
+    style RUSSIA fill:#0d3d0d,stroke:#1a5a1a,color:#fff
+
+    style ENERGY fill:#8b4000,stroke:#cc6600,color:#fff
+    style OIL fill:#a04800,stroke:#cc6600,color:#fff
+    style LNG fill:#a04800,stroke:#cc6600,color:#fff
+    style HORMUZ fill:#a04800,stroke:#cc6600,color:#fff
+    style RARE fill:#a04800,stroke:#cc6600,color:#fff
+
+    style DEBT fill:#0a1628,stroke:#1a3a5c,color:#fff
+    style NATL fill:#0d2240,stroke:#1a3a5c,color:#fff
+    style INT fill:#0d2240,stroke:#1a3a5c,color:#fff
+    style CORP fill:#0d2240,stroke:#1a3a5c,color:#fff
+    style ZOMBIE fill:#0d2240,stroke:#1a3a5c,color:#fff
+
+    style CREDIT fill:#2a2a2a,stroke:#555,color:#fff
+    style PRIV fill:#3a3a3a,stroke:#666,color:#fff
+    style BBB fill:#3a3a3a,stroke:#666,color:#fff
+    style ISM fill:#3a3a3a,stroke:#666,color:#fff
+
+    style SPARE fill:#1a1a1a,stroke:#444,color:#fff
+    style SPARE_OIL fill:#2a2a2a,stroke:#555,color:#fff
+    style IRAN_SALVO fill:#2a2a2a,stroke:#555,color:#fff

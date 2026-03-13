@@ -1,0 +1,134 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1a1a2e', 'lineColor': '#555', 'fontSize': '14px'}}}%%
+flowchart TD
+    subgraph P1["PILLAR 1: DATA INFRASTRUCTURE"]
+        direction LR
+        D1["DOGE Unified API\n(Palantir/AWS/Salesforce)"]
+        D2["SSA NUMIDENT\n300M+ records on\nunsecured cloud"]
+        D3["IRS IDRS\nIncome, banking,\nemployer, medical"]
+        D4["State Voter Rolls\nTX 18M sent to DOJ\n26 states via SAVE"]
+        D5["Data Brokers\nWebblock, geofencing\nreal-time location"]
+        D6["Selective Service\nDraft eligibility\n18-25 males"]
+        D7["Seized Databases\nLeakBase: 142K accounts\n100s of millions credentials"]
+        D8["Medicaid/CMS\n80M patient records\n1.8B claims"]
+    end
+
+    subgraph P2["PILLAR 2: LEGAL ARCHITECTURE"]
+        direction LR
+        L1["244 Executive Orders\n57 Memoranda\n131 Proclamations"]
+        L2["NSPM-7\nDomestic terrorism\nredefined"]
+        L3["SAVE America Act\nCitizenship proof to vote"]
+        L4["Schedule F\n50K federal employees\nto at-will"]
+        L5["AI Preemption EO\nBlock state AI laws\n10-year moratorium"]
+    end
+
+    subgraph P6["PILLAR 6: OVERSIGHT DESTRUCTION"]
+        direction LR
+        O1["CISA Gutted\n-33% staff, -17% budget\nElection security: ELIMINATED"]
+        O2["DHS Shutdown\n100K+ workers unpaid\nFeb 14, 2026"]
+        O3["EI-ISAC Defunded\nPost-2016 Russian\ninterference protections cut"]
+        O4["Schedule F\nProtected civil servants\nbecome at-will"]
+        O5["Cyber Info Sharing\nAct EXPIRED\nduring shutdown"]
+    end
+
+    subgraph P4["PILLAR 4: DEPLOYMENT"]
+        direction LR
+        DEP1["ICE Surveillance\nGraphite spyware ($2M)\nCelebrite ($11M)\n14,899 devices searched/qtr"]
+        DEP2["CBP Border Searches\nNo warrant required\nDevice extraction"]
+        DEP3["National Guard QRF\n23,500 troops\nAll 50 states + PR + Guam\n125 troops in 8 hours"]
+        DEP4["Operation Metro Surge\nICE killed 2 US citizens\nRenee Good, Alex Pretti"]
+    end
+
+    subgraph P5["PILLAR 5: ELECTION CONTROL"]
+        direction LR
+        E1["SAVE Act\nCitizenship proof\n+ photo ID to vote"]
+        E2["SAVE Tool\n26 states\nFlags legitimate voters"]
+        E3["Voter Roll Collection\nFederal database\nof all voters"]
+        E4["ICE at Polls\nChief admits 'no reason'\nBlue states legislating bans"]
+        E5["QRF Deployable\n125 troops / 8 hours\nevery state"]
+    end
+
+    subgraph P3["PILLAR 3: HEMISPHERE WAR"]
+        direction LR
+        W1["Iran War\nBegan Feb 28, 2026\nNSPM-2 preceded by 1 year"]
+        W2["Venezuela\nMaduro captured Jan 3\n150 jets, CIA operation"]
+        W3["Ecuador\nOperation Total Extermination\nFirst US land ops in S. America"]
+        W4["Emergency Powers\nWar justifies\nexpanded authority"]
+    end
+
+    subgraph P7["PILLAR 7: FINANCIAL LEVERAGE"]
+        direction LR
+        F1["Epstein Files\n3.5M pages, 2K videos\nDOJ controls redaction\n= selective leverage"]
+        F2["Board of Peace\nTrump is Chairman\n$1B buys permanent seat"]
+        F3["Russia Sanctions\n30-day oil waiver\nRussia 'real winner'\nof Iran war"]
+    end
+
+    %% Main flow: Data feeds Legal feeds Oversight Destruction
+    P1 -->|"Populates the\nlookup infrastructure"| P2
+    P2 -->|"Authorizes collection\nand deployment"| P6
+
+    %% Oversight removal enables deployment
+    P6 -->|"REMOVES checks that\nwould catch abuse"| P4
+    P1 -->|"Data flows directly\nto enforcement"| P4
+
+    %% Deployment feeds election control
+    P4 -->|"Enforcement tools\ndeployed at polls"| P5
+
+    %% Parallel tracks feed the system
+    P3 -->|"Emergency powers\njustify expansion"| P2
+    P3 -->|"War justifies\ndomestic deployment"| P4
+    P7 -->|"Leverage ensures\ncompliance"| P2
+    P7 -->|"Financial incentives\nalign actors"| P3
+
+    %% Convergence point
+    P5 -->|"ALL PILLARS CONVERGE"| NOV["NOV 2026\nMIDTERM ELECTIONS"]
+
+    %% Styles
+    style P1 fill:#4a0000,stroke:#8b0000,color:#fff
+    style P2 fill:#0a1628,stroke:#1a3a5c,color:#fff
+    style P6 fill:#2a2a2a,stroke:#555,color:#fff
+    style P4 fill:#8b4000,stroke:#cc6600,color:#fff
+    style P5 fill:#8b0000,stroke:#cc0000,color:#fff
+    style P3 fill:#1a1a1a,stroke:#444,color:#fff
+    style P7 fill:#0a3a0a,stroke:#1a5a1a,color:#fff
+    style NOV fill:#ff0000,stroke:#cc0000,color:#fff,font-weight:bold
+
+    style D1 fill:#6b1010,stroke:#8b0000,color:#fff
+    style D2 fill:#6b1010,stroke:#8b0000,color:#fff
+    style D3 fill:#6b1010,stroke:#8b0000,color:#fff
+    style D4 fill:#6b1010,stroke:#8b0000,color:#fff
+    style D5 fill:#6b1010,stroke:#8b0000,color:#fff
+    style D6 fill:#6b1010,stroke:#8b0000,color:#fff
+    style D7 fill:#6b1010,stroke:#8b0000,color:#fff
+    style D8 fill:#6b1010,stroke:#8b0000,color:#fff
+
+    style L1 fill:#0d2240,stroke:#1a3a5c,color:#fff
+    style L2 fill:#0d2240,stroke:#1a3a5c,color:#fff
+    style L3 fill:#0d2240,stroke:#1a3a5c,color:#fff
+    style L4 fill:#0d2240,stroke:#1a3a5c,color:#fff
+    style L5 fill:#0d2240,stroke:#1a3a5c,color:#fff
+
+    style O1 fill:#3a3a3a,stroke:#666,color:#fff
+    style O2 fill:#3a3a3a,stroke:#666,color:#fff
+    style O3 fill:#3a3a3a,stroke:#666,color:#fff
+    style O4 fill:#3a3a3a,stroke:#666,color:#fff
+    style O5 fill:#3a3a3a,stroke:#666,color:#fff
+
+    style DEP1 fill:#a04800,stroke:#cc6600,color:#fff
+    style DEP2 fill:#a04800,stroke:#cc6600,color:#fff
+    style DEP3 fill:#a04800,stroke:#cc6600,color:#fff
+    style DEP4 fill:#a04800,stroke:#cc6600,color:#fff
+
+    style E1 fill:#a00000,stroke:#cc0000,color:#fff
+    style E2 fill:#a00000,stroke:#cc0000,color:#fff
+    style E3 fill:#a00000,stroke:#cc0000,color:#fff
+    style E4 fill:#a00000,stroke:#cc0000,color:#fff
+    style E5 fill:#a00000,stroke:#cc0000,color:#fff
+
+    style W1 fill:#2a2a2a,stroke:#555,color:#fff
+    style W2 fill:#2a2a2a,stroke:#555,color:#fff
+    style W3 fill:#2a2a2a,stroke:#555,color:#fff
+    style W4 fill:#2a2a2a,stroke:#555,color:#fff
+
+    style F1 fill:#0d3d0d,stroke:#1a5a1a,color:#fff
+    style F2 fill:#0d3d0d,stroke:#1a5a1a,color:#fff
+    style F3 fill:#0d3d0d,stroke:#1a5a1a,color:#fff

@@ -1,0 +1,34 @@
+  <!-- HEADER — shared partial -->
+  <header class="sticky top-0 z-50 bg-[#0f1a24] border-b border-white/10 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo + Site Name -->
+      <a href="/" class="flex items-center gap-3 group" aria-label="Cloud Publica Home">
+        <img src="/assets/img/favicon.png" alt="Cloud Publica" class="h-10 w-10" width="40" height="40">
+        <span class="text-white text-xl font-bold tracking-tight group-hover:text-[#38c1e0] transition-colors">Cloud Publica</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Main navigation">
+        <a href="/article/" class="text-white/80 hover:text-[#38c1e0] transition-colors font-medium {{ACTIVE:investigations}}">Investigations</a>
+        <a href="/research/" class="text-white/80 hover:text-[#38c1e0] transition-colors font-medium {{ACTIVE:research}}">Research</a>
+        <a href="/about/" class="text-white/80 hover:text-[#38c1e0] transition-colors font-medium {{ACTIVE:about}}">About</a>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0f1a24] border-t border-white/10 px-4 pb-4">
+      <nav class="flex flex-col gap-3 pt-3" aria-label="Mobile navigation">
+        <a href="/article/" class="text-white/80 hover:text-[#38c1e0] transition-colors font-medium py-2 {{ACTIVE:investigations}}">Investigations</a>
+        <a href="/research/" class="text-white/80 hover:text-[#38c1e0] transition-colors font-medium py-2 {{ACTIVE:research}}">Research</a>
+        <a href="/about/" class="text-white/80 hover:text-[#38c1e0] transition-colors font-medium py-2 {{ACTIVE:about}}">About</a>
+      </nav>
+    </div>
+  </header>

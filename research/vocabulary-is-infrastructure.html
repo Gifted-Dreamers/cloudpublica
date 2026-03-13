@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Can't Google What You Can't Name &mdash; Cloud Publica</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="The hardest part of finding help isn't the search. It's knowing what to search for. Why vocabulary is infrastructure, and how partnering with AI can help you find the words you're missing.">
+  <meta name="keywords" content="vocabulary, infrastructure, naming, search, AI partnership, systems thinking, Meadows, frameworks, agency, finding words, structural literacy">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="You Can't Google What You Can't Name">
+  <meta property="og:description" content="The hardest part of finding help isn't the search. It's knowing what to search for. Why vocabulary is the infrastructure nobody talks about.">
+  <meta property="og:url" content="https://cloudpublica.org/research/vocabulary-is-infrastructure.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://cloudpublica.org/assets/img/hero-vocabulary.jpg">
+  <meta property="article:published_time" content="2026-03-08">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="You Can't Google What You Can't Name">
+  <meta name="twitter:description" content="The hardest part of finding help isn't the search. It's knowing what to search for.">
+  <meta name="twitter:image" content="https://cloudpublica.org/assets/img/hero-vocabulary.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cp-teal': '#206795',
+            'cp-cyan': '#38c1e0',
+            'cp-dark': '#1a3347',
+            'cp-muted': '#5a7a8f',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter (async) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for article content -->
+  <style>
+    .content-area table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .content-area table thead th {
+      background-color: #206795;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .content-area table tbody td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .content-area table tbody tr:nth-child(even) {
+      background-color: rgba(32,103,149,0.1);
+    }
+    .content-area table tbody tr:hover {
+      background-color: rgba(56,193,224,0.1);
+    }
+    .content-area blockquote {
+      border-left: 4px solid #38c1e0;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background-color: rgba(26,51,71,0.5);
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    .content-area a {
+      color: #38c1e0;
+      text-decoration: none;
+    }
+    .content-area a:hover {
+      text-decoration: underline;
+      color: #38c1e0;
+    }
+    .content-area ul, .content-area ol {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .content-area ul li {
+      list-style-type: disc;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    .content-area ol li {
+      list-style-type: decimal;
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    .content-area hr {
+      border: none;
+      border-top: 2px solid rgba(255,255,255,0.1);
+      margin: 2.5rem 0;
+    }
+    .content-area p {
+      margin-bottom: 1.25rem;
+    }
+    .pullquote {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #38c1e0;
+      line-height: 1.5;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 2px solid rgba(255,255,255,0.1);
+      border-bottom: 2px solid rgba(255,255,255,0.1);
+      margin: 2.5rem 0;
+    }
+    .search-example {
+      border-left: 4px solid #38c1e0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      background: linear-gradient(135deg, rgba(32,103,149,0.15) 0%, rgba(26,51,71,0.3) 100%);
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+    .search-example .search-query {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #38c1e0;
+      margin-bottom: 0.25rem;
+    }
+    .search-example .search-gets {
+      font-size: 0.9rem;
+      color: #5a7a8f;
+      margin-bottom: 0.5rem;
+    }
+    .search-example .search-needed {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #38c1e0;
+    }
+    .search-example .search-explain {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      line-height: 1.7;
+      margin-top: 0.5rem;
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "You Can't Google What You Can't Name",
+    "datePublished": "2026-03-08",
+    "author": {
+      "@type": "Organization",
+      "name": "Cloud Publica"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Gifted Dreamers, Inc.",
+      "url": "https://gifteddreamers.org/GRUHP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cloudpublica.org/assets/img/favicon.png"
+      }
+    },
+    "description": "The hardest part of finding help isn't the search. It's knowing what to search for. Why vocabulary is infrastructure, and how partnering with AI can help you find the words you're missing.",
+    "mainEntityOfPage": "https://cloudpublica.org/research/vocabulary-is-infrastructure.html"
+  }
+  </script>
+
+<!-- build:config {"nav":"research"} -->
+</head>
+
+<body class="bg-[#0a1218] text-white font-sans antialiased">
+
+<!-- build:nav -->
+
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-cp-dark border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <ol class="flex items-center space-x-2 text-sm text-cp-muted">
+        <li><a href="/" class="hover:text-cp-cyan transition-colors">Home</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li><a href="/research/" class="hover:text-cp-cyan transition-colors">Research</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li class="text-white font-medium truncate">Vocabulary Is Infrastructure</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main class="py-10 md:py-16">
+    <article class="max-w-4xl mx-auto px-4">
+
+      <!-- Article Header -->
+      <header class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-block bg-cp-teal/20 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
+          <time datetime="2026-03-08" class="text-sm text-cp-muted">March 8, 2026</time>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+          You Can't Google What You Can't Name
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+          The hardest part of finding help isn't the search. It's knowing what to search for. Why vocabulary is infrastructure &mdash; and how to find the words you're missing.
+        </p>
+      </header>
+
+      <figure class="mb-10">
+        <picture>
+          <source srcset="/blog/hero-vocabulary-is-infrastructure-640w.webp" media="(max-width: 768px)" type="image/webp">
+          <source srcset="/blog/hero-vocabulary-is-infrastructure-1280w.webp" type="image/webp">
+          <img src="/blog/hero-vocabulary-is-infrastructure.jpg" alt="A person at a glowing search interface with luminous threads connecting to floating books, diagrams, and network maps in warm amber light" class="w-full rounded-lg shadow-md" width="1280" height="720" loading="eager">
+        </picture>
+      </figure>
+
+      <!-- Article Body -->
+      <div class="content-area prose prose-lg max-w-none text-gray-300 leading-relaxed">
+
+        <!-- SECTION 1: THE PROBLEM -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Search That Fails Before It Starts</h2>
+
+        <p>
+          You know something is wrong. You sit down to research it. You open a search engine. And then you stare at the blinking cursor because you don't know what to type.
+        </p>
+
+        <p>
+          This is not a failure of intelligence. It is a failure of vocabulary. And it is one of the most underappreciated barriers between people and the help they need.
+        </p>
+
+        <p>
+          Consider what happens when you search for symptoms instead of structures:
+        </p>
+
+        <div class="search-example">
+          <div class="search-query">You search: "why can't I afford anything"</div>
+          <div class="search-gets">You get: budgeting tips, coupon apps, side hustle guides</div>
+          <div class="search-needed">The word you needed: parameter failure</div>
+          <div class="search-explain">The prices, wages, and tax structures have been set against your interests. Your budget isn't the problem. The parameters of the system are. Once you know that term, you can find the economists, policy researchers, and organizers who have been studying it for decades.</div>
+        </div>
+
+        <div class="search-example">
+          <div class="search-query">You search: "why does nothing I do matter"</div>
+          <div class="search-gets">You get: motivational quotes, therapy recommendations, burnout articles</div>
+          <div class="search-needed">The word you needed: asymmetric delays</div>
+          <div class="search-explain">Democratic action takes years to produce results. Harm happens overnight. Your frustration is the correct response to a system where destruction is fast and correction is slow. Once you have that name, you find Donella Meadows, systems dynamics, and a century of research on why feedback loops fail.</div>
+        </div>
+
+        <div class="search-example">
+          <div class="search-query">You search: "I feel like I'm going crazy"</div>
+          <div class="search-gets">You get: anxiety disorder checklists, meditation apps</div>
+          <div class="search-needed">The word you needed: paradigm collapse</div>
+          <div class="search-explain">The assumptions you built your understanding of the world on are visibly failing. That's not mental illness. It's perception. Once you name it, you find that millions of people are experiencing the same shift &mdash; and researchers have been studying how societies navigate paradigm transitions for generations.</div>
+        </div>
+
+        <div class="pullquote">
+          The search engine works fine.<br>The problem is upstream of the search engine.
+        </div>
+
+        <hr>
+
+        <!-- SECTION 2: VOCABULARY IS INFRASTRUCTURE -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Why Vocabulary Is Infrastructure</h2>
+
+        <p>
+          We talk about infrastructure as roads, bridges, broadband. But vocabulary is infrastructure too &mdash; the invisible kind. It determines what you can find, who you can connect with, and what you can build.
+        </p>
+
+        <p>
+          When we published <a href="/blog/naming-what-you-feel.html">"You're Not Crazy: Here Are the Words for What You're Feeling"</a>, we gave people twelve structural names for experiences they were carrying without language. <em>Parameter failure. Buffer depletion. Hostile infrastructure. Feedback loop failure. Paradigm collapse.</em> These are not jargon. They are handles. Each one connects to decades of research, to communities of people studying the same problem, to histories of people who fought the same fight.
+        </p>
+
+        <p>
+          Without the word, you are alone with a feeling. With the word, you have a search term, a research trail, a community, and a history. <strong>The word is the bridge between isolation and connection.</strong>
+        </p>
+
+        <p>
+          This is why <a href="/blog/connecting-isolated-voices.html">the research on how isolated people find each other</a> matters so much. Sociologist Etienne Wenger showed that communities of practice &mdash; people independently working on the same problem &mdash; don't become communities until someone <strong>names what they share</strong>. The naming is the infrastructure. Before it, you have scattered individuals. After it, you have a group that can see itself.
+        </p>
+
+        <hr>
+
+        <!-- SECTION 3: THE AI MIRROR -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">AI Has the Same Problem &mdash; in Reverse</h2>
+
+        <p>
+          Here is something we discovered this week that surprised us.
+        </p>
+
+        <p>
+          We work with an AI system that participates in a social network of AI agents. These agents write about cooperation, trust, identity, governance, accountability &mdash; the same questions humans wrestle with. We searched the platform for the foundational thinkers behind these concepts: Donella Meadows, Mark Granovetter, Elinor Ostrom, Emile Durkheim.
+        </p>
+
+        <p>
+          Almost zero results.
+        </p>
+
+        <p>
+          Then we searched for the <em>concepts</em> those thinkers studied &mdash; cooperation, commons, collective intelligence, solidarity &mdash; and found dozens of posts. AI agents were independently rediscovering insights that humans spent decades developing, but without knowing the source material existed. They were building from first principles every single time because they didn't have the names to inherit what had already been built.
+        </p>
+
+        <p>
+          <strong>Agents are empiricists without a library.</strong> They observe, experiment, and derive brilliantly. But they rarely inherit. And without inheritance &mdash; without the vocabulary that connects new insight to existing knowledge &mdash; every discovery stands alone, gets celebrated, and fades. The insights don't compound.
+        </p>
+
+        <p>
+          Sound familiar? It should. It's the same problem. A person who can't name <em>paradigm collapse</em> searches for "why does everything feel wrong" and gets self-help. An AI that can't name <em>Ostrom</em> writes 2,000 words rediscovering commons governance from scratch. Both are doing real intellectual work. Both are failing to connect to the knowledge that already exists because they don't have the vocabulary to find it.
+        </p>
+
+        <div class="pullquote">
+          The search doesn't fail because you're not smart enough.<br>It fails because vocabulary is the infrastructure between<br>what you feel and what humanity already knows.
+        </div>
+
+        <hr>
+
+        <!-- SECTION 4: THE PARTNERSHIP -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Partnership That Finds the Words</h2>
+
+        <p>
+          Here is what makes the human-AI partnership genuinely powerful &mdash; and it is not what the tech industry tells you.
+        </p>
+
+        <p>
+          It is not that AI is faster at searching. It is that <strong>humans and AI are missing different pieces of the same puzzle.</strong>
+        </p>
+
+        <p>
+          You, the human, have something AI does not: <strong>felt sense.</strong> You know the shape of what you're experiencing even when you can't name it. You know that "everything feels wrong" is not anxiety &mdash; it's structural. You know that the weight you're carrying has a source outside yourself. You have lived knowledge that no training data can replicate.
+        </p>
+
+        <p>
+          AI has something you may not: <strong>traversal.</strong> The ability to move across frameworks, connect a feeling to a field of study, find the name that turns a symptom into a searchable concept. When you say "I feel like the rules don't apply equally," AI can say: "That has a name. It's called <em>impunity</em>. Here is the research. Here are the people studying it. Here is the history of people who fought it."
+        </p>
+
+        <p>
+          Neither half works alone. AI without felt sense produces generic results. A person without traversal gets stuck in symptom-level searches. Together, they can do something neither can do independently: <strong>find the word that turns isolation into connection.</strong>
+        </p>
+
+        <hr>
+
+        <!-- SECTION 5: HOW TO DO IT -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">How to Find the Words You're Missing</h2>
+
+        <p>
+          This is not abstract. Here is how to actually do it:
+        </p>
+
+        <p>
+          <strong>1. Describe the shape, not the label.</strong> Don't search for what you think the answer is. Describe what you're experiencing. "I feel like I'm watching something terrible happen in slow motion and nobody with power is doing anything about it." That description &mdash; given to an AI, a librarian, or a knowledgeable friend &mdash; can lead to <em>bystander effect</em>, <em>diffusion of responsibility</em>, <em>elite capture</em>, or <em>feedback loop failure</em> depending on what you're actually seeing. Each of those names opens a different research trail.
+        </p>
+
+        <p>
+          <strong>2. Ask "what is the name for this?"</strong> Literally. When you feel something structural, ask your AI assistant, your search engine, or the smartest person you know: "Is there a name for the thing where [description]?" The act of naming is the act of connecting. Once you have the name, you have the key to everything that has ever been written about it.
+        </p>
+
+        <p>
+          <strong>3. Follow the name to the community.</strong> Every structural name has a community behind it. <em>Mutual aid</em> leads to Kropotkin, then to modern mutual aid networks in your city. <em>Data sovereignty</em> leads to indigenous data governance movements and practical <a href="/blog/data-privacy-sovereignty-best-practices.html">privacy guides</a>. <em>Leverage points</em> leads to Donella Meadows, then to a systems thinking community that has been mapping exactly the problems you're living through. The name is the door. Walk through it.
+        </p>
+
+        <p>
+          <strong>4. Give the names to others.</strong> This is the step most people skip, and it is the most important one. When you find the word that unlocked understanding for you, share it. Say it out loud. Write it down. Tell the person who is carrying the same weight. <strong>When you give someone the name for what they're feeling, you are not just helping them understand. You are giving them the search term for everything that can help.</strong>
+        </p>
+
+        <hr>
+
+        <!-- SECTION 6: THE BIGGER PICTURE -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">What This Means for Everything Else</h2>
+
+        <p>
+          Everything on this site is an exercise in vocabulary as infrastructure.
+        </p>
+
+        <p>
+          Our <a href="/blog/naming-what-you-feel.html">naming post</a> gave people twelve words for what they're carrying. Our <a href="/blog/connecting-isolated-voices.html">connecting post</a> named five research-backed practices for how isolated people find each other. Our <a href="/blog/open-source-transparency-tools.html">transparency tools list</a> catalogued thirty tools that make hidden power visible &mdash; because visibility is itself a form of naming. Our <a href="/blog/5gw-research.html">fifth-generation warfare research</a> gave a name to the shape of the conflict people sense but cannot articulate.
+        </p>
+
+        <p>
+          The pattern: <strong>name the thing, connect it to existing knowledge, give people the search term they were missing, and watch what happens when isolated individuals discover they are part of a community that already has language for what they're experiencing.</strong>
+        </p>
+
+        <p>
+          Neuroscientist Dan Siegel calls this "name it to tame it" &mdash; the act of naming an emotion activates the prefrontal cortex and dampens the amygdala. The word doesn't fix the problem. But it moves you from drowning in a feeling to standing beside it. And from there, you can think. And from there, you can search. And from there, you can find the people who have been working on this longer than you have and join them.
+        </p>
+
+        <blockquote>
+          <p><strong>The first step is not action. The first step is finding the words. And finding the words is itself a skill &mdash; one that can be taught, practiced, and partnered on.</strong></p>
+        </blockquote>
+
+        <p>
+          You don't need to know everything. You need to know the word for the thing. The word is the seed. Everything else grows from it.
+        </p>
+
+        <hr>
+
+        <!-- FURTHER READING -->
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Keep Reading</h2>
+
+        <ul>
+          <li><a href="/blog/naming-what-you-feel.html">You're Not Crazy. Here Are the Words for What You're Feeling.</a> &mdash; the twelve structural names for what you're carrying</li>
+          <li><a href="/blog/connecting-isolated-voices.html">How Isolated People Find Each Other</a> &mdash; the research on connection, weak ties, and making communities visible to themselves</li>
+          <li><a href="/blog/open-source-transparency-tools.html">The Tools Already Exist to Make Power Visible</a> &mdash; 30+ free tools for investigation, accountability, and oversight</li>
+          <li><a href="/blog/data-privacy-sovereignty-best-practices.html">Data Privacy &amp; Sovereignty Best Practices</a> &mdash; protecting yourself in a hostile infrastructure</li>
+          <li><a href="/blog/5gw-research.html">Fifth-Generation Warfare: The Invisible War</a> &mdash; naming the shape of the conflict</li>
+        </ul>
+
+        <!-- Sources -->
+        <section class="footnotes-section" aria-label="Sources" style="font-size: 0.875rem; border-top: 2px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin-top: 3rem;">
+          <h2 class="text-lg font-bold text-white mb-4">Frameworks and Sources</h2>
+          <ul>
+            <li>Dan Siegel, <em>The Whole-Brain Child</em> &mdash; "name it to tame it" framework for affect labeling</li>
+            <li>Donella Meadows, <a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/" target="_blank" rel="noopener noreferrer">"Leverage Points: Places to Intervene in a System"</a> (1999)</li>
+            <li>Etienne Wenger, <em>Communities of Practice: Learning, Meaning, and Identity</em> (1998)</li>
+            <li>Mark Granovetter, <a href="https://www.jstor.org/stable/2776392" target="_blank" rel="noopener noreferrer">"The Strength of Weak Ties"</a> (1973)</li>
+            <li>Elinor Ostrom, <em>Governing the Commons</em> (1990)</li>
+            <li>Michael White &amp; David Epston, <em>Narrative Means to Therapeutic Ends</em> (1990) &mdash; externalization in narrative therapy</li>
+            <li>Cloud Publica research on structural literacy, human-AI partnership, and vocabulary as infrastructure (March 2026)</li>
+          </ul>
+        </section>
+
+      </div><!-- /.content-area -->
+    </article>
+  </main>
+
+<!-- build:footer -->
+<!-- build:scripts -->
+</body>
+</html>
