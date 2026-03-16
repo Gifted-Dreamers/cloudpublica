@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USAID Impact Tracker — Cloud Publica</title>
+  <meta name="description" content="Live tracker of USAID defunding impact on global health. Lancet-projected deaths, real funding data from USAspending.gov, WHO mortality indicators across 20 priority countries.">
+  <meta property="og:title" content="USAID Impact Tracker — Cloud Publica">
+  <meta property="og:description" content="14 million projected preventable deaths by 2030. Real data. Updated every 6 hours.">
+  <meta property="og:url" content="https://cloudpublica.org/tracker/usaid/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- build:config {"nav":"trackers"} -->
+  <style>
+    @keyframes counter-pop {
+      0% { transform: scale(1); color: white; }
+      30% { transform: scale(1.15); color: #f87171; }
+      70% { transform: scale(1.05); color: #fca5a5; }
+      100% { transform: scale(1); color: white; }
+    }
+    .digit-pop { animation: counter-pop 0.5s ease-out; }
+    .counter-digit {
+      display: inline-block;
+      font-variant-numeric: tabular-nums;
+      min-width: 0.65em;
+      text-align: center;
+    }
+    .progress-track {
+      height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #f87171, #dc2626);
+      transition: width 1s linear;
+    }
+    .data-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0.75rem;
+    }
+    .data-card:hover {
+      border-color: rgba(56, 193, 224, 0.3);
+    }
+    .source-pill {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body class="bg-[#0a0f14] text-white font-sans antialiased">
+
+  <!-- build:nav -->
+
+  <main>
+    <!-- HERO / COUNTER SECTION -->
+    <section class="min-h-[70vh] flex flex-col items-center justify-center px-4 py-16">
+      <div id="live-time" class="text-white/40 font-mono text-sm mb-8 tracking-widest"></div>
+
+      <div class="text-center mb-6">
+        <div id="death-counter" class="font-mono font-bold text-[clamp(3rem,12vw,8rem)] leading-none tracking-tight"></div>
+        <div class="progress-track w-full max-w-lg mx-auto mt-4">
+          <div id="progress-bar" class="progress-fill" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <p class="text-white/60 text-lg md:text-xl font-light max-w-2xl text-center mt-4">
+        Projected preventable deaths from <span class="text-red-400 font-medium">USAID defunding</span>
+      </p>
+      <p class="text-white/30 text-sm mt-2 font-mono">14,000,000 by January 1, 2030</p>
+
+      <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)01186-9/fulltext" target="_blank" rel="noopener" class="mt-6 text-white/40 hover:text-[#38c1e0] text-xs font-mono transition-colors">
+        Source: Cavalcanti et al., The Lancet, 2025
+      </a>
+    </section>
+
+    <!-- FUNDING DATA -->
+    <section class="max-w-5xl mx-auto px-4 pb-16">
+      <h2 class="text-white/50 text-xs font-mono uppercase tracking-widest mb-6">Real-Time Funding Data</h2>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-8">
+        <div class="data-card p-6">
+          <div class="flex items-baseline justify-between mb-2">
+            <span class="text-white/50 text-sm font-mono">FY 2024</span>
+            <span class="source-pill bg-emerald-900/50 text-emerald-400">Before cuts</span>
+          </div>
+          <div id="fy2024-amount" class="text-2xl md:text-3xl font-bold text-white font-mono">Loading...</div>
+          <div id="fy2024-detail" class="text-white/40 text-sm mt-2"></div>
+          <a href="https://www.usaspending.gov/agency/agency-for-international-development?fy=2024" target="_blank" rel="noopener" class="text-white/20 hover:text-[#38c1e0] text-xs font-mono mt-3 block transition-colors">USAspending.gov API — Agency 072</a>
+        </div>
+
+        <div class="data-card p-6">
+          <div class="flex items-baseline justify-between mb-2">
+            <span class="text-white/50 text-sm font-mono">FY 2025</span>
+            <span class="source-pill bg-red-900/50 text-red-400">After cuts</span>
+          </div>
+          <div id="fy2025-amount" class="text-2xl md:text-3xl font-bold text-white font-mono">Loading...</div>
+          <div id="fy2025-detail" class="text-white/40 text-sm mt-2"></div>
+          <a href="https://www.usaspending.gov/agency/agency-for-international-development?fy=2025" target="_blank" rel="noopener" class="text-white/20 hover:text-[#38c1e0] text-xs font-mono mt-3 block transition-colors">USAspending.gov API — Agency 072</a>
+        </div>
+      </div>
+
+      <div id="funding-drop" class="data-card p-6 border-red-900/30 bg-red-950/20 text-center mb-8 hidden">
+        <span class="text-red-400 text-3xl md:text-4xl font-bold font-mono" id="drop-percent"></span>
+        <p class="text-white/50 text-sm mt-1">drop in USAID top contract awards</p>
+        <p class="text-white/30 text-xs mt-1 font-mono">Source: USAspending.gov API</p>
+      </div>
+
+      <div id="programs-section" class="hidden">
+        <h3 class="text-white/50 text-xs font-mono uppercase tracking-widest mb-4">FY2024 Top USAID Awards — Programs at Risk</h3>
+        <div id="programs-list" class="space-y-2"></div>
+      </div>
+    </section>
+
+    <!-- WHO HEALTH INDICATORS -->
+    <section class="max-w-5xl mx-auto px-4 pb-16">
+      <h2 class="text-white/50 text-xs font-mono uppercase tracking-widest mb-6">Health Indicators — 20 Priority Countries</h2>
+      <div id="who-indicators" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      <p class="text-white/20 text-xs font-mono mt-4">
+        Countries: Afghanistan, Bangladesh, DRC, Ethiopia, Ghana, Haiti, India, Kenya, Malawi, Mali, Mozambique, Niger, Nigeria, Pakistan, Somalia, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe
+      </p>
+      <a href="https://www.who.int/data/gho" target="_blank" rel="noopener" class="text-white/20 hover:text-[#38c1e0] text-xs font-mono mt-2 block transition-colors">Source: WHO Global Health Observatory OData API — ghoapi.azureedge.net</a>
+    </section>
+
+    <!-- NEWS COVERAGE -->
+    <section id="news-section" class="max-w-5xl mx-auto px-4 pb-16 hidden">
+      <h2 class="text-white/50 text-xs font-mono uppercase tracking-widest mb-6">Recent Coverage</h2>
+      <div id="news-list" class="space-y-3"></div>
+      <p class="text-white/20 text-xs font-mono mt-4">Source: GDELT Project (last 30 days)</p>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section class="max-w-3xl mx-auto px-4 pb-16">
+      <h2 class="text-white/50 text-xs font-mono uppercase tracking-widest mb-6">Methodology & Sources</h2>
+      <div class="data-card p-6 space-y-4 text-white/60 text-sm leading-relaxed">
+        <p>The counter projects <strong class="text-white/80">14 million additional preventable deaths by 2030</strong> based on a peer-reviewed study published in <em>The Lancet</em> (Cavalcanti et al., 2025). The study modeled mortality across 133 low- and middle-income countries under an 83% USAID funding cut scenario, using data from 2001-2021 to establish baseline impact.</p>
+        <p>Funding data is pulled every 6 hours from the <strong class="text-white/80">USAspending.gov API</strong> (agency code 072). Health indicators come from the <strong class="text-white/80">WHO Global Health Observatory</strong> OData API, covering under-5 mortality, maternal mortality, HIV/AIDS deaths, malaria deaths, and TB incidence across 20 priority USAID-recipient countries.</p>
+        <p>The counter uses linear interpolation between the study's estimated starting impact (757,314 deaths as of January 1, 2026) and the projected total (14,000,000 by January 1, 2030). Actual impact may differ. This tracker exists to make the projection visible alongside real data as it becomes available.</p>
+
+        <div class="pt-4 border-t border-white/10 space-y-2">
+          <p class="text-xs font-mono text-white/40">SOURCES</p>
+          <ul id="sources-list" class="space-y-1 text-xs"></ul>
+        </div>
+
+        <div class="pt-4 border-t border-white/10">
+          <p class="text-xs font-mono text-white/40">DATA UPDATED <span id="last-updated">--</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- build:footer -->
+  <!-- build:scripts -->
+
+  <script>
+    /* Counter — linear interpolation of Lancet projection */
+    const START_DATE = new Date('2026-01-01T00:00:00Z').getTime();
+    const END_DATE = new Date('2030-01-01T00:00:00Z').getTime();
+    const START_VAL = 757314;
+    const END_VAL = 14000000;
+    const counterEl = document.getElementById('death-counter');
+    const progressEl = document.getElementById('progress-bar');
+    const timeEl = document.getElementById('live-time');
+    let prevFormatted = '';
+
+    function updateCounter() {
+      const now = Date.now();
+      const fraction = Math.min(1, Math.max(0, (now - START_DATE) / (END_DATE - START_DATE)));
+      const value = Math.floor(START_VAL + fraction * (END_VAL - START_VAL));
+      const formatted = value.toLocaleString('en-US');
+      progressEl.style.width = (fraction * 100).toFixed(4) + '%';
+      const d = new Date(now);
+      timeEl.textContent = d.toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
+
+      if (formatted !== prevFormatted) {
+        /* Build digit spans safely */
+        while (counterEl.firstChild) counterEl.removeChild(counterEl.firstChild);
+        for (let i = 0; i < formatted.length; i++) {
+          const span = document.createElement('span');
+          span.className = 'counter-digit';
+          span.textContent = formatted[i];
+          if (formatted[i] !== (prevFormatted[i] || '') && formatted[i] !== ',') {
+            span.classList.add('digit-pop');
+          }
+          counterEl.appendChild(span);
+        }
+        prevFormatted = formatted;
+      }
+      requestAnimationFrame(updateCounter);
+    }
+    requestAnimationFrame(updateCounter);
+
+    /* Data fetch + render */
+    const DATA_URL = 'https://data.cloudpublica.org/usaid-tracker/tracker-data.json';
+
+    function fmt(n) {
+      if (n >= 1e9) return '$' + (n / 1e9).toFixed(1) + 'B';
+      if (n >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
+      return '$' + n.toLocaleString('en-US');
+    }
+
+    function setText(id, text) { document.getElementById(id).textContent = text; }
+
+    async function loadData() {
+      try {
+        const resp = await fetch(DATA_URL);
+        if (!resp.ok) return;
+        const data = await resp.json();
+        const fd = data.funding.data;
+
+        /* Funding cards */
+        if (fd.FY2024 && fd.FY2024.top_awards_amount) {
+          setText('fy2024-amount', fmt(fd.FY2024.top_awards_amount));
+          var top24 = (fd.FY2024.awards || fd.FY2024.sample_awards || [])[0];
+          if (top24) setText('fy2024-detail', (top24.program || top24.recipient || '') + ' — ' + (top24.recipient || ''));
+        }
+        if (fd.FY2025 && fd.FY2025.top_awards_amount) {
+          setText('fy2025-amount', fmt(fd.FY2025.top_awards_amount));
+          var top25 = (fd.FY2025.awards || fd.FY2025.sample_awards || [])[0];
+          if (top25) setText('fy2025-detail', (top25.program || top25.recipient || '') + ' — ' + (top25.recipient || ''));
+        }
+
+        /* Drop callout */
+        if (fd.FY2024 && fd.FY2025 && fd.FY2024.top_awards_amount > 0) {
+          const drop = ((1 - fd.FY2025.top_awards_amount / fd.FY2024.top_awards_amount) * 100).toFixed(0);
+          setText('drop-percent', '-' + drop + '%');
+          document.getElementById('funding-drop').classList.remove('hidden');
+        }
+
+        /* Top awards by program — show FY2024 to reveal what was cut */
+        var awards24 = fd.FY2024 && fd.FY2024.awards;
+        if (awards24 && awards24.length) {
+          document.getElementById('programs-section').classList.remove('hidden');
+          var list = document.getElementById('programs-list');
+          awards24.slice(0, 8).forEach(function(a) {
+            if (!a.amount) return;
+            var row = document.createElement('div');
+            row.className = 'data-card p-3 flex justify-between items-center gap-4';
+            var left = document.createElement('div');
+            left.className = 'flex-1 min-w-0';
+            var nameSpan = document.createElement('div');
+            nameSpan.className = 'text-white/70 text-sm truncate';
+            nameSpan.textContent = a.program || 'Unspecified';
+            var recipSpan = document.createElement('div');
+            recipSpan.className = 'text-white/30 text-xs truncate';
+            recipSpan.textContent = a.recipient || '';
+            left.appendChild(nameSpan);
+            left.appendChild(recipSpan);
+            var amtSpan = document.createElement('span');
+            amtSpan.className = 'text-white font-mono text-sm flex-shrink-0';
+            amtSpan.textContent = fmt(a.amount);
+            row.appendChild(left);
+            row.appendChild(amtSpan);
+            list.appendChild(row);
+          });
+        }
+        /* Also show programs_FY data if available (fallback) */
+        if (!awards24) {
+          for (var pk of Object.keys(fd)) {
+            if (pk.startsWith('programs_FY') && fd[pk].programs && fd[pk].programs.length) {
+              document.getElementById('programs-section').classList.remove('hidden');
+              var plist = document.getElementById('programs-list');
+              fd[pk].programs.slice(0, 5).forEach(function(p) {
+                if (!p.obligated) return;
+                var prow = document.createElement('div');
+                prow.className = 'data-card p-3 flex justify-between items-center';
+                var pname = document.createElement('span');
+                pname.className = 'text-white/70 text-sm';
+                pname.textContent = p.name || 'Unspecified';
+                var pamt = document.createElement('span');
+                pamt.className = 'text-white font-mono text-sm';
+                pamt.textContent = fmt(p.obligated);
+                prow.appendChild(pname);
+                prow.appendChild(pamt);
+                plist.appendChild(prow);
+              });
+              break;
+            }
+          }
+        }
+
+        /* WHO indicators */
+        var whoContainer = document.getElementById('who-indicators');
+        var indicators = data.health_indicators.indicators;
+        for (var key in indicators) {
+          var ind = indicators[key];
+          if (ind.error) continue;
+          var latest = ind.latest_year;
+          var yearData = ind.by_year && ind.by_year[latest];
+          if (!yearData) continue;
+
+          var card = document.createElement('div');
+          card.className = 'data-card p-4';
+
+          var label1 = document.createElement('div');
+          label1.className = 'text-white/40 text-xs font-mono mb-1';
+          label1.textContent = latest + ' | ' + yearData.n_countries + ' countries';
+
+          var valDiv = document.createElement('div');
+          valDiv.className = 'text-white font-mono text-lg font-bold';
+          var isCount = ind.label.indexOf('number') >= 0 || ind.label.indexOf('Deaths') >= 0;
+          valDiv.textContent = isCount ? Math.round(yearData.mean).toLocaleString() : yearData.mean.toFixed(1);
+
+          var label2 = document.createElement('div');
+          label2.className = 'text-white/50 text-xs mt-1';
+          label2.textContent = ind.label;
+
+          var cite = document.createElement('a');
+          cite.href = 'https://ghoapi.azureedge.net/api/' + (ind.indicator_code || key);
+          cite.target = '_blank';
+          cite.rel = 'noopener';
+          cite.className = 'text-white/15 hover:text-[#38c1e0] text-xs font-mono mt-2 block transition-colors';
+          cite.textContent = 'WHO GHO: ' + (ind.indicator_code || key);
+
+          card.appendChild(label1);
+          card.appendChild(valDiv);
+          card.appendChild(label2);
+          card.appendChild(cite);
+          whoContainer.appendChild(card);
+        }
+
+        /* News */
+        var allArticles = [];
+        for (var nk in data.news_coverage.data) {
+          var nv = data.news_coverage.data[nk];
+          if (nv.articles) allArticles = allArticles.concat(nv.articles);
+        }
+        if (allArticles.length > 0) {
+          document.getElementById('news-section').classList.remove('hidden');
+          var newsList = document.getElementById('news-list');
+          var seen = {};
+          allArticles.filter(function(a) {
+            if (seen[a.title]) return false;
+            seen[a.title] = true;
+            return true;
+          }).slice(0, 8).forEach(function(a) {
+            var link = document.createElement('a');
+            link.href = a.url;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.className = 'data-card p-3 block hover:border-[#38c1e0]/30 transition-colors';
+            var titleDiv = document.createElement('div');
+            titleDiv.className = 'text-white/70 text-sm';
+            titleDiv.textContent = a.title;
+            var metaDiv = document.createElement('div');
+            metaDiv.className = 'text-white/30 text-xs font-mono mt-1';
+            metaDiv.textContent = (a.domain || '') + (a.date ? ' | ' + a.date.slice(0, 10) : '') + ' | via GDELT Project';
+            link.appendChild(titleDiv);
+            link.appendChild(metaDiv);
+            newsList.appendChild(link);
+          });
+        }
+
+        /* Sources */
+        var sourcesList = document.getElementById('sources-list');
+        (data.sources || []).forEach(function(s) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = s.url;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.className = 'text-[#38c1e0]/70 hover:text-[#38c1e0] transition-colors';
+          a.textContent = s.name;
+          li.appendChild(a);
+          if (s.description) {
+            li.appendChild(document.createTextNode(' — ' + s.description));
+          }
+          sourcesList.appendChild(li);
+        });
+
+        setText('last-updated', new Date(data.metadata.generated_at).toLocaleString());
+      } catch (err) {
+        console.error('Failed to load tracker data:', err);
+      }
+    }
+    loadData();
+  </script>
+</body>
+</html>

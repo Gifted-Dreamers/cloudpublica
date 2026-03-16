@@ -1,0 +1,42 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1a1a2e', 'lineColor': '#888', 'fontSize': '12px'}, 'flowchart': {'nodeSpacing': 15, 'rankSpacing': 25}}}%%
+flowchart LR
+    subgraph LANG["LANGUAGE — Definitions"]
+        L1["Data:\nCategories\nEntity types"]
+        L2["Logic:\nRules\nThresholds"]
+        L3["Action:\nWarrants\nArrest orders"]
+        L4["Security:\nAccess controls\nClearance"]
+    end
+
+    subgraph ENG["ENGINE — Computation"]
+        E1["Data:\nIngestion\nGraph DB"]
+        E2["Logic:\nAI models\nScoring"]
+        E3["Action:\nAutomation\nTargeting"]
+        E4["Security:\nCross-domain\nAudit trails"]
+    end
+
+    subgraph TOOL["TOOLCHAIN — Applications"]
+        T1["Data:\nFoundry\nGotham"]
+        T2["Logic:\nAIP · Maven\nClaude"]
+        T3["Action:\nElite · VOWS\nImmigrationOS"]
+        T4["Security:\nGovCloud\nRole-based"]
+    end
+
+    LANG --> ENG --> TOOL
+    TOOL --> OUT["Whoever controls\nthe ontology controls\nwhat questions\ncan be asked"]
+
+    style LANG fill:#1a3347,stroke:#206795,color:#fff
+    style ENG fill:#0f2027,stroke:#38c1e0,color:#fff
+    style TOOL fill:#0a1628,stroke:#555,color:#fff
+    style L1 fill:#1a3347,stroke:#206795,color:#fff
+    style L2 fill:#1a3347,stroke:#206795,color:#fff
+    style L3 fill:#1a3347,stroke:#206795,color:#fff
+    style L4 fill:#1a3347,stroke:#206795,color:#fff
+    style E1 fill:#0f2027,stroke:#38c1e0,color:#fff
+    style E2 fill:#0f2027,stroke:#38c1e0,color:#fff
+    style E3 fill:#0f2027,stroke:#38c1e0,color:#fff
+    style E4 fill:#0f2027,stroke:#38c1e0,color:#fff
+    style T1 fill:#0a1628,stroke:#555,color:#fff
+    style T2 fill:#0a1628,stroke:#555,color:#fff
+    style T3 fill:#0a1628,stroke:#555,color:#fff
+    style T4 fill:#0a1628,stroke:#555,color:#fff
+    style OUT fill:#8b0000,stroke:#cc0000,color:#fff,font-weight:bold

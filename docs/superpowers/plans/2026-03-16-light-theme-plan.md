@@ -1,7 +1,7 @@
 # CloudPublica Light Theme + Privacy-Hardened Deploy Plan
 
 **Date:** 2026-03-16
-**Status:** IN PROGRESS
+**Status:** PHASES 1-2, 4 COMPLETE. Phase 3 superseded by article-split plan.
 **Deadline:** Mozilla application — March 16, 11:59pm PT
 **Goal:** CloudPublica looks professional, reads well, and makes zero external requests when Mozilla reviewers click the demo links.
 
@@ -119,27 +119,18 @@ Once shared CSS is in `style.css`, remove the `<style>...</style>` blocks from e
 
 ---
 
-## Phase 3: Ontology Architecture Article
+## Phase 3: Article Split (SUPERSEDED)
 
-### 3a. Convert markdown to HTML
-- Source: `investigations/comprehensive-analysis-footnoted.md`
-- Target: `article/ontology-architecture.html`
-- Use the article template structure from seven-pillars.html (breadcrumb, hero, key findings box, content-area, footnotes)
-- Update all internal links
+**This phase has been replaced by the article-split plan.**
 
-### 3b. Update index.html flagship card
-- Already done: card points to seven-pillars.html but shows new title/description
-- Change `href` to `ontology-architecture.html` once the new page exists
-- Keep seven-pillars.html as a redirect to the new URL
+See: `docs/superpowers/plans/2026-03-16-article-split.md`
 
-### 3c. Generate diagrams
-- 5 Mermaid diagrams (ontology architecture, domain connections, cogwar spectrum, assembled profile, timeline)
-- Render via local `mmdc` CLI to PNG
-- Place in `assets/diagrams/`
-- Embed in ontology-architecture.html with click-to-expand
+Instead of a single `ontology-architecture.html`, the markdown is split into two cross-referenced articles:
+- **The Lookup Table** (`article/the-lookup-table.html`) — data infrastructure, 8 pillars, assembled profile. Based on friend's structural rewrite.
+- **The Endgame** (`article/the-endgame.html`) — ontology architecture, cognitive warfare, education, BITE mapping. New analytical material.
 
-### 3d. Update article index page
-- `article/index.html` — add ontology-architecture as featured, demote seven-pillars or redirect
+Both cross-reference each other and all 12 existing site articles inline.
+`seven-pillars.html` is deleted (not redirected).
 
 ---
 

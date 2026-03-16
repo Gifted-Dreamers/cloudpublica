@@ -1,0 +1,38 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1a1a2e', 'lineColor': '#888', 'fontSize': '14px'}, 'flowchart': {'curve': 'basis', 'nodeSpacing': 30, 'rankSpacing': 40}}}%%
+graph TB
+    P1["1. BUILD INFRASTRUCTURE\nDOGE · Palantir · SAVE"]
+    P2["2. POPULATE\nIRS · SSA · Voter Rolls · Medicaid"]
+    P3["3. REMOVE OVERSIGHT\nCISA gutted · DHS shutdown"]
+    P4["4. DEPLOY AT ENDPOINT\nICE tools · CBP · QRF"]
+    P5["5. CONTROL ELECTION\nSAVE Act · ICE at polls · QRF"]
+    P6["6. JUSTIFY VIA WAR\nIran · Venezuela · Ecuador"]
+    P7["7. PRIVATIZE\nHaiti template · BlackRock"]
+    P8["8. ENFORCE VIA LEVERAGE\nEpstein files · Board of Peace"]
+    P9["9. TARGET AND DETAIN\nElite app · 3K/day · $38.3B"]
+    CENTER(("ASSEMBLED\nPROFILE"))
+    NOV["NOV 2026\nMIDTERMS"]
+
+    P1 --> CENTER
+    P2 --> CENTER
+    P3 --> CENTER
+    P6 --> CENTER
+    P8 --> CENTER
+    CENTER --> P4
+    CENTER --> P5
+    CENTER --> P9
+    P7 --> P6
+    P4 --> P5
+    P9 --> P5
+    P5 --> NOV
+
+    style CENTER fill:#206795,stroke:#38c1e0,color:#fff,font-weight:bold
+    style NOV fill:#dc2626,stroke:#b91c1c,color:#fff,font-weight:bold
+    style P1 fill:#4a0000,stroke:#8b0000,color:#fff
+    style P2 fill:#4a0000,stroke:#8b0000,color:#fff
+    style P3 fill:#2a2a2a,stroke:#555,color:#fff
+    style P4 fill:#8b4000,stroke:#cc6600,color:#fff
+    style P5 fill:#8b0000,stroke:#cc0000,color:#fff
+    style P6 fill:#1a1a1a,stroke:#444,color:#fff
+    style P7 fill:#0a3a0a,stroke:#1a5a1a,color:#fff
+    style P8 fill:#2a1a00,stroke:#5a4a00,color:#fff
+    style P9 fill:#700000,stroke:#aa0000,color:#fff

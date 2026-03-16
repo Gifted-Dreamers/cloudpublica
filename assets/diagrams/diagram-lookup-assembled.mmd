@@ -1,0 +1,32 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1a1a2e', 'lineColor': '#888', 'fontSize': '13px'}, 'flowchart': {'nodeSpacing': 15, 'rankSpacing': 30}}}%%
+flowchart LR
+    subgraph SOURCES["EIGHT DATABASES"]
+        direction TB
+        S1["SSA NUMIDENT\n300M+ records"]
+        S2["IRS / IDRS\nIncome · banking"]
+        S3["State Voter Rolls\n18M+ from TX alone"]
+        S4["Data Brokers\nReal-time location"]
+        S5["Medicaid/CMS\n80M patient records"]
+        S6["Seized Databases\nLeakBase · credentials"]
+        S7["Selective Service\nDraft eligibility"]
+        S8["SAVE Tool\n26 states"]
+    end
+
+    PROFILE["ONE AMERICAN\n\nWho you are\nWhere you work\nHow you vote\nWhere you go\nYour health\nYour searches\nDraft eligible?\nCitizenship status"]
+
+    WARRANT["NO LAW AUTHORIZED\nASSEMBLING THIS\nPICTURE\n\nEach database has its\nown legal basis.\nThe capability is\nin the connections."]
+
+    SOURCES --> PROFILE
+    PROFILE --> WARRANT
+
+    style SOURCES fill:#1a1a2e,stroke:#4a0000,color:#fff
+    style S1 fill:#4a0000,stroke:#8b0000,color:#fff
+    style S2 fill:#4a0000,stroke:#8b0000,color:#fff
+    style S3 fill:#4a0000,stroke:#8b0000,color:#fff
+    style S4 fill:#4a0000,stroke:#8b0000,color:#fff
+    style S5 fill:#4a0000,stroke:#8b0000,color:#fff
+    style S6 fill:#4a0000,stroke:#8b0000,color:#fff
+    style S7 fill:#4a0000,stroke:#8b0000,color:#fff
+    style S8 fill:#4a0000,stroke:#8b0000,color:#fff
+    style PROFILE fill:#206795,stroke:#38c1e0,color:#fff,font-weight:bold
+    style WARRANT fill:#dc2626,stroke:#b91c1c,color:#fff,font-weight:bold
