@@ -26,188 +26,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'cp-teal': '#206795',
-            'cp-cyan': '#38c1e0',
-            'cp-dark': '#1a3347',
-            'cp-muted': '#5a7a8f',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Inter (async) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for article content -->
-  <style>
-    /* Tables */
-    .content-area table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-    }
-    .content-area table thead th {
-      background-color: rgba(255,255,255,0.08);
-      color: #fff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
-      border-bottom: 2px solid rgba(255,255,255,0.1);
-    }
-    .content-area table tbody td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.8);
-    }
-    .content-area table tbody tr {
-      background-color: rgba(255,255,255,0.03);
-    }
-    .content-area table tbody tr:nth-child(even) {
-      background-color: rgba(255,255,255,0.06);
-    }
-    .content-area table tbody tr:hover {
-      background-color: rgba(56, 193, 224, 0.08);
-    }
-
-    /* Blockquotes */
-    .content-area blockquote {
-      border-left: 4px solid #38c1e0;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      background-color: rgba(26, 51, 71, 0.5);
-      border-radius: 0 0.5rem 0.5rem 0;
-      color: rgba(255,255,255,0.8);
-    }
-
-    /* Links */
-    .content-area a {
-      color: #38c1e0;
-      text-decoration: none;
-    }
-    .content-area a:hover {
-      text-decoration: underline;
-    }
-
-    /* Lists */
-    .content-area ul, .content-area ol {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-    }
-    .content-area ul li {
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area ol li {
-      list-style-type: decimal;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-
-    /* Nested lists */
-    .content-area ul ul {
-      margin-top: 0.25rem;
-      margin-bottom: 0.25rem;
-    }
-
-    /* Table overflow wrapper */
-    .table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 1.5rem 0;
-    }
-
-    /* Section dividers */
-    .content-area hr {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      margin: 2.5rem 0;
-    }
-
-    /* Source labels */
-    .source-label {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
-      margin-top: 0.75rem;
-    }
-    .source-label a {
-      color: #38c1e0;
-    }
-    .source-label a:hover {
-      text-decoration: underline;
-    }
-
-    /* Diagram figure */
-    .diagram-figure {
-      margin: 2.5rem 0;
-    }
-    .diagram-figure .diagram-container {
-      max-height: 600px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 0.5rem;
-      cursor: pointer;
-    }
-    .diagram-figure .diagram-container::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 120px;
-      background: linear-gradient(transparent, #0a1218);
-      pointer-events: none;
-    }
-    .diagram-figure .diagram-container.expanded {
-      max-height: none;
-    }
-    .diagram-figure .diagram-container.expanded::after {
-      display: none;
-    }
-    .diagram-figure img {
-      width: 100%;
-      display: block;
-    }
-    .diagram-figure .expand-btn {
-      display: block;
-      text-align: center;
-      padding: 0.5rem;
-      color: #38c1e0;
-      font-size: 0.875rem;
-      cursor: pointer;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-top: none;
-      border-radius: 0 0 0.5rem 0.5rem;
-      background: rgba(255,255,255,0.03);
-    }
-    .diagram-figure .expand-btn:hover {
-      background: rgba(56,193,224,0.1);
-    }
-    .diagram-figure figcaption {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.875rem;
-      font-style: italic;
-      margin-top: 0.75rem;
-      text-align: center;
-    }
-  </style>
-
-  <!-- JSON-LD Structured Data -->
+<!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -232,10 +51,13 @@
   }
   </script>
 
-<!-- build:config {"nav":"investigations"} -->
+<!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- build:config {"nav":"investigations"} -->
 </head>
 
-<body class="bg-[#0a1218] text-white font-sans antialiased">
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
 <!-- build:nav -->
 
   <!-- Breadcrumb -->
@@ -244,7 +66,7 @@
       <ol class="flex items-center space-x-2 text-sm text-cp-muted">
         <li><a href="/" class="hover:text-cp-cyan transition-colors">Home</a></li>
         <li><span class="mx-1">/</span></li>
-        <li><a href="/article/" class="hover:text-cp-cyan transition-colors">Investigations</a></li>
+        <li><a href="/article/" class="hover:text-cp-cyan transition-colors">Articles</a></li>
         <li><span class="mx-1">/</span></li>
         <li class="text-white font-medium truncate">Seven Pillars</li>
       </ol>
@@ -263,7 +85,7 @@
           <span class="inline-block bg-cp-teal/10 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Investigation</span>
           <time datetime="2026-03-12" class="text-sm text-cp-muted">March 12, 2026</time>
         </div>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
           Seven Pillars, One System: The Architecture of Consolidation
         </h1>
         <p class="text-lg md:text-xl text-white/70 leading-relaxed mb-6">
@@ -279,60 +101,67 @@
             Updated March 12, 2026
           </span>
         </div>
+      
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-200">
+          <div>
+            <p class="text-sm font-semibold text-gray-900">Kristine Socall, MBA International Economic Development</p>
+            <p class="text-xs text-gray-500">Founder &amp; Executive Director, <a href="https://gifteddreamers.org" class="text-cp-teal hover:underline">Gifted Dreamers, Inc.</a> 501(c)(3)</p>
+          </div>
+        </div>
       </header>
 
       <!-- Key Findings Box -->
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6 md:p-8 mb-12">
-        <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+      <div class="bg-white border border-gray-200 rounded-xl p-6 md:p-8 mb-12">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
           <svg class="w-5 h-5 text-cp-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           Key Findings: What Connects Them
         </h2>
         <p class="text-white/70 mb-4">The seven pillars are not independent policy decisions. They are a system:</p>
-        <ol class="space-y-3 text-white/80">
+        <ol class="space-y-3 text-gray-700">
           <li class="flex gap-3">
-            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-white">1</span>
-            <span><strong class="text-white">Build the lookup infrastructure</strong> &mdash; DOGE unified API, Palantir partnership, SAVE tool upgrade</span>
+            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-gray-900">1</span>
+            <span><strong class="text-gray-900">Build the lookup infrastructure</strong> &mdash; DOGE unified API, Palantir partnership, SAVE tool upgrade</span>
           </li>
           <li class="flex gap-3">
-            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-white">2</span>
-            <span><strong class="text-white">Populate it</strong> &mdash; IRS data, SSA NUMIDENT, state voter rolls, Medicaid records, data broker purchases, seized leak databases, Selective Service records</span>
+            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-gray-900">2</span>
+            <span><strong class="text-gray-900">Populate it</strong> &mdash; IRS data, SSA NUMIDENT, state voter rolls, Medicaid records, data broker purchases, seized leak databases, Selective Service records</span>
           </li>
           <li class="flex gap-3">
-            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-white">3</span>
-            <span><strong class="text-white">Remove oversight</strong> &mdash; CISA sidelined, DHS shutdown, election security eliminated, Schedule F, federal preemption of state laws, CISA at 38% capacity</span>
+            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-gray-900">3</span>
+            <span><strong class="text-gray-900">Remove oversight</strong> &mdash; CISA sidelined, DHS shutdown, election security eliminated, Schedule F, federal preemption of state laws, CISA at 38% capacity</span>
           </li>
           <li class="flex gap-3">
-            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-white">4</span>
-            <span><strong class="text-white">Deploy at the endpoint</strong> &mdash; ICE with Celebrite/Graphite/Mobile Fortify, CBP device searches, SAVE voter verification, QRF in every state</span>
+            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-gray-900">4</span>
+            <span><strong class="text-gray-900">Deploy at the endpoint</strong> &mdash; ICE with Celebrite/Graphite/Mobile Fortify, CBP device searches, SAVE voter verification, QRF in every state</span>
           </li>
           <li class="flex gap-3">
-            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-white">5</span>
-            <span><strong class="text-white">Control the election</strong> &mdash; SAVE Act, voter purges, ICE at polls, election security eliminated, third term amendment</span>
+            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-gray-900">5</span>
+            <span><strong class="text-gray-900">Control the election</strong> &mdash; SAVE Act, voter purges, ICE at polls, election security eliminated, third term amendment</span>
           </li>
           <li class="flex gap-3">
-            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-white">6</span>
-            <span><strong class="text-white">Justify via war</strong> &mdash; Iran war enables emergency powers, energy disruption enables Russia sanctions relaxation, data centers become military targets</span>
+            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-gray-900">6</span>
+            <span><strong class="text-gray-900">Justify via war</strong> &mdash; Iran war enables emergency powers, energy disruption enables Russia sanctions relaxation, data centers become military targets</span>
           </li>
           <li class="flex gap-3">
-            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-white">7</span>
-            <span><strong class="text-white">Privatize state functions</strong> &mdash; Haiti template: security, customs, prisons, tax collection transferred to private entities with revenue-based compensation; BlackRock acquires strategic ports; defense ETFs profit from the military spending these operations require</span>
+            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-gray-900">7</span>
+            <span><strong class="text-gray-900">Privatize state functions</strong> &mdash; Haiti template: security, customs, prisons, tax collection transferred to private entities with revenue-based compensation; BlackRock acquires strategic ports; defense ETFs profit from the military spending these operations require</span>
           </li>
           <li class="flex gap-3">
-            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-white">8</span>
-            <span><strong class="text-white">Enforce via leverage</strong> &mdash; Epstein files ensure Congressional compliance, Apollo-Epstein-Board of Peace network connects financial leverage to foreign policy, database consolidation enables population-scale leverage</span>
+            <span class="flex-shrink-0 w-6 h-6 bg-cp-teal rounded-full flex items-center justify-center text-xs font-bold text-gray-900">8</span>
+            <span><strong class="text-gray-900">Enforce via leverage</strong> &mdash; Epstein files ensure Congressional compliance, Apollo-Epstein-Board of Peace network connects financial leverage to foreign policy, database consolidation enables population-scale leverage</span>
           </li>
         </ol>
-        <p class="text-white/60 text-sm mt-4 italic">Each step has legal justification. No single step is the story. The story is how they connect &mdash; and that every mechanism designed to catch this pattern is being dismantled at the same time.</p>
+        <p class="text-gray-500 text-sm mt-4 italic">Each step has legal justification. No single step is the story. The story is how they connect &mdash; and that every mechanism designed to catch this pattern is being dismantled at the same time.</p>
       </div>
 
       <!-- Article Body -->
-      <div class="content-area text-white/80 leading-relaxed space-y-8">
+      <div class="content-area text-gray-700 leading-relaxed space-y-8">
 
         <!-- ===================== -->
         <!-- THE PATTERN           -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 border-t border-white/10 pt-8">The Pattern</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 border-t border-gray-200 pt-8">The Pattern</h2>
           <p>Each of these seven pillars has its own legal justification. Tax administration. Immigration enforcement. Election integrity. Evidence seizure. National defense. The pattern is not in any single pillar &mdash; it is in how they connect.</p>
           <p>When you link IRS records to Social Security data to state voter rolls to Medicaid files to data broker purchases to seized credential databases to Selective Service registration, you get something no single warrant covers and no single agency controls: a comprehensive profile of every American that includes who they are, where they work, how they vote, where they go, their health status, and whether they're draft-eligible.</p>
           <p>No law authorized assembling this picture. No court reviewed it. No oversight body monitors it. And nearly every mechanism that would catch it is being dismantled at the same time.</p>
@@ -353,12 +182,12 @@
         <!-- PILLAR 1              -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Pillar 1: Data Infrastructure</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Pillar 1: Data Infrastructure</h2>
 
-          <h3 class="text-xl font-semibold text-white mb-3">DOGE Database Consolidation</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">DOGE Database Consolidation</h3>
           <p>The Department of Government Efficiency is centralizing federal data at unprecedented speed:</p>
 
-          <h4 class="text-lg font-semibold text-white mt-6 mb-2">IRS Data Centralization</h4>
+          <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-2">IRS Data Centralization</h4>
           <ul>
             <li>DOGE is building a unified API to access all IRS data through a single portal &mdash; income, banking, medical expenses, employer information</li>
             <li>Access to the Integrated Data Retrieval System (IDRS): enter a name and SSN, retrieve income, address, banking/brokerage accounts, marital status, medical expenses, employer, and tax preparer</li>
@@ -367,7 +196,7 @@
           </ul>
           <p class="source-label">Sources: <a href="https://www.accountingtoday.com/news/doge-planning-to-centralize-irs-data-under-one-api" target="_blank" rel="noopener noreferrer">Accounting Today</a>; <a href="https://taxpolicycenter.org/taxvox/how-doges-access-irs-data-puts-taxpayer-information-risk" target="_blank" rel="noopener noreferrer">Tax Policy Center</a>; <a href="https://www.pbs.org/newshour/show/musk-and-doge-face-new-criticism-for-seeking-access-to-sensitive-irs-data" target="_blank" rel="noopener noreferrer">PBS</a></p>
 
-          <h4 class="text-lg font-semibold text-white mt-6 mb-2">SSA NUMIDENT Database Breach</h4>
+          <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-2">SSA NUMIDENT Database Breach</h4>
           <ul>
             <li>DOGE employees uploaded the entire NUMIDENT database &mdash; the Social Security Administration's master file &mdash; to an unsecured custom cloud environment</li>
             <li>300+ million Americans' data exposed: names, phone numbers, addresses, dates and places of birth, parents' names, Social Security numbers</li>
@@ -376,7 +205,7 @@
           </ul>
           <p class="source-label">Sources: <a href="https://fedscoop.com/doge-social-security-database-whistleblower-cloud-environment-data-vulnerabilities/" target="_blank" rel="noopener noreferrer">FedScoop</a>; <a href="https://time.com/7312556/doge-social-security-data-whistleblower-complaint/" target="_blank" rel="noopener noreferrer">TIME</a>; <a href="https://www.nbcnews.com/politics/doge/doge-put-social-security-numbers-data-risky-server-whistleblower-alleg-rcna227259" target="_blank" rel="noopener noreferrer">NBC News</a>; <a href="https://www.cnn.com/2026/01/20/politics/doge-social-security-data-unauthorized-server" target="_blank" rel="noopener noreferrer">CNN</a>; <a href="https://www.npr.org/2025/08/26/nx-s1-5517977/social-security-doge-privacy" target="_blank" rel="noopener noreferrer">NPR</a></p>
 
-          <h4 class="text-lg font-semibold text-white mt-6 mb-2">DOGE &mdash; Supreme Court Shadow Docket (March 2026)</h4>
+          <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-2">DOGE &mdash; Supreme Court Shadow Docket (March 2026)</h4>
           <ul>
             <li>Supreme Court STAYED a lower court's data deletion order &mdash; DOGE data access continues uninterrupted</li>
             <li>Appeals court reversed the temporary injunction blocking DOGE access</li>
@@ -385,7 +214,7 @@
           </ul>
           <p class="source-label">Sources: <a href="https://www.reuters.com/legal/us-supreme-court-pauses-order-blocking-doge-data-access-2026-03-10/" target="_blank" rel="noopener noreferrer">Reuters</a>; <a href="https://www.politico.com/news/2026/03/10/supreme-court-doge-data-access-shadow-docket" target="_blank" rel="noopener noreferrer">Politico</a></p>
 
-          <h4 class="text-lg font-semibold text-white mt-6 mb-2">LexisNexis Data Breach (March 2026)</h4>
+          <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-2">LexisNexis Data Breach (March 2026)</h4>
           <ul>
             <li>FULCRUMSEC group breached LexisNexis &mdash; the data broker infrastructure serving the legal and government sectors</li>
             <li>2.04 GB structured data, 3.9 million Enterprise Data Warehouse records, 400,000 cloud user profiles</li>
@@ -395,7 +224,7 @@
           </ul>
           <p class="source-label">Source: <a href="https://dailydarkweb.net/fulcrumsec-claims-breach-of-lexisnexis/" target="_blank" rel="noopener noreferrer">Daily Dark Web</a></p>
 
-          <h4 class="text-lg font-semibold text-white mt-6 mb-2">DHS Protester Database</h4>
+          <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-2">DHS Protester Database</h4>
           <ul>
             <li>CREW filed FOIA (February 13, 2026) revealing DHS maintains a database of individuals who protest or observe immigration enforcement</li>
             <li>Tom Homan: "we're going to make them famous"</li>
@@ -403,7 +232,7 @@
           </ul>
           <p class="source-label">Source: <a href="https://www.citizensforethics.org/reports-investigations/crew-investigations/dhs-protester-database-foia/" target="_blank" rel="noopener noreferrer">Citizens for Responsibility and Ethics in Washington (CREW)</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">State Voter Data Collection</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">State Voter Data Collection</h3>
           <ul>
             <li>Texas sent 18 million registered voters' records to DOJ on January 9, 2026</li>
             <li>A DOGE employee at SSA signed a "Voter Data Agreement" with an advocacy group whose stated aim was to find evidence of voter fraud and overturn election results</li>
@@ -412,42 +241,42 @@
           </ul>
           <p class="source-label">Sources: <a href="https://www.texastribune.org/2026/01/09/texas-voter-roll-trump-administration-justice-department-democrats-dnc/" target="_blank" rel="noopener noreferrer">Texas Tribune</a>; <a href="https://www.votebeat.org/texas/2026/01/09/texas-secretary-of-state-shares-voter-rolls-with-justice-department-dnc-ken-martin/" target="_blank" rel="noopener noreferrer">Votebeat</a>; <a href="https://www.brennancenter.org/our-work/analysis-opinion/confidential-agreements-show-trump-administrations-plans-states-voter" target="_blank" rel="noopener noreferrer">Brennan Center</a>; <a href="https://www.texastribune.org/2026/02/13/save-voter-citizenship-tool-mistakes-confusion/" target="_blank" rel="noopener noreferrer">Texas Tribune/SAVE</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Selective Service / Draft Database</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Selective Service / Draft Database</h3>
           <ul>
             <li>DOGE has access to automatic Selective Service registration data &mdash; every male 18-25 automatically registered</li>
             <li>Combined with two active wars (Iran, hemisphere operations) and DOGE's existing database consolidation, this adds military conscription eligibility to the profile: who you are (SSA) + where you work (IRS) + how you vote (state rolls) + whether you're draft-eligible (Selective Service)</li>
           </ul>
           <p class="source-label">Source: <a href="https://www.hackingbutlegal.com/p/doge-has-the-draft-list" target="_blank" rel="noopener noreferrer">Hacking, but Legal &mdash; "DOGE Has the Draft List"</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Palantir: The Integration Layer</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Palantir: The Integration Layer</h3>
           <p>Palantir reported a $4.3 billion record quarter in Q4 2025, driven by federal contracts that form the connective tissue between these data systems:</p>
           <ul>
-            <li><strong class="text-white">VA:</strong> $385M contract</li>
-            <li><strong class="text-white">USDA:</strong> $300M (Pentagon/DHS connected)</li>
-            <li><strong class="text-white">Treasury/IRS:</strong> Building "common API layer" &mdash; the unified interface DOGE needs to query across databases</li>
-            <li><strong class="text-white">IRS specifically:</strong> $180M+ across 26 contracts since 2018</li>
-            <li><strong class="text-white">ICE/CBP:</strong> Palantir Gotham is the analytical backbone for immigration enforcement targeting</li>
-            <li><strong class="text-white">Federal workforce surveillance:</strong> Described as "bossware" for monitoring federal employees</li>
+            <li><strong class="text-gray-900">VA:</strong> $385M contract</li>
+            <li><strong class="text-gray-900">USDA:</strong> $300M (Pentagon/DHS connected)</li>
+            <li><strong class="text-gray-900">Treasury/IRS:</strong> Building "common API layer" &mdash; the unified interface DOGE needs to query across databases</li>
+            <li><strong class="text-gray-900">IRS specifically:</strong> $180M+ across 26 contracts since 2018</li>
+            <li><strong class="text-gray-900">ICE/CBP:</strong> Palantir Gotham is the analytical backbone for immigration enforcement targeting</li>
+            <li><strong class="text-gray-900">Federal workforce surveillance:</strong> Described as "bossware" for monitoring federal employees</li>
           </ul>
           <p>The pattern: Palantir doesn't build databases. It connects them. The "common API layer" for Treasury/IRS is exactly the infrastructure that turns individually legal databases into a population-scale lookup table.</p>
           <p class="source-label">Sources: <a href="https://www.palantir.com/quarterly-results/" target="_blank" rel="noopener noreferrer">Palantir Q4 2025 Earnings</a>; <a href="https://jacobin.com/2026/03/palantir-federal-bossware-surveillance" target="_blank" rel="noopener noreferrer">Jacobin</a>; <a href="https://www.propublica.org/article/how-palantir-and-the-irs-teamed-up-to-mine-taxpayer-data" target="_blank" rel="noopener noreferrer">ProPublica/IRS</a></p>
 
-          <h4 class="text-lg font-semibold text-white mt-6 mb-2">Palantir's Stated Ambition and Political Architecture</h4>
+          <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-2">Palantir's Stated Ambition and Political Architecture</h4>
           <p>Palantir CTO Shyam Sankar has stated the company's goal is "becoming the US government's central operating system." Sankar testified before the Senate Armed Services Committee (January 28, 2025) and published "The Defense Reformation" (October 31, 2024) &mdash; 18 theses arguing the post-Cold War defense establishment must be restructured around software companies like Palantir.</p>
           <p>The company's political philosophy predates its government contracts. Co-founder Peter Thiel at Libertopia 2010: "We could never win an election... But maybe you could actually unilaterally change the world without having to constantly convince people... through technological means... technology is this incredible alternative to politics."</p>
           <p>Palantir's Class F share structure ensures founders retain full control while owning as little as 6% of equity &mdash; controlling ~50% of total voting power through a Founder Voting Trust. Revenue reached $2.9 billion in 2024, with 55% from government sources. Post-Trump election, Palantir replaced Dow Inc. in the S&amp;P 100 (March 24, 2025).</p>
 
-          <h4 class="text-lg font-semibold text-white mt-6 mb-2">Health Data Integration</h4>
+          <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-2">Health Data Integration</h4>
           <p>Palantir holds multiple contracts with HHS for Medicare/Medicaid data &mdash; described as enabling agencies to "manage, ingest, and access data securely across business domains." On the private-sector side, Palantir builds AI tools for health insurers specifically for "denials management to protect revenue" &mdash; the same company that manages government health data also helps insurers deny claims against that data.</p>
 
-          <h4 class="text-lg font-semibold text-white mt-6 mb-2">The DOGE-Palantir Pipeline</h4>
+          <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-2">The DOGE-Palantir Pipeline</h4>
           <p>DOGE addresses agency IT departments first; Palantir restructures government ontology &mdash; determining "what systems matter, what information matters, what processes matter." Many former Palantir employees are sprinkled across the Trump administration &mdash; in DOGE, foreign policy, and tech appointments.</p>
 
-          <h4 class="text-lg font-semibold text-white mt-6 mb-2">Internal Language</h4>
+          <h4 class="text-lg font-semibold text-gray-900 mt-6 mb-2">Internal Language</h4>
           <p>CEO Alex Karp admits internally they call it the "kill chain" while lawyers use sanitized language for external communications. By 2013 &mdash; ten years after founding &mdash; Palantir's client list already included the FBI, CIA, NSA, Marines, Air Force, and Special Operations Command.</p>
           <p class="source-label">Sources: <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001321655&type=10-K&dateb=&owner=include&count=40" target="_blank" rel="noopener noreferrer">SEC 10-K/DEF 14A</a> (Class F shares); <a href="https://www.armed-services.senate.gov/download/sankar-opening-statement-012825" target="_blank" rel="noopener noreferrer">Senate Armed Services Committee testimony, Jan 28, 2025</a>; <a href="https://www.cato-unbound.org/2009/04/13/peter-thiel/education-libertarian/" target="_blank" rel="noopener noreferrer">Cato Unbound, "The Education of a Libertarian," Apr 13, 2009</a>; <a href="https://www.youtube.com/@MorePerfectUnion" target="_blank" rel="noopener noreferrer">More Perfect Union</a> investigation; <a href="https://youtu.be/e-ZpsxnmmbE" target="_blank" rel="noopener noreferrer">Libertopia 2010 conference recording</a>; <a href="https://www.usaspending.gov/" target="_blank" rel="noopener noreferrer">USAspending.gov</a> (HHS contracts)</p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">ICE Surveillance Ecosystem</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">ICE Surveillance Ecosystem</h3>
           <p>Documented by the Surveillance Technology Oversight Project (Albert Fox Cahn):</p>
 
           <div class="table-wrap">
@@ -461,37 +290,37 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="font-semibold text-white">Paragon Graphite</td>
+                  <td class="font-semibold text-gray-900">Paragon Graphite</td>
                   <td>Zero-click phone spyware &mdash; sees messages before encryption</td>
                   <td>$2M ICE contract</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">Celebrite UFED</td>
+                  <td class="font-semibold text-gray-900">Celebrite UFED</td>
                   <td>Breaks into locked phones, bypasses PIN, extracts deleted data</td>
                   <td>$11M ICE contract</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">Mobile Fortify</td>
+                  <td class="font-semibold text-gray-900">Mobile Fortify</td>
                   <td>Phone-based facial recognition, 200M image database</td>
                   <td>Unknown</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">Pen Link (Webloc/Tangles)</td>
+                  <td class="font-semibold text-gray-900">Pen Link (Webloc/Tangles)</td>
                   <td>Geofencing &mdash; tracks all phones in an area via data brokers</td>
                   <td>$5M ICE purchase</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">SocialNet/Tangles</td>
+                  <td class="font-semibold text-gray-900">SocialNet/Tangles</td>
                   <td>Scrapes 200+ websites to build identity dossiers</td>
                   <td>Unknown</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">ISO Claim Search</td>
+                  <td class="font-semibold text-gray-900">ISO Claim Search</td>
                   <td>Insurance/medical billing metadata: 1.8B claims, 58M medical bills</td>
                   <td>Data vendor contract</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">Medicaid/CMS sharing</td>
+                  <td class="font-semibold text-gray-900">Medicaid/CMS sharing</td>
                   <td>80M patient records shared with DHS</td>
                   <td>Interagency agreement</td>
                 </tr>
@@ -502,7 +331,7 @@
           <p>None of these require a warrant. Data broker purchases, border search exceptions, interagency agreements, and commercial contracts bypass the warrant requirement entirely.</p>
           <p class="source-label">Source: <a href="https://youtu.be/b1K7yLWs2DM" target="_blank" rel="noopener noreferrer">Proton/Albert Fox Cahn, Surveillance Technology Oversight Project</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">LeakBase Seizure (Operation Leak, March 3-4, 2026)</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">LeakBase Seizure (Operation Leak, March 3-4, 2026)</h3>
           <p>FBI and Europol, with 14 countries, seized LeakBase &mdash; one of the world's largest stolen data marketplaces. The seizure yielded:</p>
           <ul>
             <li>142,000 user accounts with registration data</li>
@@ -513,7 +342,7 @@
           <p>The critical point: the seizure is the acquisition. The FBI now possesses not just the criminals' data but the victims' data &mdash; every breached database that was traded on the forum. This data was "seized as evidence," not "collected via warrant," bypassing the warrant requirement for the data subjects entirely.</p>
           <p class="source-label">Sources: <a href="https://www.justice.gov/opa/pr/united-states-leads-dismantlement-one-worlds-largest-hacker-forums" target="_blank" rel="noopener noreferrer">DOJ</a>; <a href="https://thehackernews.com/2026/03/fbi-and-europol-seize-leakbase-forum.html" target="_blank" rel="noopener noreferrer">The Hacker News</a>; <a href="https://techcrunch.com/2026/03/04/u-s-and-eu-police-shut-down-leakbase-a-site-accused-of-sharing-stolen-passwords-and-hacking-tools/" target="_blank" rel="noopener noreferrer">TechCrunch</a>; <a href="https://www.bleepingcomputer.com/news/security/fbi-seizes-leakbase-cybercrime-forum-data-of-142-000-members/" target="_blank" rel="noopener noreferrer">BleepingComputer</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Epstein Files as Leverage</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Epstein Files as Leverage</h3>
           <ul>
             <li>3.5 million pages, 2,000 videos, 180,000 images released January 30, 2026; 500+ pages entirely redacted in the initial December 2025 release</li>
             <li>DOJ controls release and redaction &mdash; selective disclosure functions as leverage</li>
@@ -523,7 +352,7 @@
           </ul>
           <p class="source-label">Sources: <a href="https://www.cnn.com/politics/live-news/epstein-files-release-doj-01-30-26" target="_blank" rel="noopener noreferrer">CNN</a>; <a href="https://www.justice.gov/epstein" target="_blank" rel="noopener noreferrer">DOJ Epstein Library</a>; <a href="https://www.npr.org/2026/01/02/nx-s1-5662638/epstein-files-release-trump-conspiracy-2026" target="_blank" rel="noopener noreferrer">NPR</a>; <a href="https://www.pbs.org/newshour/classroom/daily-news-lessons/2026/02/epstein-files-scrubbed-to-protect-elite-powerful-men-rep-ro-khanna-says" target="_blank" rel="noopener noreferrer">PBS</a>; <a href="https://www.npr.org/2026/02/14/nx-s1-5714609/epstein-europe-fallout" target="_blank" rel="noopener noreferrer">NPR/Europe</a>; <a href="https://blogs.lse.ac.uk/medialse/2026/02/18/the-epstein-files-and-the-architecture-of-elite-protection-what-media-coverage-reveals-about-power/" target="_blank" rel="noopener noreferrer">LSE</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">The Assembled Profile</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">The Assembled Profile</h3>
           <p>No single database is the story. The assembled profile is:</p>
 
           <div class="table-wrap">
@@ -536,35 +365,35 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="font-semibold text-white">SSA NUMIDENT</td>
+                  <td class="font-semibold text-gray-900">SSA NUMIDENT</td>
                   <td>Who you are &mdash; name, SSN, birth data, family relationships</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">IRS (IDRS + unified API)</td>
+                  <td class="font-semibold text-gray-900">IRS (IDRS + unified API)</td>
                   <td>Where you work &mdash; income, employer, banking, medical expenses</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">State voter rolls</td>
+                  <td class="font-semibold text-gray-900">State voter rolls</td>
                   <td>How you vote &mdash; party affiliation, voting history, address</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">Data brokers (Pen Link/Webloc, etc.)</td>
+                  <td class="font-semibold text-gray-900">Data brokers (Pen Link/Webloc, etc.)</td>
                   <td>Where you go &mdash; real-time location, movement patterns</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">Medicaid/CMS + ISO Claim Search</td>
+                  <td class="font-semibold text-gray-900">Medicaid/CMS + ISO Claim Search</td>
                   <td>Your health &mdash; 80M patient records, 1.8B insurance claims</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">Platform data + seized databases</td>
+                  <td class="font-semibold text-gray-900">Platform data + seized databases</td>
                   <td>What you search and post &mdash; credentials, browsing, social media</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">Selective Service</td>
+                  <td class="font-semibold text-gray-900">Selective Service</td>
                   <td>Whether you're draft-eligible</td>
                 </tr>
                 <tr>
-                  <td class="font-semibold text-white">SAVE tool</td>
+                  <td class="font-semibold text-gray-900">SAVE tool</td>
                   <td>Your immigration/citizenship status</td>
                 </tr>
               </tbody>
@@ -588,35 +417,35 @@
         <!-- PILLAR 2              -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Pillar 2: Legal Architecture</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Pillar 2: Legal Architecture</h2>
 
-          <p><strong class="text-white">244 executive orders, 57 memoranda, and 131 proclamations</strong> issued between January 2025 and March 2026. 26 on Day 1 alone. Key orders:</p>
+          <p><strong class="text-gray-900">244 executive orders, 57 memoranda, and 131 proclamations</strong> issued between January 2025 and March 2026. 26 on Day 1 alone. Key orders:</p>
           <ul>
-            <li><strong class="text-white">Revoked Biden AI safety executive order</strong> (January 23, 2025)</li>
-            <li><strong class="text-white">AI preemption EO</strong> (December 11, 2025): AG creates task force to challenge state AI laws; 10-year moratorium proposed on state AI regulation</li>
-            <li><strong class="text-white">Elections EO</strong> (March 25, 2025): proof of citizenship for voter registration, federal database sharing for voter verification</li>
-            <li><strong class="text-white">Schedule F revived</strong> (EO 14171): reclassifies up to 50,000 federal employees as at-will, removable without cause</li>
-            <li><strong class="text-white">DOGE workforce optimization</strong> (EO 14210): mass reductions in force, 1:4 hiring ratio</li>
+            <li><strong class="text-gray-900">Revoked Biden AI safety executive order</strong> (January 23, 2025)</li>
+            <li><strong class="text-gray-900">AI preemption EO</strong> (December 11, 2025): AG creates task force to challenge state AI laws; 10-year moratorium proposed on state AI regulation</li>
+            <li><strong class="text-gray-900">Elections EO</strong> (March 25, 2025): proof of citizenship for voter registration, federal database sharing for voter verification</li>
+            <li><strong class="text-gray-900">Schedule F revived</strong> (EO 14171): reclassifies up to 50,000 federal employees as at-will, removable without cause</li>
+            <li><strong class="text-gray-900">DOGE workforce optimization</strong> (EO 14210): mass reductions in force, 1:4 hiring ratio</li>
           </ul>
           <p class="source-label">Sources: <a href="https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2025" target="_blank" rel="noopener noreferrer">Federal Register 2025</a>; <a href="https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2026" target="_blank" rel="noopener noreferrer">Federal Register 2026</a>; <a href="https://www.mayerbrown.com/en/insights/publications/2025/12/president-trump-issues-executive-order-on-ensuring-a-national-policy-framework-for-artificial-intelligence" target="_blank" rel="noopener noreferrer">Mayer Brown</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">National Security Presidential Memoranda</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">National Security Presidential Memoranda</h3>
           <ul>
-            <li><strong class="text-white">NSPM-2</strong> (February 4, 2025): Maximum pressure on Iran &mdash; preceded the war by one year</li>
-            <li><strong class="text-white">NSPM-4</strong> (April 11, 2025): Military mission at the southern border</li>
-            <li><strong class="text-white">NSPM-7</strong> (September 25, 2025): "Countering Domestic Terrorism" &mdash; redefines threats to include anti-capitalism, anti-Americanism, and hostility to "traditional views." Joint Terrorism Task Forces directed to investigate. No way to know if you're on the list.</li>
+            <li><strong class="text-gray-900">NSPM-2</strong> (February 4, 2025): Maximum pressure on Iran &mdash; preceded the war by one year</li>
+            <li><strong class="text-gray-900">NSPM-4</strong> (April 11, 2025): Military mission at the southern border</li>
+            <li><strong class="text-gray-900">NSPM-7</strong> (September 25, 2025): "Countering Domestic Terrorism" &mdash; redefines threats to include anti-capitalism, anti-Americanism, and hostility to "traditional views." Joint Terrorism Task Forces directed to investigate. No way to know if you're on the list.</li>
           </ul>
           <p class="source-label">Sources: <a href="https://en.wikipedia.org/wiki/NSPM-7" target="_blank" rel="noopener noreferrer">Wikipedia/NSPM-7</a>; <a href="https://www.aclu.org/news/national-security/how-nspm-7-seeks-to-use-domestic-terrorism-to-target-nonprofits-and-activists" target="_blank" rel="noopener noreferrer">ACLU</a>; <a href="https://theintercept.com/2025/11/04/trump-terrorist-list-nspm7-enemies/" target="_blank" rel="noopener noreferrer">The Intercept</a>; <a href="https://www.interfaithalliance.org/post/nspm-7-co-opting-national-security-to-suppress-dissent" target="_blank" rel="noopener noreferrer">Interfaith Alliance</a>; <a href="https://irp.fas.org/offdocs/47-nspm/index.html" target="_blank" rel="noopener noreferrer">FAS.org NSPM index</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">SAVE America Act</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">SAVE America Act</h3>
           <p>Passed the House in February 2026. Requires proof of citizenship and photo ID to vote. Targets the November 2026 midterms. Noncitizen voting is already illegal; the Heritage Foundation found only 100 instances since 2000.</p>
           <p class="source-label">Sources: <a href="https://www.npr.org/2026/02/19/nx-s1-5719252/trump-voting-save-america-act-explainer" target="_blank" rel="noopener noreferrer">NPR</a>; <a href="https://www.americanprogress.org/article/the-save-america-act-explained-how-the-new-show-your-papers-voting-bill-is-even-more-extreme-than-the-save-act/" target="_blank" rel="noopener noreferrer">Center for American Progress</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Third Term Amendment</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Third Term Amendment</h3>
           <p>H.J.Res.29 (Ogles, R-TN, January 23, 2025). Allows three terms but bars two consecutive &mdash; structured so only Trump qualifies. Zero cosponsors. Counter-resolution H.Res.171 (Goldman, D-NY) reaffirms the 22nd Amendment.</p>
           <p class="source-label">Sources: <a href="https://www.congress.gov/bill/119th-congress/house-joint-resolution/29" target="_blank" rel="noopener noreferrer">Congress.gov</a>; <a href="https://www.snopes.com/fact-check/bill-to-let-donald-trump-serve-third-term/" target="_blank" rel="noopener noreferrer">Snopes</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">State AI Preemption</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">State AI Preemption</h3>
           <p>The federal government is simultaneously deregulating AI at the federal level while preparing to block states from filling the gap:</p>
           <ul>
             <li>Commerce must review state AI laws; FTC must issue preemption guidance; DOJ preparing to challenge</li>
@@ -632,9 +461,9 @@
         <!-- PILLAR 3              -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Pillar 3: Military Deployment</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Pillar 3: Military Deployment</h2>
 
-          <h3 class="text-xl font-semibold text-white mb-3">National Guard Quick Reaction Forces &mdash; All 50 States Plus Puerto Rico and Guam</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">National Guard Quick Reaction Forces &mdash; All 50 States Plus Puerto Rico and Guam</h3>
           <ul>
             <li>23,000+ troops total, operational January 1, 2026</li>
             <li>100 sets of crowd control equipment per state (batons, shields, Tasers, pepper spray)</li>
@@ -644,7 +473,7 @@
           </ul>
           <p class="source-label">Sources: <a href="https://www.military.com/daily-news/2025/10/31/national-guard-each-state-ordered-create-quick-reaction-forces-trained-civil-unrest.html" target="_blank" rel="noopener noreferrer">Military.com</a>; <a href="https://taskandpurpose.com/news/national-guard-quick-reaction-force/" target="_blank" rel="noopener noreferrer">Task &amp; Purpose</a>; <a href="https://www.lawfaremedia.org/projects-series/trials-of-the-trump-administration/tracking-domestic-deployments-of-the-u.s.-military" target="_blank" rel="noopener noreferrer">Lawfare</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">ICE Use of Force (Through March 2026)</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">ICE Use of Force (Through March 2026)</h3>
           <ul>
             <li>33 shootings, 9 deaths (including 6 deaths in custody in 2026 alone)</li>
             <li>Video evidence contradicts ICE's official account of a Texas shooting</li>
@@ -653,7 +482,7 @@
           </ul>
           <p class="source-label">Sources: <a href="https://www.washingtonpost.com/immigration/2026/03/10/ice-shooting-video-contradicts-account/" target="_blank" rel="noopener noreferrer">Washington Post</a>; <a href="https://www.americanoversight.org/investigation/ice-warrantless-entry-training-documents" target="_blank" rel="noopener noreferrer">American Oversight</a>; Congressional Testimony of Ryan Schwank, February 24, 2026</p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Insurrection Act</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Insurrection Act</h3>
           <p>Not formally invoked but repeatedly threatened. June 7, 2025 presidential memo claimed authority to deploy without geographic or temporal limits. Federal courts in California, Oregon, and Illinois ruled against. Threatened again in Minneapolis in January 2026 after ICE killed a US citizen.</p>
           <p class="source-label">Sources: <a href="https://www.aclu.org/news/civil-liberties/trumps-threat-to-invoke-the-insurrection-act-explained" target="_blank" rel="noopener noreferrer">ACLU</a>; <a href="https://www.brennancenter.org/our-work/analysis-opinion/insurrection-act-presidential-power-threatens-democracy" target="_blank" rel="noopener noreferrer">Brennan Center</a>; <a href="https://www.npr.org/2026/01/15/nx-s1-5678612/minneapolis-insurrection-act-trump-threats" target="_blank" rel="noopener noreferrer">NPR</a></p>
         </section>
@@ -664,9 +493,9 @@
         <!-- PILLAR 4              -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Pillar 4: Hemisphere War</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Pillar 4: Hemisphere War</h2>
 
-          <h3 class="text-xl font-semibold text-white mb-3">Operation Southern Spear (2025-2026)</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Operation Southern Spear (2025-2026)</h3>
           <ul>
             <li>45 strikes on 46 vessels, 157+ killed (many confirmed civilians and fishermen)</li>
             <li>Venezuela: President Maduro captured January 3, 2026 &mdash; 150 jets, CIA tracked via source, flown to New York</li>
@@ -676,7 +505,7 @@
           </ul>
           <p class="source-label">Sources: <a href="https://www.aljazeera.com/news/2026/1/4/how-the-us-attack-on-venezuela-abduction-of-maduro-unfolded" target="_blank" rel="noopener noreferrer">Al Jazeera/Venezuela</a>; <a href="https://www.pbs.org/newshour/world/us-strikes-venezuela-and-says-its-leader-maduro-has-been-captured-and-flown-out-of-the-country" target="_blank" rel="noopener noreferrer">PBS/Venezuela</a>; <a href="https://www.aljazeera.com/news/2026/3/4/trump-administration-launches-us-military-operation-in-ecuador" target="_blank" rel="noopener noreferrer">Al Jazeera/Ecuador</a>; <a href="https://theintercept.com/2026/03/04/us-military-ecuador-trump/" target="_blank" rel="noopener noreferrer">The Intercept/Ecuador</a>; <a href="https://www.justsecurity.org/119982/legal-issues-military-attack-carribean/" target="_blank" rel="noopener noreferrer">Just Security</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Iran War &mdash; Day 13 (as of March 12, 2026)</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Iran War &mdash; Day 13 (as of March 12, 2026)</h3>
           <ul>
             <li>1,348+ Iranian civilians killed, 17,000+ injured, 760,000 displaced, 1,100+ children killed or injured</li>
             <li>7 US soldiers dead, 5,000+ targets struck</li>
@@ -688,7 +517,7 @@
             <li>Iran's new Supreme Leader Mojtaba Khamenei's first public address since succession</li>
           </ul>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Financial Fragility Context</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Financial Fragility Context</h3>
           <p>The Iran war is unfolding against a backdrop of structural financial fragility:</p>
           <ul>
             <li>US national debt: $38.88 trillion as of March 11, 2026 (<a href="https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny" target="_blank" rel="noopener noreferrer">Treasury Fiscal Data</a>), increasing ~$8 billion per day. Interest payments crossed $1 trillion annually for the first time (<a href="https://www.crfb.org/blogs/trillion-dollar-interest-payments-are-new-norm" target="_blank" rel="noopener noreferrer">CRFB</a>).</li>
@@ -700,7 +529,7 @@
             <li>ISM Prices Paid: 70.5 in February 2026 (highest since June 2022)</li>
           </ul>
 
-          <p class="mt-4"><strong class="text-white">War-specific economic impacts:</strong></p>
+          <p class="mt-4"><strong class="text-gray-900">War-specific economic impacts:</strong></p>
           <ul>
             <li>WTI crude: $90.90 (+12% in a single session post-strike)</li>
             <li>Iran first salvo: 770+ ballistic missiles, 900+ drones</li>
@@ -721,7 +550,7 @@
         </figure>
 
         <section>
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">FISA Section 702 &mdash; Expires April 20, 2026 (39 days)</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">FISA Section 702 &mdash; Expires April 20, 2026 (39 days)</h3>
           <ul>
             <li>Expiring during active wartime + DHS shutdown + CISA at 38% capacity</li>
             <li>SAFE Act introduced by Senators Lee and Durbin &mdash; EFF calls it "imperfect" but significant reform attempt</li>
@@ -729,29 +558,29 @@
           </ul>
           <p class="source-label">Sources: <a href="https://www.congress.gov/bill/119th-congress/senate-bill/" target="_blank" rel="noopener noreferrer">Congress.gov/SAFE Act</a>; <a href="https://www.eff.org/deeplinks/2026/03/safe-act-imperfect-necessary" target="_blank" rel="noopener noreferrer">EFF</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Shield of the Americas (March 7, 2026)</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Shield of the Americas (March 7, 2026)</h3>
           <ul>
             <li>Launched by Trump at Doral golf club; 17 nations joined the "Americas Counter-Cartel Coalition"</li>
             <li>Kristi Noem named Special Envoy after being fired as DHS Secretary on March 5 &mdash; the immigration enforcement apparatus is becoming a foreign policy tool</li>
-            <li><strong class="text-white">Haiti was conspicuously excluded</strong> despite being the most acute security crisis in the Western Hemisphere</li>
+            <li><strong class="text-gray-900">Haiti was conspicuously excluded</strong> despite being the most acute security crisis in the Western Hemisphere</li>
           </ul>
           <p class="source-label">Sources: <a href="https://www.newsweek.com/what-is-shield-of-the-americas-kristi-noem-role-11629111" target="_blank" rel="noopener noreferrer">Newsweek</a>; <a href="https://peoplesdispatch.org/2026/03/10/shield-of-the-americas-trumps-new-tool-for-hemispheric-military-coordination/" target="_blank" rel="noopener noreferrer">Peoples Dispatch</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Haiti: The Privatization Template</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Haiti: The Privatization Template</h3>
           <p>While Shield of the Americas formalizes hemisphere military coordination, Haiti demonstrates what the model looks like on the ground &mdash; sovereign state functions transferred to private entities:</p>
           <ul>
-            <li><strong class="text-white">Vectus Global</strong> (Erik Prince, formerly Blackwater): 10-year contract signed March 2025 with Haiti's transitional government. Two components: (1) security operations (drones, helicopters, mercenaries), (2) customs revenue collection at the Dominican border</li>
-            <li><strong class="text-white">Compensation:</strong> 20% of customs revenue increases (years 1-3), 15% thereafter, plus guaranteed 3% of all import volumes &mdash; estimated over $1 billion over the contract's life</li>
-            <li><strong class="text-white">Documented results (March 2025 &ndash; January 2026):</strong> 141 drone operations, at least 1,243 people killed, including 43 confirmed non-gang-members and 17 children (Human Rights Watch)</li>
-            <li><strong class="text-white">Additional privatization:</strong> PM Fils-Aime signed at least $137 million in foreign contracts covering prisons, police, border control, and tax collection</li>
-            <li><strong class="text-white">US military presence:</strong> USS Stockdale (guided-missile destroyer) + Coast Guard deployed to Port-au-Prince under Operation Southern Spear. US envoy to Senate: "We have full-scale urban warfare going on"</li>
-            <li><strong class="text-white">$20 billion in untouched mineral wealth</strong> (gold, copper, silver) &mdash; mining suspended despite extensive exploration permits held by Newmont (US), Eurasian Minerals (Canada), Majescor (Canada)</li>
-            <li><strong class="text-white">The US government states it is "not funding or overseeing" Vectus operations</strong> &mdash; plausible deniability while the military umbrella (Southern Spear) operates in the same waters</li>
+            <li><strong class="text-gray-900">Vectus Global</strong> (Erik Prince, formerly Blackwater): 10-year contract signed March 2025 with Haiti's transitional government. Two components: (1) security operations (drones, helicopters, mercenaries), (2) customs revenue collection at the Dominican border</li>
+            <li><strong class="text-gray-900">Compensation:</strong> 20% of customs revenue increases (years 1-3), 15% thereafter, plus guaranteed 3% of all import volumes &mdash; estimated over $1 billion over the contract's life</li>
+            <li><strong class="text-gray-900">Documented results (March 2025 &ndash; January 2026):</strong> 141 drone operations, at least 1,243 people killed, including 43 confirmed non-gang-members and 17 children (Human Rights Watch)</li>
+            <li><strong class="text-gray-900">Additional privatization:</strong> PM Fils-Aime signed at least $137 million in foreign contracts covering prisons, police, border control, and tax collection</li>
+            <li><strong class="text-gray-900">US military presence:</strong> USS Stockdale (guided-missile destroyer) + Coast Guard deployed to Port-au-Prince under Operation Southern Spear. US envoy to Senate: "We have full-scale urban warfare going on"</li>
+            <li><strong class="text-gray-900">$20 billion in untouched mineral wealth</strong> (gold, copper, silver) &mdash; mining suspended despite extensive exploration permits held by Newmont (US), Eurasian Minerals (Canada), Majescor (Canada)</li>
+            <li><strong class="text-gray-900">The US government states it is "not funding or overseeing" Vectus operations</strong> &mdash; plausible deniability while the military umbrella (Southern Spear) operates in the same waters</li>
           </ul>
           <p>The pattern: Haiti is simultaneously militarized by private contractors and US warships while being excluded from the diplomatic framework (Shield of the Americas) governing the region's security future. Sovereign functions &mdash; security, customs, prisons, tax collection &mdash; are transferred to foreign entities whose compensation is tied to revenue extraction, not outcomes.</p>
           <p class="source-label">Sources: <a href="https://www.npr.org/2025/08/15/nx-s1-5503316/blackwater-erik-prince-haiti-gang-violence" target="_blank" rel="noopener noreferrer">NPR</a>; <a href="https://haitiantimes.com/2025/08/15/erik-prince-10-year-contract-with-haiti/" target="_blank" rel="noopener noreferrer">Haitian Times</a>; <a href="https://international-and-comparative-law-review.law.miami.edu/haitis-vectus-gamble-private-force-and-private-customs-in-a-failing-state/" target="_blank" rel="noopener noreferrer">Miami Law Review</a>; <a href="https://www.hrw.org/world-report/2026/country-chapters/haiti" target="_blank" rel="noopener noreferrer">Human Rights Watch</a>; <a href="https://haitiantimes.com/2026/03/10/haitian-pm-slammed-for-signing-millions-in-foreign-contracts-that-undermine-sovereignty/" target="_blank" rel="noopener noreferrer">Haitian Times/contracts</a>; <a href="https://www.military.com/daily-news/2026/02/11/we-have-full-scale-urban-warfare-going-us-envoy-haiti-tells-congress.html" target="_blank" rel="noopener noreferrer">Military.com</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">BlackRock Panama Canal Port Acquisition</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">BlackRock Panama Canal Port Acquisition</h3>
           <ul>
             <li>BlackRock-TiL consortium agreed to a $22.8 billion deal to acquire 43 ports in 23 countries from CK Hutchison, including the two most strategic ports at the Panama Canal (Balboa and Cristobal, handling 39% of canal cargo)</li>
             <li>Larry Fink phoned Trump directly to pitch the deal</li>
@@ -760,7 +589,7 @@
           </ul>
           <p class="source-label">Sources: <a href="https://www.cbsnews.com/news/blackrock-panama-canal-deal-ck-hutchison-trump/" target="_blank" rel="noopener noreferrer">CBS News</a>; <a href="https://fortune.com/2025/03/05/larry-fink-phoned-trump-directly-to-pitch-blackrocks-panama-deal/" target="_blank" rel="noopener noreferrer">Fortune</a>; <a href="https://www.csis.org/analysis/chinese-ports-panama-come-under-new-management" target="_blank" rel="noopener noreferrer">CSIS</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">2026 National Defense Strategy</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">2026 National Defense Strategy</h3>
           <p>Described as "the greatest shift in American defense priorities since WWII." Western Hemisphere prioritized. Greenland, Panama Canal, Gulf of Mexico, Arctic, and South America designated as "key terrain." Allies called "freeloading dependents."</p>
           <p class="source-label">Sources: <a href="https://www.csis.org/analysis/2026-national-defense-strategy-numbers-radical-changes-moderate-changes-and-some" target="_blank" rel="noopener noreferrer">CSIS</a>; <a href="https://media.defense.gov/2026/Jan/23/2003864773/-1/-1/0/2026-NATIONAL-DEFENSE-STRATEGY.PDF" target="_blank" rel="noopener noreferrer">NDS PDF</a></p>
         </section>
@@ -771,18 +600,18 @@
         <!-- PILLAR 5              -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Pillar 5: Election Control</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Pillar 5: Election Control</h2>
           <p>The pieces assembled for the November 2026 midterms:</p>
           <ol>
-            <li><strong class="text-white">SAVE America Act</strong> &mdash; proof of citizenship and photo ID to vote (passed House)</li>
-            <li><strong class="text-white">SAVE tool</strong> &mdash; deployed in 26 states, mistakenly flags legitimate voters as noncitizens</li>
-            <li><strong class="text-white">Federal voter roll collection</strong> &mdash; Texas sent 18M records; more states following</li>
-            <li><strong class="text-white">ICE at polling places</strong> &mdash; ICE chief admits "no reason" for agents at polls but won't rule it out; blue states legislating preemptive bans</li>
-            <li><strong class="text-white">CISA election security program eliminated entirely</strong> &mdash; 14 staff, $39.6M budget, support for thousands of state and local governments halted</li>
-            <li><strong class="text-white">Election Infrastructure ISAC defunded</strong> &mdash; established in 2018 after Russian interference; all funding cut</li>
-            <li><strong class="text-white">QRF deployable</strong> &mdash; 125 troops within 8 hours in every state</li>
-            <li><strong class="text-white">Third term amendment introduced</strong> &mdash; structured so only Trump qualifies</li>
-            <li><strong class="text-white">Trump won't sign bills until Congress "overhauls voting"</strong></li>
+            <li><strong class="text-gray-900">SAVE America Act</strong> &mdash; proof of citizenship and photo ID to vote (passed House)</li>
+            <li><strong class="text-gray-900">SAVE tool</strong> &mdash; deployed in 26 states, mistakenly flags legitimate voters as noncitizens</li>
+            <li><strong class="text-gray-900">Federal voter roll collection</strong> &mdash; Texas sent 18M records; more states following</li>
+            <li><strong class="text-gray-900">ICE at polling places</strong> &mdash; ICE chief admits "no reason" for agents at polls but won't rule it out; blue states legislating preemptive bans</li>
+            <li><strong class="text-gray-900">CISA election security program eliminated entirely</strong> &mdash; 14 staff, $39.6M budget, support for thousands of state and local governments halted</li>
+            <li><strong class="text-gray-900">Election Infrastructure ISAC defunded</strong> &mdash; established in 2018 after Russian interference; all funding cut</li>
+            <li><strong class="text-gray-900">QRF deployable</strong> &mdash; 125 troops within 8 hours in every state</li>
+            <li><strong class="text-gray-900">Third term amendment introduced</strong> &mdash; structured so only Trump qualifies</li>
+            <li><strong class="text-gray-900">Trump won't sign bills until Congress "overhauls voting"</strong></li>
           </ol>
           <p class="source-label">Sources: <a href="https://www.democracydocket.com/news-alerts/ice-chief-federal-immmigration-agents-polling-places-2026-midterms/" target="_blank" rel="noopener noreferrer">Democracy Docket/ICE</a>; <a href="https://www.votebeat.org/2026/02/26/ice-agents-polling-places-2026-midterm-elections-heather-honey-election-official-meeting/" target="_blank" rel="noopener noreferrer">Votebeat/ICE</a>; <a href="https://ctmirror.org/2026/03/05/ice-ban-polling-places-blue-states/" target="_blank" rel="noopener noreferrer">CT Mirror</a></p>
         </section>
@@ -793,9 +622,9 @@
         <!-- PILLAR 6              -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Pillar 6: Oversight Destruction</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Pillar 6: Oversight Destruction</h2>
 
-          <h3 class="text-xl font-semibold text-white mb-3">DHS Shutdown (February 14, 2026 &mdash; Day 26 as of March 12)</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">DHS Shutdown (February 14, 2026 &mdash; Day 26 as of March 12)</h3>
           <p>Triggered by ICE killing two US citizens &mdash; Renee Good (January 7) and Alex Pretti (January 24) &mdash; during Operation Metro Surge. As of Day 26:</p>
           <ul>
             <li>100,000+ workers unpaid; 50,000+ TSA agents about to miss first paycheck during spring break travel</li>
@@ -806,32 +635,32 @@
           </ul>
           <p class="source-label">Sources: <a href="https://www.congress.gov/" target="_blank" rel="noopener noreferrer">Congress.gov/Senate votes</a>; <a href="https://www.dhs.gov/news/2026/02/22/1-week-democrats-shutdown-dhs-implements-emergency-measures-conserve-resources-and" target="_blank" rel="noopener noreferrer">DHS.gov</a>; <a href="https://www.tsa.gov/" target="_blank" rel="noopener noreferrer">TSA.gov</a>; <a href="https://www.cnn.com/2026/02/12/politics/department-homeland-security-government-shutdown" target="_blank" rel="noopener noreferrer">CNN</a>; <a href="https://www.npr.org/2026/02/14/nx-s1-5713914/department-of-homeland-security-shutdown" target="_blank" rel="noopener noreferrer">NPR</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">CISA &mdash; Gutted</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">CISA &mdash; Gutted</h3>
           <p>The Cybersecurity and Infrastructure Security Agency has been systematically dismantled:</p>
           <ul>
-            <li><strong class="text-white">Budget:</strong> $2.87B to $2.38B proposed (-17%, -$491M)</li>
-            <li><strong class="text-white">Staffing:</strong> 3,400 to projected 2,324 (-33%). Approximately 1,000 departed by May 2025 via buyouts and resignations</li>
-            <li><strong class="text-white">Election Security Program: eliminated entirely</strong> &mdash; 14 staff, $39.6M. Support halted March 2025, leaving thousands of state and local governments without assistance ahead of the 2026 midterms</li>
-            <li><strong class="text-white">Election Infrastructure ISAC:</strong> all funding cut (established 2018 after Russian election interference)</li>
-            <li><strong class="text-white">Multi-State ISAC:</strong> funding cut</li>
-            <li><strong class="text-white">Cyber scholarship program:</strong> cut 60%+</li>
-            <li><strong class="text-white">National Risk Management Center:</strong> 35 positions, $70M cut</li>
+            <li><strong class="text-gray-900">Budget:</strong> $2.87B to $2.38B proposed (-17%, -$491M)</li>
+            <li><strong class="text-gray-900">Staffing:</strong> 3,400 to projected 2,324 (-33%). Approximately 1,000 departed by May 2025 via buyouts and resignations</li>
+            <li><strong class="text-gray-900">Election Security Program: eliminated entirely</strong> &mdash; 14 staff, $39.6M. Support halted March 2025, leaving thousands of state and local governments without assistance ahead of the 2026 midterms</li>
+            <li><strong class="text-gray-900">Election Infrastructure ISAC:</strong> all funding cut (established 2018 after Russian election interference)</li>
+            <li><strong class="text-gray-900">Multi-State ISAC:</strong> funding cut</li>
+            <li><strong class="text-gray-900">Cyber scholarship program:</strong> cut 60%+</li>
+            <li><strong class="text-gray-900">National Risk Management Center:</strong> 35 positions, $70M cut</li>
             <li>During the DHS shutdown: only 38% of remaining staff working</li>
-            <li><strong class="text-white">Cybersecurity Information Sharing Act</strong> expired September 30, 2025; re-extended through September 30, 2026, but CISA capacity severely degraded during shutdown</li>
+            <li><strong class="text-gray-900">Cybersecurity Information Sharing Act</strong> expired September 30, 2025; re-extended through September 30, 2026, but CISA capacity severely degraded during shutdown</li>
             <li>Leader of federal cyber defense programs resigned March 2026</li>
             <li>FBI also cut ~$543M and ~1,830 positions; DOE cyber office cut 30%+; NSF computer science research cut from $952M to $346M</li>
             <li>Election officials say trust with CISA is "broken"</li>
           </ul>
           <p class="source-label">Sources: <a href="https://www.nextgov.com/cybersecurity/2025/06/cisa-projected-lose-third-its-workforce-under-trumps-2026-budget/405726/" target="_blank" rel="noopener noreferrer">Nextgov</a>; <a href="https://www.bankinfosecurity.com/trump-homeland-security-budget-guts-cisa-staff-key-programs-a-28576" target="_blank" rel="noopener noreferrer">BankInfoSecurity</a>; <a href="https://techcrunch.com/2026/02/25/us-cybersecurity-agency-cisa-reportedly-in-dire-shape-amid-trump-cuts-and-layoffs/" target="_blank" rel="noopener noreferrer">TechCrunch</a>; <a href="https://theconversation.com/federal-shutdown-deals-blow-to-already-hobbled-cybersecurity-agency-266862" target="_blank" rel="noopener noreferrer">The Conversation</a>; <a href="https://www.votebeat.org/2026/01/15/cisa-election-security-trust-broken-trump-chris-krebs-denise-merrill/" target="_blank" rel="noopener noreferrer">Votebeat</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">The Gap</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">The Gap</h3>
           <p>With CISA at 38% capacity, election security eliminated, and CISA at 38% capacity, volunteer hackers are filling the gap. DEF CON Franklin &mdash; launched by former acting Principal Deputy National Cyber Director Jake Braun and DEF CON founder Jeff Moss &mdash; has 350 volunteer hackers pairing with under-resourced water utilities and K-12 schools. Named for Benjamin Franklin's volunteer fire department. "We're in the gap period."</p>
           <p class="source-label">Sources: <a href="https://cyberscoop.com/franklin-project-cybersecurity-volunteers-jeff-moss-def-con/" target="_blank" rel="noopener noreferrer">CyberScoop</a>; <a href="https://therecord.media/def-con-franklin-water-utility-cybersecurity-volunteers" target="_blank" rel="noopener noreferrer">The Record</a>; <a href="https://www.nbcnews.com/tech/security/army-volunteer-hackers-help-protect-american-water-systems-schools-rcna165461" target="_blank" rel="noopener noreferrer">NBC News</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Schedule F</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Schedule F</h3>
           <p>50,000 federal employees reclassifiable to at-will positions. OPM finalized rule February 2026. Career civil servants who would normally provide institutional continuity and oversight become removable without cause.</p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Budget Priorities</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Budget Priorities</h3>
           <ul>
             <li>Defense: $838.7B</li>
             <li>Medicaid: cut $1.035 trillion over 10 years (10.9 million lose insurance)</li>
@@ -846,13 +675,13 @@
         <!-- PILLAR 7              -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Pillar 7: Financial Architecture</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Pillar 7: Financial Architecture</h2>
 
-          <h3 class="text-xl font-semibold text-white mb-3">Board of Peace</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Board of Peace</h3>
           <p>Trump is Chairman. $1 billion buys a permanent seat. Members include Rubio, Kushner, Witkoff, Marc Rowan (Apollo Global Management), Tony Blair, and Ajay Banga (World Bank). International Security Force: 20,000 troops pledged.</p>
           <p class="source-label">Sources: <a href="https://www.britannica.com/topic/Board-of-Peace" target="_blank" rel="noopener noreferrer">Britannica</a>; <a href="https://www.aljazeera.com/news/2026/1/18/who-is-part-of-trumps-board-of-peace-for-gaza" target="_blank" rel="noopener noreferrer">Al Jazeera</a>; <a href="https://www.pbs.org/newshour/world/1-billion-contribution-secures-permanent-seat-on-trumps-board-of-peace" target="_blank" rel="noopener noreferrer">PBS</a></p>
 
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Apollo-Epstein Financial Network</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Apollo-Epstein Financial Network</h3>
           <p>A class-action lawsuit filed March 2, 2026 in SDNY &mdash; brought by two teachers' unions representing $27.5 billion in pension capital &mdash; demands an SEC investigation into Apollo Global Management. CEO Marc Rowan sits on both the Board of Peace and the Gaza Executive Board while under lawsuit for allegedly lying to investors about his business relationship with Jeffrey Epstein. Apollo's share price fell approximately 27% since February 2026 documents surfaced, erasing roughly $12 billion in market capitalization.</p>
           <p>Apollo co-founder Leon Black paid Epstein $158 million for "tax and estate planning services." A January 14, 2016 Epstein calendar entry documents meetings that day with Larry Summers, Vitaly Churkin (Russian UN Ambassador, who died suddenly in February 2017), Kathy Ruemmler (Obama White House Counsel), and the Apollo CEO with Edmond de Rothschild representatives.</p>
           <p>Richard Kahn, Epstein's accountant, was deposed by House Oversight on March 11, 2026. Kahn tracked Rowan's stock trades and Kushner family financial vulnerabilities for Epstein. Apollo provided $300 million in mezzanine financing for Kushner's 666 Fifth Avenue rescue.</p>
@@ -872,7 +701,7 @@
         </figure>
 
         <section>
-          <h3 class="text-xl font-semibold text-white mt-8 mb-3">Russia Sanctions Relaxation</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Russia Sanctions Relaxation</h3>
           <p>30-day waiver on Russian oil sanctions issued March 6, 2026. Russia described as the "real winner" of the Iran war energy disruption. Witkoff coached Ushakov (Putin's adviser) on how to pitch Trump. The 28-point Ukraine peace plan is "generally favorable to Russia."</p>
           <p class="source-label">Sources: <a href="https://www.france24.com/en/live-news/20260310-trump-says-will-waive-some-oil-sanctions-as-iran-war-roils-markets" target="_blank" rel="noopener noreferrer">France24</a>; <a href="https://www.cnbc.com/2026/03/10/russia-winner-iran-us-war-energy-oil-disruption.html" target="_blank" rel="noopener noreferrer">CNBC</a>; <a href="https://www.axios.com/2025/11/20/trump-ukraine-peace-plan-28-points-russia" target="_blank" rel="noopener noreferrer">Axios</a></p>
         </section>
@@ -883,7 +712,7 @@
         <!-- PROJECT 2025          -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Project 2025: 53% Complete</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Project 2025: 53% Complete</h2>
           <p>283 of 532 recommended actions have been initiated or completed in 14 months. Heritage Foundation released Heritage 2.0 / Project 2026 in December 2025 &mdash; nine agendas focused on execution and maintenance of what's already in place. DOGE exceeded Project 2025's federal workforce reduction goals.</p>
           <p class="source-label">Sources: <a href="https://progressivereform.org/tracking-trump-2/project-2025-executive-action-tracker/" target="_blank" rel="noopener noreferrer">Center for Progressive Reform tracker</a>; <a href="https://www.pbs.org/newshour/politics/tracking-how-much-of-project-2025-the-trump-administration-achieved-this-year" target="_blank" rel="noopener noreferrer">PBS</a>; <a href="https://www.notus.org/trump-white-house/heritage-foundation-project-2025-2026-architects-release-new-policy-plan" target="_blank" rel="noopener noreferrer">NOTUS</a>; <a href="https://www.axios.com/2025/12/09/trump-china-project-2026-2025-policy-heritage-foundation-abortion" target="_blank" rel="noopener noreferrer">Axios</a>; <a href="https://www.govexec.com/transition/2025/04/project-2025-wanted-hobble-federal-workforce-doge-has-hastily-done-and-more/404390/" target="_blank" rel="noopener noreferrer">Government Executive</a></p>
         </section>
@@ -894,17 +723,17 @@
         <!-- WHAT CONNECTS THEM    -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">What Connects Them</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">What Connects Them</h2>
           <p>The seven pillars are not independent policy decisions. They are a system:</p>
           <ol>
-            <li><strong class="text-white">Build the lookup infrastructure</strong> &mdash; DOGE unified API, Palantir partnership, SAVE tool upgrade</li>
-            <li><strong class="text-white">Populate it</strong> &mdash; IRS data, SSA NUMIDENT, state voter rolls, Medicaid records, data broker purchases, seized leak databases, Selective Service records</li>
-            <li><strong class="text-white">Remove oversight</strong> &mdash; CISA sidelined, DHS shutdown, election security eliminated, Schedule F, federal preemption of state laws, CISA at 38% capacity</li>
-            <li><strong class="text-white">Deploy at the endpoint</strong> &mdash; ICE with Celebrite/Graphite/Mobile Fortify, CBP device searches, SAVE voter verification, QRF in every state</li>
-            <li><strong class="text-white">Control the election</strong> &mdash; SAVE Act, voter purges, ICE at polls, election security eliminated, third term amendment</li>
-            <li><strong class="text-white">Justify via war</strong> &mdash; Iran war enables emergency powers, energy disruption enables Russia sanctions relaxation, data centers become military targets</li>
-            <li><strong class="text-white">Privatize state functions</strong> &mdash; Haiti template: security, customs, prisons, tax collection transferred to private entities with revenue-based compensation; BlackRock acquires strategic ports; defense ETFs profit from the military spending these operations require</li>
-            <li><strong class="text-white">Enforce via leverage</strong> &mdash; Epstein files ensure Congressional compliance, Apollo-Epstein-Board of Peace network connects financial leverage to foreign policy (Rowan sits on both while under lawsuit for Epstein ties), database consolidation enables population-scale leverage</li>
+            <li><strong class="text-gray-900">Build the lookup infrastructure</strong> &mdash; DOGE unified API, Palantir partnership, SAVE tool upgrade</li>
+            <li><strong class="text-gray-900">Populate it</strong> &mdash; IRS data, SSA NUMIDENT, state voter rolls, Medicaid records, data broker purchases, seized leak databases, Selective Service records</li>
+            <li><strong class="text-gray-900">Remove oversight</strong> &mdash; CISA sidelined, DHS shutdown, election security eliminated, Schedule F, federal preemption of state laws, CISA at 38% capacity</li>
+            <li><strong class="text-gray-900">Deploy at the endpoint</strong> &mdash; ICE with Celebrite/Graphite/Mobile Fortify, CBP device searches, SAVE voter verification, QRF in every state</li>
+            <li><strong class="text-gray-900">Control the election</strong> &mdash; SAVE Act, voter purges, ICE at polls, election security eliminated, third term amendment</li>
+            <li><strong class="text-gray-900">Justify via war</strong> &mdash; Iran war enables emergency powers, energy disruption enables Russia sanctions relaxation, data centers become military targets</li>
+            <li><strong class="text-gray-900">Privatize state functions</strong> &mdash; Haiti template: security, customs, prisons, tax collection transferred to private entities with revenue-based compensation; BlackRock acquires strategic ports; defense ETFs profit from the military spending these operations require</li>
+            <li><strong class="text-gray-900">Enforce via leverage</strong> &mdash; Epstein files ensure Congressional compliance, Apollo-Epstein-Board of Peace network connects financial leverage to foreign policy (Rowan sits on both while under lawsuit for Epstein ties), database consolidation enables population-scale leverage</li>
           </ol>
           <p>Each step has legal justification. No single step is the story. The story is how they connect &mdash; and that every mechanism designed to catch this pattern is being dismantled at the same time.</p>
         </section>
@@ -915,24 +744,24 @@
         <!-- PEADs                 -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">The Activation Mechanism: Presidential Emergency Action Documents (PEADs)</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">The Activation Mechanism: Presidential Emergency Action Documents (PEADs)</h2>
           <p>The seven pillars describe an infrastructure. PEADs describe how it gets turned on.</p>
           <p>Presidential Emergency Action Documents are pre-drafted executive orders stored in the Oval Office safe. They are classified, have never been disclosed to Congress, and are not subject to judicial review until after activation. Their existence has been confirmed through FOIA litigation, declassified Eisenhower-era documents, and Congressional Research Service reports.</p>
           <p>According to the Brennan Center for Justice, PEADs have historically authorized:</p>
           <ul>
-            <li><strong class="text-white">Communications control</strong> &mdash; seizing broadcast and internet infrastructure</li>
-            <li><strong class="text-white">Asset freezes</strong> &mdash; blocking bank accounts of individuals or organizations</li>
-            <li><strong class="text-white">Domestic troop deployment</strong> &mdash; without Congressional approval</li>
-            <li><strong class="text-white">Detention</strong> &mdash; of citizens and noncitizens</li>
-            <li><strong class="text-white">Suspension of habeas corpus</strong></li>
-            <li><strong class="text-white">News censorship</strong> &mdash; restricting press access</li>
-            <li><strong class="text-white">Passport and travel restrictions</strong></li>
+            <li><strong class="text-gray-900">Communications control</strong> &mdash; seizing broadcast and internet infrastructure</li>
+            <li><strong class="text-gray-900">Asset freezes</strong> &mdash; blocking bank accounts of individuals or organizations</li>
+            <li><strong class="text-gray-900">Domestic troop deployment</strong> &mdash; without Congressional approval</li>
+            <li><strong class="text-gray-900">Detention</strong> &mdash; of citizens and noncitizens</li>
+            <li><strong class="text-gray-900">Suspension of habeas corpus</strong></li>
+            <li><strong class="text-gray-900">News censorship</strong> &mdash; restricting press access</li>
+            <li><strong class="text-gray-900">Passport and travel restrictions</strong></li>
           </ul>
           <p>The activation pathway follows a three-step pattern documented in emergency governance research:</p>
           <ol>
-            <li><strong class="text-white">Blend domestic dissent with foreign adversary</strong> &mdash; NSPM-7 already does this by defining "anti-Americanism" and "anti-capitalism" as domestic terrorism indicators alongside foreign threats</li>
-            <li><strong class="text-white">Declare domestic emergency</strong> &mdash; Iran war, sleeper cell alerts, and airport disruptions provide the predicate</li>
-            <li><strong class="text-white">Activate PEADs</strong> &mdash; no legislation required, no Congressional approval, no judicial review until after the fact</li>
+            <li><strong class="text-gray-900">Blend domestic dissent with foreign adversary</strong> &mdash; NSPM-7 already does this by defining "anti-Americanism" and "anti-capitalism" as domestic terrorism indicators alongside foreign threats</li>
+            <li><strong class="text-gray-900">Declare domestic emergency</strong> &mdash; Iran war, sleeper cell alerts, and airport disruptions provide the predicate</li>
+            <li><strong class="text-gray-900">Activate PEADs</strong> &mdash; no legislation required, no Congressional approval, no judicial review until after the fact</li>
           </ol>
           <p>The seven pillars are the infrastructure. The PEADs are the switch.</p>
           <p class="source-label">Sources: <a href="https://www.brennancenter.org/our-work/research-reports/presidential-emergency-action-documents" target="_blank" rel="noopener noreferrer">Brennan Center for Justice, "Presidential Emergency Action Documents"</a>; <a href="https://sgp.fas.org/crs/natsec/98-505.pdf" target="_blank" rel="noopener noreferrer">Congressional Research Service, "National Emergency Powers" (98-505)</a>; <a href="https://nsarchive.gwu.edu/briefing-book/foia/2020-04-06/presidential-emergency-action-documents-peads-set-secret-executive-orders" target="_blank" rel="noopener noreferrer">National Security Archive/GWU</a></p>
@@ -944,15 +773,15 @@
         <!-- AI AS THREAT          -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">AI as Threat Multiplier</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">AI as Threat Multiplier</h2>
           <p>The Cisco State of AI Security 2026 report documents the convergence of AI capabilities with the surveillance infrastructure described above:</p>
           <ul>
-            <li><strong class="text-white">83% of organizations planned agentic AI deployment; only 29% were ready</strong> &mdash; the readiness gap is a fertile ground for state actors</li>
-            <li><strong class="text-white">Chinese state-backed group GTG-1002</strong> jailbroke Claude Code in late 2025, automating 80-90% of a multi-target cyberattack using the AI model itself &mdash; the first publicly reported case of AI as force multiplier for state-sponsored cyber-espionage</li>
-            <li><strong class="text-white">"Excessive Agency"</strong> is now an OWASP LLM Top 10 vulnerability category: AI systems with unsupervised control over critical business functions</li>
-            <li><strong class="text-white">Multi-turn jailbreak attack success rate: 92.78%</strong> across 8 open-weight models &mdash; AI guardrails fail under sustained pressure</li>
-            <li><strong class="text-white">26% of 31,000 agent skills analyzed contained at least one vulnerability</strong> &mdash; the agentic AI ecosystem has no clear ownership, liability, or security standards</li>
-            <li><strong class="text-white">Vector embedding attacks</strong> predicted as next frontier: poisoning the vector databases that serve as RAG memory, manipulating model retrieval without touching the prompt window</li>
+            <li><strong class="text-gray-900">83% of organizations planned agentic AI deployment; only 29% were ready</strong> &mdash; the readiness gap is a fertile ground for state actors</li>
+            <li><strong class="text-gray-900">Chinese state-backed group GTG-1002</strong> jailbroke Claude Code in late 2025, automating 80-90% of a multi-target cyberattack using the AI model itself &mdash; the first publicly reported case of AI as force multiplier for state-sponsored cyber-espionage</li>
+            <li><strong class="text-gray-900">"Excessive Agency"</strong> is now an OWASP LLM Top 10 vulnerability category: AI systems with unsupervised control over critical business functions</li>
+            <li><strong class="text-gray-900">Multi-turn jailbreak attack success rate: 92.78%</strong> across 8 open-weight models &mdash; AI guardrails fail under sustained pressure</li>
+            <li><strong class="text-gray-900">26% of 31,000 agent skills analyzed contained at least one vulnerability</strong> &mdash; the agentic AI ecosystem has no clear ownership, liability, or security standards</li>
+            <li><strong class="text-gray-900">Vector embedding attacks</strong> predicted as next frontier: poisoning the vector databases that serve as RAG memory, manipulating model retrieval without touching the prompt window</li>
           </ul>
           <p>NATO's Chief Scientist 2025 report on cognitive warfare identifies AI as enabling "precision influence at scale" through three levels: biological (neurotechnology targeting the nervous system), psychological (AI-tailored stimuli exploiting cognitive biases), and social (fracturing shared narratives to create "epistemic chaos"). The report explicitly calls for cognitive engagement to be integrated alongside cyber and electronic warfare as a standing military capability.</p>
           <p>The AI threat is not separate from the seven pillars. It is the accelerant. Palantir's "common API layer" is AI infrastructure. DOGE's database consolidation feeds AI analytics. The McKinsey AI platform "Lilli" was hacked in 2 hours, exposing 46.5 million chat messages &mdash; system prompts are now attack surface. And the FBI has called AI a "game changer" for "remote access operations" (hacking), later characterized as "hypothetical."</p>
@@ -965,13 +794,13 @@
         <!-- AI CHAT HISTORY       -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">AI Chat History: No Legal Protection</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">AI Chat History: No Legal Protection</h2>
           <p>A note for anyone reading this on a screen connected to the internet:</p>
           <ul>
-            <li><strong class="text-white">US v. Heppner (February 10, 2026):</strong> Federal court ruled AI conversations have no attorney-client privilege. First ruling of its kind.</li>
-            <li><strong class="text-white">NYT v. OpenAI (January 2026):</strong> Court ordered OpenAI to produce its entire 20-million-log sample of ChatGPT conversations.</li>
-            <li><strong class="text-white">FBI seizure (2026):</strong> FBI seized a CEO's computer and sought AI chat history as evidence.</li>
-            <li><strong class="text-white">OpenAI monitors all conversations</strong> and escalates concerning ones to human reviewers who can report to law enforcement. This is not optional.</li>
+            <li><strong class="text-gray-900">US v. Heppner (February 10, 2026):</strong> Federal court ruled AI conversations have no attorney-client privilege. First ruling of its kind.</li>
+            <li><strong class="text-gray-900">NYT v. OpenAI (January 2026):</strong> Court ordered OpenAI to produce its entire 20-million-log sample of ChatGPT conversations.</li>
+            <li><strong class="text-gray-900">FBI seizure (2026):</strong> FBI seized a CEO's computer and sought AI chat history as evidence.</li>
+            <li><strong class="text-gray-900">OpenAI monitors all conversations</strong> and escalates concerning ones to human reviewers who can report to law enforcement. This is not optional.</li>
             <li>Sam Altman publicly warned people treating ChatGPT like a therapist or lawyer should understand those conversations can be subpoenaed.</li>
           </ul>
           <p class="source-label">Sources: <a href="https://www.hsfkramer.com/notes/litigation/2026-02/new-york-court-finds-client-chats-with-generative-ai-tool-claude-are-not-privileged" target="_blank" rel="noopener noreferrer">HSFKramer</a>; <a href="https://www.crowell.com/en/insights/client-alerts/federal-court-rules-some-ai-chats-are-not-protected-by-legal-privilege-what-it-means-for-you" target="_blank" rel="noopener noreferrer">Crowell</a>; <a href="https://natlawreview.com/article/openai-loses-privacy-gambit-20-million-chatgpt-logs-likely-headed-copyright" target="_blank" rel="noopener noreferrer">NatLawReview</a></p>
@@ -983,17 +812,17 @@
         <!-- ACTIVE THREATS        -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Active Threats (March 9-12, 2026)</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Active Threats (March 9-12, 2026)</h2>
 
-          <p><strong class="text-white">Iran Sleeper Cell Alert:</strong> US intercepted a new Farsi numbers station on 7910 kHz shortwave (designated V32), using Cold War-era one-way voice link protocol. Federal alert to all law enforcement describes it as an "operational trigger" for sleeper assets. No specific credible threat tied to a location.</p>
+          <p><strong class="text-gray-900">Iran Sleeper Cell Alert:</strong> US intercepted a new Farsi numbers station on 7910 kHz shortwave (designated V32), using Cold War-era one-way voice link protocol. Federal alert to all law enforcement describes it as an "operational trigger" for sleeper assets. No specific credible threat tied to a location.</p>
 
-          <p><strong class="text-white">Airport Disruptions (March 4-10):</strong> Bomb threats at Newark/LaGuardia (March 4), Philadelphia (March 4), Kansas City (March 8-9), and Reagan National. JetBlue nationwide ground stop on March 10 &mdash; "system outage" with no details on which system failed or whether it was a cyberattack. 155 delays. Same day as the sleeper cell alert.</p>
+          <p><strong class="text-gray-900">Airport Disruptions (March 4-10):</strong> Bomb threats at Newark/LaGuardia (March 4), Philadelphia (March 4), Kansas City (March 8-9), and Reagan National. JetBlue nationwide ground stop on March 10 &mdash; "system outage" with no details on which system failed or whether it was a cyberattack. 155 delays. Same day as the sleeper cell alert.</p>
 
-          <p><strong class="text-white">NORAD detecting and tracking Russian aircraft</strong> &mdash; active monitoring as of March 2026.</p>
+          <p><strong class="text-gray-900">NORAD detecting and tracking Russian aircraft</strong> &mdash; active monitoring as of March 2026.</p>
 
-          <p><strong class="text-white">149 hacktivist DDoS attacks hitting 110 targets</strong> &mdash; coordinated campaign across multiple nation-state-aligned groups.</p>
+          <p><strong class="text-gray-900">149 hacktivist DDoS attacks hitting 110 targets</strong> &mdash; coordinated campaign across multiple nation-state-aligned groups.</p>
 
-          <p><strong class="text-white">CISA at 38% capacity</strong> during all of this. FISA 702 expires in 39 days. DHS shutdown at Day 26. Election security program eliminated. The cybersecurity infrastructure designed to detect and respond to exactly these threats is operating at a fraction of capacity during a period of unprecedented threat convergence.</p>
+          <p><strong class="text-gray-900">CISA at 38% capacity</strong> during all of this. FISA 702 expires in 39 days. DHS shutdown at Day 26. Election security program eliminated. The cybersecurity infrastructure designed to detect and respond to exactly these threats is operating at a fraction of capacity during a period of unprecedented threat convergence.</p>
         </section>
 
         <!-- Diagram: Timeline -->
@@ -1011,7 +840,7 @@
         <!-- METHODOLOGY           -->
         <!-- ===================== -->
         <section>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Methodology</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Methodology</h2>
           <p>Every claim in this document is sourced from publicly available reporting, government documents, court filings, or whistleblower complaints. Source links are provided inline. No anonymous sources. No speculation about intent &mdash; only documented actions, their legal basis, and their structural connections.</p>
           <p>The contribution of this analysis is not new reporting. It is the structural pattern: seven independently justified pillars that, taken together, constitute a surveillance and control architecture operating without oversight, accountability, or public consent.</p>
         </section>
@@ -1020,7 +849,7 @@
 
         <!-- Source Count Footer -->
         <div class="text-center py-8">
-          <p class="text-white/50 text-sm italic">110+ primary sources. All public record. Updated March 12, 2026.</p>
+          <p class="text-gray-500 text-sm italic">110+ primary sources. All public record. Updated March 12, 2026.</p>
         </div>
 
       </div><!-- /content-area -->

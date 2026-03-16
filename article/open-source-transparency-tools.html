@@ -26,153 +26,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'cp-teal': '#206795',
-            'cp-cyan': '#38c1e0',
-            'cp-dark': '#1a3347',
-            'cp-muted': '#5a7a8f',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Inter (async) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for article content -->
-  <style>
-    .content-area table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-    }
-    .content-area table thead th {
-      background-color: #206795;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
-    }
-    .content-area table tbody td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid #1a3347;
-    }
-    .content-area table tbody tr:nth-child(even) {
-      background-color: #1a2a38;
-    }
-    .content-area table tbody tr:hover {
-      background-color: #1e3044;
-    }
-    .content-area blockquote {
-      border-left: 4px solid #38c1e0;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      background-color: #152230;
-      border-radius: 0 0.5rem 0.5rem 0;
-    }
-    .content-area a {
-      color: #38c1e0;
-      text-decoration: none;
-    }
-    .content-area a:hover {
-      text-decoration: underline;
-      color: #38c1e0;
-    }
-    .content-area ul, .content-area ol {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-    }
-    .content-area ul li {
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area ol li {
-      list-style-type: decimal;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area hr {
-      border: none;
-      border-top: 2px solid #1a3347;
-      margin: 2.5rem 0;
-    }
-    .content-area p {
-      margin-bottom: 1.25rem;
-    }
-    .pullquote {
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: #38c1e0;
-      line-height: 1.5;
-      padding: 2rem 0;
-      text-align: center;
-      border-top: 2px solid #1a3347;
-      border-bottom: 2px solid #1a3347;
-      margin: 2.5rem 0;
-    }
-    .tool-card {
-      border-left: 4px solid #38c1e0;
-      padding: 1rem 1.5rem;
-      margin: 1rem 0;
-      background: linear-gradient(135deg, #1a2a38 0%, #152230 100%);
-      border-radius: 0 0.75rem 0.75rem 0;
-    }
-    .tool-card .tool-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #38c1e0;
-      margin-bottom: 0.25rem;
-    }
-    .tool-card .tool-url {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #38c1e0;
-      margin-bottom: 0.5rem;
-    }
-    .tool-card .tool-desc {
-      font-size: 0.95rem;
-      color: #9ca3af;
-      line-height: 1.7;
-    }
-    .category-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .category-icon {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-    .table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 1.5rem 0;
-    }
-  </style>
-
-  <!-- JSON-LD Structured Data -->
+<!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -197,10 +51,13 @@
   }
   </script>
 
-<!-- build:config {"nav":"investigations"} -->
+<!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- build:config {"nav":"investigations"} -->
 </head>
 
-<body class="bg-[#0a1218] text-white font-sans antialiased">
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
 <!-- build:nav -->
 
 
@@ -210,9 +67,9 @@
       <ol class="flex items-center space-x-2 text-sm text-gray-400">
         <li><a href="/" class="hover:text-[#38c1e0] transition-colors">Home</a></li>
         <li><span class="mx-1">/</span></li>
-        <li><a href="/investigations.html" class="hover:text-[#38c1e0] transition-colors">Investigations</a></li>
+        <li><a href="/investigations.html" class="hover:text-[#38c1e0] transition-colors">Articles</a></li>
         <li><span class="mx-1">/</span></li>
-        <li class="text-gray-300 font-medium">The Tools Already Exist to Make Power Visible</li>
+        <li class="text-gray-600 font-medium">The Tools Already Exist to Make Power Visible</li>
       </ol>
     </div>
   </nav>
@@ -227,12 +84,19 @@
           <span class="inline-block bg-cp-teal/10 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
           <time datetime="2026-03-08" class="text-sm text-gray-400">March 8, 2026</time>
         </div>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
           The Tools Already Exist to Make Power Visible
         </h1>
         <p class="text-lg md:text-xl text-gray-400 leading-relaxed">
           60+ free, open-source tools for investigation, conflict monitoring, democratic oversight, AI security, decentralized communication, OSINT, personal counter-surveillance, and accountability. Nobody compiled the list &mdash; until now.
         </p>
+      
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-200">
+          <div>
+            <p class="text-sm font-semibold text-gray-900">Kristine Socall, MBA International Economic Development</p>
+            <p class="text-xs text-gray-500">Founder &amp; Executive Director, <a href="https://gifteddreamers.org" class="text-cp-teal hover:underline">Gifted Dreamers, Inc.</a> 501(c)(3)</p>
+          </div>
+        </div>
       </header>
 
       <figure class="mb-10">
@@ -250,10 +114,10 @@
       </figure>
 
       <!-- Article Body -->
-      <div class="content-area prose prose-lg max-w-none text-gray-200 leading-relaxed">
+      <div class="content-area prose prose-lg max-w-none leading-relaxed">
 
         <!-- SECTION 1: THE FRAMEWORK -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Why Information Changes Everything</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Why Information Changes Everything</h2>
 
         <p>
           Donella Meadows, the systems scientist who gave us the concept of <em>leverage points</em>, identified twelve places where you can intervene in a complex system. Most activism &mdash; most politics, most media &mdash; operates at the lowest-leverage points: arguing about numbers, tweaking parameters, fighting over budgets. The interventions that actually transform systems happen higher up.
@@ -272,7 +136,7 @@
         </div>
 
         <p>
-          This principle is why <a href="/blog/5gw-research.html">fifth-generation warfare targets information flows first</a>. It's why <a href="/blog/data-privacy-sovereignty-best-practices.html">data sovereignty matters</a>. It's why our <a href="/blog/atx-ice-activity.html">ICE activity tracking</a> follows the same logic as the Toxic Release Inventory: make the system's behavior visible so people can respond.
+          This principle is why <a href="/article/5gw-research.html">fifth-generation warfare targets information flows first</a>. It's why <a href="/article/data-privacy-sovereignty-best-practices.html">data sovereignty matters</a>. It's why our <a href="/article/atx-ice-activity.html">ICE activity tracking</a> follows the same logic as the Toxic Release Inventory: make the system's behavior visible so people can respond.
         </p>
 
         <p>
@@ -288,7 +152,7 @@
         <!-- SECTION 2: INVESTIGATION TOOLS -->
         <div class="category-header">
           <div class="category-icon bg-red-100 text-red-700">&#128269;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Investigation &amp; Financial Network Analysis</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Investigation &amp; Financial Network Analysis</h2>
         </div>
         <p>Tools for surfacing hidden relationships in financial crime, corporate ownership, and political money.</p>
 
@@ -393,7 +257,7 @@
         <!-- SECTION 3: CONFLICT MONITORING -->
         <div class="category-header">
           <div class="category-icon bg-orange-100 text-orange-700">&#127758;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Conflict Monitoring &amp; Military Accountability</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Conflict Monitoring &amp; Military Accountability</h2>
         </div>
         <p>Tools for making military operations, their costs, and their consequences visible in real time.</p>
 
@@ -444,7 +308,7 @@
         <!-- SECTION 4: DEMOCRATIC TRANSPARENCY -->
         <div class="category-header">
           <div class="category-icon bg-blue-100 text-blue-700">&#127963;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Democratic Transparency</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Democratic Transparency</h2>
         </div>
         <p>Tools for making the behavior of elected officials and government institutions visible.</p>
 
@@ -483,9 +347,9 @@
         <!-- SECTION 5: MEDIA LITERACY -->
         <div class="category-header">
           <div class="category-icon bg-purple-100 text-purple-700">&#128240;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Media Literacy &amp; Disinformation Detection</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Media Literacy &amp; Disinformation Detection</h2>
         </div>
-        <p>Tools for making narrative manipulation visible &mdash; essential in an era of <a href="/blog/5gw-research.html">fifth-generation warfare</a>.</p>
+        <p>Tools for making narrative manipulation visible &mdash; essential in an era of <a href="/article/5gw-research.html">fifth-generation warfare</a>.</p>
 
         <div class="tool-card">
           <div class="tool-name">Ground News</div>
@@ -516,7 +380,7 @@
         <!-- SECTION 6: ENVIRONMENTAL -->
         <div class="category-header">
           <div class="category-icon bg-green-100 text-green-700">&#127793;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Environmental Monitoring</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Environmental Monitoring</h2>
         </div>
         <p>Tools for making ecological damage visible &mdash; following the exact principle of the Toxic Release Inventory.</p>
 
@@ -543,7 +407,7 @@
         <!-- SECTION 7: ACCOUNTABILITY -->
         <div class="category-header">
           <div class="category-icon bg-gray-200 text-gray-700">&#128737;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Police &amp; Government Accountability</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Police &amp; Government Accountability</h2>
         </div>
 
         <div class="tool-card">
@@ -561,7 +425,7 @@
         <hr>
 
         <!-- SECTION 8: START HERE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Where to Start</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Where to Start</h2>
 
         <p>Thirty tools is overwhelming. Here's how to pick based on what you care about:</p>
 
@@ -647,7 +511,7 @@
         <!-- SECTION: INVESTIGATION ADDITIONS (March 12, 2026 update) -->
         <div class="category-header">
           <div class="category-icon bg-red-100 text-red-700">&#128200;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Government Accountability &amp; Contract Tracking</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Government Accountability &amp; Contract Tracking</h2>
         </div>
         <p>Tools for tracking government contracts, congressional behavior, and enforcement patterns &mdash; added March 12, 2026.</p>
 
@@ -674,7 +538,7 @@
         <!-- SECTION: CONFLICT & INFRASTRUCTURE ADDITIONS -->
         <div class="category-header">
           <div class="category-icon bg-orange-100 text-orange-700">&#127760;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Intelligence &amp; Infrastructure Mapping</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Intelligence &amp; Infrastructure Mapping</h2>
         </div>
         <p>Multi-layer OSINT dashboards and infrastructure maps for situational awareness &mdash; added March 12, 2026.</p>
 
@@ -701,7 +565,7 @@
         <!-- SECTION: AI & AGENTIC SECURITY -->
         <div class="category-header">
           <div class="category-icon bg-indigo-100 text-indigo-700">&#129302;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">AI &amp; Agentic Security</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">AI &amp; Agentic Security</h2>
         </div>
         <p>As AI agents gain authority to execute code, access databases, and act on behalf of humans, the security of the &ldquo;connective tissue&rdquo; &mdash; the protocols, tools, and skills that connect AI to the world &mdash; becomes critical infrastructure. These tools make that attack surface visible. Context: Cisco&rsquo;s <em>State of AI Security 2026</em> found that 26% of 31,000 agent skills contained at least one vulnerability, and multi-turn jailbreak attacks succeed 92.78% of the time against open-weight models.</p>
 
@@ -734,9 +598,9 @@
         <!-- SECTION: PERSONAL SECURITY & COMMUNICATION -->
         <div class="category-header">
           <div class="category-icon bg-yellow-100 text-yellow-700">&#128225;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Personal Security &amp; Resilient Communication</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Personal Security &amp; Resilient Communication</h2>
         </div>
-        <p>Tools for detecting surveillance at the personal level, communicating when infrastructure is compromised, and maintaining digital autonomy. These operate at the individual layer that our <a href="/blog/psychology-of-authoritarian-control.html">psychology of authoritarian control</a> research identifies as the first target of coercive systems.</p>
+        <p>Tools for detecting surveillance at the personal level, communicating when infrastructure is compromised, and maintaining digital autonomy. These operate at the individual layer that our <a href="/article/psychology-of-authoritarian-control.html">psychology of authoritarian control</a> research identifies as the first target of coercive systems.</p>
 
         <div class="tool-card">
           <div class="tool-name">Rayhunter</div>
@@ -767,7 +631,7 @@
         <!-- SECTION: DECENTRALIZED COMMUNICATION -->
         <div class="category-header">
           <div class="category-icon bg-teal-100 text-teal-700">&#128752;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Decentralized Communication</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Decentralized Communication</h2>
         </div>
         <p>Networking stacks and clients that operate without centralized infrastructure. When ISPs, cell towers, or platforms are compromised or shut down, these tools maintain the ability to communicate &mdash; added March 12, 2026.</p>
 
@@ -812,7 +676,7 @@
         <!-- SECTION: OSINT & INVESTIGATION -->
         <div class="category-header">
           <div class="category-icon bg-purple-100 text-purple-700">&#128373;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">OSINT &amp; Investigation</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">OSINT &amp; Investigation</h2>
         </div>
         <p>Automated open-source intelligence collection, relationship visualization, breach monitoring, and internet-connected device discovery &mdash; added March 12, 2026.</p>
 
@@ -845,7 +709,7 @@
         <!-- SECTION: AI GOVERNANCE -->
         <div class="category-header">
           <div class="category-icon bg-emerald-100 text-emerald-700">&#127963;</div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">AI Governance</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">AI Governance</h2>
         </div>
         <p>Frameworks and policy instruments for governing AI systems as operational actors rather than passive tools &mdash; added March 12, 2026.</p>
 
@@ -857,15 +721,29 @@
 
         <hr>
 
+        <div class="category-header">
+          <div class="category-icon bg-pink-100 text-pink-700">&#128147;</div>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Public Mood Tracking</h2>
+        </div>
+        <p>Real-time crowd-sourced sentiment data &mdash; how people actually feel right now, unfiltered by algorithms or polling questions. Added March 13, 2026.</p>
+
+        <div class="tool-card">
+          <div class="tool-name">Are We Cooked?</div>
+          <div class="tool-url"><a href="https://www.arewecooked.app/" target="_blank" rel="noopener noreferrer">arewecooked.app</a></div>
+          <div class="tool-desc">Real-time global mood tracker. Anonymous, no accounts. People rate how they feel on a 0&ndash;10 scale and tag what&rsquo;s causing it (war, work, cost of living, politics, sleep). Results displayed on a live heatmap with geographic distribution. Unlike social media sentiment analysis (which filters through algorithms) or polling (which filters through questions), this captures raw felt experience at population scale. The aggregate becomes a map of collective state &mdash; what people are actually feeling, not what platforms want them to engage with.</div>
+        </div>
+
+        <hr>
+
         <!-- SECTION 9: THE PRINCIPLE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Principle Behind the Tools</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">The Principle Behind the Tools</h2>
 
         <p>
           Every tool on this list follows the same logic: <strong>information flow as structural intervention.</strong> Nobody had to pass a law requiring them to exist. Nobody had to get permission. People saw that power was hiding in opacity and built instruments of visibility.
         </p>
 
         <p>
-          This is the same principle behind our <a href="/blog/atx-ice-activity.html">ICE activity tracking for Austin</a> and <a href="/blog/mn-ice-activity.html">Minneapolis</a>. The same principle behind our <a href="/blog/ai-surveillance-countermeasures.html">surveillance countermeasures research</a>. The same principle behind our <a href="/blog/data-privacy-sovereignty-best-practices.html">data sovereignty guides</a>: when you make the system's behavior visible, people can respond. When you keep it hidden, they can't.
+          This is the same principle behind our <a href="/article/atx-ice-activity.html">ICE activity tracking for Austin</a> and <a href="/article/mn-ice-activity.html">Minneapolis</a>. The same principle behind our <a href="/article/ai-surveillance-countermeasures.html">surveillance countermeasures research</a>. The same principle behind our <a href="/article/data-privacy-sovereignty-best-practices.html">data sovereignty guides</a>: when you make the system's behavior visible, people can respond. When you keep it hidden, they can't.
         </p>
 
         <p>
@@ -887,15 +765,15 @@
 
         <hr>
 
-        <section class="mt-10 p-6 bg-[#152230] rounded-lg border border-[#1a3347]">
-          <h3 class="text-lg font-bold text-white mb-2">Related Reading</h3>
+        <section class="mt-10 p-6 bg-gray-50 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Related Reading</h3>
           <ul>
-            <li><a href="/blog/psychology-of-authoritarian-control.html">The Psychology of Authoritarian Control: From Cults to Cognitive Warfare</a></li>
-            <li><a href="/blog/5gw-research.html">Fifth-Generation Warfare: The Invisible War Already Underway</a></li>
-            <li><a href="/blog/data-privacy-sovereignty-best-practices.html">Data Privacy &amp; Sovereignty Best Practices (Feb 2026)</a></li>
-            <li><a href="/blog/ai-surveillance-countermeasures.html">Defeating Facial Recognition in an AI Surveillance Era</a></li>
-            <li><a href="/blog/connecting-isolated-voices.html">How Isolated People Find Each Other</a></li>
-            <li><a href="/blog/atx-ice-activity.html">ICE Activity Within a 2-Hour Radius of Austin, TX</a></li>
+            <li><a href="/article/psychology-of-authoritarian-control.html">The Psychology of Authoritarian Control: From Cults to Cognitive Warfare</a></li>
+            <li><a href="/article/5gw-research.html">Fifth-Generation Warfare: The Invisible War Already Underway</a></li>
+            <li><a href="/article/data-privacy-sovereignty-best-practices.html">Data Privacy &amp; Sovereignty Best Practices (Feb 2026)</a></li>
+            <li><a href="/article/ai-surveillance-countermeasures.html">Defeating Facial Recognition in an AI Surveillance Era</a></li>
+            <li><a href="/article/connecting-isolated-voices.html">How Isolated People Find Each Other</a></li>
+            <li><a href="/article/atx-ice-activity.html">ICE Activity Within a 2-Hour Radius of Austin, TX</a></li>
           </ul>
         </section>
 

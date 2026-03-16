@@ -28,155 +28,7 @@
 
   <!-- DNS Prefetch -->
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'cp-teal': '#206795',
-            'cp-cyan': '#38c1e0',
-            'cp-dark': '#1a3347',
-            'cp-muted': '#5a7a8f',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Inter (async) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for article content -->
-  <style>
-    /* Tables */
-    .content-area table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-    }
-    .content-area table thead th {
-      background-color: #206795;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
-    }
-    .content-area table tbody td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .content-area table tbody tr:nth-child(even) {
-      background-color: rgba(32,103,149,0.1);
-    }
-    .content-area table tbody tr:hover {
-      background-color: rgba(56,193,224,0.1);
-    }
-
-    /* Blockquotes */
-    .content-area blockquote {
-      border-left: 4px solid #38c1e0;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      background-color: rgba(26,51,71,0.5);
-      border-radius: 0 0.5rem 0.5rem 0;
-    }
-
-    /* Links */
-    .content-area a {
-      color: #38c1e0;
-      text-decoration: none;
-    }
-    .content-area a:hover {
-      text-decoration: underline;
-      color: #38c1e0;
-    }
-
-    /* Lists */
-    .content-area ul, .content-area ol {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-    }
-    .content-area ul li {
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area ol li {
-      list-style-type: decimal;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-
-    /* Footnote references (superscript in text) */
-    .content-area sup a.fn-ref {
-      font-size: 0.75em;
-      color: #38c1e0;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0 1px;
-    }
-    .content-area sup a.fn-ref:hover {
-      text-decoration: underline;
-      color: #38c1e0;
-    }
-
-    /* Footnotes section */
-    .footnotes-section {
-      font-size: 0.875rem;
-      border-top: 2px solid rgba(255,255,255,0.15);
-      padding-top: 1.5rem;
-      margin-top: 3rem;
-    }
-    .footnotes-section ol {
-      padding-left: 1.5rem;
-    }
-    .footnotes-section li {
-      margin-bottom: 0.5rem;
-      line-height: 1.6;
-      color: #94a3b8;
-    }
-    .footnotes-section li a {
-      color: #38c1e0;
-      word-break: break-all;
-    }
-    .footnotes-section li a:hover {
-      color: #38c1e0;
-      text-decoration: underline;
-    }
-    .footnotes-section .fn-back {
-      color: #38c1e0;
-      text-decoration: none;
-      margin-left: 0.25rem;
-      font-size: 0.85em;
-    }
-    .footnotes-section .fn-back:hover {
-      color: #38c1e0;
-    }
-
-    /* Table overflow wrapper */
-    .table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 1.5rem 0;
-    }
-
-    /* Section dividers */
-    .content-area hr {
-      border: none;
-      border-top: 2px solid rgba(255,255,255,0.15);
-      margin: 2.5rem 0;
-    }
-  </style>
-
-  <!-- JSON-LD Structured Data -->
+<!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -201,21 +53,24 @@
   }
   </script>
 
-<!-- build:config {"nav":"research"} -->
+<!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- build:config {"nav":"research"} -->
 </head>
 
-<body class="bg-[#0a1218] text-white font-sans antialiased">
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
 
 <!-- build:nav -->
 
 
   <!-- Breadcrumb -->
-  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-cp-dark/80 backdrop-blur border-b border-white/10">
+  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-cp-dark/80 backdrop-blur border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
       <ol class="flex items-center space-x-2 text-sm text-cp-muted">
         <li><a href="/" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.home">Home</a></li>
         <li><span class="mx-1">/</span></li>
-        <li><a href="/research/" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.research">Research</a></li>
+        <li><a href="/article/" class="hover:text-cp-cyan transition-colors">Articles</a></li>
         <li><span class="mx-1">/</span></li>
         <li class="text-white font-medium truncate" data-i18n="breadcrumb.resilience">Rebuilding Resilience</li>
       </ol>
@@ -231,15 +86,22 @@
       <!-- Article Header -->
       <header class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span class="inline-block bg-cp-teal/20 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide" data-i18n="blog.category.research">Research &amp; Frameworks</span>
+          <span class="inline-block bg-cp-teal/10 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide" data-i18n="blog.category.research">Research &amp; Frameworks</span>
           <time datetime="2026-02-10" class="text-sm text-cp-muted">February 10, 2026</time>
         </div>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6" data-i18n="blog.resilience.title">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6" data-i18n="blog.resilience.title">
           Rebuilding Resilience: Frameworks, Metrics, and Research for Communities and Individuals
         </h1>
         <p class="text-lg md:text-xl text-cp-muted leading-relaxed" data-i18n="blog.resil.subtitle">
           A research compilation covering conceptual overviews, neighborhood-level frameworks, quantitative indices, and psychological resilience scales&mdash;tools for understanding, measuring, and strengthening resilience at every level.
         </p>
+      
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-200">
+          <div>
+            <p class="text-sm font-semibold text-gray-900">Kristine Socall, MBA International Economic Development</p>
+            <p class="text-xs text-gray-500">Founder &amp; Executive Director, <a href="https://gifteddreamers.org" class="text-cp-teal hover:underline">Gifted Dreamers, Inc.</a> 501(c)(3)</p>
+          </div>
+        </div>
       </header>
       <figure class="mb-10">
         <picture>
@@ -251,7 +113,7 @@
 
 
       <!-- Article Body -->
-      <div class="content-area prose prose-lg max-w-none text-gray-300 leading-relaxed">
+      <div class="content-area prose prose-lg max-w-none text-gray-600 leading-relaxed">
 
         <p data-i18n="blog.resil.p1">
           Resilience is used in several overlapping ways: as the capacity to withstand shocks, the dynamic process of adapting over time, and the outcomes that signal successful recovery or transformation. It helps to explicitly distinguish personal psychological resilience from community or neighborhood resilience, and then borrow concrete frameworks and metrics from each.<sup><a href="#fn1" id="fnref1" class="fn-ref">[1]</a></sup><sup><a href="#fn2" id="fnref2" class="fn-ref">[2]</a></sup><sup><a href="#fn3" id="fnref3" class="fn-ref">[3]</a></sup><sup><a href="#fn4" id="fnref4" class="fn-ref">[4]</a></sup>
@@ -260,7 +122,7 @@
         <hr>
 
         <!-- BIG-PICTURE CONCEPTUAL OVERVIEWS -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.resilience.h2.conceptual">Big-Picture Conceptual Overviews</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.resilience.h2.conceptual">Big-Picture Conceptual Overviews</h2>
 
         <p data-i18n="blog.resil.p2">
           <strong>What Do We Mean by &ldquo;Community Resilience&rdquo;? A Systematic Literature Review of How It Is Defined and Measured</strong><br>
@@ -283,7 +145,7 @@
         <hr>
 
         <!-- COMMUNITY AND NEIGHBORHOOD RESILIENCE FRAMEWORKS -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.resilience.h2.community">Community and Neighborhood Resilience Frameworks</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.resilience.h2.community">Community and Neighborhood Resilience Frameworks</h2>
 
         <p data-i18n="blog.resil.p5">
           <strong>EnRiCH Community Resilience Framework for High-Risk Populations</strong><br>
@@ -318,7 +180,7 @@
         <hr>
 
         <!-- QUANTITATIVE INDICES AND METRICS -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.resilience.h2.metrics">Quantitative Indices and Metrics</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.resilience.h2.metrics">Quantitative Indices and Metrics</h2>
 
         <p data-i18n="blog.resil.p10">
           <strong>A Value-Focused Thinking Approach to Measure Community Sustainable Resilience</strong><br>
@@ -347,7 +209,7 @@
         <hr>
 
         <!-- PERSONAL PSYCHOLOGICAL RESILIENCE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.resilience.h2.personal">Personal Psychological Resilience: Frameworks and Scales</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.resilience.h2.personal">Personal Psychological Resilience: Frameworks and Scales</h2>
 
         <p data-i18n="blog.resil.p14">
           <strong>Resilience Resources, Coping Strategies and Positive Adaptation</strong><br>
@@ -376,7 +238,7 @@
         <hr>
 
         <!-- COMPARISON TABLE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.resilience.h2.comparison">Community vs Personal Resilience: A Quick Comparison</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.resilience.h2.comparison">Community vs Personal Resilience: A Quick Comparison</h2>
 
         <div class="table-wrap">
           <table>
@@ -420,7 +282,7 @@
 
         <!-- Footnotes -->
         <section class="footnotes-section" aria-label="Footnotes">
-          <h2 class="text-lg font-bold text-white mb-4">Sources</h2>
+          <h2 class="text-lg font-bold text-gray-900 mb-4">Sources</h2>
           <ol>
             <li id="fn1">
               <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0246000" target="_blank" rel="noopener noreferrer">Fullerton, D.J. et al. &mdash; Resilience Resources, Coping Strategies and Positive Adaptation (PLOS ONE, 2021)</a>

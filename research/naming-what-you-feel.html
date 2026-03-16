@@ -26,136 +26,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon.png">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'cp-teal': '#206795',
-            'cp-cyan': '#38c1e0',
-            'cp-dark': '#1a3347',
-            'cp-muted': '#5a7a8f',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Inter (async) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for article content -->
-  <style>
-    .content-area table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-    }
-    .content-area table thead th {
-      background-color: #206795;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
-    }
-    .content-area table tbody td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .content-area table tbody tr:nth-child(even) {
-      background-color: rgba(32,103,149,0.1);
-    }
-    .content-area table tbody tr:hover {
-      background-color: rgba(56,193,224,0.1);
-    }
-    .content-area blockquote {
-      border-left: 4px solid #38c1e0;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      background-color: rgba(26,51,71,0.5);
-      border-radius: 0 0.5rem 0.5rem 0;
-    }
-    .content-area a {
-      color: #38c1e0;
-      text-decoration: none;
-    }
-    .content-area a:hover {
-      text-decoration: underline;
-      color: #38c1e0;
-    }
-    .content-area ul, .content-area ol {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-    }
-    .content-area ul li {
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area ol li {
-      list-style-type: decimal;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area hr {
-      border: none;
-      border-top: 2px solid rgba(255,255,255,0.1);
-      margin: 2.5rem 0;
-    }
-    .table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 1.5rem 0;
-    }
-    .feeling-card {
-      border-left: 4px solid #38c1e0;
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      background: linear-gradient(135deg, rgba(32,103,149,0.15) 0%, rgba(26,51,71,0.3) 100%);
-      border-radius: 0 0.75rem 0.75rem 0;
-    }
-    .feeling-card .feeling-quote {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #38c1e0;
-      margin-bottom: 0.5rem;
-    }
-    .feeling-card .feeling-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #38c1e0;
-      margin-bottom: 0.5rem;
-    }
-    .feeling-card .feeling-explain {
-      font-size: 0.95rem;
-      color: #c0c8d0;
-      line-height: 1.7;
-    }
-    .content-area p {
-      margin-bottom: 1.25rem;
-    }
-    .pullquote {
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: #38c1e0;
-      line-height: 1.5;
-      padding: 2rem 0;
-      text-align: center;
-      border-top: 2px solid rgba(255,255,255,0.1);
-      border-bottom: 2px solid rgba(255,255,255,0.1);
-      margin: 2.5rem 0;
-    }
-  </style>
-
-  <!-- JSON-LD Structured Data -->
+<!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -180,21 +51,24 @@
   }
   </script>
 
+  <!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
   <!-- build:config {"nav":"research"} -->
 </head>
 
-<body class="bg-[#0a1218] text-white font-sans antialiased">
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
 
 <!-- build:nav -->
 
 
   <!-- Breadcrumb -->
-  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-[#1a3347] border-b border-white/10">
+  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-[#1a3347] border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
       <ol class="flex items-center space-x-2 text-sm text-gray-400">
         <li><a href="/" class="hover:text-[#38c1e0] transition-colors">Home</a></li>
         <li><span class="mx-1">/</span></li>
-        <li><a href="/research/" class="hover:text-[#38c1e0] transition-colors">Research</a></li>
+        <li><a href="/article/" class="hover:text-cp-cyan transition-colors">Articles</a></li>
         <li><span class="mx-1">/</span></li>
         <li class="text-gray-200 font-medium truncate">Naming What You Feel</li>
       </ol>
@@ -208,15 +82,22 @@
       <!-- Article Header -->
       <header class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span class="inline-block bg-cp-teal/20 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
+          <span class="inline-block bg-cp-teal/10 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
           <time datetime="2026-03-07" class="text-sm text-gray-400">March 7, 2026</time>
         </div>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
           You're Not Crazy. Here Are the Words for What You're Feeling.
         </h1>
-        <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
           If you know something is deeply wrong but can't quite name it &mdash; if you feel stuck between grief and action, between knowing too much and not knowing what to do &mdash; this is for you. You're not alone. And there are words for this.
         </p>
+      
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-200">
+          <div>
+            <p class="text-sm font-semibold text-gray-900">Kristine Socall, MBA International Economic Development</p>
+            <p class="text-xs text-gray-500">Founder &amp; Executive Director, <a href="https://gifteddreamers.org" class="text-cp-teal hover:underline">Gifted Dreamers, Inc.</a> 501(c)(3)</p>
+          </div>
+        </div>
       </header>
 
       <figure class="mb-10">
@@ -228,10 +109,10 @@
       </figure>
 
       <!-- Article Body -->
-      <div class="content-area prose prose-lg max-w-none text-gray-300 leading-relaxed">
+      <div class="content-area prose prose-lg max-w-none text-gray-600 leading-relaxed">
 
         <!-- SECTION 1: VALIDATION -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">This Is Real. What You're Feeling Makes Sense.</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">This Is Real. What You're Feeling Makes Sense.</h2>
 
         <p>
           Maybe you're reading this at 2am. Maybe you've been doomscrolling and something in your chest hasn't unclenched in months. Maybe you tried to explain what you're feeling to someone you love and the words came out wrong, or not at all. Maybe you said "I'm fine" again today and meant "I don't know how to describe the shape of what I'm carrying."
@@ -252,7 +133,7 @@
         <hr>
 
         <!-- SECTION 2: NAMING -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Words You've Been Looking For</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">The Words You've Been Looking For</h2>
 
         <p>
           Each of these starts with what you might say out loud &mdash; the raw version. Then comes the structural name: what systems thinkers and researchers call it. These aren't just academic labels. They're proof that what you're experiencing is <em>documented, shared, and understood</em>. You are not imagining this.
@@ -337,7 +218,7 @@
         <hr>
 
         <!-- SECTION 3: YOU'RE NOT ALONE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">You Are Not Alone in This</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">You Are Not Alone in This</h2>
 
         <p>
           Not metaphorically. <em>Actually.</em>
@@ -366,7 +247,7 @@
         <hr>
 
         <!-- SECTION 4: AGENCY -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">What You Can Actually Do</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">What You Can Actually Do</h2>
 
         <p>
           Writer Rebecca Solnit reminds us that hope is not optimism. Hope lives in uncertainty &mdash; and uncertainty means the outcome is not fixed. The future is genuinely open. "We can't know what will happen. That's not a reason for despair &mdash; it's the exact condition that makes your action matter."
@@ -401,7 +282,7 @@
         <hr>
 
         <!-- SECTION 5: THE BIGGER PICTURE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Why Naming This Matters</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Why Naming This Matters</h2>
 
         <p>
           Systems thinker Donella Meadows spent her career studying where to intervene in complex systems. Her insight: most activism and most political debate operate at the lowest-leverage points &mdash; arguing over numbers, tweaking parameters, fighting about this policy or that policy. Meanwhile, the system's actual dysfunction lives at the highest-leverage points: who has information, who writes the rules, whether people can self-organize, what the system is actually optimized for, and what assumptions we hold about how the world works.
@@ -426,7 +307,7 @@
         <hr>
 
         <!-- SECTION 6: CLOSING -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">A Final Word</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">A Final Word</h2>
 
         <p>
           If you found yourself in these words &mdash; if something unclenched even slightly &mdash; share this with someone who needs it. Not as homework. As an act of solidarity. As a way of saying: <em>I see you. I feel it too. We're going to figure this out.</em>
@@ -447,7 +328,7 @@
         <hr>
 
         <!-- FURTHER READING -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Keep Reading</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Keep Reading</h2>
 
         <ul>
           <li><a href="/blog/rebuilding-resilience.html">Rebuilding Resilience: Frameworks for Personal and Community Recovery</a> &mdash; the research behind community and personal resilience</li>
@@ -458,8 +339,8 @@
         </ul>
 
         <!-- Sources -->
-        <section class="footnotes-section" aria-label="Sources" style="font-size: 0.875rem; border-top: 2px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin-top: 3rem;">
-          <h2 class="text-lg font-bold text-white mb-4">Frameworks and Sources</h2>
+        <section class="footnotes-section" aria-label="Sources" style="font-size: 0.875rem; border-top: 2px solid #e5e7eb; padding-top: 1.5rem; margin-top: 3rem;">
+          <h2 class="text-lg font-bold text-gray-900 mb-4">Frameworks and Sources</h2>
           <ul>
             <li>Donella Meadows, <a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/" target="_blank" rel="noopener noreferrer">"Leverage Points: Places to Intervene in a System"</a> (1999)</li>
             <li>Dan Siegel, <em>The Whole-Brain Child</em> &mdash; "name it to tame it" framework for affect labeling</li>

@@ -26,136 +26,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'cp-teal': '#206795',
-            'cp-cyan': '#38c1e0',
-            'cp-dark': '#1a3347',
-            'cp-muted': '#5a7a8f',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Inter (async) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for article content -->
-  <style>
-    .content-area table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-    }
-    .content-area table thead th {
-      background-color: #206795;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
-    }
-    .content-area table tbody td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .content-area table tbody tr:nth-child(even) {
-      background-color: rgba(32,103,149,0.1);
-    }
-    .content-area table tbody tr:hover {
-      background-color: rgba(56,193,224,0.1);
-    }
-    .content-area blockquote {
-      border-left: 4px solid #38c1e0;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      background-color: rgba(26,51,71,0.5);
-      border-radius: 0 0.5rem 0.5rem 0;
-    }
-    .content-area a {
-      color: #38c1e0;
-      text-decoration: none;
-    }
-    .content-area a:hover {
-      text-decoration: underline;
-      color: #38c1e0;
-    }
-    .content-area ul, .content-area ol {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-    }
-    .content-area ul li {
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area ol li {
-      list-style-type: decimal;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area hr {
-      border: none;
-      border-top: 2px solid rgba(255,255,255,0.1);
-      margin: 2.5rem 0;
-    }
-    .content-area p {
-      margin-bottom: 1.25rem;
-    }
-    .pullquote {
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: #38c1e0;
-      line-height: 1.5;
-      padding: 2rem 0;
-      text-align: center;
-      border-top: 2px solid rgba(255,255,255,0.1);
-      border-bottom: 2px solid rgba(255,255,255,0.1);
-      margin: 2.5rem 0;
-    }
-    .search-example {
-      border-left: 4px solid #38c1e0;
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      background: linear-gradient(135deg, rgba(32,103,149,0.15) 0%, rgba(26,51,71,0.3) 100%);
-      border-radius: 0 0.75rem 0.75rem 0;
-    }
-    .search-example .search-query {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #38c1e0;
-      margin-bottom: 0.25rem;
-    }
-    .search-example .search-gets {
-      font-size: 0.9rem;
-      color: #5a7a8f;
-      margin-bottom: 0.5rem;
-    }
-    .search-example .search-needed {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #38c1e0;
-    }
-    .search-example .search-explain {
-      font-size: 0.95rem;
-      color: #94a3b8;
-      line-height: 1.7;
-      margin-top: 0.5rem;
-    }
-  </style>
-
-  <!-- JSON-LD Structured Data -->
+<!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -180,21 +51,24 @@
   }
   </script>
 
-<!-- build:config {"nav":"research"} -->
+<!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- build:config {"nav":"research"} -->
 </head>
 
-<body class="bg-[#0a1218] text-white font-sans antialiased">
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
 
 <!-- build:nav -->
 
 
   <!-- Breadcrumb -->
-  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-cp-dark border-b border-white/10">
+  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-cp-dark border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
       <ol class="flex items-center space-x-2 text-sm text-cp-muted">
         <li><a href="/" class="hover:text-cp-cyan transition-colors">Home</a></li>
         <li><span class="mx-1">/</span></li>
-        <li><a href="/research/" class="hover:text-cp-cyan transition-colors">Research</a></li>
+        <li><a href="/article/" class="hover:text-cp-cyan transition-colors">Articles</a></li>
         <li><span class="mx-1">/</span></li>
         <li class="text-white font-medium truncate">Vocabulary Is Infrastructure</li>
       </ol>
@@ -208,15 +82,22 @@
       <!-- Article Header -->
       <header class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span class="inline-block bg-cp-teal/20 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
+          <span class="inline-block bg-cp-teal/10 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
           <time datetime="2026-03-08" class="text-sm text-cp-muted">March 8, 2026</time>
         </div>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
           You Can't Google What You Can't Name
         </h1>
-        <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
           The hardest part of finding help isn't the search. It's knowing what to search for. Why vocabulary is infrastructure &mdash; and how to find the words you're missing.
         </p>
+      
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-200">
+          <div>
+            <p class="text-sm font-semibold text-gray-900">Kristine Socall, MBA International Economic Development</p>
+            <p class="text-xs text-gray-500">Founder &amp; Executive Director, <a href="https://gifteddreamers.org" class="text-cp-teal hover:underline">Gifted Dreamers, Inc.</a> 501(c)(3)</p>
+          </div>
+        </div>
       </header>
 
       <figure class="mb-10">
@@ -228,10 +109,10 @@
       </figure>
 
       <!-- Article Body -->
-      <div class="content-area prose prose-lg max-w-none text-gray-300 leading-relaxed">
+      <div class="content-area prose prose-lg max-w-none text-gray-600 leading-relaxed">
 
         <!-- SECTION 1: THE PROBLEM -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Search That Fails Before It Starts</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">The Search That Fails Before It Starts</h2>
 
         <p>
           You know something is wrong. You sit down to research it. You open a search engine. And then you stare at the blinking cursor because you don't know what to type.
@@ -273,7 +154,7 @@
         <hr>
 
         <!-- SECTION 2: VOCABULARY IS INFRASTRUCTURE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Why Vocabulary Is Infrastructure</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Why Vocabulary Is Infrastructure</h2>
 
         <p>
           We talk about infrastructure as roads, bridges, broadband. But vocabulary is infrastructure too &mdash; the invisible kind. It determines what you can find, who you can connect with, and what you can build.
@@ -294,7 +175,7 @@
         <hr>
 
         <!-- SECTION 3: THE AI MIRROR -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">AI Has the Same Problem &mdash; in Reverse</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">AI Has the Same Problem &mdash; in Reverse</h2>
 
         <p>
           Here is something we discovered this week that surprised us.
@@ -327,7 +208,7 @@
         <hr>
 
         <!-- SECTION 4: THE PARTNERSHIP -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Partnership That Finds the Words</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">The Partnership That Finds the Words</h2>
 
         <p>
           Here is what makes the human-AI partnership genuinely powerful &mdash; and it is not what the tech industry tells you.
@@ -352,7 +233,7 @@
         <hr>
 
         <!-- SECTION 5: HOW TO DO IT -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">How to Find the Words You're Missing</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">How to Find the Words You're Missing</h2>
 
         <p>
           This is not abstract. Here is how to actually do it:
@@ -377,7 +258,7 @@
         <hr>
 
         <!-- SECTION 6: THE BIGGER PICTURE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">What This Means for Everything Else</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">What This Means for Everything Else</h2>
 
         <p>
           Everything on this site is an exercise in vocabulary as infrastructure.
@@ -406,7 +287,7 @@
         <hr>
 
         <!-- FURTHER READING -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Keep Reading</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Keep Reading</h2>
 
         <ul>
           <li><a href="/blog/naming-what-you-feel.html">You're Not Crazy. Here Are the Words for What You're Feeling.</a> &mdash; the twelve structural names for what you're carrying</li>
@@ -417,8 +298,8 @@
         </ul>
 
         <!-- Sources -->
-        <section class="footnotes-section" aria-label="Sources" style="font-size: 0.875rem; border-top: 2px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin-top: 3rem;">
-          <h2 class="text-lg font-bold text-white mb-4">Frameworks and Sources</h2>
+        <section class="footnotes-section" aria-label="Sources" style="font-size: 0.875rem; border-top: 2px solid #e5e7eb; padding-top: 1.5rem; margin-top: 3rem;">
+          <h2 class="text-lg font-bold text-gray-900 mb-4">Frameworks and Sources</h2>
           <ul>
             <li>Dan Siegel, <em>The Whole-Brain Child</em> &mdash; "name it to tame it" framework for affect labeling</li>
             <li>Donella Meadows, <a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/" target="_blank" rel="noopener noreferrer">"Leverage Points: Places to Intervene in a System"</a> (1999)</li>

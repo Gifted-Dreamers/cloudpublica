@@ -6,7 +6,7 @@
   <title>Cloud Publica — Investigations &amp; Research</title>
 
   <!-- SEO Meta -->
-  <meta name="description" content="Cloud Publica is an investigations and research platform focused on structural analysis of power, surveillance, and public infrastructure.">
+  <meta name="description" content="Cloud Publica publishes investigations and research focused on structural analysis of power, surveillance, and public infrastructure.">
   <meta name="keywords" content="investigations, surveillance, public records, AI safety, structural analysis, transparency, accountability">
 
   <!-- Open Graph -->
@@ -24,48 +24,27 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'cp-teal': '#206795',
-            'cp-cyan': '#38c1e0',
-            'cp-dark': '#1a3347',
-            'cp-muted': '#5a7a8f',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Inter (async) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
 
   <!-- build:config {"nav":"home"} -->
 </head>
-<body class="bg-[#0a1218] text-white font-sans antialiased">
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
 
   <!-- build:nav -->
 
   <!-- Hero Section -->
-  <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-24 pb-16">
     <div class="absolute inset-0 bg-gradient-to-br from-[#0f2027] via-[#1a3347] to-[#0d1a24]"></div>
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 25% 25%, #38c1e0 1px, transparent 1px); background-size: 40px 40px;"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
-      <p class="text-cp-cyan text-sm font-semibold uppercase tracking-widest mb-4">Investigations &amp; Research</p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Structural analysis of power,<br class="hidden md:block"> surveillance, and public infrastructure</h1>
-      <p class="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-8">Sourced from public records, court filings, and government documents. No ads. No tracking. No cookies.</p>
+      <p class="text-cp-cyan text-sm font-semibold uppercase tracking-widest mb-4">Civic Infrastructure</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">Structural analysis of power,<br class="hidden md:block"> surveillance, and public infrastructure</h1>
+      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-8">Sourced from public records, court filings, and government documents. No ads. No tracking. No cookies.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/article/" class="inline-block px-6 py-3 bg-cp-cyan text-[#0a1218] font-semibold rounded-lg hover:bg-[#2db3d4] transition-colors">Read Investigations</a>
-        <a href="/research/" class="inline-block px-6 py-3 border-2 border-white/20 text-white font-semibold rounded-lg hover:border-cp-cyan hover:text-cp-cyan transition-colors">Browse Research</a>
+        <a href="/article/" class="inline-block px-6 py-3 bg-cp-cyan text-[#0a1218] font-semibold rounded-lg hover:bg-[#2db3d4] transition-colors">Start Here</a>
+        <a href="/why/" class="inline-block px-6 py-3 border-2 border-white/20 text-white font-semibold rounded-lg hover:border-cp-cyan hover:text-cp-cyan transition-colors">Why It Matters</a>
+        <a href="/word/" class="inline-block px-6 py-3 border-2 border-white/20 text-white font-semibold rounded-lg hover:border-cp-cyan hover:text-cp-cyan transition-colors">The Word</a>
       </div>
     </div>
   </section>
@@ -73,61 +52,61 @@
   <!-- Featured Investigations -->
   <section class="max-w-6xl mx-auto px-4 py-16">
     <div class="flex items-center justify-between mb-8">
-      <h2 class="text-2xl font-bold text-white">Latest Investigations</h2>
-      <a href="/article/" class="text-cp-cyan text-sm font-medium hover:underline">View all &rarr;</a>
+      <h2 class="text-2xl font-bold text-gray-900">Latest Articles</h2>
+      <a href="/article/" class="text-cp-teal text-sm font-medium hover:underline">View all &rarr;</a>
     </div>
 
     <!-- Flagship -->
-    <a href="/article/seven-pillars.html" class="group block bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-cp-cyan/40 transition-colors mb-8">
-      <div class="aspect-[21/9] bg-gradient-to-br from-[#4a0000]/40 to-cp-dark overflow-hidden">
-        <img src="/assets/img/hero-seven-pillars.jpg" alt="Seven Pillars — surveillance infrastructure" class="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" loading="lazy">
+    <a href="/article/seven-pillars.html" class="group block bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-cp-teal/60 hover:shadow-lg transition-all mb-8">
+      <div class="aspect-[21/9] bg-gradient-to-br from-[#1a3347] to-[#0d1a24] overflow-hidden">
+        <img src="/assets/img/hero-seven-pillars.jpg" alt="The Ontology Architecture" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity" loading="lazy">
       </div>
       <div class="p-6">
         <div class="flex items-center gap-3 mb-2">
-          <span class="bg-red-900/50 text-red-300 text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Featured Investigation</span>
-          <span class="text-white/30 text-xs">Mar 12, 2026</span>
-          <span class="text-white/30 text-xs">110+ sources</span>
+          <span class="bg-red-100 text-red-700 text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded">Featured Investigation</span>
+          <span class="text-gray-400 text-xs">Mar 16, 2026</span>
+          <span class="text-gray-400 text-xs">150+ sources</span>
         </div>
-        <h3 class="text-white font-bold text-xl md:text-2xl mb-3 group-hover:text-cp-cyan transition-colors">Seven Pillars, One System: The Architecture of Consolidation</h3>
-        <p class="text-white/50 text-sm md:text-base">The US federal government is assembling a surveillance and control infrastructure through individually justified data collections that, when connected, create population-scale leverage.</p>
+        <h3 class="text-gray-900 font-bold text-xl md:text-2xl mb-3 group-hover:text-cp-teal transition-colors">The Ontology Architecture: How the Federal Government Deploys a System That Defines What Is Real</h3>
+        <p class="text-gray-500 text-sm md:text-base">The US federal government is deploying an ontology architecture across every domain of public life. Profiling, targeting, curriculum control, war planning, cognitive warfare, and institutional compliance are all outputs of this single system.</p>
       </div>
     </a>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Card: 5GW Research -->
-      <a href="/article/5gw-research.html" class="group block bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-cp-cyan/40 transition-colors">
+      <a href="/article/5gw-research.html" class="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-cp-teal/60 hover:shadow-lg transition-all">
         <div class="aspect-[16/9] bg-gradient-to-br from-cp-teal/30 to-cp-dark overflow-hidden">
-          <img src="/assets/img/hero-5gw.jpg" alt="Fifth-generation warfare" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" onerror="this.style.display='none'">
+          <img src="/assets/img/hero-5gw.jpg" alt="Fifth-generation warfare" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="p-5">
-          <span class="text-cp-cyan text-xs font-semibold uppercase tracking-wider">Investigation</span>
-          <h3 class="text-white font-semibold text-lg mt-2 mb-2 group-hover:text-cp-cyan transition-colors">Fifth-Generation Warfare: The Invisible War Already Underway</h3>
-          <p class="text-white/50 text-sm line-clamp-2">A comprehensive guide to how nations are fighting — and losing — wars you can't see.</p>
+          <span class="text-cp-teal text-xs font-semibold uppercase tracking-wider">Investigation</span>
+          <h3 class="text-gray-900 font-semibold text-lg mt-2 mb-2 group-hover:text-cp-teal transition-colors">Fifth-Generation Warfare: The Invisible War Already Underway</h3>
+          <p class="text-gray-500 text-sm line-clamp-2">A comprehensive guide to how nations are fighting — and losing — wars you can't see.</p>
         </div>
       </a>
 
       <!-- Card: Open Source Transparency Tools -->
-      <a href="/article/open-source-transparency-tools.html" class="group block bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-cp-cyan/40 transition-colors">
+      <a href="/article/open-source-transparency-tools.html" class="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-cp-teal/60 hover:shadow-lg transition-all">
         <div class="aspect-[16/9] bg-gradient-to-br from-cp-teal/30 to-cp-dark overflow-hidden">
-          <img src="/assets/img/hero-transparency.jpg" alt="Open source transparency tools" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" onerror="this.style.display='none'">
+          <img src="/assets/img/hero-transparency.jpg" alt="Open source transparency tools" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="p-5">
-          <span class="text-cp-cyan text-xs font-semibold uppercase tracking-wider">Research</span>
-          <h3 class="text-white font-semibold text-lg mt-2 mb-2 group-hover:text-cp-cyan transition-colors">Open-Source Transparency Tools</h3>
-          <p class="text-white/50 text-sm line-clamp-2">Tools for making power visible — from corporate ownership to surveillance tracking.</p>
+          <span class="text-cp-teal text-xs font-semibold uppercase tracking-wider">Research</span>
+          <h3 class="text-gray-900 font-semibold text-lg mt-2 mb-2 group-hover:text-cp-teal transition-colors">Open-Source Transparency Tools</h3>
+          <p class="text-gray-500 text-sm line-clamp-2">Tools for making power visible — from corporate ownership to surveillance tracking.</p>
         </div>
       </a>
 
       <!-- Card: Psychology of Authoritarian Control -->
-      <a href="/article/psychology-of-authoritarian-control.html" class="group block bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-cp-cyan/40 transition-colors">
+      <a href="/article/psychology-of-authoritarian-control.html" class="group block bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-cp-teal/60 hover:shadow-lg transition-all">
         <div class="aspect-[16/9] bg-gradient-to-br from-cp-teal/30 to-cp-dark overflow-hidden">
-          <img src="/assets/img/hero-psychology.jpg" alt="Psychology of authoritarian control" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" onerror="this.style.display='none'">
+          <img src="/assets/img/hero-psychology.jpg" alt="Psychology of authoritarian control" class="w-full h-full object-cover group-hover:opacity-90 transition-opacity" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="p-5">
-          <span class="text-cp-cyan text-xs font-semibold uppercase tracking-wider">Research</span>
-          <h3 class="text-white font-semibold text-lg mt-2 mb-2 group-hover:text-cp-cyan transition-colors">The Psychology of Authoritarian Control</h3>
-          <p class="text-white/50 text-sm line-clamp-2">How authoritarian systems manipulate perception, identity, and social bonds.</p>
+          <span class="text-cp-teal text-xs font-semibold uppercase tracking-wider">Research</span>
+          <h3 class="text-gray-900 font-semibold text-lg mt-2 mb-2 group-hover:text-cp-teal transition-colors">The Psychology of Authoritarian Control</h3>
+          <p class="text-gray-500 text-sm line-clamp-2">How authoritarian systems manipulate perception, identity, and social bonds.</p>
         </div>
       </a>
 
@@ -135,32 +114,32 @@
   </section>
 
   <!-- Topics Grid -->
-  <section class="max-w-6xl mx-auto px-4 py-16 border-t border-white/10">
-    <h2 class="text-2xl font-bold text-white mb-8 text-center">Topics We Cover</h2>
+  <section class="max-w-6xl mx-auto px-4 py-16 border-t border-gray-200">
+    <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Topics We Cover</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-3">&#128269;</div>
-        <h3 class="text-white font-semibold mb-2">Surveillance &amp; Data</h3>
-        <p class="text-white/50 text-sm">Facial recognition, predictive policing, data brokers, and the surveillance economy.</p>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 mx-auto mb-3 bg-cp-teal/10 rounded-lg flex items-center justify-center text-cp-teal text-xl">&#128269;</div>
+        <h3 class="text-gray-900 font-semibold mb-2">Surveillance &amp; Data</h3>
+        <p class="text-gray-500 text-sm">Facial recognition, predictive policing, data brokers, and the surveillance economy.</p>
       </div>
 
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-3">&#129302;</div>
-        <h3 class="text-white font-semibold mb-2">AI &amp; Security</h3>
-        <p class="text-white/50 text-sm">AI companionship harms, deepfakes, algorithmic manipulation, and accountability gaps.</p>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 mx-auto mb-3 bg-cp-teal/10 rounded-lg flex items-center justify-center text-cp-teal text-xl">&#129302;</div>
+        <h3 class="text-gray-900 font-semibold mb-2">AI &amp; Security</h3>
+        <p class="text-gray-500 text-sm">AI companionship harms, deepfakes, algorithmic manipulation, and accountability gaps.</p>
       </div>
 
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-3">&#129504;</div>
-        <h3 class="text-white font-semibold mb-2">Psychology &amp; Control</h3>
-        <p class="text-white/50 text-sm">Authoritarian tactics, cognitive warfare, information manipulation, and social engineering.</p>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 mx-auto mb-3 bg-cp-teal/10 rounded-lg flex items-center justify-center text-cp-teal text-xl">&#129504;</div>
+        <h3 class="text-gray-900 font-semibold mb-2">Psychology &amp; Control</h3>
+        <p class="text-gray-500 text-sm">Authoritarian tactics, cognitive warfare, information manipulation, and social engineering.</p>
       </div>
 
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-3">&#128736;</div>
-        <h3 class="text-white font-semibold mb-2">Transparency Tools</h3>
-        <p class="text-white/50 text-sm">Open-source tools for tracking corporate ownership, lobbying, government spending, and more.</p>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 mx-auto mb-3 bg-cp-teal/10 rounded-lg flex items-center justify-center text-cp-teal text-xl">&#128736;</div>
+        <h3 class="text-gray-900 font-semibold mb-2">Transparency Tools</h3>
+        <p class="text-gray-500 text-sm">Open-source tools for tracking corporate ownership, lobbying, government spending, and more.</p>
       </div>
 
     </div>
@@ -168,9 +147,9 @@
 
   <!-- About Callout -->
   <section class="max-w-4xl mx-auto px-4 py-16">
-    <div class="bg-gradient-to-br from-cp-teal/20 to-transparent border border-white/10 rounded-2xl p-8 md:p-12 text-center">
+    <div class="bg-[#0f1a24] border border-[#1a3347] rounded-2xl p-8 md:p-12 text-center">
       <h2 class="text-2xl font-bold text-white mb-4">Independent. Nonprofit. No paywalls.</h2>
-      <p class="text-white/60 text-lg max-w-2xl mx-auto mb-6">Cloud Publica is a project of <a href="https://gifteddreamers.org" class="text-cp-cyan hover:underline">Gifted Dreamers, Inc.</a>, a 501(c)(3) nonprofit. Our investigations are free, our methods are transparent, and our sources are public.</p>
+      <p class="text-white/70 text-lg max-w-2xl mx-auto mb-6">Cloud Publica is a project of <a href="https://gifteddreamers.org" class="text-cp-cyan hover:underline">Gifted Dreamers, Inc.</a>, a 501(c)(3) nonprofit. Our investigations are free, our methods are transparent, and our sources are public.</p>
       <a href="/about/" class="inline-block px-6 py-3 border-2 border-cp-cyan text-cp-cyan font-semibold rounded-lg hover:bg-cp-cyan hover:text-[#0a1218] transition-colors">Learn More</a>
     </div>
   </section>

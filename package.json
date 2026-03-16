@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css": "npx tailwindcss -i assets/css/input.css -o assets/css/style.css --minify",
+    "build": "npm run css && node build.js",
+    "dev": "npx tailwindcss -i assets/css/input.css -o assets/css/style.css --watch"
   },
   "keywords": [],
   "author": "",
@@ -11,5 +13,8 @@
   "description": "",
   "dependencies": {
     "@mermaid-js/mermaid-cli": "^11.12.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
   }
 }

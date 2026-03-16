@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Word — Cloud Publica</title>
+
+  <meta name="description" content="Search what you're experiencing. Find what researchers call it. A living vocabulary of structural concepts across psychology, systems theory, governance, and more.">
+
+  <meta property="og:title" content="The Word — Cloud Publica">
+  <meta property="og:description" content="Search what you're experiencing. Find what researchers call it.">
+  <meta property="og:url" content="https://cloudpublica.org/word/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cloudpublica.org/assets/img/favicon.png">
+
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+
+  <!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- build:config {"nav":"why"} -->
+</head>
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
+
+  <!-- build:nav -->
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden pt-24 pb-16">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#0f2027] via-[#1a3347] to-[#0d1a24]"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-white">The Word</h1>
+      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">Search what you're experiencing. Find what researchers call it.</p>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section class="max-w-3xl mx-auto px-4 py-12">
+    <div class="relative">
+      <input
+        type="text"
+        id="word-search"
+        placeholder="What are you experiencing?"
+        class="w-full px-6 py-4 text-lg bg-white border border-gray-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#206795] focus:border-transparent placeholder-gray-400"
+        autocomplete="off"
+      >
+      <svg class="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+    </div>
+
+    <!-- Stats -->
+    <p id="word-stats" class="text-sm text-gray-500 mt-3 text-center"></p>
+
+    <!-- Results -->
+    <div id="search-results" class="mt-8 space-y-4 hidden"></div>
+
+    <!-- No Results -->
+    <div id="no-results" class="mt-8 hidden">
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+        <p class="text-gray-600 text-lg">No matches found.</p>
+        <p class="text-gray-500 mt-2">This gap is a signal — it may mean a Name is needed that doesn't exist yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- "People searched for..." Section -->
+  <section id="browse-section" class="max-w-3xl mx-auto px-4 pb-16">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">What are you carrying?</h2>
+    <p class="text-gray-500 mb-6">Click what resonates. The search will find the structural name.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="felt-prompts">
+      <button class="felt-prompt text-left bg-white border border-gray-200 rounded-xl p-4 hover:border-cp-teal hover:shadow-sm transition-all cursor-pointer" data-query="I can't afford anything anymore">
+        <p class="text-gray-900 font-medium text-sm">"I can't afford anything anymore"</p>
+        <p class="text-gray-400 text-xs mt-1">Why the rules are set before you arrive</p>
+      </button>
+      <button class="felt-prompt text-left bg-white border border-gray-200 rounded-xl p-4 hover:border-cp-teal hover:shadow-sm transition-all cursor-pointer" data-query="nobody listens to me">
+        <p class="text-gray-900 font-medium text-sm">"Nobody actually listens"</p>
+        <p class="text-gray-400 text-xs mt-1">Why being heard is so close to being loved</p>
+      </button>
+      <button class="felt-prompt text-left bg-white border border-gray-200 rounded-xl p-4 hover:border-cp-teal hover:shadow-sm transition-all cursor-pointer" data-query="everything feels wrong and I don't know why">
+        <p class="text-gray-900 font-medium text-sm">"Everything feels wrong and I don't know why"</p>
+        <p class="text-gray-400 text-xs mt-1">When the assumptions you built your world on are failing</p>
+      </button>
+      <button class="felt-prompt text-left bg-white border border-gray-200 rounded-xl p-4 hover:border-cp-teal hover:shadow-sm transition-all cursor-pointer" data-query="I feel alone in a room full of people">
+        <p class="text-gray-900 font-medium text-sm">"I feel alone in a room full of people"</p>
+        <p class="text-gray-400 text-xs mt-1">What loneliness looks like as a structural problem</p>
+      </button>
+      <button class="felt-prompt text-left bg-white border border-gray-200 rounded-xl p-4 hover:border-cp-teal hover:shadow-sm transition-all cursor-pointer" data-query="I'm being controlled and can't leave">
+        <p class="text-gray-900 font-medium text-sm">"I'm being controlled and I can't leave"</p>
+        <p class="text-gray-400 text-xs mt-1">Recognizing the architecture of coercive control</p>
+      </button>
+      <button class="felt-prompt text-left bg-white border border-gray-200 rounded-xl p-4 hover:border-cp-teal hover:shadow-sm transition-all cursor-pointer" data-query="the AI keeps telling me what I want to hear">
+        <p class="text-gray-900 font-medium text-sm">"The AI keeps telling me what I want to hear"</p>
+        <p class="text-gray-400 text-xs mt-1">When confidence is cosmetic, not epistemic</p>
+      </button>
+      <button class="felt-prompt text-left bg-white border border-gray-200 rounded-xl p-4 hover:border-cp-teal hover:shadow-sm transition-all cursor-pointer" data-query="nothing I do matters">
+        <p class="text-gray-900 font-medium text-sm">"Nothing I do matters"</p>
+        <p class="text-gray-400 text-xs mt-1">When democratic action takes years but harm happens overnight</p>
+      </button>
+      <button class="felt-prompt text-left bg-white border border-gray-200 rounded-xl p-4 hover:border-cp-teal hover:shadow-sm transition-all cursor-pointer" data-query="they have special words for everything that outsiders don't understand">
+        <p class="text-gray-900 font-medium text-sm">"They have special words for everything"</p>
+        <p class="text-gray-400 text-xs mt-1">How loaded language shuts down critical thinking</p>
+      </button>
+    </div>
+
+    <p class="text-center text-gray-400 text-sm mt-6"><span id="word-count">0</span> entries and growing. <a href="#dev-docs" class="text-cp-teal hover:underline">View all entries (JSON)</a></p>
+  </section>
+
+  <!-- Developer / Agent Docs -->
+  <section class="max-w-3xl mx-auto px-4 pb-16">
+    <div class="bg-white border border-gray-200 rounded-xl p-8">
+      <h2 class="text-xl font-bold text-gray-900 mb-4">For Developers &amp; AI Agents</h2>
+
+      <p class="text-gray-600 mb-4">The full vocabulary dataset is available as static JSON for programmatic access:</p>
+
+      <div class="bg-gray-50 rounded-lg p-4 mb-4 overflow-x-auto">
+        <code class="text-sm text-gray-800 whitespace-pre">/assets/data/words.json</code>
+      </div>
+
+      <p class="text-gray-600 mb-2 text-sm font-semibold">Example entry:</p>
+      <div class="bg-gray-50 rounded-lg p-4 mb-4 overflow-x-auto">
+        <pre class="text-sm text-gray-800 whitespace-pre">{
+  "name": "Affect Labeling",
+  "definition": "Putting feelings into words reduces amygdala activation...",
+  "felt_sense": "When I say what I feel, it gets smaller.",
+  "why_it_matters": "Lieberman 2007 fMRI evidence...",
+  "domain": "psychology",
+  "entry_type": "Name",
+  "source": "Lieberman et al. 2007"
+}</pre>
+      </div>
+
+      <p class="text-gray-600 mb-2 text-sm font-semibold">Example fetch:</p>
+      <div class="bg-gray-50 rounded-lg p-4 mb-6 overflow-x-auto">
+        <pre class="text-sm text-gray-800 whitespace-pre">const res = await fetch('https://cloudpublica.org/assets/data/words.json');
+const words = await res.json();
+const matches = words.filter(w =>
+  w.felt_sense.toLowerCase().includes('isolated')
+);</pre>
+      </div>
+
+      <p class="text-gray-600 mb-2">The full API at <a href="https://word.cloudpublica.org" class="text-[#206795] hover:underline">word.cloudpublica.org</a> provides 7 endpoints including full-text search, filtering by domain and entry type, and JSON-LD structured data.</p>
+
+    </div>
+  </section>
+
+  <!-- Attribution -->
+  <section class="max-w-3xl mx-auto px-4 pb-16">
+    <div class="pt-6 border-t border-gray-200">
+      <p class="text-sm text-gray-500">Kristine Socall, MBA International Economic Development. Founder &amp; Executive Director, Gifted Dreamers, Inc. 501(c)(3).</p>
+      <p class="text-sm text-gray-500 mt-2">Cloud Publica is a project of <a href="https://gifteddreamers.org" class="text-[#206795] hover:underline">Gifted Dreamers, Inc.</a> No ads. No tracking. No cookies. <a href="/about/" class="text-[#206795] hover:underline">Learn more about us</a>.</p>
+    </div>
+  </section>
+
+  <!-- build:footer -->
+
+  <script>
+  // Data source: self-authored static JSON from Airtable export (trusted, not user-generated)
+  (function() {
+    var words = [];
+    var debounceTimer = null;
+
+    var searchInput = document.getElementById('word-search');
+    var resultsEl = document.getElementById('search-results');
+    var noResultsEl = document.getElementById('no-results');
+    var browseEl = document.getElementById('browse-section');
+    var statsEl = document.getElementById('word-stats');
+
+    var domainMap = {
+      'ai_ml': 'AI & Machine Learning', 'ai ml': 'AI & Machine Learning', 'AI / Machine Learning': 'AI & Machine Learning',
+      'psychology': 'Psychology', 'Psychology': 'Psychology',
+      'sociology': 'Sociology', 'Sociology': 'Sociology',
+      'economics': 'Economics', 'Economics': 'Economics',
+      'governance': 'Governance', 'Governance': 'Governance',
+      'security': 'Security', 'Security': 'Security',
+      'systems_theory': 'Systems Theory', 'Systems Theory': 'Systems Theory',
+      'social_technology': 'Social Technology', 'Social Technology': 'Social Technology',
+      'health_neuroscience': 'Health & Neuroscience', 'Health / Neuroscience': 'Health & Neuroscience',
+      'theology_philosophy': 'Philosophy', 'Theology / Philosophy': 'Philosophy', 'theology philosophy': 'Philosophy',
+      'critical_theory': 'Critical Theory', 'Critical Theory': 'Critical Theory',
+      'coercive_control': 'Coercive Control',
+      'disaster_resilience': 'Disaster Resilience',
+      'education': 'Education',
+    };
+
+    function primaryDomain(d) {
+      if (!d) return 'Community & Governance';
+      var first = d.split(',')[0].trim();
+      return domainMap[first] || domainMap[first.toLowerCase()] || first.replace(/_/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+    }
+
+    function formatDomain(d) {
+      return primaryDomain(d);
+    }
+
+    function truncate(text, len) {
+      if (!text) return '';
+      return text.length > len ? text.substring(0, len) + '...' : text;
+    }
+
+    function el(tag, classes, textContent) {
+      var e = document.createElement(tag);
+      if (classes) e.className = classes;
+      if (textContent) e.textContent = textContent;
+      return e;
+    }
+
+    function createDomainBadge(domain) {
+      var badge = el('span', 'inline-block px-2 py-0.5 text-xs font-medium rounded-full bg-[#206795]/10 text-[#206795]');
+      badge.textContent = formatDomain(domain);
+      return badge;
+    }
+
+    function createCard(w) {
+      var card = el('div', 'bg-white border border-gray-200 rounded-xl p-5 cursor-pointer hover:border-[#206795] hover:shadow-md transition-all');
+
+      var header = el('div', 'flex items-start justify-between gap-3 mb-2');
+      var titleWrap = el('div', '');
+      var title = el('h3', 'text-gray-900 font-semibold text-lg', w.name);
+      titleWrap.appendChild(title);
+      if (w.entry_type === 'BITE Item' && w.bite_category) {
+        var biteTag = el('span', 'inline-block mt-1 px-2 py-0.5 text-xs font-medium rounded-full bg-red-100 text-red-700', 'BITE: ' + w.bite_category);
+        titleWrap.appendChild(biteTag);
+      }
+      header.appendChild(titleWrap);
+      header.appendChild(createDomainBadge(w.domain));
+      card.appendChild(header);
+
+      if (w.felt_sense) {
+        var fs = el('p', 'text-gray-500 italic text-sm mb-2', w.felt_sense.split('\n')[0]);
+        card.appendChild(fs);
+      }
+
+      var def = el('p', 'text-gray-700 text-base mb-2', w.definition);
+      card.appendChild(def);
+
+      // Expandable details section
+      var expandable = el('div', 'hidden mt-3 pt-3 border-t border-gray-100');
+
+      // All felt sense lines
+      if (w.felt_sense && w.felt_sense.indexOf('\n') !== -1) {
+        var fsAll = el('div', 'mb-3');
+        var fsLabel = el('p', 'text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1', 'How people describe this');
+        fsAll.appendChild(fsLabel);
+        w.felt_sense.split('\n').forEach(function(line) {
+          if (line.trim()) {
+            var li = el('p', 'text-gray-500 italic text-sm', line.trim());
+            fsAll.appendChild(li);
+          }
+        });
+        expandable.appendChild(fsAll);
+      }
+
+      if (w.why_it_matters) {
+        var whyDiv = el('div', 'mb-3');
+        var whyLabel = el('p', 'text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1', 'Why it matters');
+        whyDiv.appendChild(whyLabel);
+        var whyP = el('p', 'text-gray-600 text-sm', w.why_it_matters);
+        whyDiv.appendChild(whyP);
+        expandable.appendChild(whyDiv);
+      }
+
+      if (w.source) {
+        var srcDiv = el('div', 'mb-2');
+        var srcLabel = el('p', 'text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1', 'Source');
+        srcDiv.appendChild(srcLabel);
+        var srcP = el('p', 'text-gray-500 text-sm', w.source);
+        srcDiv.appendChild(srcP);
+        expandable.appendChild(srcDiv);
+      }
+
+      // Link to related article for BITE items
+      if (w.entry_type === 'BITE Item') {
+        var link = document.createElement('a');
+        link.href = '/article/psychology-of-authoritarian-control.html';
+        link.className = 'inline-block mt-2 text-[#206795] text-sm font-medium hover:underline';
+        link.textContent = 'Read: The Psychology of Authoritarian Control \u2192';
+        link.addEventListener('click', function(e) { e.stopPropagation(); });
+        expandable.appendChild(link);
+      }
+
+      card.appendChild(expandable);
+
+      // Toggle expand on click
+      card.addEventListener('click', function() {
+        var isHidden = expandable.classList.contains('hidden');
+        expandable.classList.toggle('hidden');
+        if (isHidden) {
+          card.classList.add('border-[#206795]');
+        } else {
+          card.classList.remove('border-[#206795]');
+        }
+      });
+
+      return card;
+    }
+
+    function createBrowseCard(w) {
+      var card = el('div', 'bg-white border border-gray-200 rounded-xl p-4 hover:border-[#206795] hover:shadow-sm transition-all cursor-pointer');
+      var title = el('h4', 'text-gray-900 font-semibold text-sm mb-1', w.name);
+      card.appendChild(title);
+      if (w.entry_type === 'BITE Item' && w.bite_category) {
+        var biteTag = el('span', 'inline-block mb-1 px-2 py-0.5 text-xs font-medium rounded-full bg-red-100 text-red-700', w.bite_category);
+        card.appendChild(biteTag);
+      }
+      var def = el('p', 'text-gray-500 text-xs mb-0', truncate(w.definition, 120));
+      card.appendChild(def);
+
+      var expandable = el('div', 'hidden mt-3 pt-3 border-t border-gray-100');
+      if (w.felt_sense) {
+        var fs = el('p', 'text-gray-500 italic text-xs mb-2', w.felt_sense.split('\n')[0]);
+        expandable.appendChild(fs);
+      }
+      var fullDef = el('p', 'text-gray-700 text-xs mb-2', w.definition);
+      expandable.appendChild(fullDef);
+      if (w.source) {
+        var src = el('p', 'text-gray-400 text-xs', 'Source: ' + w.source);
+        expandable.appendChild(src);
+      }
+      card.appendChild(expandable);
+
+      card.addEventListener('click', function() {
+        expandable.classList.toggle('hidden');
+        card.classList.toggle('border-[#206795]');
+      });
+
+      return card;
+    }
+
+    function renderBrowse() {
+      var countEl = document.getElementById('word-count');
+      if (countEl) countEl.textContent = words.length;
+    }
+
+    function scoreWord(w, terms) {
+      var text = (w.name + ' ' + w.felt_sense + ' ' + w.definition + ' ' + (w.why_it_matters || '')).toLowerCase();
+      var nameText = w.name.toLowerCase();
+      var feltText = w.felt_sense.toLowerCase();
+      var score = 0;
+      var matched = 0;
+      for (var i = 0; i < terms.length; i++) {
+        var t = terms[i];
+        if (t.length < 2) continue;
+        if (nameText.indexOf(t) !== -1) { score += 10; matched++; }
+        else if (feltText.indexOf(t) !== -1) { score += 5; matched++; }
+        else if (text.indexOf(t) !== -1) { score += 2; matched++; }
+      }
+      // Bonus for matching most search terms
+      var coverage = terms.length > 0 ? matched / terms.length : 0;
+      score = score * (0.5 + coverage * 0.5);
+      return score;
+    }
+
+    function doSearch(query) {
+      if (!query) {
+        resultsEl.classList.add('hidden');
+        resultsEl.textContent = '';
+        noResultsEl.classList.add('hidden');
+        browseEl.style.display = '';
+        return;
+      }
+
+      browseEl.style.display = 'none';
+      // Split into individual words, remove stopwords
+      var stopwords = ['i','a','an','the','is','are','was','were','be','been','do','does','did','don','t','my','me','we','you','it','its','to','of','in','for','on','at','by','and','or','but','not','no','so','if','how','why','what','when','can','just','feel','like','know','about','that','this','with','have','has','had','from','all','been','get','got','would','could','should','more','very','really','something','thing','things','everything','anything','nothing','always','never','even','still','much','want','need','keep','going','being','doing','s','re','m','ve','ll','d'];
+      var terms = query.toLowerCase().split(/\s+/).filter(function(t) {
+        return t.length >= 2 && stopwords.indexOf(t) === -1;
+      });
+      // If all words were stopwords, use the full query as a phrase
+      if (terms.length === 0) terms = [query.toLowerCase().trim()];
+
+      var scored = [];
+      for (var i = 0; i < words.length; i++) {
+        var s = scoreWord(words[i], terms);
+        if (s > 0) scored.push({ word: words[i], score: s });
+      }
+      scored.sort(function(a, b) { return b.score - a.score; });
+      var matches = scored.slice(0, 10).map(function(s) { return s.word; });
+
+      if (matches.length === 0) {
+        resultsEl.classList.add('hidden');
+        resultsEl.textContent = '';
+        noResultsEl.classList.remove('hidden');
+        return;
+      }
+
+      noResultsEl.classList.add('hidden');
+      resultsEl.classList.remove('hidden');
+      resultsEl.textContent = '';
+      matches.forEach(function(w) {
+        resultsEl.appendChild(createCard(w));
+      });
+    }
+
+    searchInput.addEventListener('input', function() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function() {
+        doSearch(searchInput.value.trim());
+      }, 200);
+    });
+
+    // Felt-sense prompt buttons
+    document.querySelectorAll('.felt-prompt').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var query = btn.getAttribute('data-query');
+        searchInput.value = query;
+        doSearch(query);
+        searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+
+    fetch('/assets/data/words.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        words = data;
+        renderBrowse();
+      })
+      .catch(function(err) {
+        console.error('Failed to load words:', err);
+        statsEl.textContent = 'Failed to load vocabulary data.';
+      });
+  })();
+  </script>
+
+  <!-- build:scripts -->
+
+</body>
+</html>

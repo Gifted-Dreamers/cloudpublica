@@ -28,208 +28,7 @@
 
   <!-- DNS Prefetch -->
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'cp-teal': '#206795',
-            'cp-cyan': '#38c1e0',
-            'cp-dark': '#1a3347',
-            'cp-muted': '#5a7a8f',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Inter (async) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for article content -->
-  <style>
-    /* Tables */
-    .content-area table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-    }
-    .content-area table thead th {
-      background-color: #206795;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
-    }
-    .content-area table tbody td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid #1e3a4f;
-    }
-    .content-area table tbody tr:nth-child(even) {
-      background-color: #0d1a24;
-    }
-    .content-area table tbody tr:hover {
-      background-color: #122230;
-    }
-    .table-wrapper {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 1.5rem 0;
-    }
-
-    /* Blockquotes */
-    .content-area blockquote {
-      border-left: 4px solid #38c1e0;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      background-color: #0d1a24;
-      border-radius: 0 0.5rem 0.5rem 0;
-    }
-
-    /* Links */
-    .content-area a {
-      color: #38c1e0;
-      text-decoration: none;
-    }
-    .content-area a:hover {
-      text-decoration: underline;
-      color: #2ba8c5;
-    }
-
-    /* Lists */
-    .content-area ul, .content-area ol {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-    }
-    .content-area ul li {
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area ol li {
-      list-style-type: decimal;
-      margin-bottom: 0.75rem;
-      line-height: 1.7;
-    }
-    .content-area ul ul {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Footnote references (superscript) */
-    .fn-ref {
-      font-size: 0.75em;
-      vertical-align: super;
-      line-height: 0;
-      color: #38c1e0;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0 1px;
-    }
-    .fn-ref:hover {
-      color: #2ba8c5;
-      text-decoration: underline;
-    }
-
-    /* Footnotes section */
-    .footnotes-section {
-      font-size: 0.875rem;
-      line-height: 1.6;
-      border-top: 2px solid #1e3a4f;
-      padding-top: 1.5rem;
-      margin-top: 3rem;
-    }
-    .footnotes-section li {
-      margin-bottom: 0.5rem;
-      color: #94a3b8;
-    }
-    .footnotes-section a {
-      color: #38c1e0;
-      word-break: break-all;
-    }
-    .footnotes-section a:hover {
-      text-decoration: underline;
-    }
-    .fn-back {
-      color: #38c1e0;
-      text-decoration: none;
-      margin-left: 0.25rem;
-      font-size: 0.85em;
-    }
-    .fn-back:hover {
-      text-decoration: underline;
-    }
-
-    /* Source reference list */
-    .source-list h4 {
-      color: #206795;
-      font-weight: 700;
-      font-size: 1rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .source-list ul {
-      padding-left: 1.25rem;
-    }
-    .source-list li {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-    .source-list a {
-      color: #38c1e0;
-      word-break: break-all;
-    }
-    .source-list a:hover {
-      text-decoration: underline;
-    }
-
-    /* Section dividers */
-    .content-area hr {
-      border: none;
-      border-top: 1px solid #1e3a4f;
-      margin: 2.5rem 0;
-    }
-
-    /* Headings within content */
-    .content-area h2 {
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: #e2e8f0;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #206795;
-    }
-    .content-area h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #cbd5e1;
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-    }
-    .content-area h4 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: #94a3b8;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .content-area p {
-      margin-bottom: 1rem;
-      line-height: 1.8;
-    }
-  </style>
-
-  <!-- JSON-LD Structured Data -->
+<!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -249,10 +48,13 @@
   }
   </script>
 
+  <!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
   <!-- build:config {"nav":"investigations"} -->
 </head>
 
-<body class="bg-[#0a1218] text-white font-sans antialiased">
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
 
 <!-- build:nav -->
 
@@ -263,9 +65,9 @@
       <ol class="flex items-center space-x-2 text-sm text-gray-400">
         <li><a href="/" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.home">Home</a></li>
         <li><span class="mx-1">/</span></li>
-        <li><a href="/investigations.html" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.investigations">Investigations</a></li>
+        <li><a href="/investigations.html" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.investigations">Articles</a></li>
         <li><span class="mx-1">/</span></li>
-        <li class="text-gray-300 font-medium truncate">Anti-Surveillance Market Analysis</li>
+        <li class="text-gray-600 font-medium truncate">Anti-Surveillance Market Analysis</li>
       </ol>
     </div>
   </nav>
@@ -282,9 +84,16 @@
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-100 leading-tight mb-6" data-i18n="blog.market.title">
           Anti-Surveillance Technology &amp; Wearables: Threats, Countermeasures, and Market Opportunities
         </h1>
-        <p class="text-lg md:text-xl text-gray-300 leading-relaxed" data-i18n="blog.market.subtitle">
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed" data-i18n="blog.market.subtitle">
           An in-depth analysis of the surveillance landscape, market sizes, key players, regulatory impact, and strategic opportunities in the growing counter-surveillance industry.
         </p>
+      
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-200">
+          <div>
+            <p class="text-sm font-semibold text-gray-900">Kristine Socall, MBA International Economic Development</p>
+            <p class="text-xs text-gray-500">Founder &amp; Executive Director, <a href="https://gifteddreamers.org" class="text-cp-teal hover:underline">Gifted Dreamers, Inc.</a> 501(c)(3)</p>
+          </div>
+        </div>
       </header>
 
       <figure class="mb-10">

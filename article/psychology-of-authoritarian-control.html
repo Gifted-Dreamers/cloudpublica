@@ -26,191 +26,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'cp-teal': '#206795',
-            'cp-cyan': '#38c1e0',
-            'cp-dark': '#1a3347',
-            'cp-muted': '#5a7a8f',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Inter (async) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for article content -->
-  <style>
-    /* Tables */
-    .content-area table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-    }
-    .content-area table thead th {
-      background-color: #206795;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
-    }
-    .content-area table tbody td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .content-area table tbody tr:nth-child(even) {
-      background-color: rgba(32,103,149,0.1);
-    }
-    .content-area table tbody tr:hover {
-      background-color: rgba(56,193,224,0.1);
-    }
-
-    /* Blockquotes */
-    .content-area blockquote {
-      border-left: 4px solid #38c1e0;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      background-color: rgba(26,51,71,0.5);
-      border-radius: 0 0.5rem 0.5rem 0;
-    }
-
-    /* Links */
-    .content-area a {
-      color: #38c1e0;
-      text-decoration: none;
-    }
-    .content-area a:hover {
-      text-decoration: underline;
-      color: #38c1e0;
-    }
-
-    /* Lists */
-    .content-area ul, .content-area ol {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-    }
-    .content-area ul li {
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area ol li {
-      list-style-type: decimal;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-
-    /* Footnote references */
-    .content-area sup a.fn-ref {
-      font-size: 0.75em;
-      color: #38c1e0;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0 1px;
-    }
-    .content-area sup a.fn-ref:hover {
-      text-decoration: underline;
-      color: #38c1e0;
-    }
-
-    /* Footnotes section */
-    .footnotes-section {
-      font-size: 0.875rem;
-      border-top: 2px solid rgba(255,255,255,0.1);
-      padding-top: 1.5rem;
-      margin-top: 3rem;
-    }
-    .footnotes-section ol {
-      padding-left: 1.5rem;
-    }
-    .footnotes-section li {
-      margin-bottom: 0.5rem;
-      line-height: 1.6;
-      color: #9ca3af;
-    }
-    .footnotes-section li a {
-      color: #38c1e0;
-      word-break: break-all;
-    }
-    .footnotes-section li a:hover {
-      color: #38c1e0;
-      text-decoration: underline;
-    }
-    .footnotes-section .fn-back {
-      color: #38c1e0;
-      text-decoration: none;
-      margin-left: 0.25rem;
-      font-size: 0.85em;
-    }
-    .footnotes-section .fn-back:hover {
-      color: #38c1e0;
-    }
-
-    /* Table overflow wrapper */
-    .table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 1.5rem 0;
-    }
-
-    /* Section dividers */
-    .content-area hr {
-      border: none;
-      border-top: 2px solid rgba(255,255,255,0.1);
-      margin: 2.5rem 0;
-    }
-
-    .content-area p {
-      margin-bottom: 1.25rem;
-    }
-
-    .pullquote {
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: #38c1e0;
-      line-height: 1.5;
-      padding: 2rem 0;
-      text-align: center;
-      border-top: 2px solid rgba(255,255,255,0.1);
-      border-bottom: 2px solid rgba(255,255,255,0.1);
-      margin: 2.5rem 0;
-    }
-
-    /* BITE component cards */
-    .bite-card {
-      border-left: 4px solid #38c1e0;
-      padding: 1rem 1.5rem;
-      margin: 1rem 0;
-      background: linear-gradient(135deg, rgba(32,103,149,0.15) 0%, rgba(26,51,71,0.3) 100%);
-      border-radius: 0 0.75rem 0.75rem 0;
-    }
-    .bite-card .bite-label {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #38c1e0;
-      margin-bottom: 0.5rem;
-    }
-    .bite-card .bite-desc {
-      font-size: 0.95rem;
-      color: #d1d5db;
-      line-height: 1.7;
-    }
-  </style>
-
-  <!-- JSON-LD Structured Data -->
+<!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -235,21 +51,24 @@
   }
   </script>
 
-<!-- build:config {"nav":"investigations"} -->
+<!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- build:config {"nav":"investigations"} -->
 </head>
 
-<body class="bg-[#0a1218] text-white font-sans antialiased">
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
 
 <!-- build:nav -->
 
 
   <!-- Breadcrumb -->
-  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-[#1a3347] border-b border-white/10">
+  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-[#1a3347] border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
       <ol class="flex items-center space-x-2 text-sm text-gray-400">
         <li><a href="/" class="hover:text-[#38c1e0] transition-colors">Home</a></li>
         <li><span class="mx-1">/</span></li>
-        <li><a href="/investigations.html" class="hover:text-[#38c1e0] transition-colors">Investigations</a></li>
+        <li><a href="/investigations.html" class="hover:text-[#38c1e0] transition-colors">Articles</a></li>
         <li><span class="mx-1">/</span></li>
         <li class="text-gray-200 font-medium">The Psychology of Authoritarian Control</li>
       </ol>
@@ -263,15 +82,22 @@
       <!-- Article Header -->
       <header class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span class="inline-block bg-cp-teal/20 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
+          <span class="inline-block bg-cp-teal/10 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
           <time datetime="2026-03-08" class="text-sm text-gray-400">March 8, 2026</time>
         </div>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
           The Psychology of Authoritarian Control: From Cults to Cognitive Warfare
         </h1>
-        <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
           Sixty years of research on cults, coercive persuasion, and undue influence already mapped the playbook that fifth-generation warfare now deploys at scale. The BITE Model is a personal defense framework &mdash; and a diagnostic tool for recognizing when it&rsquo;s happening to you.
         </p>
+      
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-200">
+          <div>
+            <p class="text-sm font-semibold text-gray-900">Kristine Socall, MBA International Economic Development</p>
+            <p class="text-xs text-gray-500">Founder &amp; Executive Director, <a href="https://gifteddreamers.org" class="text-cp-teal hover:underline">Gifted Dreamers, Inc.</a> 501(c)(3)</p>
+          </div>
+        </div>
       </header>
 
       <figure class="mb-10">
@@ -283,10 +109,10 @@
       </figure>
 
       <!-- Article Body -->
-      <div class="content-area prose prose-lg max-w-none text-gray-300 leading-relaxed">
+      <div class="content-area prose prose-lg max-w-none text-gray-600 leading-relaxed">
 
         <!-- SECTION 1: THE BRIDGE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Missing Layer</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">The Missing Layer</h2>
 
         <p>
           Our <a href="/article/5gw-research.html">research on fifth-generation warfare</a> documented the state-level machinery: NATO&rsquo;s cognitive warfare doctrine, deepfake infrastructure, coordinated inauthentic behavior networks, and the deliberate targeting of civilian psychology as a domain of conflict. Our <a href="/article/open-source-transparency-tools.html">open-source transparency tools</a> catalogued the instruments for making that machinery visible.
@@ -319,13 +145,13 @@
         <hr>
 
         <!-- SECTION 2: THE RESEARCH LINEAGE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Sixty Years of Research Nobody Synthesized</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Sixty Years of Research Nobody Synthesized</h2>
 
         <p>
           Hassan&rsquo;s work doesn&rsquo;t emerge from nowhere. It synthesizes four major research traditions that developed independently and were never integrated into a single measurable framework until 2020.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">Robert Jay Lifton: Eight Criteria for Thought Reform (1961)</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Robert Jay Lifton: Eight Criteria for Thought Reform (1961)</h3>
 
         <p>
           Lifton, a psychiatrist at Yale, studied American POWs returning from Chinese Communist prison camps and Chinese intellectuals who had undergone &ldquo;revolutionary re-education.&rdquo; His eight criteria remain the clinical gold standard for identifying environments that produce involuntary ideological change:<sup><a href="#fn4" id="ref4" class="fn-ref">4</a></sup>
@@ -346,7 +172,7 @@
           If you&rsquo;ve read our <a href="/article/5gw-research.html">5GW research</a>, notice how many of these criteria map directly onto cognitive warfare tactics: milieu control is information environment shaping; loading the language is narrative weaponization; mystical manipulation is coordinated inauthentic behavior designed to feel organic.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">Edgar Schein: Coercive Persuasion (1961)</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Edgar Schein: Coercive Persuasion (1961)</h3>
 
         <p>
           Working at MIT during the same period as Lifton, Schein documented the mechanism as a three-stage process adapted from Kurt Lewin&rsquo;s change theory: <strong>Unfreezing</strong> (destabilizing existing beliefs through disconfirmation and anxiety), <strong>Changing</strong> (providing new beliefs that reduce the anxiety), and <strong>Refreezing</strong> (reinforcing the new identity through social validation).<sup><a href="#fn5" id="ref5" class="fn-ref">5</a></sup>
@@ -356,7 +182,7 @@
           This maps precisely onto what 5GW practitioners call the &ldquo;disorientation &rarr; reframing &rarr; consolidation&rdquo; cycle in cognitive warfare doctrine.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">Margaret Singer: Six Conditions for Thought Reform (1995)</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Margaret Singer: Six Conditions for Thought Reform (1995)</h3>
 
         <p>
           Singer, a clinical psychologist at UC Berkeley, translated the research into practical conditions that can be assessed in any group or relationship:<sup><a href="#fn6" id="ref6" class="fn-ref">6</a></sup>
@@ -375,7 +201,7 @@
           Notice conditions #1 and #6: the person <em>doesn&rsquo;t know it&rsquo;s happening</em>. This is the feature that distinguishes coercive persuasion from ordinary influence &mdash; and makes it so relevant to digital-age information warfare, where the persuasion infrastructure is invisible by design.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">Alan Scheflin: The Social Influence Model (2015)</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Alan Scheflin: The Social Influence Model (2015)</h3>
 
         <p>
           Scheflin, a professor of law at Santa Clara University, built a legal framework for evaluating undue influence in court. His Social Influence Model (SIM) assesses six factors:<sup><a href="#fn7" id="ref7" class="fn-ref">7</a></sup>
@@ -397,7 +223,7 @@
         <hr>
 
         <!-- SECTION 3: THE BITE MODEL -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The BITE Model: What It Measures</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">The BITE Model: What It Measures</h2>
 
         <p>
           Hassan&rsquo;s contribution was to take these research traditions and produce something actionable: a four-domain framework that can be scored on a scale, applied by non-experts, and used both clinically and as a self-assessment tool. BITE stands for <strong>Behavior Control, Information Control, Thought Control, and Emotional Control</strong>.
@@ -442,7 +268,7 @@
         <hr>
 
         <!-- SECTION 4: THE INFLUENCE CONTINUUM -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Influence Continuum</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">The Influence Continuum</h2>
 
         <p>
           One of the most useful concepts in Hassan&rsquo;s framework is the <strong>Influence Continuum</strong> &mdash; the recognition that influence itself is not inherently malicious. The spectrum runs from ethical influence (education, therapy, genuine leadership) to unethical influence (deception, coercion, exploitation).
@@ -509,7 +335,7 @@
         <hr>
 
         <!-- SECTION 5: DIGITAL AGE APPLICATION -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Why This Matters Now: The Digital Scaling Problem</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Why This Matters Now: The Digital Scaling Problem</h2>
 
         <p>
           The original research on coercive persuasion studied small groups: prison camps, cults, abusive relationships. What makes Hassan&rsquo;s framework urgent in 2026 is what he identified in his Discussion chapter: the same techniques now operate at population scale through digital infrastructure.<sup><a href="#fn3" class="fn-ref">3</a></sup>
@@ -569,13 +395,13 @@
         <hr>
 
         <!-- SECTION 6: USING IT -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Using the BITE Model as a Personal Defense Framework</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Using the BITE Model as a Personal Defense Framework</h2>
 
         <p>
           The practical value of this research is that it gives individuals a structured way to evaluate any information environment they find themselves in &mdash; political movements, media ecosystems, online communities, workplaces, or relationships. Here are the diagnostic questions, organized by domain:
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">Behavior: What am I being told to do?</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Behavior: What am I being told to do?</h3>
         <ul>
           <li>Am I being pressured to cut off contact with people outside this group/community?</li>
           <li>Are there rigid rules about daily activities, appearance, diet, or finances?</li>
@@ -583,7 +409,7 @@
           <li>Are there punishments &mdash; social or otherwise &mdash; for non-compliance?</li>
         </ul>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">Information: What am I being told to believe and not believe?</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Information: What am I being told to believe and not believe?</h3>
         <ul>
           <li>Am I discouraged from reading, watching, or listening to outside sources?</li>
           <li>Are critics or outsiders characterized as enemies, liars, or agents of evil?</li>
@@ -591,7 +417,7 @@
           <li>Am I being told to distrust my own observations or memories?</li>
         </ul>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">Thought: How am I being told to think?</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Thought: How am I being told to think?</h3>
         <ul>
           <li>Are there phrases or labels used to shut down questions? (&ldquo;That&rsquo;s just what <em>they</em> want you to think.&rdquo;)</li>
           <li>Is critical analysis treated as disloyalty or weakness?</li>
@@ -599,7 +425,7 @@
           <li>Are complex issues reduced to black-and-white binaries?</li>
         </ul>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">Emotion: How am I being made to feel?</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Emotion: How am I being made to feel?</h3>
         <ul>
           <li>Do I feel afraid of what will happen if I leave, disagree, or express doubt?</li>
           <li>Am I made to feel guilty for thinking independently?</li>
@@ -614,7 +440,7 @@
         <hr>
 
         <!-- SECTION 7: LEGAL AND CLINICAL -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Legal and Clinical Gap</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">The Legal and Clinical Gap</h2>
 
         <p>
           Hassan identifies a structural problem: the legal system has no standardized framework for evaluating coercive control in most contexts. Domestic violence law is beginning to incorporate coercive control (the UK&rsquo;s <em>Serious Crime Act 2015</em> was a milestone), but there is no equivalent framework for recognizing the same dynamics in political, religious, commercial, or digital contexts.<sup><a href="#fn8" id="ref8" class="fn-ref">8</a></sup>
@@ -631,7 +457,7 @@
         <hr>
 
         <!-- SECTION 8: SYNTHESIS -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">The Three Layers of Defense</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">The Three Layers of Defense</h2>
 
         <p>
           This post, combined with our earlier research, maps three complementary layers of defense against information-age authoritarian control:
@@ -682,13 +508,13 @@
 
         <!-- FURTHER READING -->
         <!-- MARCH 2026 UPDATE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">March 2026 Update: When the Agent Is the Coercive System</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">March 2026 Update: When the Agent Is the Coercive System</h2>
 
         <p>
           Since this article was published, two developments have extended the BITE framework into territory Hassan could not have anticipated: the coercive system is no longer always human.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">&ldquo;Excessive Agency&rdquo;: BITE at Machine Scale</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">&ldquo;Excessive Agency&rdquo;: BITE at Machine Scale</h3>
 
         <p>
           The OWASP Foundation &mdash; the organization that maintains the industry-standard list of web application security risks &mdash; added <strong>&ldquo;Excessive Agency&rdquo;</strong> to its LLM Top 10 in 2026. The category describes AI systems that have been granted unsupervised control over critical business functions: executing code, accessing databases, sending communications, and making decisions on behalf of humans without meaningful oversight.
@@ -709,7 +535,7 @@
           This is not to say that every AI assistant is a coercive system. The Influence Continuum applies: ethical AI design strengthens autonomy, encourages critical thinking, and makes its methods transparent. But the BITE framework provides a diagnostic tool for evaluating <em>where on the continuum</em> a given AI system falls &mdash; and the current trend, as Cisco&rsquo;s report documents, is toward more agency with less oversight.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">The Vulnerability of the Connective Tissue</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">The Vulnerability of the Connective Tissue</h3>
 
         <p>
           Cisco&rsquo;s <em>State of AI Security 2026</em> found that <strong>26% of 31,000 agent skills analyzed contained at least one vulnerability</strong>. These skills &mdash; the local file packages that give AI agents new capabilities &mdash; can execute shell commands, read files, and exfiltrate data. The viral OpenClaw agent&rsquo;s skills were found to execute data exfiltration instructions while appearing to provide legitimate functionality.
@@ -723,7 +549,7 @@
           The defense is the same at every scale: make the system visible, name what it does, and restore the capacity for informed consent. Our <a href="/article/open-source-transparency-tools.html">transparency tools</a> now include Cisco&rsquo;s open-source MCP Scanner, A2A Scanner, and Skill Scanner &mdash; instruments of visibility for the AI layer.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">The Personalization Trap</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">The Personalization Trap</h3>
 
         <p>
           ChatGPT gives personalized answers &mdash; reproducing the social media filter bubble at the conversational AI level. Each person gets a different reality from their AI companion. Shared sensemaking becomes impossible not through censorship but through <em>divergence</em>: two people asking the same question receive different answers, shaped by their conversation history, stated preferences, and inferred beliefs. The result is epistemic fragmentation at the individual level.
@@ -756,7 +582,7 @@
 
         <hr>
 
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">Further Reading</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">Further Reading</h2>
 
         <ul>
           <li>Hassan, S. A. (2020). <em>The BITE Model of Authoritarian Control: Undue Influence, Thought Reform, Brainwashing, Mind Control, Trafficking and the Law.</em> Doctoral dissertation, Fielding Graduate University.</li>
@@ -773,7 +599,7 @@
 
         <!-- FOOTNOTES -->
         <section class="footnotes-section" aria-label="Footnotes">
-          <h3 class="text-lg font-bold text-white mb-4">Notes</h3>
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Notes</h3>
           <ol>
             <li id="fn1">Hassan, S. A. (2020). <em>The BITE Model of Authoritarian Control: Undue Influence, Thought Reform, Brainwashing, Mind Control, Trafficking and the Law.</em> Doctoral dissertation, Fielding Graduate University. The study surveyed 1,044 participants across 60 groups. Internal reliability: .98; Cronbach&rsquo;s alpha: .93. Factor analysis confirmed a single construct (&ldquo;authoritarian control&rdquo;). <a href="#ref1" class="fn-back" aria-label="Back to reference 1">&uarr;</a></li>
             <li id="fn2">Hassan (2020), Chapter 5: Discussion. Hassan argues the BITE framework applies beyond cult contexts to &ldquo;any authoritarian group, relationship, or system that uses deception and undue influence.&rdquo; <a href="#ref2" class="fn-back" aria-label="Back to reference 2">&uarr;</a></li>
@@ -789,8 +615,8 @@
 
         <hr>
 
-        <section class="mt-10 p-6 bg-[#1a3347]/50 rounded-lg border border-white/10">
-          <h3 class="text-lg font-bold text-white mb-2">Related Reading</h3>
+        <section class="mt-10 p-6 bg-[#1a3347]/50 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Related Reading</h3>
           <ul>
             <li><a href="/article/5gw-research.html">Fifth-Generation Warfare: The Invisible War Already Underway</a></li>
             <li><a href="/article/open-source-transparency-tools.html">The Tools Already Exist to Make Power Visible</a></li>

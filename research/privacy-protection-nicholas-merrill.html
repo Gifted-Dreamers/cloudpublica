@@ -17,47 +17,25 @@
 
   <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = { theme: { extend: { colors: { 'cp-teal': '#206795', 'cp-cyan': '#38c1e0', 'cp-dark': '#1a3347', 'cp-muted': '#5a7a8f' }, fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    .content-area table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
-    .content-area table thead th { background-color: #206795; color: #fff; padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
-    .content-area table tbody td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .content-area blockquote { border-left: 4px solid #38c1e0; padding: 1rem 1.5rem; margin: 1.5rem 0; background-color: rgba(32,103,149,0.15); }
-    .content-area a { color: #38c1e0; text-decoration: none; }
-    .content-area a:hover { text-decoration: underline; }
-    .content-area ul, .content-area ol { padding-left: 1.5rem; margin: 1rem 0; }
-    .content-area ul li { list-style-type: disc; margin-bottom: 0.5rem; line-height: 1.7; }
-    .content-area ol li { list-style-type: decimal; margin-bottom: 0.5rem; line-height: 1.7; }
-    .content-area sup a.fn-ref { font-size: 0.75em; color: #38c1e0; text-decoration: none; font-weight: 600; padding: 0 1px; }
-    .content-area sup a.fn-ref:hover { text-decoration: underline; }
-    .footnotes-section { font-size: 0.875rem; border-top: 2px solid rgba(255,255,255,0.15); padding-top: 1.5rem; margin-top: 3rem; }
-    .footnotes-section ol { padding-left: 1.5rem; }
-    .footnotes-section li { margin-bottom: 0.5rem; line-height: 1.6; color: #94a3b8; }
-    .footnotes-section li a { color: #38c1e0; word-break: break-all; }
-    .content-area hr { border: none; border-top: 2px solid rgba(255,255,255,0.15); margin: 2.5rem 0; }
-  </style>
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Article","headline":"Privacy Protection: Actionable Steps for 2026","datePublished":"2026-02-11","author":{"@type":"Organization","name":"Cloud Publica"},"publisher":{"@type":"Organization","name":"Gifted Dreamers, Inc."}}
   </script>
 
-<!-- build:config {"nav":"research"} -->
+<!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- build:config {"nav":"research"} -->
 </head>
-<body class="bg-[#0a1218] text-white font-sans antialiased">
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
 
 <!-- build:nav -->
 
-<nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-cp-dark/80 border-b border-white/10">
+<nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-cp-dark/80 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 py-2">
       <ol class="flex items-center space-x-2 text-sm text-cp-muted">
         <li><a href="/" class="hover:text-cp-cyan" data-i18n="breadcrumb.home">Home</a></li>
         <li><span class="mx-1">/</span></li>
-        <li><a href="/research/" class="hover:text-cp-cyan" data-i18n="breadcrumb.research">Research</a></li>
+        <li><a href="/article/" class="hover:text-cp-cyan transition-colors">Articles</a></li>
         <li><span class="mx-1">/</span></li>
         <li class="text-white font-medium" data-i18n="blog.merrill.breadcrumb">Privacy Protection</li>
       </ol>
@@ -68,11 +46,18 @@
     <article class="max-w-4xl mx-auto px-4">
       <header class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <span class="bg-cp-teal/20 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase" data-i18n="blog.merrill.tag">Technology &amp; Privacy</span>
+          <span class="bg-cp-teal/10 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase" data-i18n="blog.merrill.tag">Technology &amp; Privacy</span>
           <time datetime="2026-02-11" class="text-sm text-cp-muted">February 11, 2026</time>
         </div>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6" data-i18n="blog.merrill.title">Privacy Protection: Actionable Steps for 2026</h1>
-        <p class="text-lg md:text-xl text-gray-300 leading-relaxed" data-i18n="blog.merrill.subtitle">Based on Nicholas Merrill's privacy-first philosophy and current 2026 technologies: concrete steps for phones, WiFi, home devices, and proximity-based protection.</p>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6" data-i18n="blog.merrill.title">Privacy Protection: Actionable Steps for 2026</h1>
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed" data-i18n="blog.merrill.subtitle">Based on Nicholas Merrill's privacy-first philosophy and current 2026 technologies: concrete steps for phones, WiFi, home devices, and proximity-based protection.</p>
+      
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-200">
+          <div>
+            <p class="text-sm font-semibold text-gray-900">Kristine Socall, MBA International Economic Development</p>
+            <p class="text-xs text-gray-500">Founder &amp; Executive Director, <a href="https://gifteddreamers.org" class="text-cp-teal hover:underline">Gifted Dreamers, Inc.</a> 501(c)(3)</p>
+          </div>
+        </div>
       </header>
       <figure class="mb-10">
         <picture>
@@ -83,8 +68,8 @@
       </figure>
 
 
-      <div class="content-area prose prose-lg max-w-none text-gray-300">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.merrill.about_h2">About Nicholas Merrill: Privacy Activist and Entrepreneur</h2>
+      <div class="content-area prose prose-lg max-w-none text-gray-600">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.merrill.about_h2">About Nicholas Merrill: Privacy Activist and Entrepreneur</h2>
         <p data-i18n="blog.merrill.about_p"><strong>Nicholas Merrill</strong> is a pioneering privacy advocate and system administrator best known for being the first person to challenge the National Security Letter (NSL) provision of the USA PATRIOT Act in 2004. After receiving a secret FBI demand for customer data from his ISP, Calyx Internet Access, Merrill spent over a decade fighting the accompanying lifelong gag order, eventually winning the right to speak publicly about the case in 2015.</p>
 
         <h3 class="text-xl font-semibold text-cp-cyan mt-8 mb-3" data-i18n="blog.merrill.recent_h3">Recent Developments: Calyx Institute Departure and Phreeli Launch</h3>
@@ -97,12 +82,12 @@
 
         <hr>
 
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.merrill.steps_h2">Actionable Privacy Protection Steps</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.merrill.steps_h2">Actionable Privacy Protection Steps</h2>
         <p data-i18n="blog.merrill.steps_intro">Based on Merrill's privacy-first philosophy and current 2026 technologies, here are concrete steps to protect yourself across phones, WiFi, and home devices, including proximity-based protection.</p>
 
         <hr>
 
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.merrill.phone_h2">Phone Protection</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.merrill.phone_h2">Phone Protection</h2>
 
         <h3 class="text-xl font-semibold text-cp-cyan mt-8 mb-3" data-i18n="blog.merrill.phone_1_h3">1. Choose Privacy-Respecting Mobile Service</h3>
         <p><strong data-i18n="blog.merrill.phreeli_use">Use Phreeli for Cellular Service</strong></p>
@@ -152,7 +137,7 @@
 
         <hr>
 
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.merrill.wifi_h2">WiFi Protection</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.merrill.wifi_h2">WiFi Protection</h2>
 
         <h3 class="text-xl font-semibold text-cp-cyan mt-8 mb-3" data-i18n="blog.merrill.wifi_1_h3">1. Secure Home Router Configuration</h3>
         <p><strong data-i18n="blog.merrill.principle">Principle</strong>: <span data-i18n="blog.merrill.router_principle">Treat your router as a critical privacy boundary, following Merrill's ISP privacy advocacy.</span> <sup><a href="#fn3" id="fnref3b" class="fn-ref">[3]</a></sup></p>
@@ -194,7 +179,7 @@
 
         <hr>
 
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.merrill.home_h2">Home Device Protection</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.merrill.home_h2">Home Device Protection</h2>
 
         <h3 class="text-xl font-semibold text-cp-cyan mt-8 mb-3" data-i18n="blog.merrill.home_1_h3">1. IoT Device Management</h3>
         <p><strong data-i18n="blog.merrill.principle">Principle</strong>: <span data-i18n="blog.merrill.iot_principle">Apply Merrill's "privacy by design" to smart home devices.</span> <sup><a href="#fn12" id="fnref12d" class="fn-ref">[12]</a></sup></p>
@@ -228,7 +213,7 @@
 
         <hr>
 
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.merrill.proximity_h2">Proximity-Based Protection</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.merrill.proximity_h2">Proximity-Based Protection</h2>
         <p data-i18n="blog.merrill.proximity_intro">This addresses threats from being near others, even without using your device.</p>
 
         <h3 class="text-xl font-semibold text-cp-cyan mt-8 mb-3" data-i18n="blog.merrill.prox_1_h3">1. Location Tracking Prevention</h3>
@@ -283,7 +268,7 @@
 
         <hr>
 
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.merrill.advanced_h2">Advanced Protection: Zero-Trust Architecture</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.merrill.advanced_h2">Advanced Protection: Zero-Trust Architecture</h2>
         <p><span data-i18n="blog.merrill.zero_trust_intro">Based on Merrill's "privacy by design" philosophy, implement zero-trust principles:</span> <sup><a href="#fn12" id="fnref12e" class="fn-ref">[12]</a></sup></p>
 
         <h3 class="text-xl font-semibold text-cp-cyan mt-8 mb-3" data-i18n="blog.merrill.adv_1_h3">1. Assume Breach Mentality</h3>
@@ -311,7 +296,7 @@
 
         <hr>
 
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.merrill.checklist_h2">Implementation Checklist for January 2026</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.merrill.checklist_h2">Implementation Checklist for January 2026</h2>
 
         <p><strong data-i18n="blog.merrill.immediate">Immediate Actions (This Week)</strong>:</p>
         <ol>
@@ -342,7 +327,7 @@
 
         <hr>
 
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.merrill.urls_h2">Key Live URLs (January 2026)</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.merrill.urls_h2">Key Live URLs (January 2026)</h2>
         <ul>
           <li><strong data-i18n="blog.merrill.url_phreeli_policy">Phreeli Privacy Policy</strong>: <a href="https://www.phreeli.com/privacy/policy" target="_blank" rel="noopener noreferrer">https://www.phreeli.com/privacy/policy</a></li>
           <li><strong data-i18n="blog.merrill.url_phreeli_main">Phreeli Main Site</strong>: <a href="https://www.phreeli.com/privacy" target="_blank" rel="noopener noreferrer">https://www.phreeli.com/privacy</a></li>
@@ -354,12 +339,12 @@
 
         <hr>
 
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.merrill.conclusion_h2">Conclusion</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.merrill.conclusion_h2">Conclusion</h2>
         <p><span data-i18n="blog.merrill.conclusion_p1">Nicholas Merrill's evolution from challenging FBI surveillance to launching Phreeli demonstrates that effective privacy protection in 2026 requires systemic changes at the carrier and OS level, not just app-level tweaks. The core principle remains: minimize data collection at the source, separate identity from activity, and assume that any data collected will be compromised.</span></p>
         <p><span data-i18n="blog.merrill.conclusion_p2">By implementing these steps—switching to Phreeli, using a privacy OS, securing your WiFi network, isolating IoT devices, and employing proximity-based defenses like Faraday bags—you create multiple layers of protection that align with Merrill's "privacy by design" philosophy. The goal is not paranoia, but digital autonomy: living your normal life without feeling watched or exploited.</span> <sup><a href="#fn14" id="fnref14b" class="fn-ref">[14]</a></sup><sup><a href="#fn1" id="fnref1e" class="fn-ref">[1]</a></sup></p>
 
         <div class="footnotes-section" id="footnotes">
-          <h3 class="text-lg font-bold text-white mb-3" data-i18n="blog.merrill.footnotes_title">References</h3>
+          <h3 class="text-lg font-bold text-gray-900 mb-3" data-i18n="blog.merrill.footnotes_title">References</h3>
           <ol>
             <li id="fn1">Business Wire: Wired Features Nicholas Merrill's Launch of Phreeli. <a href="https://www.businesswire.com/news/home/20251204707841/en/Wired-Features-Nicholas-Merrills-Launch-of-Privacy-First-Wireless-Carrier-Phreeli" target="_blank" rel="noopener noreferrer">Link</a>. <a href="#fnref1" class="fn-back">↑</a></li>
             <li id="fn2">Wired: New Anonymous Phone Carrier—Sign Up With Nothing But a ZIP Code. <a href="https://www.wired.com/story/new-anonymous-phone-carrier-sign-up-with-nothing-but-a-zip-code/" target="_blank" rel="noopener noreferrer">Link</a>. <a href="#fnref2" class="fn-back">↑</a></li>

@@ -28,155 +28,7 @@
 
   <!-- DNS Prefetch -->
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'cp-teal': '#206795',
-            'cp-cyan': '#38c1e0',
-            'cp-dark': '#1a3347',
-            'cp-muted': '#8a9bae',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Inter (async) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Custom styles for article content -->
-  <style>
-    /* Tables */
-    .content-area table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-    }
-    .content-area table thead th {
-      background-color: #206795;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
-    }
-    .content-area table tbody td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid #1a3347;
-    }
-    .content-area table tbody tr:nth-child(even) {
-      background-color: rgba(32, 103, 149, 0.1);
-    }
-    .content-area table tbody tr:hover {
-      background-color: rgba(56, 193, 224, 0.1);
-    }
-
-    /* Blockquotes */
-    .content-area blockquote {
-      border-left: 4px solid #38c1e0;
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      background-color: rgba(26, 51, 71, 0.5);
-      border-radius: 0 0.5rem 0.5rem 0;
-    }
-
-    /* Links */
-    .content-area a {
-      color: #38c1e0;
-      text-decoration: none;
-    }
-    .content-area a:hover {
-      text-decoration: underline;
-      color: #38c1e0;
-    }
-
-    /* Lists */
-    .content-area ul, .content-area ol {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-    }
-    .content-area ul li {
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-    .content-area ol li {
-      list-style-type: decimal;
-      margin-bottom: 0.5rem;
-      line-height: 1.7;
-    }
-
-    /* Footnote references (superscript in text) */
-    .content-area sup a.fn-ref {
-      font-size: 0.75em;
-      color: #38c1e0;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0 1px;
-    }
-    .content-area sup a.fn-ref:hover {
-      text-decoration: underline;
-      color: #38c1e0;
-    }
-
-    /* Footnotes section */
-    .footnotes-section {
-      font-size: 0.875rem;
-      border-top: 2px solid #1a3347;
-      padding-top: 1.5rem;
-      margin-top: 3rem;
-    }
-    .footnotes-section ol {
-      padding-left: 1.5rem;
-    }
-    .footnotes-section li {
-      margin-bottom: 0.5rem;
-      line-height: 1.6;
-      color: #8a9bae;
-    }
-    .footnotes-section li a {
-      color: #38c1e0;
-      word-break: break-all;
-    }
-    .footnotes-section li a:hover {
-      color: #38c1e0;
-      text-decoration: underline;
-    }
-    .footnotes-section .fn-back {
-      color: #38c1e0;
-      text-decoration: none;
-      margin-left: 0.25rem;
-      font-size: 0.85em;
-    }
-    .footnotes-section .fn-back:hover {
-      color: #38c1e0;
-    }
-
-    /* Table overflow wrapper */
-    .table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 1.5rem 0;
-    }
-
-    /* Section dividers */
-    .content-area hr {
-      border: none;
-      border-top: 2px solid #1a3347;
-      margin: 2.5rem 0;
-    }
-  </style>
-
-  <!-- JSON-LD Structured Data -->
+<!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -201,10 +53,13 @@
   }
   </script>
 
-<!-- build:config {"nav":"investigations"} -->
+<!-- Self-hosted fonts + Tailwind (no external requests) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- build:config {"nav":"investigations"} -->
 </head>
 
-<body class="bg-[#0a1218] text-white font-sans antialiased">
+<body class="bg-[#f5f5f5] text-gray-900 font-sans antialiased">
 <!-- build:nav -->
 
 
@@ -214,7 +69,7 @@
       <ol class="flex items-center space-x-2 text-sm text-cp-muted">
         <li><a href="/" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.home">Home</a></li>
         <li><span class="mx-1">/</span></li>
-        <li><a href="/article/" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.investigations">Investigations</a></li>
+        <li><a href="/article/" class="hover:text-cp-cyan transition-colors" data-i18n="breadcrumb.investigations">Articles</a></li>
         <li><span class="mx-1">/</span></li>
         <li class="text-white font-medium truncate">Fifth-Generation Warfare</li>
       </ol>
@@ -233,12 +88,19 @@
           <span class="inline-block bg-cp-teal/10 text-cp-cyan text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Research &amp; Frameworks</span>
           <time datetime="2026-02-10" class="text-sm text-cp-muted">February 10, 2026</time>
         </div>
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6" data-i18n="blog.5gw.title">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6" data-i18n="blog.5gw.title">
           Fifth-Generation Warfare: The Invisible War Already Underway
         </h1>
         <p class="text-lg md:text-xl text-cp-muted leading-relaxed" data-i18n="blog.5gw.subtitle">
           <em>A comprehensive guide to how nations are fighting &mdash; and losing &mdash; wars you can&rsquo;t see</em>
         </p>
+      
+        <div class="flex items-center gap-3 mt-6 pt-4 border-t border-gray-200">
+          <div>
+            <p class="text-sm font-semibold text-gray-900">Kristine Socall, MBA International Economic Development</p>
+            <p class="text-xs text-gray-500">Founder &amp; Executive Director, <a href="https://gifteddreamers.org" class="text-cp-teal hover:underline">Gifted Dreamers, Inc.</a> 501(c)(3)</p>
+          </div>
+        </div>
       </header>
       <figure class="mb-10">
         <picture>
@@ -250,7 +112,7 @@
 
 
       <!-- Article Body -->
-      <div class="content-area prose prose-lg max-w-none text-gray-300 leading-relaxed">
+      <div class="content-area prose prose-lg max-w-none text-gray-600 leading-relaxed">
 
         <p data-i18n="blog.5gw.p1">
           The next world war may not begin with missiles. It may begin with a deepfake video, a manipulated news feed, or a cyberattack on an undersea cable &mdash; and you may never know it started at all. Welcome to <strong>fifth-generation warfare (5GW)</strong>, the emerging paradigm of conflict where the battlefield is your mind, the weapons are information, and everyone is a target.<sup><a href="#fn1" id="fnref1" class="fn-ref">[1]</a></sup><sup><a href="#fn2" id="fnref2" class="fn-ref">[2]</a></sup>
@@ -259,7 +121,7 @@
         <hr>
 
         <!-- WHAT IS FIFTH-GENERATION WARFARE? -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.5gw.section.what_is">What Is Fifth-Generation Warfare?</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.5gw.section.what_is">What Is Fifth-Generation Warfare?</h2>
 
         <p data-i18n="blog.5gw.p2">
           Fifth-generation warfare is conflict conducted primarily through non-kinetic means &mdash; social engineering, misinformation, cyberattacks, and emerging technologies like artificial intelligence and autonomous systems.<sup><a href="#fn3" id="fnref3" class="fn-ref">[3]</a></sup><sup><a href="#fn4" id="fnref4" class="fn-ref">[4]</a></sup> The term was first coined in 2003 by Robert Steele, a former CIA operative, and later expanded by theorist Daniel Abbott, who called 5GW a war of &ldquo;information and perception.&rdquo;<sup><a href="#fn5" id="fnref5" class="fn-ref">[5]</a></sup><sup><a href="#fn6" id="fnref6" class="fn-ref">[6]</a></sup>
@@ -290,7 +152,7 @@
         <hr>
 
         <!-- HOW WE GOT HERE: THE GENERATIONS OF WAR -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.5gw.section.generations">How We Got Here: The Generations of War</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.5gw.section.generations">How We Got Here: The Generations of War</h2>
 
         <div class="table-wrap">
           <table>
@@ -342,10 +204,10 @@
         <hr>
 
         <!-- THE STATE OF PLAY -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.5gw.section.state_of_play">The State of Play: Key Developments Through Early 2026</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.5gw.section.state_of_play">The State of Play: Key Developments Through Early 2026</h2>
 
         <!-- NATO -->
-        <h3 class="text-xl font-bold text-white mt-8 mb-4">NATO Moves from Theory to Practice</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">NATO Moves from Theory to Practice</h3>
 
         <p data-i18n="blog.5gw.p6">
           NATO does not typically use the &ldquo;5GW&rdquo; label, but its <strong>Cognitive Warfare</strong> program operationalizes many of the same ideas. In late 2025, the NATO Chief Scientist released a landmark <em>Report on Cognitive Warfare</em>, framing the threat as targeting how people &ldquo;perceive, make sense, decide, and act.&rdquo; The report warns that modern technology makes cognitive attacks &ldquo;faster, cheaper, and harder to attribute.&rdquo;<sup><a href="#fn15" id="fnref15" class="fn-ref">[15]</a></sup><sup><a href="#fn16" id="fnref16" class="fn-ref">[16]</a></sup>
@@ -364,7 +226,7 @@
         </p>
 
         <!-- U.S. Response -->
-        <h3 class="text-xl font-bold text-white mt-8 mb-4">The U.S. Response: Congress and the Pentagon</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">The U.S. Response: Congress and the Pentagon</h3>
 
         <p data-i18n="blog.5gw.p9">
           The <strong>2026 National Defense Authorization Act (NDAA)</strong> directs the Secretary of Defense to formally define cognitive warfare for the Department, identify which organizations have functional responsibility, and assess the value of &ldquo;narrative intelligence&rdquo; to information operations and irregular warfare &mdash; with a deadline of March 31, 2026.<sup><a href="#fn21" id="fnref21" class="fn-ref">[21]</a></sup><sup><a href="#fn22" id="fnref22" class="fn-ref">[22]</a></sup> The <em>Small Wars Journal</em> noted in January 2026 that &ldquo;Congress has now created an opening for the Department of War to act with speed and purpose&rdquo; and that NATO&rsquo;s framework offers the Pentagon &ldquo;a ready blueprint.&rdquo;<sup><a href="#fn22" id="fnref22b" class="fn-ref">[22]</a></sup>
@@ -383,14 +245,14 @@
         </p>
 
         <!-- CISA -->
-        <h3 class="text-xl font-bold text-white mt-8 mb-4">CISA Under Strain</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">CISA Under Strain</h3>
 
         <p data-i18n="blog.5gw.p13">
           On the domestic front, the Cybersecurity and Infrastructure Security Agency (CISA) &mdash; America&rsquo;s primary civilian cyber defense body &mdash; faces significant challenges. In 2025, the Trump administration reduced CISA&rsquo;s staff by a third, shuttered election security programs, and scaled back disinformation-related activities.<sup><a href="#fn30" id="fnref30" class="fn-ref">[30]</a></sup> CISA now confronts the dual burden of supporting critical infrastructure with diminished resources while facing escalating Chinese government cyber aggression.<sup><a href="#fn30" id="fnref30b" class="fn-ref">[30]</a></sup><sup><a href="#fn31" id="fnref31" class="fn-ref">[31]</a></sup>
         </p>
 
         <!-- Russia -->
-        <h3 class="text-xl font-bold text-white mt-8 mb-4">Russia&rsquo;s Hybrid Warfare Playbook</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Russia&rsquo;s Hybrid Warfare Playbook</h3>
 
         <p data-i18n="blog.5gw.p14">
           Russia has provided the most visible real-world demonstrations of 5GW-adjacent operations. Over 20 subsea cables in the Baltic and Arctic regions were damaged between late 2024 and early 2026 &mdash; a sharp increase attributed to Russia&rsquo;s &ldquo;shadow fleet&rdquo; of vessels.<sup><a href="#fn32" id="fnref32" class="fn-ref">[32]</a></sup><sup><a href="#fn33" id="fnref33" class="fn-ref">[33]</a></sup> Finland has established new maritime surveillance mechanisms in cooperation with Baltic Sea states to counter the threat.<sup><a href="#fn34" id="fnref34" class="fn-ref">[34]</a></sup>
@@ -401,14 +263,14 @@
         </p>
 
         <!-- China -->
-        <h3 class="text-xl font-bold text-white mt-8 mb-4">China&rsquo;s Cognitive War on Taiwan</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">China&rsquo;s Cognitive War on Taiwan</h3>
 
         <p data-i18n="blog.5gw.p16">
           Taiwan&rsquo;s National Security Bureau reported in 2025 that China conducted comprehensive cognitive warfare through its party, state, and military systems.<sup><a href="#fn37" id="fnref37" class="fn-ref">[37]</a></sup> Tactics include deploying internet &ldquo;water armies&rdquo; to amplify narratives, manipulating inauthentic accounts, using AI to generate realistic deepfake videos, and leveraging TikTok for strategic messaging.<sup><a href="#fn37" id="fnref37b" class="fn-ref">[37]</a></sup><sup><a href="#fn38" id="fnref38" class="fn-ref">[38]</a></sup><sup><a href="#fn39" id="fnref39" class="fn-ref">[39]</a></sup> Chinese enterprises like China North Industries Group Corporation have developed AI models for automated video generation and precise targeted delivery.<sup><a href="#fn40" id="fnref40" class="fn-ref">[40]</a></sup> The U.S. Army TRADOC Mad Scientist blog described China&rsquo;s approach as seeking to &ldquo;hack your brain&rdquo; through algorithmic influence and neurotechnological exploitation.<sup><a href="#fn40" id="fnref40b" class="fn-ref">[40]</a></sup>
         </p>
 
         <!-- Deepfakes -->
-        <h3 class="text-xl font-bold text-white mt-8 mb-4">The Deepfake Explosion</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">The Deepfake Explosion</h3>
 
         <p data-i18n="blog.5gw.p17">
           2025 was described as the year &ldquo;synthetic media crossed another threshold.&rdquo;<sup><a href="#fn41" id="fnref41" class="fn-ref">[41]</a></sup> AI-generated deepfakes of public figures circulated during the Iran-Israel conflict and multiple elections worldwide.<sup><a href="#fn41" id="fnref41b" class="fn-ref">[41]</a></sup> Palo Alto Networks predicted that in 2026, &ldquo;identity becomes the main target&rdquo; with flawless real-time AI deepfakes making it &ldquo;impossible to tell a fake from a real person.&rdquo;<sup><a href="#fn42" id="fnref42" class="fn-ref">[42]</a></sup> ASPI documented a case of Chinese-origin deepfake videos targeting Hong Kong activists as an example of state-sponsored psychological warfare.<sup><a href="#fn43" id="fnref43" class="fn-ref">[43]</a></sup>
@@ -419,14 +281,14 @@
         </p>
 
         <!-- EU -->
-        <h3 class="text-xl font-bold text-white mt-8 mb-4">The EU Regulatory Response</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">The EU Regulatory Response</h3>
 
         <p data-i18n="blog.5gw.p19">
           The EU Artificial Intelligence Act, adopted in 2024, enters into force in August 2026.<sup><a href="#fn45" id="fnref45" class="fn-ref">[45]</a></sup><sup><a href="#fn46" id="fnref46" class="fn-ref">[46]</a></sup> Under Article 50, providers must ensure machine-readable marking and detectability of AI-generated content, and deployers must disclose deepfakes.<sup><a href="#fn45" id="fnref45b" class="fn-ref">[45]</a></sup> The European Commission published its first draft Code of Practice on AI-generated content transparency in December 2025 and issued its first fine under the Digital Services Act against X (formerly Twitter) for transparency breaches the same month.<sup><a href="#fn45" id="fnref45c" class="fn-ref">[45]</a></sup> The European Parliament held a plenary debate on tackling AI deepfakes and social media exploitation in January 2026.<sup><a href="#fn47" id="fnref47" class="fn-ref">[47]</a></sup>
         </p>
 
         <!-- Pakistan -->
-        <h3 class="text-xl font-bold text-white mt-8 mb-4">Pakistan: The Explicit Adopter</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Pakistan: The Explicit Adopter</h3>
 
         <p data-i18n="blog.5gw.p20">
           Unlike most Western governments, Pakistan uses &ldquo;fifth-generation warfare&rdquo; explicitly in its official discourse. The Ministry of IT and Telecommunication has officially stated that &ldquo;Cyberspace is a fifth-generation warfare domain.&rdquo;<sup><a href="#fn48" id="fnref48" class="fn-ref">[48]</a></sup> In March 2025, the Azad Jammu &amp; Kashmir Prime Minister publicly accused India of &ldquo;spreading chaos by manipulating youth through fifth-generation warfare tactics&rdquo; via media and social networks.<sup><a href="#fn49" id="fnref49" class="fn-ref">[49]</a></sup> A Radio Pakistan &ldquo;Expert View&rdquo; segment from early January 2026 stated that Pakistan has realized &ldquo;fifth generation warfare is being fought through media&rdquo; and must be countered through media strategies, not just conventional military means.<sup><a href="#fn50" id="fnref50" class="fn-ref">[50]</a></sup>
@@ -435,7 +297,7 @@
         <hr>
 
         <!-- THE INFRASTRUCTURE OF INVISIBLE WAR -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.5gw.section.infrastructure">The Infrastructure of Invisible War</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.5gw.section.infrastructure">The Infrastructure of Invisible War</h2>
 
         <p data-i18n="blog.5gw.p21">
           The Department of Defense&rsquo;s <strong>Private 5G Deployment Strategy</strong>, formally released in October 2024, and the broader <strong>Fulcrum IT Strategy</strong> provide the communications backbone for 5GW-type operations.<sup><a href="#fn51" id="fnref51" class="fn-ref">[51]</a></sup><sup><a href="#fn52" id="fnref52" class="fn-ref">[52]</a></sup><sup><a href="#fn53" id="fnref53" class="fn-ref">[53]</a></sup> The 5G strategy aims to deliver ubiquitous, high-speed, secure connectivity so warfighters can &ldquo;ingest and transfer massive amounts of data&rdquo; and preserve &ldquo;information and decision advantage.&rdquo;<sup><a href="#fn53" id="fnref53b" class="fn-ref">[53]</a></sup> While these documents discuss &ldquo;5G networks&rdquo; rather than &ldquo;fifth-generation warfare,&rdquo; they implement a core prerequisite: the ability to conduct data-driven, networked, multi-domain operations and information warfare at scale.<sup><a href="#fn54" id="fnref54" class="fn-ref">[54]</a></sup>
@@ -448,7 +310,7 @@
         <hr>
 
         <!-- NO DOCTRINE, BUT A CONVERGENCE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4" data-i18n="blog.5gw.section.no_doctrine">No Doctrine, But a Convergence</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4" data-i18n="blog.5gw.section.no_doctrine">No Doctrine, But a Convergence</h2>
 
         <p data-i18n="blog.5gw.p23">
           Despite all this activity, <strong>no unified U.S. or NATO &ldquo;5GW doctrine&rdquo; exists as a formal joint publication</strong>.<sup><a href="#fn11" id="fnref11c" class="fn-ref">[11]</a></sup> No joint doctrine publication (JP) or service field manual (FM) exclusively defines or codifies fifth-generation warfare. Each military service approaches the concept differently: the Air Force focuses on technology integration and situational awareness; the Army emphasizes cognitive warfare and information operations; the Marines incorporate the concept into discussions of evolving insurgency.<sup><a href="#fn56" id="fnref56" class="fn-ref">[56]</a></sup><sup><a href="#fn57" id="fnref57" class="fn-ref">[57]</a></sup><sup><a href="#fn58" id="fnref58" class="fn-ref">[58]</a></sup>
@@ -473,13 +335,13 @@
         <hr>
 
         <!-- MARCH 2026 UPDATE -->
-        <h2 class="text-2xl md:text-3xl font-bold text-white mt-10 mb-4">March 2026 Update: The Acceleration</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4">March 2026 Update: The Acceleration</h2>
 
         <p>
           Three developments since this article&rsquo;s original publication confirm the trajectory described above and add new dimensions to the threat landscape.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">NATO Cognitive Warfare 2026: The Three-Level Model</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">NATO Cognitive Warfare 2026: The Three-Level Model</h3>
 
         <p>
           Dr. James Girodano, who has worked on NATO&rsquo;s cognitive warfare studies since 2018, published a commentary on the NATO Chief Scientist&rsquo;s 2025 Report on Cognitive Warfare (January 6, 2026). His analysis confirms that cognitive warfare is &ldquo;not merely PSYOPS with better tools&rdquo; and introduces a three-level bio-psychosocial model of cognitive engagement:
@@ -495,7 +357,7 @@
           These three levels are not independent. They are &ldquo;complementary, reinforcing domains and dimensions of vulnerability.&rdquo; The report recommends cognitive engagement be integrated into military doctrine alongside cyber and electronic warfare as a standing capability, with cognitive indicators and warnings operating as a continuous function.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">AI as Force Multiplier: The Cisco State of AI Security 2026</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">AI as Force Multiplier: The Cisco State of AI Security 2026</h3>
 
         <p>
           Cisco&rsquo;s annual AI security report (2026) documents the transition from theoretical AI threats to operational ones:
@@ -513,7 +375,7 @@
           The Cisco report concludes that &ldquo;the tools we built to accelerate human potential have been successfully weaponized to accelerate adversarial objectives.&rdquo; The convergence of nation-state and cybercriminal capabilities means that AI-enabled threats will be the dominant category for the foreseeable future.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">Epistemic Chaos as Operational Objective</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Epistemic Chaos as Operational Objective</h3>
 
         <p>
           The NATO cognitive warfare framework introduces a concept that unifies the technical and social dimensions of 5GW: <strong>epistemic chaos</strong> &mdash; the deliberate destruction of a population&rsquo;s ability to distinguish truth from fabrication, trust from manipulation, signal from noise. This is not a side effect. It is the objective.
@@ -527,7 +389,7 @@
           This is why our <a href="/article/open-source-transparency-tools.html">transparency tools</a> and <a href="/article/psychology-of-authoritarian-control.html">BITE Model analysis</a> are complementary to this research. The tools make operations visible. The BITE framework makes manipulation recognizable at the individual level. And the emerging vocabulary of cognitive warfare &mdash; epistemic chaos, narrative weaponization, attentional saturation, engineered distrust &mdash; provides the shared language necessary for collective defense.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">The Technological Alternative to Politics</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">The Technological Alternative to Politics</h3>
 
         <p>
           Peter Thiel, speaking at Libertopia in 2010, stated it plainly: &ldquo;We could never win an election&hellip; technology is this incredible alternative to politics.&rdquo; This is a textbook 5GW declaration: bypass democratic processes entirely through technological infrastructure. Don&rsquo;t compete in the system &mdash; replace the system.
@@ -545,7 +407,7 @@
           The countermeasure is architectural too: <a href="https://reticulum.network" target="_blank" rel="noopener noreferrer">Reticulum</a>, a hardware-agnostic cryptographic networking stack with origin-obscured routing, cannot be shut down by centralized actors because there is no central point to target. Communication infrastructure that no single entity controls is the structural response to communication infrastructure that a single entity owns.
         </p>
 
-        <h3 class="text-xl font-bold text-white mt-8 mb-3">Countermeasure Architecture</h3>
+        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Countermeasure Architecture</h3>
 
         <p>
           If 5GW operates by controlling information infrastructure, the defense is sovereign information infrastructure &mdash; communication that cannot be shut down, rerouted, or surveilled by any centralized actor. This is not theoretical. The tools exist.
@@ -566,7 +428,7 @@
 
         <!-- Footnotes -->
         <section class="footnotes-section" aria-label="Footnotes">
-          <h2 class="text-lg font-bold text-white mb-4" data-i18n="blog.5gw.section.sources">Sources</h2>
+          <h2 class="text-lg font-bold text-gray-900 mb-4" data-i18n="blog.5gw.section.sources">Sources</h2>
           <ol>
             <li id="fn1">
               <a href="https://globalsecurityreview.com/the-5gw-playbook-silent-wars-and-invisible-battlefields/" target="_blank" rel="noopener noreferrer">Global Security Review, &ldquo;The 5GW Playbook: Silent Wars and Invisible Battlefields,&rdquo; May 2025.</a>
@@ -846,7 +708,7 @@
         <hr>
 
         <section class="mt-10 p-6 bg-[#1a3347] rounded-lg border border-cp-dark">
-          <h3 class="text-lg font-bold text-white mb-2">Related Reading</h3>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Related Reading</h3>
           <ul>
             <li><a href="/article/psychology-of-authoritarian-control.html">The Psychology of Authoritarian Control: From Cults to Cognitive Warfare</a></li>
             <li><a href="/article/open-source-transparency-tools.html">The Tools Already Exist to Make Power Visible</a></li>

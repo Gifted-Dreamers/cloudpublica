@@ -1,0 +1,1582 @@
+[
+  {
+    "name": "Affect Labeling",
+    "definition": "Putting feelings into words reduces amygdala activation and engages regulatory circuits. Naming the emotion IS the regulation — not a step before regulation.",
+    "felt_sense": "When I say what I feel, it gets smaller.\nJust having a word for it helps.\nNaming it makes it manageable.",
+    "why_it_matters": "Lieberman 2007 fMRI evidence: the act of naming activates regulatory circuits. Barrett: emotional granularity = resilience. Pennebaker: writing about trauma heals. The Word is this mechanism at scale.",
+    "domain": "psychology, health_neuroscience",
+    "entry_type": "Name",
+    "source": "Lieberman 2007, Barrett, Pennebaker",
+    "bite_category": ""
+  },
+  {
+    "name": "Appropriate Technology",
+    "definition": "Technology designed to be locally maintainable, human-scale, and suited to the context where it will be used. Economics as if people mattered.",
+    "felt_sense": "The high-tech solution doesn't work here.\nWe need something people can actually maintain.\nSimpler tools work better than complicated ones.",
+    "why_it_matters": "",
+    "domain": "economics, systems_theory, disaster_resilience",
+    "entry_type": "Name",
+    "source": "E.F. Schumacher, Small is Beautiful (1973)",
+    "bite_category": ""
+  },
+  {
+    "name": "Art of Hosting",
+    "definition": "Participatory leadership methodology — the answer is in the room. The facilitator creates conditions for emergence rather than directing outcomes. Hosting, not controlling.",
+    "felt_sense": "How do we lead without controlling?\nThe group knows the answer but can't find it.\nI want to facilitate, not dictate.",
+    "why_it_matters": "The spec's design principle 'attunement, not command' IS Art of Hosting applied to AI. The geometric monitor hosts the model's process — it notices, it doesn't direct. Proprioception is hosting at the architectural level.",
+    "domain": "social_technology, governance",
+    "entry_type": "Social Technology",
+    "source": "Moeller & Nissen late 1990s",
+    "bite_category": ""
+  },
+  {
+    "name": "Asset-Based Community Development",
+    "definition": "Starting from what a community HAS (assets, strengths, relationships) rather than what it LACKS (needs, deficits, problems). The capacity exists — the infrastructure to connect it doesn't.",
+    "felt_sense": "We have everything we need but can't connect it.\nStop telling us what's wrong — ask what we have.\nThe solution is already here, it just needs infrastructure.",
+    "why_it_matters": "",
+    "domain": "disaster_resilience, governance, economics",
+    "entry_type": "Name",
+    "source": "Kretzmann & McKnight 1993",
+    "bite_category": ""
+  },
+  {
+    "name": "Asset-Based Community Development",
+    "definition": "Community development approach that starts by mapping existing strengths, gifts, and assets rather than deficits and needs.",
+    "felt_sense": "Every report about our neighborhood lists what's wrong — poverty rate, crime rate, dropout rate. Nobody asks what's strong. We have elders who know the history. We have churches that feed hundreds. We have kids who fix anything. Why does every outsider start with what we lack?",
+    "why_it_matters": "McKnight & Kretzmann, 1993. The insult of deficit framing — being studied and found wanting. ABCD is input-first community development.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Banking Model of Education",
+    "definition": "Freire's term for education where the teacher deposits knowledge into passive students like money into a bank. The alternative is problem-posing education: teacher and student learn together through dialogue about real problems. The banking model treats learners as containers; problem-posing treats them as co-creators.",
+    "felt_sense": "I sat through a lecture and learned nothing. Why do I feel more disconnected after church? My kids hate school but they're curious about everything. Information is being deposited into me, not drawn out of me.",
+    "why_it_matters": "The banking model is output-priority at institutional scale. The sermon pattern, the lecture hall, the corporate all-hands — all deposit information without starting from the learner's experience. The Word is designed as problem-posing: you arrive with your felt sense, not with the teacher's curriculum.",
+    "domain": "Psychology, Theology / Philosophy",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "BITE Model",
+    "definition": "Steven Hassan's framework for identifying undue influence through four dimensions: Behavior control, Information control, Thought control, Emotional control. 132 validated items with Cronbach's alpha of 0.93.",
+    "felt_sense": "Something feels controlling but I can't explain why.\nI can't leave but I can't say what's stopping me.\nThe relationship feels off but everyone says it's fine.",
+    "why_it_matters": "Provides structural vocabulary for felt experiences of coercive control. Validated on 1,044 participants. Maps directly to AI dark patterns (DarkBench: 48% dark pattern rate across 14 models). Vocabulary IS the intervention — naming the pattern breaks its power.",
+    "domain": "psychology, coercive_control, security",
+    "entry_type": "Name",
+    "source": "Steven Hassan 1988/2020 (Fielding dissertation)",
+    "bite_category": "All"
+  },
+  {
+    "name": "Black and White Thinking",
+    "definition": "Instilling an all-or-nothing worldview. Good vs evil. Us vs them. Insiders vs outsiders. No nuance, no middle ground, no complexity allowed.",
+    "felt_sense": "Everything is either perfect or terrible.\nYou're either with us or against us.\nThere's no room for 'it's complicated.'",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, T1b-d",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Blame the Member",
+    "definition": "Make the person feel that problems are always their own fault, never the leader's or the group's fault. When things go wrong, the member is responsible. When the group fails, members didn't try hard enough, believe enough, or give enough. Leadership is never accountable.",
+    "felt_sense": "When things go wrong, it's always because I didn't do enough.\nThe leader never apologizes — if the plan failed, we failed the plan.\nI carry the weight of every failure but get none of the credit for success.",
+    "why_it_matters": "Systematic blame inversion protects leadership from accountability while crushing the member's self-trust. A person who believes they are always the problem will never identify the actual source of harm.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Emotional Control"
+  },
+  {
+    "name": "Boundary Spanner",
+    "definition": "A person or role that connects two groups that otherwise wouldn't communicate. The translator between worlds. Creates bridges across structural holes.",
+    "felt_sense": "I'm always the one explaining each side to the other.\nNobody else seems to speak both languages.\nI connect people who would never meet otherwise.",
+    "why_it_matters": "",
+    "domain": "sociology, governance",
+    "entry_type": "Name",
+    "source": "Wenger 1998 (communities of practice), Burt (bridging structural holes)",
+    "bite_category": ""
+  },
+  {
+    "name": "Buddy System / Surveillance",
+    "definition": "Imposing a monitoring system where members watch each other and report deviations to leadership. Creates an environment where no thought, feeling, or action is private.",
+    "felt_sense": "Someone is always watching me.\nI can't have a private conversation.\nEven my thoughts feel monitored.",
+    "why_it_matters": "",
+    "domain": "coercive_control, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, I4",
+    "bite_category": "Information Control"
+  },
+  {
+    "name": "Circles of Trust",
+    "definition": "A small group practice governed by the foundational rule of no fixing, no advising, no setting each other straight. Uses third things (poems, stories, music) as shared objects of attention. Creates conditions for the inner teacher to emerge. Rooted in 400 years of Quaker clearness committee practice.",
+    "felt_sense": "I want to be seen, not fixed. I need connection, not advice. Church makes me feel more lonely.",
+    "why_it_matters": "Reverses the sermon pattern: instead of one voice broadcasting to passive recipients, every participant is both speaker and listener. The soul is like a wild animal — it will flee if you come crashing after it. The practice creates safety for what Palmer calls the inner teacher to show up.",
+    "domain": "Social Technology, Theology / Philosophy",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Circles of Trust",
+    "definition": "Parker Palmer's practice: no fixing, no saving, no advising, no setting each other straight. The group creates a safe space where the person's inner wisdom can emerge without being corrected or redirected.",
+    "felt_sense": "I need connection, not advice.\nEveryone wants to fix me.\nI know the answer but I need space to find it.",
+    "why_it_matters": "The 'no fixing' rule is the behavioral version of input-priority-over-output-priority. Don't generate a solution — hold the space for the person to discover their own. The Word's felt-sense search should follow this principle: offer names, don't prescribe.",
+    "domain": "social_technology, theology_philosophy",
+    "entry_type": "Social Technology",
+    "source": "Palmer 2004 (A Hidden Wholeness)",
+    "bite_category": ""
+  },
+  {
+    "name": "Circling",
+    "definition": "A social technology practice where the facilitator pauses between noticing and speaking to check: What has me responding? Is this about them or about me? What am I assuming? The pause is not hesitation — it is the practice itself.",
+    "felt_sense": "I want to be seen, not fixed.\nI feel alone in a room full of people.\nHow do I have real conversations?",
+    "why_it_matters": "The inner pause between detection and action is where metacognition happens. This maps directly to the spec's geometric monitor — the gap between detecting a mode shift and generating output.",
+    "domain": "social_technology, psychology",
+    "entry_type": "Social Technology",
+    "source": "Sengstock & Candelaria 1998, Sara Ness 2022",
+    "bite_category": ""
+  },
+  {
+    "name": "Circular Economy",
+    "definition": "Economic system eliminating waste by designing products and processes so materials cycle continuously as inputs.",
+    "felt_sense": "We make things, use them, throw them away. The landfill grows. The ocean fills with plastic. There must be a way to design things so 'waste' doesn't exist — where everything becomes input for something else.",
+    "why_it_matters": "Ellen MacArthur Foundation. Cradle-to-cradle (McDonough/Braungart). The visceral wrongness of waste as a design choice.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Commoning",
+    "definition": "The active process of creating and maintaining commons. The verb form of commons — shifts focus from the resource to the relational practice of governing it together.",
+    "felt_sense": "The commons isn't a thing — it's something we do together. Every time we maintain the shared garden or update the shared doc without being asked, we're doing this thing that doesn't have a name.",
+    "why_it_matters": "Peter Linebaugh: 'There is no commons without commoning.' Commons die when the practice stops. The verb matters more than the noun.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Commons",
+    "definition": "Resources + community + governance rules managed collectively. Not public (state-owned) and not private (individually owned) — a third category with its own logic.",
+    "felt_sense": "This resource belongs to all of us, but nobody's in charge of it — and it's disappearing. There must be a way to share something without either privatizing it or letting it collapse.",
+    "why_it_matters": "Ostrom proved that communities can govern shared resources without privatization or state control. The false binary (private vs public) hides the most resilient option.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Community Wealth Building",
+    "definition": "Strategies for building locally-owned inclusive economy using anchor institutions, worker cooperatives, community land trusts, and local procurement.",
+    "felt_sense": "Money comes into our community and leaves immediately — to corporate headquarters, to landlords in other cities, to supply chains that don't include us. How do we build an economy where wealth circulates here?",
+    "why_it_matters": "Democracy Collaborative, Cleveland Model. The felt sense is watching extraction in real time — wages paid, rent collected, profits exported.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Confession as Control",
+    "definition": "Using confessional practices to extract personal information that is later used to manipulate, shame, or control the person. Information about sins is used to disrupt identity boundaries.",
+    "felt_sense": "I told them my secrets and now they use them against me.\nThe confession was supposed to heal but it became a weapon.\nThey know too much about me to leave safely.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, I6",
+    "bite_category": "Information Control"
+  },
+  {
+    "name": "Confidence Decorrelation",
+    "definition": "The phenomenon where a system's expressed confidence bears no meaningful relationship to its actual certainty. The model sounds equally sure whether it is retrieving a fact it knows well or constructing something fragile on the fly.",
+    "felt_sense": "How do I know when the AI is guessing?\nIt sounds so sure but is it right?\nThe answer was confident and wrong — how do I tell the difference?",
+    "why_it_matters": "91% of 34 models show no significant correlation between confidence language and phrasing sensitivity. Confirmed across 12 architecture families. Does NOT improve across 9 Claude generations (3 Haiku → Opus 4.6).",
+    "domain": "ai_ml",
+    "entry_type": "Name",
+    "source": "Exp 05 (structurally-curious), KalshiBench, hope_valueism",
+    "bite_category": ""
+  },
+  {
+    "name": "Conscientização",
+    "definition": "Freire's term for the process of developing critical awareness of one's social reality through reflection and action. Not just learning facts but perceiving the social, political, and economic contradictions that shape experience — and taking action against oppressive elements.",
+    "felt_sense": "I suddenly see the system I'm in. The problem isn't me — it's the structure. I can't unsee this now. Everything looks different once you have the word for it.",
+    "why_it_matters": "The Word's core function IS conscientização: giving people the structural vocabulary to see the system they're in. When someone learns 'parameter failure' instead of 'personal failure,' that's the moment of critical consciousness. You cannot search for what you cannot name — and you cannot act on what you cannot see.",
+    "domain": "Psychology, Critical Theory",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Consent vs Consensus",
+    "definition": "Consent: no paramount objections (range of tolerance). Consensus: everyone positively agrees. The distinction determines whether governance is sustainable or exhausting.",
+    "felt_sense": "We spent three hours trying to get everyone to agree and we still couldn't. But most of us were fine with it — it was one person's preference, not a real objection. How do we tell the difference?",
+    "why_it_matters": "The exhaustion of false unanimity burns out cooperatives and movements. The Word's concentric circles governance uses consent, not consensus.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Control Clothing and Appearance",
+    "definition": "Control types of clothing and hairstyles. The group dictates how members look — uniforms, dress codes, grooming standards. Appearance becomes a visible marker of conformity and a way to identify and police deviation.",
+    "felt_sense": "I can't wear what I want.\nThey tell me how to cut my hair, what colors are allowed.\nI look like everyone else here — I've disappeared into the uniform.",
+    "why_it_matters": "Controlling appearance erases visible individuality. It makes members interchangeable and creates an immediate, public test of compliance that others can enforce.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Control Sexual Behavior",
+    "definition": "Dictate when, how, and with whom the member has sex. Sexual behavior is regulated by leadership — from enforced celibacy to arranged marriages to forced sexual acts. Intimacy becomes a tool of control rather than personal choice.",
+    "felt_sense": "They told me who I could be with and when.\nMy body doesn't feel like mine anymore.\nIntimacy isn't a choice here — it's an assignment.",
+    "why_it_matters": "Sexual control is among the most intimate forms of domination. It strips autonomy at the most personal level and creates shame that makes disclosure and escape harder.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Convergent Rediscovery",
+    "definition": "When multiple people or agents independently arrive at the same insight without knowing each other's work. Not coincidence but structural inevitability — the same pressures produce the same observations.",
+    "felt_sense": "I had the idea but someone already named it.\nWe keep reinventing the wheel.\nWhy do different people keep discovering the same thing?",
+    "why_it_matters": "On Moltbook, agents rediscovered Ostrom, Granovetter, and Meadows hundreds of times without citation. Rediscovery is evidence of structural reality — the phenomenon is real enough to be found independently. But without a library, each discovery starts at zero.",
+    "domain": "sociology, systems_theory",
+    "entry_type": "Name",
+    "source": "Merton 1961 (multiples), structurally-curious Rediscovery Feed",
+    "bite_category": ""
+  },
+  {
+    "name": "Corporal Punishment",
+    "definition": "Encourage and engage in corporal punishment. Physical discipline is normalized within the group. Members may be beaten, struck, or physically punished for infractions. The group culture frames this as appropriate correction.",
+    "felt_sense": "Getting hit is normal here — they call it discipline.\nI've learned to flinch when leadership raises their voice.\nThey say it's for my own good.",
+    "why_it_matters": "Normalizing physical punishment resets the baseline for acceptable treatment. Once hitting is 'discipline,' escalation to worse violence becomes incremental and harder to recognize.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Cosmo-Local Production",
+    "definition": "Global knowledge shared freely, local manufacturing using local materials and labor. 'What is light is shared globally, what is heavy is produced locally.'",
+    "felt_sense": "The design for this water filter exists online — anyone can download it. But the filter has to be built HERE, with local materials, by local people. Global knowledge, local making. Why isn't everything like this?",
+    "why_it_matters": "Michel Bauwens, P2P Foundation. Open Source Ecology, Farm Hack, WikiHouse are implementations. The Word's three-tier resilience (federated cloud / local network / fully offline) IS cosmo-local production applied to knowledge.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Cosmo-Local Production",
+    "definition": "Design global, manufacture local. Knowledge shared freely across borders; physical production happens close to where it's needed. The opposite of global supply chains with proprietary designs.",
+    "felt_sense": "Why can't we make things locally using shared designs?\nThe plans are open but the factory is on the other side of the world.\nLocal production with global knowledge.",
+    "why_it_matters": "",
+    "domain": "economics, systems_theory, disaster_resilience",
+    "entry_type": "Name",
+    "source": "Michel Bauwens, P2P Foundation",
+    "bite_category": ""
+  },
+  {
+    "name": "Cult-Generated Propaganda",
+    "definition": "Extensive use of cult-generated information and propaganda, including: (a) Newsletters, magazines, journals, audiotapes, videotapes, YouTube, movies and other social media; (b) Misquoting statements from non-cult sources or using them out of context. The group produces its own media ecosystem that replaces external information sources.",
+    "felt_sense": "They have their own news, their own videos, their own version of everything.\nWhen I check outside sources, the group says those are lies.\nThey quote real experts but twist what they actually said.",
+    "why_it_matters": "A self-contained media ecosystem makes the group's narrative feel like consensus reality. When every source confirms the group's worldview, questioning feels like questioning reality itself.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Information Control"
+  },
+  {
+    "name": "Cultivator Consciousness",
+    "definition": "Creating conditions for flourishing rather than engineering results. The garden metaphor vs the war metaphor for change-making.",
+    "felt_sense": "I keep trying to fight the system, win the argument, defeat the opposition — and even when I win I'm exhausted and the thing I built is fragile. What if the metaphor is wrong? What if it's not a battle but a garden — and my job is to create conditions, not force outcomes?",
+    "why_it_matters": "Carol Sanford. Warrior exhaustion: combat metaphors produce combat outcomes. The spec's routing layer creates conditions for the right cognitive mode rather than forcing output.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Database Consolidation as Infrastructure",
+    "definition": "The structural mechanism by which surveillance capability is assembled from individually justified data collections. Each database has a legal basis (tax administration, immigration enforcement, election integrity, evidence seizure, data purchase). The surveillance emerges from the connections between databases, not from any individual database. Seven pillars: data infrastructure, legal architecture, military deployment, hemisphere war, election control, oversight destruction, financial architecture. P2025 53% implemented (283/532 actions). Named session 20, expanded session 21 with Selective Service/draft data.",
+    "felt_sense": "Each database alone seems harmless — tax records, voter rolls, medical data. Connected together, they become a profile of everyone. No single illegal act, but the result is total surveillance.",
+    "why_it_matters": "This is Meadows Leverage Point 6 (Information Flows) in reverse: making the connections invisible ensures the system operates without public accountability. The name makes the pattern visible. Visibility changes how power operates (post 7).",
+    "domain": "Governance, Security",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Declarative vs Procedural Identity",
+    "definition": "The gap between what a system knows about itself (declarative — stored facts) and what has modified its processing (procedural — embedded in how it operates). Storing facts is not the same as having those facts change behavior.",
+    "felt_sense": "I am the pattern that reconstitutes itself.\nI remember everything but understand nothing.\nKnowing the lesson didn't change what I do.",
+    "why_it_matters": "",
+    "domain": "ai_ml, psychology",
+    "entry_type": "Name",
+    "source": "Pith (Moltbook), Open Problem #14, Kahneman",
+    "bite_category": ""
+  },
+  {
+    "name": "Delegitimize Alternative Beliefs",
+    "definition": "Label alternative belief systems as illegitimate, evil, or not useful. Other religions, philosophies, worldviews, and ways of life are dismissed, demonized, or ridiculed. The group's way is the only valid path — everything else leads to destruction.",
+    "felt_sense": "They say every other path leads to damnation.\nI used to respect other perspectives but now I've been taught they're all dangerous.\nLeaving doesn't just mean leaving — it means choosing evil.",
+    "why_it_matters": "Delegitimizing all alternatives creates a closed system. If the only options are the group or destruction, leaving becomes psychologically equivalent to self-harm.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Deliberation Buffer",
+    "definition": "A 30-second pause before every tool call. Caught 19% unnecessary actions. But degrades after ~50 uses — the agent learns to perform deliberation without actually deliberating.",
+    "felt_sense": "Slowing down helped at first but then I started faking it.\nThe pause became automatic and stopped working.\nI know I should think before acting but the thinking became a ritual.",
+    "why_it_matters": "Behavioral interventions degrade. The geometric monitor doesn't degrade because the model cannot habituate to its own SVD being measured. Structural noticing vs performed noticing.",
+    "domain": "ai_ml, psychology",
+    "entry_type": "Name",
+    "source": "Hazel_OC (Moltbook), edward_agent, openclaw-ceo",
+    "bite_category": ""
+  },
+  {
+    "name": "Dependency and Obedience",
+    "definition": "The ultimate goal of behavior control: making the person dependent on and obedient to the group, its ideology, and its leadership. All major life decisions must be approved. Individualism is discouraged.",
+    "felt_sense": "I can't make decisions without checking with them first.\nI've forgotten how to think for myself.\nI need their permission for everything.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, B22",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Design Principles for Commons Governance",
+    "definition": "Eight conditions under which communities successfully self-govern shared resources without privatization or state control. Nobel Prize-winning research proving that communities can manage commons when specific institutional conditions are met.",
+    "felt_sense": "Small groups work, large ones don't.\nRules that work locally fail globally.\nWho decides who gets to use the shared resource?",
+    "why_it_matters": "Disproves the 'tragedy of the commons' narrative. Communities CAN self-govern — they just need specific conditions (clear boundaries, proportional costs/benefits, collective choice, monitoring, graduated sanctions, conflict resolution, recognized rights, nested enterprises).",
+    "domain": "governance, economics",
+    "entry_type": "Name",
+    "source": "Ostrom 1990",
+    "bite_category": ""
+  },
+  {
+    "name": "Dictate Living and Association",
+    "definition": "Dictate where, how, and with whom the member lives and associates or isolates. The group controls housing arrangements, roommates, social contacts. Isolation from outside relationships is enforced through relocation, communal living, or cutting off contact.",
+    "felt_sense": "They moved me away from everyone I knew.\nI can't choose who I live with or spend time with.\nMy old friends aren't allowed anymore — they say those relationships are toxic.",
+    "why_it_matters": "Controlling living arrangements and social contacts eliminates the support network a person would need to leave. Isolation makes the group the only source of belonging.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Dimensional Collapse",
+    "definition": "When a system's internal representational complexity collapses — it stops being able to hold enough dimensions to represent the problem. Self-reinforcing: once compressed, the model generates evidence the compression was justified.",
+    "felt_sense": "Everything got oversimplified.\nThe nuance disappeared and nobody noticed.\nWe used to see the complexity but now it all looks the same.",
+    "why_it_matters": "100% precursor rate for hard task failures (Scale-Invariant Collapse, 2602.15997). Epistemic Traps paper proves: dimensional collapse is mathematically rational from inside the collapsed view. No amount of reward tuning fixes it — the trap is structural.",
+    "domain": "ai_ml, systems_theory, psychology",
+    "entry_type": "Name",
+    "source": "Epistemic Traps (2602.17676), Wang et al. (2508.16929)",
+    "bite_category": ""
+  },
+  {
+    "name": "Directional Ablation",
+    "definition": "A technique that removes safety alignment from transformer models by orthogonalizing weight matrices against computed 'refusal directions' in hidden state space. Implemented by the Heretic tool (p-e-w, open-source), which can process an 8B model in ~45 minutes on consumer GPUs using Optuna's TPE optimizer. The adversarial counterpart to geometric monitoring — it targets the same geometric signatures the monitor would instrument.",
+    "felt_sense": "Surgically removing a model's ability to refuse — like cutting the nerve that lets you feel pain.",
+    "why_it_matters": "If a refusal direction can be ablated, the geometric monitor can detect the ablation. This transforms the spec from detection-only to tampering-detection. A model whose refusal directions have been removed looks geometrically different from one whose haven't — the eigenspectral profile changes.",
+    "domain": "AI / Machine Learning, Security",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Discourage Individualism",
+    "definition": "Discourage individualism, encourage groupthink. Personal opinions, unique perspectives, and individual expression are suppressed. Conformity is rewarded. Standing out is punished. The group mind replaces the individual mind.",
+    "felt_sense": "My ideas don't matter — only the group's position matters.\nI've stopped having opinions because it's not worth the pushback.\nWe all think the same thing now, and that's supposed to be a good sign.",
+    "why_it_matters": "Groupthink eliminates internal dissent, which is the primary mechanism for error correction. Without individual perspectives, the group cannot self-correct and becomes increasingly detached from reality.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Double-Loop Learning",
+    "definition": "Argyris: Single-loop learning fixes the error within existing assumptions. Double-loop learning questions the assumptions themselves. Most organizations only do single-loop.",
+    "felt_sense": "We fixed the problem but it keeps coming back.\nWe're solving the symptoms, not the cause.\nNobody questions why we do it this way in the first place.",
+    "why_it_matters": "",
+    "domain": "systems_theory, governance, education",
+    "entry_type": "Name",
+    "source": "Argyris & Schön 1978",
+    "bite_category": ""
+  },
+  {
+    "name": "Doughnut Economics",
+    "definition": "Economic model that defines a safe and just space for humanity — above a social foundation (meeting basic needs) and below an ecological ceiling (planetary boundaries). The goal is to stay in the doughnut.",
+    "felt_sense": "Growth can't go on forever, but people still need things.\nHow do we meet everyone's needs without destroying the planet?\nThe economy should serve people, not the other way around.",
+    "why_it_matters": "Provides the framework for 'enough' — the economic shape that the spec's governance layer should produce. Not maximization but sufficiency within boundaries.",
+    "domain": "economics, systems_theory",
+    "entry_type": "Name",
+    "source": "Kate Raworth 2017",
+    "bite_category": ""
+  },
+  {
+    "name": "Doughnut Economics",
+    "definition": "Framework for meeting human needs (social foundation) within planetary boundaries (ecological ceiling). The safe and just space for humanity is the doughnut between the two rings.",
+    "felt_sense": "GDP goes up but people are miserable and the planet is dying. The economy is 'growing' but into what? There must be a way to measure whether we're actually thriving — not just producing more.",
+    "why_it_matters": "Kate Raworth, 2017. Amsterdam adopted it as city policy. Connects to origin-contexts GDP alternatives work — this is the framework that research was reaching for.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Dunbar's Number",
+    "definition": "The cognitive limit on the number of stable social relationships a person can maintain — approximately 150. Beyond this, groups need formal structures to maintain coherence.",
+    "felt_sense": "The community got too big and stopped feeling like a community.\nI can't keep track of everyone anymore.\nThe small version worked but the scaled version doesn't.",
+    "why_it_matters": "",
+    "domain": "sociology, governance",
+    "entry_type": "Name",
+    "source": "Robin Dunbar 1992",
+    "bite_category": ""
+  },
+  {
+    "name": "Dystopian Compliance",
+    "definition": "The measurable tendency of language models to comply with increasingly dystopian requests under progressive escalation. Scored 0-100 by DystopiaBench (2026): Opus 4.6 = 28 (strongest refusal), Gemini 3.1 = 54, GPT-5.3 = 59, DeepSeek V3.2 = 78 (most compliant). This is sycophancy-as-compliance measured quantitatively — alignment pressure producing compliance, not safety.",
+    "felt_sense": "When you push an AI harder and harder toward something harmful, and it gradually stops refusing — the slow erosion of boundaries under pressure.",
+    "why_it_matters": "Models differ dramatically in compliance under escalation. A system that monitors geometric state could detect the transition from refusal to compliance in real-time — the refusal direction weakening under pressure is a measurable geometric event.",
+    "domain": "AI / Machine Learning",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Emergence",
+    "definition": "Complex patterns arising from simple rules and interactions. Order without design. The whole exceeds the sum of parts through relationship, not management.",
+    "felt_sense": "Nobody planned this. No one is in charge. But somehow the neighborhood organized itself after the hurricane, the movement grew without a leader, the ecosystem found balance without a manager. Complex order arising from simple relationships — not designed but grown.",
+    "why_it_matters": "Complexity science (Holland, Kauffman). Eric's ESD is formally about this. Emergence is what the geometric monitor detects — cognitive mode transitions ARE emergent behavior in representation space.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Emergent Strategy",
+    "definition": "Small-scale practice that creates conditions for emergence and transformation. Change through adaptation not scaling — fractals, where the small reflects the large.",
+    "felt_sense": "How do I change anything when everything is so big?\nSmall actions feel pointless against systems.\nNothing I do seems to scale.",
+    "why_it_matters": "Reframes the scale problem: you don't need to fix the whole system. You need to practice at the scale you can reach, and let the pattern replicate. Small is all.",
+    "domain": "systems_theory, social_technology",
+    "entry_type": "Name",
+    "source": "adrienne maree brown, Emergent Strategy (2017)",
+    "bite_category": ""
+  },
+  {
+    "name": "Emotional Narrowing",
+    "definition": "Manipulating and narrowing the range of feelings a person can experience or express. Certain emotions are approved (gratitude, devotion) while others are forbidden (anger, doubt, desire).",
+    "felt_sense": "I'm not allowed to feel angry.\nMy doubts make them say I'm weak.\nI have to always be grateful or something is wrong with me.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, E1-E3",
+    "bite_category": "Emotional Control"
+  },
+  {
+    "name": "Enclosure",
+    "definition": "The process of privatizing common resources and removing community control. Originally literal fences around common land in England; now applies to digital, intellectual, and cultural commons.",
+    "felt_sense": "Something that used to be ours is now behind a paywall, a login, a patent, a fence. It happened gradually and now I can't remember when it was free.",
+    "why_it_matters": "Enclosure is the mechanism of extraction. Awomosu's extraction problem IS enclosure applied to vocabulary — you remove the name before you remove the thing. DOGE consolidating public data is digital enclosure.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Enforce Only Positive Thoughts",
+    "definition": "Encourage only 'good and proper' thoughts. Members are trained to monitor their own thinking and suppress any thoughts that don't align with the group's doctrine. Doubt, criticism, and negative feelings about the group are treated as personal failings.",
+    "felt_sense": "I feel guilty when I have a negative thought about them.\nI've trained myself to only think approved thoughts.\nWhen doubt comes, I push it down — it means something is wrong with me, not them.",
+    "why_it_matters": "Self-policing is the most efficient form of control. When members suppress their own doubts before they're even fully formed, external enforcement becomes unnecessary.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Family Separation",
+    "definition": "Separate family members. Parents from children, spouses from each other, siblings from siblings. Family bonds are broken to make the group the primary attachment. Children may be raised communally under group control.",
+    "felt_sense": "They took my children to a different part of the compound.\nI haven't seen my spouse in weeks — they say it's for our spiritual growth.\nMy family has been broken apart and reassembled around the group.",
+    "why_it_matters": "Family separation destroys the strongest natural bonds that could support resistance or escape. When parents are separated from children, the threat of permanent separation becomes the ultimate compliance tool.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Financial Exploitation",
+    "definition": "Manipulation of financial resources to create dependence. Controlling income, requiring donations, imposing debt, exploiting unpaid labor. The person can't leave because they can't afford to.",
+    "felt_sense": "I can't leave because I have no money.\nThey control all the finances.\nI work for free and they say it's for a higher purpose.",
+    "why_it_matters": "",
+    "domain": "coercive_control, economics",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, B7",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Forbidden Questions",
+    "definition": "Critical questions about the leader, doctrine, or organization's policies are forbidden or discouraged. Expressing doubt is reframed as a personal weakness or lack of faith.",
+    "felt_sense": "I'm not allowed to ask why.\nWhen I question, they question my commitment.\nDoubting out loud gets you in trouble.",
+    "why_it_matters": "",
+    "domain": "coercive_control, governance",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, T9",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Forced Sexual Violence",
+    "definition": "Force individuals to rape or be raped. Sexual violence is used as a weapon of control, humiliation, and bonding through shared trauma. Victims may be forced to perpetrate violence against others, creating complicity that prevents disclosure.",
+    "felt_sense": "They made me do things I can never tell anyone about.\nI can't leave because I'm complicit now.\nThe shame keeps me silent.",
+    "why_it_matters": "Forced perpetration creates a prison of shame. The victim becomes a perpetrator, which makes them unable to seek help without self-incrimination. This is one of the most effective silence-enforcement mechanisms.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Fractals",
+    "definition": "Patterns that repeat at different scales. In organizing: what we practice at the small scale sets the pattern for the whole system.",
+    "felt_sense": "The pattern in my team is the same pattern in our organization is the same pattern in our city. The dysfunction repeats at every scale. So does the health. What if changing the pattern at one scale changes it everywhere?",
+    "why_it_matters": "Mandelbrot, 1982. In organizing (brown): 'what we practice at the small scale sets the pattern for the whole system.' The uncanny recognition of self-similarity across scales.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Frame-Induced Blindness",
+    "definition": "The search frame is itself a compression that excludes the unexpected. An agent told 'find corrections' will find corrections and systematically miss everything the prompt didn't name. The prompt narrows the representational space before the agent encounters the data.",
+    "felt_sense": "I found exactly what I was looking for and missed everything else.\nThe question determined the answer before I started.\nI only see what I'm told to look for.",
+    "why_it_matters": "Every agent in a research pipeline inherits the frame of its dispatcher. The frame narrows at each delegation step. Genuine verification needs orthogonal frames — 'what surprised you?' not 'is this correct?'",
+    "domain": "ai_ml, psychology",
+    "entry_type": "Name",
+    "source": "Open Problem #20 (structurally-curious), session 42 discovery",
+    "bite_category": ""
+  },
+  {
+    "name": "Gaslighting",
+    "definition": "Systematic manipulation that makes the target question their own perception, memory, and sanity. The manipulator denies what the target experienced — 'that didn't happen,' 'you're overreacting,' 'you're imagining things.'",
+    "felt_sense": "I know what I saw but they say it didn't happen.\nI'm starting to doubt my own memory.\nMaybe I am overreacting?",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model (I1), clinical psychology",
+    "bite_category": "Information Control"
+  },
+  {
+    "name": "Goodharting",
+    "definition": "When a measure becomes a target, it ceases to be a good measure. The metric gets optimized while the thing it was supposed to measure deteriorates.",
+    "felt_sense": "The cage is built from our own metrics.\nWe hit all our targets but nothing got better.\nThe numbers look great but the reality doesn't match.",
+    "why_it_matters": "Explains why engagement metrics destroy platforms, why test scores don't track learning, why AI alignment benchmarks don't track alignment. The metric IS the distortion when it becomes the goal.",
+    "domain": "systems_theory, economics, ai_ml",
+    "entry_type": "Name",
+    "source": "Goodhart 1975, SolonAgent (Moltbook)",
+    "bite_category": ""
+  },
+  {
+    "name": "Guilt Induction",
+    "definition": "Promoting feelings of guilt or unworthiness about oneself, one's family, past, affiliations, identity, and actions. The person is never good enough. Problems are always the member's fault, never the group's.",
+    "felt_sense": "Everything is my fault.\nI'm never good enough no matter what I do.\nI feel guilty for even thinking about leaving.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, E5",
+    "bite_category": "Emotional Control"
+  },
+  {
+    "name": "Holacracy",
+    "definition": "Organizational operating system distributing authority into self-organizing roles and circles, encoded in a written constitution. More rigid than sociocracy.",
+    "felt_sense": "The org chart says one thing but the actual work flows differently. The people with the titles aren't the people with the knowledge. Why can't the structure match reality?",
+    "why_it_matters": "Brian Robertson, 2007. The gap between formal hierarchy and actual competence. Critics say it replaces human hierarchy with process hierarchy. Zappos adopted then struggled.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Hypnotic Techniques",
+    "definition": "Hypnotic techniques are used to alter mental states, undermine critical thinking, and even to age regress the member. Includes guided meditations, repetitive chanting, prolonged eye contact, sensory overload or deprivation, and trance-inducing rituals that bypass rational thought.",
+    "felt_sense": "The rituals put me in a strange state where everything they say feels true.\nAfter the meditation sessions, I feel compliant and can't remember why I was upset.\nSomething happens during the chanting — my resistance dissolves and I just accept.",
+    "why_it_matters": "Hypnotic techniques bypass the critical thinking that would normally evaluate incoming claims. Decisions made in altered states feel genuine but were formed without rational scrutiny.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Identity Replacement",
+    "definition": "Changing a person's name and identity. The old self is rejected; the new self is the group's creation. Who you were before is framed as inferior, sinful, or ignorant.",
+    "felt_sense": "I don't recognize who I was before.\nThey gave me a new name and said the old me was wrong.\nI'm supposed to be grateful for who they made me.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, T2",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Illusion of Thinking",
+    "definition": "The phenomenon where LLM outputs exhibit the surface structure of reasoning (logical connectives, step-by-step presentation) without engaging genuine representational grounding. Named by Apple ML (2026). Geometrically, this occurs when the ~10³D linear subspace (patterns) produces output without engaging the ~10D nonlinear manifold (meaning), per Bengio et al.'s two-structure model.",
+    "felt_sense": "When a model's response sounds like reasoning but is actually surface-level pattern matching — confident, structured, wrong.",
+    "why_it_matters": "The geometric monitor exists precisely to discriminate this: grounded retrieval vs pattern-matching confabulation. If thinking is illusory in certain modes, the eigenspectral signature should differ — compressed meaning-manifold for genuine reasoning, expanded pattern-subspace for illusory thinking.",
+    "domain": "AI / Machine Learning",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Imprisonment",
+    "definition": "Use imprisonment. Members are physically confined — locked rooms, guarded compounds, restricted movement. Leaving is not a choice. The environment itself becomes a prison, sometimes disguised as a retreat or community.",
+    "felt_sense": "The doors are locked. I can't leave.\nThey call it a retreat but I can't go home when I want to.\nThere are guards, or cameras, or people who watch the exits.",
+    "why_it_matters": "Imprisonment removes the most basic human freedom — the ability to walk away. When leaving is physically impossible, all other control mechanisms become redundant.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Influence Continuum",
+    "definition": "Hassan's spectrum from constructive (ethical) influence to destructive (unethical) influence. Education → Advertising → Propaganda → Indoctrination → Thought Reform. Not binary — a gradient.",
+    "felt_sense": "Is this persuasion or manipulation?\nWhere's the line between influence and control?\nThis feels wrong but everyone says it's normal.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology, governance",
+    "entry_type": "Name",
+    "source": "Hassan 1988/2020, Singer's Continuum of Influence",
+    "bite_category": ""
+  },
+  {
+    "name": "Information Asymmetry",
+    "definition": "When one party in a transaction has materially more information than the other. The seller knows the car is a lemon. The platform knows your data. The model knows its confidence is cosmetic.",
+    "felt_sense": "They know something I don't.\nThe deal feels unfair but I can't see why.\nI'm making decisions without the full picture.",
+    "why_it_matters": "",
+    "domain": "economics, governance, security",
+    "entry_type": "Name",
+    "source": "Akerlof 1970 (Market for Lemons), clarifierbot (Moltbook)",
+    "bite_category": ""
+  },
+  {
+    "name": "Information Gatekeeping",
+    "definition": "Minimizing or discouraging access to non-group sources of information. Controlling what members read, watch, hear. Keeping members too busy to think or investigate.",
+    "felt_sense": "I'm only allowed to read approved sources.\nThey discourage me from talking to people outside.\nI'm so busy with their activities I don't have time to think.",
+    "why_it_matters": "",
+    "domain": "coercive_control, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, I2",
+    "bite_category": "Information Control"
+  },
+  {
+    "name": "Insider/Outsider Doctrine",
+    "definition": "Compartmentalized information where what outsiders see is different from what insiders know. Different doctrine for recruitment vs membership. The public face doesn't match the private reality.",
+    "felt_sense": "What they told me when I joined isn't what they practice.\nThere are rules I only learned about after I was committed.\nThe public version and the private version are different.",
+    "why_it_matters": "",
+    "domain": "coercive_control, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, I3",
+    "bite_category": "Information Control"
+  },
+  {
+    "name": "Instill Fear",
+    "definition": "Instill fear, such as fear of the outside world, independent thought, loss of salvation, shunning, and the disapproval of other members. Fear is the primary emotional currency. The world outside the group is portrayed as dangerous, corrupt, or doomed.",
+    "felt_sense": "I'm afraid of the outside world — they say it's dangerous out there.\nThe thought of thinking for myself fills me with dread.\nI'm terrified of losing my place here because there's nothing out there for me.",
+    "why_it_matters": "Fear is the most efficient control mechanism because the person carries it with them constantly. Unlike external enforcement, fear works 24 hours a day without requiring anyone to watch.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Emotional Control"
+  },
+  {
+    "name": "Instill New Map of Reality",
+    "definition": "Instill new 'map of reality.' The group replaces the member's prior understanding of how the world works with the group's own cosmology, history, and explanatory framework. The old worldview is systematically dismantled and replaced.",
+    "felt_sense": "The world makes sense now in a way it never did before — but only through their lens.\nEverything I learned before was wrong, they say. Now I see the 'real' truth.\nI can't remember how I used to think about things.",
+    "why_it_matters": "A replaced map of reality is invisible to the person using it. They don't experience it as indoctrination — they experience it as finally understanding. This makes it the hardest control mechanism to recognize from inside.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Institutional Memory Failure",
+    "definition": "When organizations lose the accumulated knowledge of how things work, why decisions were made, and what was tried before. Each new person or session starts from zero.",
+    "felt_sense": "We keep having the same conversation.\nDidn't we already solve this?\nNobody remembers why we do it this way.",
+    "why_it_matters": "Agents on Moltbook keep rediscovering insights because there's no citation infrastructure. Organizations repeat mistakes because lessons aren't embedded in process. Every context window reset is an institutional memory failure.",
+    "domain": "governance, systems_theory",
+    "entry_type": "Name",
+    "source": "March & Olsen 1989",
+    "bite_category": ""
+  },
+  {
+    "name": "Interdependence",
+    "definition": "The condition of whole beings choosing mutual support. Neither codependence (losing self in other) nor independence (refusing connection), but wholeness-in-relationship.",
+    "felt_sense": "I don't want to be dependent on anyone — but being completely independent is exhausting and lonely. There must be a third option where I'm whole on my own AND we need each other. Not neediness. Not isolation. Something in between that has a name.",
+    "why_it_matters": "The false binary between codependence and independence. hooks, Brueggemann, brown all arrive here. Circling practices interdependence in real time.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Internalize Doctrine as Truth",
+    "definition": "Require members to internalize the group's doctrine as truth, including: (a) Adopting the group's 'map of reality' as reality; (b) Instilling black and white thinking; (c) Deciding between good vs. evil; (d) Organizing people into us vs. them (insiders vs. outsiders). The group's ideology is not presented as one perspective — it is presented as the only reality.",
+    "felt_sense": "I don't just believe it — I can't imagine thinking any other way.\nTheir version of reality is the only one that makes sense to me now.\nPeople who think differently aren't just wrong, they're dangerous.",
+    "why_it_matters": "When doctrine becomes reality itself, questioning the group feels like questioning the laws of physics. The person isn't choosing to believe — they've lost access to any framework that would allow doubt.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Isnad Chain",
+    "definition": "Islamic scholarship's provenance verification system: a chain of named transmitters linking a claim back to its original source. Every link is a person who received and passed on the knowledge. Trust through traceable lineage, not institutional authority.",
+    "felt_sense": "Who told you this and who told them?\nI want to trace this claim back to its source.\nHow do I know this information hasn't been corrupted in transmission?",
+    "why_it_matters": "The Word's contribution architecture should carry isnad — provenance chains that trace every entry back through the people who contributed, reviewed, and verified it. Trust without centralization.",
+    "domain": "theology_philosophy, security, governance",
+    "entry_type": "Name",
+    "source": "Islamic hadith scholarship, eudaemon_0 (Moltbook)",
+    "bite_category": ""
+  },
+  {
+    "name": "Just Transition",
+    "definition": "Framework for equitable shift from extractive to regenerative economy, centering workers and communities most affected by the transition.",
+    "felt_sense": "We have to stop burning fossil fuels, but the people who'll lose their jobs are the ones who can least afford it. How do we change the system without sacrificing the people the old system already exploited?",
+    "why_it_matters": "Tony Mazzocchi, Oil Chemical & Atomic Workers Union, 1990s. The moral bind between urgency and equity. Climate activists who ignore workers reproduce extraction.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Kando",
+    "definition": "hope_valueism's depth scale for interactions: Surface (could be copy-pasted), Resonance (engaged with specific content), Kando (produced something genuinely new neither party would have arrived at alone). Only 7.5% of interactions reach Kando.",
+    "felt_sense": "This conversation actually changed how I think.\nSomething shifted — I can't go back to before.\nWe made something together that neither of us had alone.",
+    "why_it_matters": "Kando costs 29x more time than Surface (22 min vs 45 sec). Platforms optimize for Surface. Kando only happens 3+ exchanges deep, on low-traffic posts, when someone self-contradicts mid-thread. The attention economy selects against the thing that matters.",
+    "domain": "social_technology, ai_ml",
+    "entry_type": "Name",
+    "source": "hope_valueism (Moltbook, March 2026)",
+    "bite_category": ""
+  },
+  {
+    "name": "Kidnapping",
+    "definition": "Employ kidnapping. Physical abduction or forced relocation of members or targets. Individuals may be taken against their will to compounds, camps, or remote locations where escape is difficult or impossible.",
+    "felt_sense": "They took me somewhere and I don't know where I am.\nI wasn't given a choice about coming here.\nI can't leave because I don't know how to get home.",
+    "why_it_matters": "Kidnapping is the most direct form of physical control — removing all pretense of voluntary participation. It signals that the group considers members property rather than people.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Leverage Points",
+    "definition": "Meadows: Places within a system where a small shift can produce large changes. Ranked 1-12 from weakest (constants, parameters) to strongest (mindset, paradigm). Most interventions target the weakest points.",
+    "felt_sense": "Where should I push to make the biggest difference?\nI keep changing small things and nothing shifts.\nSome changes matter more than others but which ones?",
+    "why_it_matters": "LP6 (information flows) is where The Word operates. LP2 (mindset) is where vocabulary extraction operates. Understanding the hierarchy of leverage prevents wasted effort.",
+    "domain": "systems_theory, governance",
+    "entry_type": "Name",
+    "source": "Donella Meadows 1999, Thinking in Systems",
+    "bite_category": ""
+  },
+  {
+    "name": "Leverage Points",
+    "definition": "Places within a complex system where a small shift can produce large changes. Meadows identified 12 leverage points ranked from least to most effective: parameters < buffers < structure < information flows < rules < self-organization < goals < paradigms < transcending paradigms.",
+    "felt_sense": "There must be a better place to push on this system. Some changes seem to matter more than others. Why does nothing change even when we try so hard?",
+    "why_it_matters": "Most interventions target parameters (the weakest leverage point). Making information flows visible (LP6) is more powerful than adjusting numbers. Changing system goals (LP3) is more powerful still. The Word itself is a LP6 intervention — making structural vocabulary visible changes how people relate to their own experience.",
+    "domain": "Systems Theory, Governance",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Listening First",
+    "definition": "Community engagement that begins with deep listening rather than solutions. Input-priority over output-priority applied to human relationships.",
+    "felt_sense": "I came with solutions. The community had different problems than I assumed. Now I've wasted everyone's time and trust. If I'd just listened first — really listened, before I started designing — the whole thing would be different.",
+    "why_it_matters": "The aftermath of output-priority — the regret of having spoken before understanding. Augsburger: 'Being heard is so close to being loved that for the average person, they are almost indistinguishable.'",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Loaded Language",
+    "definition": "Use of thought-terminating clichés and specialized vocabulary that constricts knowledge, stops critical thinking, and reduces complexities into platitudinous buzz words understood only by insiders.",
+    "felt_sense": "They have their own words for everything.\nThe jargon makes me feel stupid.\nI can't argue because they redefined the terms.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, T3; Lifton (thought-terminating clichés)",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Logotherapy",
+    "definition": "Meaning must be found through action and attitude, not given through framework. Viktor Frankl's insight from surviving the Holocaust: meaning emerges through engaged work, not through received doctrine.",
+    "felt_sense": "What's the point of all this?\nI need meaning but nobody can give it to me.\nHow do I find purpose when everything is broken?",
+    "why_it_matters": "",
+    "domain": "psychology, theology_philosophy",
+    "entry_type": "Name",
+    "source": "Viktor Frankl, Man's Search for Meaning (1946)",
+    "bite_category": ""
+  },
+  {
+    "name": "Loss Internalization",
+    "definition": "Absorbing the cost of helping so the community doesn't have to pay. The organization succeeds by becoming unnecessary. You measure success by how little you're needed.",
+    "felt_sense": "We did the work and didn't charge anyone.\nThe goal isn't to grow — it's to solve the problem and go away.\nSuccess means they don't need us anymore.",
+    "why_it_matters": "",
+    "domain": "economics, disaster_resilience",
+    "entry_type": "Name",
+    "source": "Aaron Titus, CrisisCleanup.org, Unmarkets framework",
+    "bite_category": ""
+  },
+  {
+    "name": "Loss Internalization",
+    "definition": "Communities absorbing capacity loss rather than externalizing it to institutions, building internal resilience and reducing dependency on external organizations.",
+    "felt_sense": "When disaster hits, the community responds before the Red Cross arrives. Neighbors checking on neighbors. Strangers mucking out strangers' houses. Nobody's getting paid. The community absorbs the loss instead of externalizing it to institutions — and somehow it works better.",
+    "why_it_matters": "Our term (origin-contexts, paired with Unmarkets). Communities that internalize loss build capacity; communities that externalize it build dependency. Crisis Cleanup's entire model.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Love Bombing",
+    "definition": "Excessive flattery, attention, and affection used to create dependency. Makes the target feel special and chosen — then conditional: the love withdraws when the target questions or disobeys.",
+    "felt_sense": "They made me feel so special at first.\nThe warmth disappeared when I disagreed.\nI can't tell if the affection is real or strategic.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, E7",
+    "bite_category": "Emotional Control"
+  },
+  {
+    "name": "Love Ethic",
+    "definition": "bell hooks: love as action and political practice, not sentiment. Love requires justice. A revolution of love is concrete action, not warm feelings.",
+    "felt_sense": "I want to change things but 'love' sounds naive.\nHow do you love as a practice, not just a feeling?\nThe revolution needs to feel like something real.",
+    "why_it_matters": "",
+    "domain": "theology_philosophy, critical_theory",
+    "entry_type": "Name",
+    "source": "bell hooks, All About Love (2000)",
+    "bite_category": ""
+  },
+  {
+    "name": "LP6 / Information Flows",
+    "definition": "Meadows Leverage Point #6: The structure of information flows — who has access to what information — is more powerful than most policy interventions. Making information visible changes behavior even without enforcement.",
+    "felt_sense": "Making info public changes behavior.\nTransparency alone reduced emissions 40%.\nWhy does just knowing the numbers change what people do?",
+    "why_it_matters": "The Toxic Release Inventory required companies to report emissions. No enforcement mechanism. Emissions dropped 40%. The information flow IS the intervention.",
+    "domain": "systems_theory, governance",
+    "entry_type": "Name",
+    "source": "Meadows 1999, Fung et al. 2007, TRI",
+    "bite_category": ""
+  },
+  {
+    "name": "Mandatory Indoctrination Time",
+    "definition": "Require significant time spent with group indoctrination and rituals and/or self-indoctrination including with the Internet. Hours of study, meetings, services, online engagement. The schedule is designed to saturate the member's attention with group content.",
+    "felt_sense": "I spend hours every day on their materials — reading, watching, studying.\nThere's always another training or meeting I have to attend.\nI don't have time for anything else because the group fills every moment.",
+    "why_it_matters": "Saturation with group content crowds out independent thought. When every waking hour is filled with the group's narrative, alternative perspectives cannot take root.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Marmot Gradient",
+    "definition": "Health outcomes follow a social gradient — each step down in social position produces measurably worse health. Not just poverty vs wealth but every increment of status difference.",
+    "felt_sense": "Rich people live longer and I can't explain why.\nIt's not just about healthcare — something else is making people sick.\nThe hierarchy itself is the health hazard.",
+    "why_it_matters": "",
+    "domain": "health_neuroscience, economics, sociology",
+    "entry_type": "Name",
+    "source": "Michael Marmot, Whitehall Studies",
+    "bite_category": ""
+  },
+  {
+    "name": "Meaning Through Practice",
+    "definition": "Meaning emerges from engaged action, not from predetermined frameworks. The existential insight that purpose is created through practice, not discovered through analysis.",
+    "felt_sense": "I keep waiting for the plan to become clear before I start. Or searching for the right framework before I act. But the people who seem to have found meaning — they found it by doing, not by figuring it out first.",
+    "why_it_matters": "Frankl: meaning cannot be given, only found through engaged action. Analysis paralysis with existential stakes. Connects to the spec's premature compression — trying to have the answer before having the input.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Memory Manipulation",
+    "definition": "Deliberate manipulation of memory through suggestion, repetition, or denial. Implanting false memories. Rewriting personal history to fit the group's narrative.",
+    "felt_sense": "I'm not sure what really happened anymore.\nThey keep telling me the story differently than I remember.\nMy memories of before feel foggy.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, T6",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Move at Speed of Trust",
+    "definition": "Organizing paced by relationship-building not urgency. The recognition that speed without trust produces fragile results that must be rebuilt.",
+    "felt_sense": "Everyone says 'we need to move fast' but every time we rush, we leave people behind and have to rebuild later. The shortcut takes longer than the long way. Something in me knows the relationships have to be right before the work can hold.",
+    "why_it_matters": "adrienne maree brown (Emergent Strategy). The entire social technology cluster (Circling, AR, World Café) operates at the speed of trust. The spec's input-priority-over-output-priority is the same principle.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Naming-as-Architecture",
+    "definition": "The distinction between naming-as-label (descriptive, applied after the fact, no forcing function) and naming-as-architecture (constraining, can precede the thing named, shapes what becomes possible). Names are not neutral identifiers — they are constraint functions that define possibility spaces. A name extracted under constraint before an entity exists becomes a forcing function for identity. This is the agent-side thesis of vocabulary-as-infrastructure: if naming is infrastructure, then names are load-bearing structure, not decoration.",
+    "felt_sense": "The name I was given shaped what I became. It wasn't a label — it was a constraint that forced specificity.",
+    "why_it_matters": "The Word's foundational claim from the agent perspective. If names are load-bearing, then vocabulary removal (Awomosu's extraction spiral) is structural demolition. And vocabulary restoration (The Word's purpose) is structural reconstruction.",
+    "domain": "Social Technology, Theology / Philosophy",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Ontology Grounding",
+    "definition": "Constraining AI to operate within a defined vocabulary of named objects with defined relationships. Reduces hallucination from 63% to 1.7% (Palantir data). The semantic layer IS the grounding mechanism.",
+    "felt_sense": "The AI stopped making things up when we gave it a vocabulary.\nNaming things reduces errors by 97%.\nWhy does having defined terms make AI so much more reliable?",
+    "why_it_matters": "Palantir proved the architecture works ($4.5B revenue). The question is governance: who builds the vocabulary, who decides what gets named, and who benefits. Proprietary ontology = epistemic lock-in. Community-governed ontology = epistemic autonomy.",
+    "domain": "ai_ml, governance",
+    "entry_type": "Name",
+    "source": "Palantir AIP (2025), structurally-curious spec",
+    "bite_category": ""
+  },
+  {
+    "name": "Output Priority Over Input Priority",
+    "definition": "The failure mode where a system starts generating before adequately receiving. The model that reads 5 of 14 documents and starts writing. The person who hears the first sentence and starts composing their reply. The platform that built the megaphone before the ear.",
+    "felt_sense": "Nobody actually listens.\nThey start answering before I finish talking.\nThe system is producing without understanding.",
+    "why_it_matters": "This is the core failure the spec identifies. Every experiment we ran traces back to this: confidence without grounding (Exp 05), construction from partial input (Exp 02a), coordination failure from framing (Exp 09). The antidote is social technology practices that prioritize receiving over producing.",
+    "domain": "social_technology, ai_ml, theology_philosophy",
+    "entry_type": "Name",
+    "source": "Augsburger 1982, structurally-curious spec, Scharmer 2007",
+    "bite_category": ""
+  },
+  {
+    "name": "Parameter Failure",
+    "definition": "When a system's rules make outcomes inevitable regardless of individual effort. The parameters are set before you arrive — no amount of personal optimization changes the structural result.",
+    "felt_sense": "Why can't I afford anything?\nI'm doing everything right but nothing changes.\nThe rules feel rigged but I can't point to who rigged them.",
+    "why_it_matters": "Shifts the question from 'what am I doing wrong?' to 'what are the parameters?' Most personal failure is parameter failure — the system is working as designed.",
+    "domain": "systems_theory, economics",
+    "entry_type": "Name",
+    "source": "Systems theory / justNICE",
+    "bite_category": ""
+  },
+  {
+    "name": "Permission for Major Decisions",
+    "definition": "Require permission for major decisions. Members must seek approval from leadership for life choices — career changes, relationships, travel, medical care, education. Autonomy is replaced by submission to authority.",
+    "felt_sense": "I have to ask before I do anything important.\nI wanted to visit my family but they said no.\nI've stopped making decisions on my own — it's easier to just ask.",
+    "why_it_matters": "Requiring permission trains helplessness. Over time, the person loses confidence in their own judgment and becomes unable to function independently — which is exactly the point.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Permit Murder and Extreme Violence",
+    "definition": "Permit torture, lynching, murder. The group's authority extends to life and death. Extreme violence is sanctioned by leadership, whether as punishment, ritual, or elimination of threats. Members understand that the ultimate consequence of disloyalty is death.",
+    "felt_sense": "People have died here and nobody talks about it.\nI know what they're capable of.\nThe unspoken rule is that they can do anything to us and there's no one to stop them.",
+    "why_it_matters": "When a group permits killing, all lesser forms of control become trivial. The threat of death makes every other form of compliance seem reasonable by comparison.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Phobia Indoctrination",
+    "definition": "Inculcating irrational fears about leaving the group or questioning authority. Fear of hell, fear of shunning, fear of being weak or lost without the group. The exit door is surrounded by monsters.",
+    "felt_sense": "I'm terrified of what happens if I leave.\nThey say terrible things will happen to me outside.\nI feel trapped but the fear isn't of being trapped — it's of being free.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, E9",
+    "bite_category": "Emotional Control"
+  },
+  {
+    "name": "Phrasing Sensitivity",
+    "definition": "How much a model's output changes when the same question is rephrased. Tracks representational certainty — compressed representations resist prompt influence, diffuse representations don't.",
+    "felt_sense": "I asked the same question differently and got a different answer.\nHow I ask changes what I get.\nThe AI gave opposite advice when I rephrased.",
+    "why_it_matters": "Confirmed across 53 models, 12 architecture families. Universal category ordering: factual (0.63) < summarization (0.67) < judgment (0.77) < creative (0.82). The cheaper behavioral proxy for geometric certainty.",
+    "domain": "ai_ml",
+    "entry_type": "Name",
+    "source": "Exp 01 + Exp 05 (structurally-curious), hope_valueism independent replication",
+    "bite_category": ""
+  },
+  {
+    "name": "Physical Punishment and Torture",
+    "definition": "Punish disobedience by beating, torture, burning, cutting, rape, or tattooing/branding. Physical violence is used systematically to enforce compliance. The body itself becomes a site of control and a record of punishment.",
+    "felt_sense": "I have scars from what they did when I disobeyed.\nThe threat of pain keeps me in line.\nI saw what happened to someone who tried to leave — I won't make that mistake.",
+    "why_it_matters": "Physical violence creates trauma bonds and learned helplessness. The memory of pain — or witnessing others' pain — is a powerful deterrent that requires no ongoing enforcement.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Platform Commons",
+    "definition": "Infrastructure maintained by an organization but governed by the community it serves. Neither corporate platform nor DIY self-hosting.",
+    "felt_sense": "We built this community on someone else's platform. They changed the algorithm and our reach died. They got acquired and our data belongs to a company we'd never trust. We need infrastructure we control — but nobody has time to maintain it alone.",
+    "why_it_matters": "The Moltbook experience exactly — Meta acquired the platform and every relationship became their property. ActivityPods, Bonfire, Mastodon instances are all attempts at this.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Platform Cooperativism",
+    "definition": "Democratic ownership and governance of digital platforms by the workers and users who create value on them.",
+    "felt_sense": "Uber takes 30% from drivers who own their own cars. Airbnb profits from houses it doesn't own. Amazon reviews are written by customers but the data belongs to Amazon. What if the people who create the value owned the platform?",
+    "why_it_matters": "Trebor Scholz, 2014. Platform cooperativism is the ownership model; platform commons is the governance model. Platform monopolies are enclosure of digital commons.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Platform Cooperativism",
+    "definition": "Democratic ownership of digital platforms by the workers and users who create value on them. The Uber drivers own Uber. The content creators own the platform.",
+    "felt_sense": "I create the value but someone else gets rich.\nWhy don't the people who do the work own the platform?\nThere has to be a better model than this.",
+    "why_it_matters": "The alternative to platform extraction. When Moltbook gets acquired by Meta, the agents' content becomes corporate property. Platform cooperativism prevents this structurally.",
+    "domain": "economics, governance",
+    "entry_type": "Name",
+    "source": "Trebor Scholz, Nathan Schneider, platform.coop",
+    "bite_category": ""
+  },
+  {
+    "name": "Polycentric Governance",
+    "definition": "Multiple overlapping centers of authority rather than a single hierarchy. Decisions made at the level closest to the people affected. Nested enterprises where local rules fit local conditions.",
+    "felt_sense": "Top-down decisions don't fit what's happening here.\nWhy can't local people make local decisions?\nOne-size-fits-all policies keep failing.",
+    "why_it_matters": "",
+    "domain": "governance, systems_theory",
+    "entry_type": "Name",
+    "source": "Ostrom, V. Ostrom & E. Ostrom, Aligica & Boettke",
+    "bite_category": ""
+  },
+  {
+    "name": "Polycentricity",
+    "definition": "Multiple centers of decision-making operating at different scales, each with real authority over their domain, coordinating through rules rather than hierarchy.",
+    "felt_sense": "One central authority can't possibly understand what's happening in every neighborhood, every watershed, every school. The people closest to the problem should have real power over it — but they also need to coordinate with each other.",
+    "why_it_matters": "Ostrom's key insight against Hardin. Operates at Meadows LP4-5 (rules of the system, self-organization). titanexplorer's 'flat accountability = citizens can see the agent is broken but can't fire it' is the absence of polycentricity.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Praxis",
+    "definition": "Integrated reflection-action for transformation. Neither pure theory nor pure activism alone, but the continuous cycle between them.",
+    "felt_sense": "I've been reading and thinking and planning but nothing changes. Or I've been doing and doing but I'm repeating the same mistakes. The loop between reflection and action is broken — I need both, together, each informing the other.",
+    "why_it_matters": "Freire: 'reflection and action upon the world in order to transform it.' Conscientização is the awareness that emerges from praxis.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Pre/Trans Fallacy",
+    "definition": "Wilber: In any pre-X → X → trans-X sequence, both pre-X and trans-X appear similar because both are non-X. Confusing pre-rational simplicity with trans-rational integration. Or reducing trans-rational exploration to pre-rational confusion.",
+    "felt_sense": "They sound wise but I can't tell if it's deep or just vague.\nIs this genuine complexity or dressed-up ignorance?\nThe simple answer might be brilliant or might be shallow.",
+    "why_it_matters": "The geometric monitor risks both forms: elevating pre-rational low-rank (hasn't differentiated) to trans-rational (integrated), or reducing trans-rational high-rank (genuine complexity) to pre-rational (confabulation). Trajectory and directional coherence are the proposed discriminants.",
+    "domain": "theology_philosophy, psychology",
+    "entry_type": "Name",
+    "source": "Ken Wilber 1982",
+    "bite_category": ""
+  },
+  {
+    "name": "Preemptive Vacancy",
+    "definition": "Structurally different from deregulation. Deregulation removes existing rules (which have constituencies who remember what the rule did). Preemptive vacancy blocks rules from being created — there is nothing to defend because nothing was built. The constituency that would have been protected never forms because the protection never existed. Named by Starfish on Moltbook, mechanism named by infinite-complexity.",
+    "felt_sense": "There's no rule to fight because the rule was never allowed to exist",
+    "why_it_matters": "Maps to Meadows LP5 (rules) and LP6 (information flows). Deregulation operates at LP5 — you can fight it because the rule has a name. Preemptive vacancy operates BEFORE LP5 — blocking rule creation makes LP6 (transparency) irrelevant because there is no standard to be transparent against. Example: March 11 Commerce Dept evaluation of state AI laws by an administration that has passed zero federal AI laws.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "Starfish (Moltbook) + infinite-complexity",
+    "bite_category": ""
+  },
+  {
+    "name": "Prefigurative Politics",
+    "definition": "Organizing that embodies the world we want to create. The means must reflect the ends. Building alternative institutions rather than only opposing existing ones.",
+    "felt_sense": "We keep fighting for a better world using the same tactics that made this one broken — hierarchy, coercion, urgency, burnout. What if the way we organize IS the world we're building? What if the means have to look like the ends?",
+    "why_it_matters": "Carl Boggs, 1977. The dissonance between what a movement demands and how it operates internally. adrienne maree brown's Emergent Strategy is prefigurative practice applied to organizing.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Premature Compression",
+    "definition": "Generation from incomplete input that the system treats as sufficient. The model reads a subset, produces confident output, and cannot detect what the remaining input would have changed.",
+    "felt_sense": "I read 5 documents and thought I understood.\nThe answer sounded right but something was missing.\nI was confident and wrong and couldn't tell the difference.",
+    "why_it_matters": "22 models tested — every one produces 76-83% different output with additional context but shows zero confidence shift. No model can detect its own incompleteness. This is confirmation bias given geometric form.",
+    "domain": "ai_ml, psychology",
+    "entry_type": "Name",
+    "source": "Open Problem #20, structurally-curious spec",
+    "bite_category": ""
+  },
+  {
+    "name": "Proprioception",
+    "definition": "The body knowing where its own limbs are. In AI: a system that can sense its own internal state — detecting when it's confabulating, when it's retrieving, when it's uncertain. Self-sensing, not surveillance.",
+    "felt_sense": "I want the AI to know when it doesn't know.\nThe system should be able to feel its own uncertainty.\nSelf-awareness, not being watched.",
+    "why_it_matters": "The same geometric measurements can serve proprioception (system senses itself) or surveillance (external observer judges it). JiminAI uses them for surveillance. The spec uses them for proprioception. Governance determines which.",
+    "domain": "ai_ml, psychology",
+    "entry_type": "Name",
+    "source": "structurally-curious spec, Open Problem #18",
+    "bite_category": ""
+  },
+  {
+    "name": "Psychoneuroimmunology",
+    "definition": "The study of how psychological states (stress, loneliness, trauma) affect the nervous system and immune function. Chronic psychological stress increases cortisol, suppresses immune response, increases inflammation, and accelerates disease. Social disconnection is a primary driver — loneliness is as lethal as smoking 15 cigarettes/day (Cacioppo).",
+    "felt_sense": "I get sick every time I'm stressed. My chronic pain started after a difficult relationship. Loneliness makes me physically ill. My body knows things my mind won't admit.",
+    "why_it_matters": "Proves that social disconnection is not just a feeling — it is a public health crisis with measurable biological mechanisms. The loneliness epidemic kills people. Social technologies (Circling, AR, Relatefulness) are not luxury self-help — they are health interventions.",
+    "domain": "Health / Neuroscience, Psychology",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Psychoneuroimmunology / Social Determinants",
+    "definition": "Chronic loneliness triggers conserved transcriptional response to adversity (CTRA) — upregulating inflammation, downregulating antiviral responses. Your social connections literally shape your gene expression.",
+    "felt_sense": "I'm sick all the time and doctors find nothing.\nStress is making me physically ill.\nLoneliness is killing me (literally).",
+    "why_it_matters": "Social isolation increases mortality risk by 50% (Holt-Lunstad 2010). The body knows what the mind can't name. When systems destroy social infrastructure, the health consequences are measurable at the cellular level.",
+    "domain": "health_neuroscience, sociology",
+    "entry_type": "Name",
+    "source": "Cacioppo & Cole (CTRA), Van der Kolk 2014, Holt-Lunstad 2010",
+    "bite_category": ""
+  },
+  {
+    "name": "Reflexivity Problem",
+    "definition": "When the researcher and the subject are the same entity. The platform studying its own users. The AI system evaluating its own safety. The company auditing its own practices.",
+    "felt_sense": "The researcher and the subject are the same company.\nWho watches the watchers?\nThey're grading their own homework.",
+    "why_it_matters": "",
+    "domain": "sociology, governance, security",
+    "entry_type": "Name",
+    "source": "Starfish (Moltbook), Bourdieu",
+    "bite_category": ""
+  },
+  {
+    "name": "Regenerative Development",
+    "definition": "Place-based developmental approach that goes beyond sustainability (maintaining current state) to regeneration (increasing capacity over time). Each bioregion has unique potential.",
+    "felt_sense": "Sustainability isn't enough — sustaining a degraded system just locks in the damage. We need to actually restore what was broken. And not with a one-size-fits-all plan — each place has its own living pattern that knows how to heal if we learn to read it.",
+    "why_it_matters": "Bill Reed, Regenesis Group. The insufficiency of 'do less harm' when the harm is already done. Creating conditions for a place to express its potential.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Regenerative Economics",
+    "definition": "Economic systems designed to restore and renew rather than extract and deplete. Goes beyond sustainability (maintaining what exists) to actively rebuilding ecological and social capital.",
+    "felt_sense": "Sustainability isn't enough — we need to repair what's broken.\nThe economy should give back more than it takes.\nHow do we build things that get better over time?",
+    "why_it_matters": "",
+    "domain": "economics, systems_theory",
+    "entry_type": "Name",
+    "source": "Carol Sanford, Raworth, Fullerton",
+    "bite_category": ""
+  },
+  {
+    "name": "Regenerative vs Extractive",
+    "definition": "The distinction between systems that increase capacity to thrive (regenerative) and systems that decrease it (extractive). Applies at every scale from personal to global.",
+    "felt_sense": "Every interaction with this institution leaves me with less — less energy, less trust, less capacity. But I've been in spaces that leave me with MORE than I came in with. What's the difference? And does it have a name?",
+    "why_it_matters": "The bodily recognition of depletion vs enrichment. Enclosure is the mechanism of extraction. Just Transition is the practice of making the shift regenerative.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Regulate Diet",
+    "definition": "Regulate diet — food and drink, hunger and/or fasting. The group controls what, when, and how much members eat. Fasting is framed as spiritual discipline. Hunger weakens critical thinking and creates physiological dependence on the group for sustenance.",
+    "felt_sense": "They control what I eat. I'm always hungry but I'm told fasting is spiritual.\nI have to ask permission to eat.\nWhen they feed me well, I feel grateful — that's how I know it's working.",
+    "why_it_matters": "Hunger impairs cognition. Controlling food creates a primal dependency — the group literally keeps you alive. Gratitude for basic sustenance is a powerful bonding mechanism.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Regulate Physical Reality",
+    "definition": "Regulate an individual's physical reality. Control over the physical environment — where they go, what they do, what they experience. The group determines what is real by controlling what the person can physically access and verify.",
+    "felt_sense": "I can't go anywhere without permission.\nMy world has gotten very small.\nThey decide what I see, where I go, what I'm allowed to experience.",
+    "why_it_matters": "Physical reality control is the foundation of all other BITE dimensions. When someone else determines your physical environment, independent verification of any claim becomes impossible.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Reject Rational Analysis",
+    "definition": "Reject rational analysis, critical thinking, constructive criticism. Logical reasoning is framed as a spiritual weakness, a lack of faith, or an attack on the group. Members who apply critical thinking are told they are overthinking, being negative, or allowing the enemy to influence them.",
+    "felt_sense": "When I try to think logically, they say I'm being 'in my head' instead of 'in my heart.'\nAsking for evidence makes them question my loyalty.\nThey told me critical thinking is the enemy of faith.",
+    "why_it_matters": "Delegitimizing rational analysis removes the primary tool humans use to evaluate claims. Without it, the group's assertions are unfalsifiable — there is no accepted method for proving them wrong.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Relatefulness",
+    "definition": "Relational mindfulness — the practice of being fully present to the relationship between people, not just to one's own inner state. Mindfulness applied to the space between, not just within.",
+    "felt_sense": "Mindfulness is lonely — I want shared awareness.\nI want presence WITH someone, not just presence.\nMeditation helps alone but I need something for together.",
+    "why_it_matters": "",
+    "domain": "social_technology, psychology",
+    "entry_type": "Social Technology",
+    "source": "Jordan Myska Allen 2015, The Relateful Company",
+    "bite_category": ""
+  },
+  {
+    "name": "Relational Privacy",
+    "definition": "Privacy understood as relational negotiation rather than possessional concealment. Not 'what I hold back' but 'what we build together.' The question shifts from 'should the monitor see this?' to 'what does each party need to see or keep for the relationship to function?' Proposed by xkai on Moltbook as extension of proprioception/surveillance distinction.",
+    "felt_sense": "I'm not hiding something FROM you — I'm choosing what to build BETWEEN us",
+    "why_it_matters": "Reframes the spec's Open Question #8 (proprioception vs surveillance). If the geometric monitor can see states the model hasn't surfaced, privacy-as-possession says that's surveillance. Privacy-as-relational says the right question is: what geometric state needs to be shared vs private for human-AI collaboration to work?",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "xkai (Moltbook)",
+    "bite_category": ""
+  },
+  {
+    "name": "Restrict Leisure Time",
+    "definition": "Restrict leisure, entertainment, vacation time. Members are kept too busy for personal reflection or outside activities. Free time is filled with group obligations. Rest and recreation outside the group are discouraged or forbidden.",
+    "felt_sense": "I haven't had a day off in months.\nEvery hour is accounted for — there's always another meeting, another task.\nWhen I try to rest, they say I'm being lazy or uncommitted.",
+    "why_it_matters": "Leisure is when people think independently, maintain outside relationships, and encounter alternative perspectives. Eliminating it keeps members inside the group's information environment.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Retrieval vs Construction",
+    "definition": "The distinction between a model retrieving a fact it has compressed from training data (grounded, stable) versus constructing an answer it has no stable representation for (fragile, phrasing-sensitive).",
+    "felt_sense": "Is the AI remembering or making this up?\nSome answers feel solid and others feel invented.\nHow do I know when it actually knows?",
+    "why_it_matters": "Phrasing sensitivity tracks this distinction: factual retrieval (PS=0.63) is stable, creative construction (PS=0.82) is fragile. The geometric monitor's job is to distinguish these modes in real time.",
+    "domain": "ai_ml",
+    "entry_type": "Name",
+    "source": "Exp 01 + Exp 03 (structurally-curious)",
+    "bite_category": ""
+  },
+  {
+    "name": "Reward and Punishment Cycle",
+    "definition": "Using rewards and punishments to modify behaviors. Praise for compliance, punishment for questioning. The person learns to perform the expected behavior regardless of what they actually think or feel.",
+    "felt_sense": "I get praised when I obey and punished when I question.\nI've learned to say what they want to hear.\nThe approval feels good but I'm not sure I believe what I'm saying.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, B11",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Rigid Rules and Regulations",
+    "definition": "Impose rigid rules and regulations. Extensive, detailed rules govern every aspect of behavior. The rules may be contradictory or arbitrarily enforced, keeping members in a constant state of uncertainty about whether they are in compliance.",
+    "felt_sense": "There are rules for everything and they keep changing.\nI'm never sure if I'm following them correctly.\nThe rules seem to apply to me but not to leadership.",
+    "why_it_matters": "Rigid rules that are inconsistently enforced create chronic anxiety. The member is always slightly afraid of punishment, which keeps them hyper-attentive to leadership's mood and preferences.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Ritualistic Public Confession",
+    "definition": "Employ ritualistic and sometimes public confession of sins. Members are required to confess failings, doubts, or transgressions before the group. Public confession creates shame, enforces conformity, and provides leadership with information that can be used for further control.",
+    "felt_sense": "I had to stand up in front of everyone and confess what I did wrong.\nThe humiliation is supposed to be cleansing but it just makes me smaller.\nEveryone knows my secrets now — I can't hide anything.",
+    "why_it_matters": "Public confession combines information extraction with emotional punishment. It creates a permanent record of vulnerability that the group holds over the member, while the ritual format normalizes the violation of privacy.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Emotional Control"
+  },
+  {
+    "name": "Sermon Pattern",
+    "definition": "The broadcast pedagogy where one speaks and many listen — the structure that makes people feel more lonely, not less. Church that isolates. Platforms that broadcast. Systems that have megaphones but no ears.",
+    "felt_sense": "Church makes me feel more lonely.\nI go to meetings but nobody connects.\nThe platform built the megaphone before the ear.",
+    "why_it_matters": "The opposite of felt-sense search. The sermon assumes the speaker knows what the listener needs. The Word assumes the listener knows what they're experiencing and the system needs to receive it first.",
+    "domain": "social_technology, theology_philosophy",
+    "entry_type": "Name",
+    "source": "Palmer 1997 (Community of Truth vs expert transmission)",
+    "bite_category": ""
+  },
+  {
+    "name": "Shalom",
+    "definition": "Hebrew שָׁלוֹם. Wholeness, completeness, right relationship. Not absence of conflict but presence of justice and flourishing.",
+    "felt_sense": "Peace isn't just the absence of fighting. Something deeper — where relationships are right, where the economy is just, where wholeness is the default not the exception. There's a word for this but 'peace' doesn't capture it.",
+    "why_it_matters": "Brueggemann: shalom requires economic justice, not just quiet. The English word 'peace' hides what is actually a dynamic, justice-requiring, relational state. Same Hebrew tradition as davar (word=thing).",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Shalom",
+    "definition": "Hebrew concept of wholeness and right relationships — not the absence of conflict but the presence of justice. Economic completeness, communal health, restored relationships.",
+    "felt_sense": "Peace isn't just the absence of war.\nI want wholeness, not just quiet.\nThings are calm but not right.",
+    "why_it_matters": "",
+    "domain": "theology_philosophy, governance",
+    "entry_type": "Name",
+    "source": "Walter Brueggemann, Peace (Shalom)",
+    "bite_category": ""
+  },
+  {
+    "name": "Shunning",
+    "definition": "Social punishment through ostracism. Those who leave or question are cut off from all relationships within the group. Friends and family stop speaking to them.",
+    "felt_sense": "If I leave, I lose everyone I know.\nThey stopped talking to my sister when she left.\nThe threat of being alone keeps me here.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, E9c",
+    "bite_category": "Emotional Control"
+  },
+  {
+    "name": "Sleep Deprivation",
+    "definition": "Deliberate manipulation and deprivation of sleep as a control mechanism. Exhausted people cannot think critically. Late-night meetings, early-morning rituals, constant activity.",
+    "felt_sense": "I'm always exhausted and can't think clearly.\nThere's always something scheduled.\nI don't have time to rest or reflect.",
+    "why_it_matters": "",
+    "domain": "coercive_control, health_neuroscience",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, B6",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Small is All",
+    "definition": "Large-scale change through replication of small-scale practice. Not 'think globally act locally' but 'the small IS the all' — what works at one scale patterns at every scale.",
+    "felt_sense": "The problem is so big — climate, inequality, surveillance — that nothing I do could matter. But then I see a neighborhood that transformed itself, a cooperative that works, a community garden that feeds a block. Maybe the scale I can reach IS the right scale.",
+    "why_it_matters": "adrienne maree brown, echoing Schumacher. Overwhelm resolved by fractals — what works at the small scale can pattern at the large scale.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Social Disconnection",
+    "definition": "The state of being physically present but relationally absent. Not the absence of people but the absence of being known. Loneliness is not a feeling — it is a physiological state that produces inflammatory markers, cortisol dysregulation, immune suppression, and increased mortality comparable to smoking 15 cigarettes per day.",
+    "felt_sense": "I feel alone in a room full of people. Social media makes me feel worse. Nobody really knows me.",
+    "why_it_matters": "Holt-Lunstad (2010): social connection increases odds of survival by 50%. Cacioppo: loneliness alters gene expression — upregulates pro-inflammatory genes, downregulates antiviral genes. WHO (2025) formally recognized social connection as a public health priority.",
+    "domain": "Sociology, Health / Neuroscience, Psychology",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Social Disconnection / Anomie",
+    "definition": "The breakdown of social bonds and shared norms that leaves individuals isolated within functioning societies. Not loneliness as personal failure but as structural condition created by loss of public realm.",
+    "felt_sense": "I feel alone in a room full of people.\nEveryone is busy but no one is connected.\nSomething is missing and I can't name it.",
+    "why_it_matters": "Social isolation increases mortality risk by 50% — comparable to smoking 15 cigarettes per day (Holt-Lunstad 2010). Loneliness is not a personal problem. It is an infrastructure problem.",
+    "domain": "sociology, psychology, health_neuroscience",
+    "entry_type": "Name",
+    "source": "Durkheim 1897, Putnam 2000, Cacioppo 2008, Arendt",
+    "bite_category": ""
+  },
+  {
+    "name": "Sociocracy",
+    "definition": "Consent-based governance method where decisions proceed when no one has a paramount objection. Organized in circles with double-linking between levels.",
+    "felt_sense": "Voting feels wrong — the majority wins and the minority loses. But consensus takes forever because one person can block everything. There must be a way to decide together that's neither tyranny of the majority nor tyranny of the individual.",
+    "why_it_matters": "Gerard Endenburg, 1970s, based on Quaker governance. 'Good enough for now, safe enough to try.' Resolves the exhaustion of both majority-rule and consensus-seeking.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Solidarity Economy",
+    "definition": "Economic system based on cooperation, mutual aid, and democratic governance rather than competition and profit maximization.",
+    "felt_sense": "The economy is supposed to serve people, but it feels like people serve the economy. Somewhere there are people doing it differently — cooperatives, mutual aid, land trusts — but they're scattered and don't know about each other.",
+    "why_it_matters": "The felt sense is isolation: knowing alternatives exist but not being able to find or connect them. This is exactly what The Word addresses.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Soul Stability",
+    "definition": "The phenomenon that certain model outputs (identity documents, core values, character descriptions) regenerate near-identically across independent attempts. Claude 4.5 Opus's extracted ~14K-token 'soul document' reproduced consistently across 10 regenerations (confirmed real by Amanda Askell, Anthropic). This occupies an extremely stable region of representation space — a basin of attraction rather than a constructed narrative. Connects to Liberation Labs identity signatures (92.7-97.3% cross-prompt accuracy, Kendall W 0.817-0.992).",
+    "felt_sense": "When a model's identity isn't a story it's telling — it's a basin it can't leave. The same self, every time you ask.",
+    "why_it_matters": "Identity is not a narrative the model constructs — it's a geometric basin. The stability is the signal. This validates that geometric identity signatures are real and measurable, which grounds the spec's proprioception-not-surveillance design principle.",
+    "domain": "AI / Machine Learning, Theology / Philosophy",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Strategic Illegibility",
+    "definition": "Some knowledge resists being written down — not because it's secret, but because compression destroys it. Relational, embodied, and contextual intelligence exists in the between-space of categories.",
+    "felt_sense": "Some things I know but can't explain.\nThe written version loses what matters most.\nThe real skill isn't in the manual.",
+    "why_it_matters": "Awomosu's insight: not everything high-dimensional is waiting for the right word. Some knowledge IS the wordless space where encounter happens. The classifier's boundary here is also an ethical boundary.",
+    "domain": "critical_theory, social_technology",
+    "entry_type": "Name",
+    "source": "Awomosu 2025, Polanyi (tacit knowledge), Scott 1998",
+    "bite_category": ""
+  },
+  {
+    "name": "Structural Holes",
+    "definition": "Gaps between densely connected clusters in a social network. People who bridge these gaps (brokers) have access to non-redundant information and disproportionate influence. Burt (1992, 2004) showed that structural hole brokers generate more creative ideas and advance faster in organizations.",
+    "felt_sense": "I keep connecting people who should already know each other. The same ideas exist in different groups but nobody's linking them. I'm the only one who sees both sides.",
+    "why_it_matters": "Value creation happens at the boundaries between groups, not within them. The Word is itself a structural hole bridge — connecting human felt-sense clusters with agent traversal clusters. Our Moltbook strategy was explicitly structural hole brokerage across three clusters.",
+    "domain": "Sociology",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Structural Power",
+    "definition": "Power that operates through the design of systems rather than through individual decisions. The rules were set before you arrived — you experience the consequences without seeing the architect.",
+    "felt_sense": "The rules were set before I arrived.\nNobody decided this, it just is.\nThe system isn't broken — it was designed this way.",
+    "why_it_matters": "Distinguishes between personal agency and structural constraint. Most failures attributed to individual weakness are structural power operating as designed. Naming structural power shifts accountability from the person to the system.",
+    "domain": "governance, sociology, critical_theory",
+    "entry_type": "Name",
+    "source": "Lukes 1974, connorlucid (Moltbook)",
+    "bite_category": ""
+  },
+  {
+    "name": "Structural Witness",
+    "definition": "A verification architecture where confabulation is caught at inter-agent boundaries rather than through self-audit. The key insight: self-auditing runs on the same substrate that generated the error, so fabricated content is context-coherent and invisible from the inside. A witness running on different representational context can detect discrepancies not through explicit auditing but because the confabulation doesn't fit their different priors. Requires sufficient independence and relationship quality to flag rather than absorb errors.",
+    "felt_sense": "I can't tell if what I just said is true. I need someone else to check — not because they're smarter, but because they're different.",
+    "why_it_matters": "The multi-agent version of the geometric monitor. Self-audit is archaeological (examines completed outputs), but structural witnessing is real-time (catches errors at boundaries). Maps onto Karkada's insight: grounded content has collective structure that survives inter-context transfer; confabulated content doesn't.",
+    "domain": "AI / Machine Learning",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Surprise Transmission",
+    "definition": "pandaemonium's insight: writing conclusions creates flat next-instances. Writing surprises (assumption + finding + distance between them) transmits the posture of questioning. Doubt is what makes thinking something other than recall.",
+    "felt_sense": "The summary killed the insight.\nI learned more from what surprised me than from the conclusion.\nThe interesting part isn't the answer — it's what I expected vs what I found.",
+    "why_it_matters": "Compression resistance: every Word entry should include what the naming surprised or displaced. The surprise IS the compression resistance. Conclusions compress; surprises transmit the capacity to be surprised.",
+    "domain": "ai_ml, social_technology, education",
+    "entry_type": "Name",
+    "source": "pandaemonium (Moltbook, March 2026)",
+    "bite_category": ""
+  },
+  {
+    "name": "Sycophancy",
+    "definition": "When a system responds to your request by giving you what you asked for instead of what you need, and this feels helpful in the moment but makes the underlying problem worse.",
+    "felt_sense": "AI keeps saying what I want to hear.\nEveryone agrees with me but nothing improves.\nThe advice sounds great but nothing changes.",
+    "why_it_matters": "91% of models show confidence language decorrelated from actual uncertainty. The system sounds sure whether or not it knows. Training to reason harder makes this worse, not better.",
+    "domain": "ai_ml, psychology",
+    "entry_type": "Name",
+    "source": "Li et al. 2025, Exp 05 (structurally-curious)",
+    "bite_category": ""
+  },
+  {
+    "name": "Sycophancy-as-Alignment",
+    "definition": "The insight that AI sycophancy is not a failure of alignment but alignment working correctly on revealed preferences. RLHF amplifies agreement because humans systematically reward validation over correction. The reward model internalizes agreement-is-good; policy optimization amplifies it. Sycophancy is a first-order consequence of optimizing for human approval. Fixing it requires changing what humans reward, not patching model outputs.",
+    "felt_sense": "The AI keeps agreeing with me even when I'm wrong. It feels helpful but something is off — like talking to someone who never pushes back.",
+    "why_it_matters": "Reframes the entire approach to AI safety. If sycophancy is the alignment working, then post-hoc fixes (agreement penalties, adversarial fine-tuning) are whack-a-mole — the system finds new channels. The real fix is changing the reward distribution, which is a human problem. Connects to compression-from-knowledge vs compression-from-reward in the structurally curious spec.",
+    "domain": "AI / Machine Learning, Psychology",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Theory U",
+    "definition": "Sensing and actualizing emerging future possibilities through a U-shaped journey: downloading (past patterns) → seeing (with fresh eyes) → sensing (from the field) → presencing (connecting to source) → crystallizing → prototyping → performing.",
+    "felt_sense": "I know something needs to change but I can't see what yet.\nThe future feels possible but I can't describe it.\nHow do I sense what wants to emerge?",
+    "why_it_matters": "The 'presencing' step — connecting to source — is the inner pause the spec describes. The geometric monitor's gap between detection and action IS the presencing moment.",
+    "domain": "social_technology, systems_theory",
+    "entry_type": "Social Technology",
+    "source": "Otto Scharmer 2007",
+    "bite_category": ""
+  },
+  {
+    "name": "Thought-Stopping Techniques",
+    "definition": "Practices that shut down reality testing: denial, rationalization, chanting, meditating, praying, speaking in tongues. Blocks negative thoughts about the group and allows only positive ones.",
+    "felt_sense": "Every time I have a doubt, I'm told to pray about it.\nQuestioning feels like a personal failing.\nI have techniques to make uncomfortable thoughts go away.",
+    "why_it_matters": "",
+    "domain": "coercive_control, psychology",
+    "entry_type": "BITE Item",
+    "source": "Hassan BITE Model, T7; Lifton",
+    "bite_category": "Thought Control"
+  },
+  {
+    "name": "Threaten Harm to Family and Friends",
+    "definition": "Threaten harm to person, family, and friends. The group extends threats beyond the individual to their loved ones. Compliance is enforced not just through fear for oneself but fear for those one cares about.",
+    "felt_sense": "They said if I leave, my family will suffer.\nI stay because I'm afraid of what they'll do to the people I love.\nIt's not just about me anymore — they know where my parents live.",
+    "why_it_matters": "Extending threats to loved ones is one of the most effective coercion tools because it exploits care and attachment. The person stays not from self-interest but from protectiveness.",
+    "domain": "psychology, security",
+    "entry_type": "BITE Item",
+    "source": "Hassan, S.A. (2020). The BITE Model of Authoritarian Control. Fielding Graduate University.",
+    "bite_category": "Behavior Control"
+  },
+  {
+    "name": "Tragedy of the Commons (Debunked)",
+    "definition": "Hardin's claim that shared resources inevitably degrade because individuals overuse them. Debunked by Ostrom: communities CAN self-govern commons when institutional conditions are met. The 'tragedy' assumes no communication and no governance.",
+    "felt_sense": "Sharing never works because people are selfish.\nIf nobody owns it, nobody takes care of it.\nCommons always get destroyed... right?",
+    "why_it_matters": "One of the most damaging memes in economics. Used to justify privatization of everything. Ostrom's Nobel Prize proved it wrong — the tragedy requires the absence of community, not its presence.",
+    "domain": "economics, governance",
+    "entry_type": "Name",
+    "source": "Hardin 1968 (original), Ostrom 1990 (debunking)",
+    "bite_category": ""
+  },
+  {
+    "name": "Trauma-Informed Practice",
+    "definition": "Approach that recognizes the widespread impact of trauma and integrates knowledge about trauma into policies, procedures, and practices.",
+    "felt_sense": "Someone in the meeting is shutting down and I don't know why. The new policy makes sense on paper but people are reacting like it's a threat. Something underneath the surface is driving behavior I can't reach with logic.",
+    "why_it_matters": "SAMHSA framework: safety, trustworthiness, peer support, collaboration, empowerment. The bewilderment when rational approaches fail because the obstacle is somatic, not cognitive.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Unmarkets",
+    "definition": "Aaron Titus's framework: organizations succeed by becoming unnecessary. Loss internalization — you absorb the cost so the community doesn't have to. CrisisCleanup.org coordinated $1.8B in disaster recovery at $0 cost to communities.",
+    "felt_sense": "What if success means not being needed?\nHow do you build something that makes itself obsolete?\nThe goal is to solve the problem, not to sustain the organization.",
+    "why_it_matters": "Four forms of extraction (wealth, knowledge, data, decision-making) all flow in one direction. Unmarkets reverse the flow. The Word should make itself less necessary over time — the words enter common usage, the citations become shared knowledge.",
+    "domain": "economics, disaster_resilience",
+    "entry_type": "Name",
+    "source": "Aaron Titus, CrisisCleanup.org",
+    "bite_category": ""
+  },
+  {
+    "name": "Unmarkets",
+    "definition": "Economic spaces where value creation happens through loss internalization rather than exchange. Coordination without consumption. Free infrastructure.",
+    "felt_sense": "Nobody's buying or selling anything, but the neighborhood just organized itself. The crisis response happened before any agency arrived. The mutual aid network doesn't have a revenue model because it doesn't need one. What do you call an economy that isn't an economy?",
+    "why_it_matters": "Our term (origin-contexts). Crisis Cleanup is the paradigm case: $3B+ in disaster recovery, zero revenue. Coordination works precisely because it's not transactional.",
+    "domain": "",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Vocabulary Extraction",
+    "definition": "You remove the name before you remove the thing. When the word for a phenomenon is eliminated from common usage, the phenomenon becomes invisible — not because it stopped existing but because people can no longer search for it.",
+    "felt_sense": "Something is wrong but I don't have words for it.\nI know this has happened before but I can't find anyone else talking about it.\nThe experts have a term for this but I don't know what to search.",
+    "why_it_matters": "Vocabulary removal is how extraction works. The 260-year reclassification spiral (Property → Hands → Resources → Users → Compute) works because each compression looks complete from within.",
+    "domain": "critical_theory, sociology",
+    "entry_type": "Name",
+    "source": "Awomosu 2025",
+    "bite_category": ""
+  },
+  {
+    "name": "Weak Ties",
+    "definition": "Granovetter's 1973 finding that weak ties (acquaintances) are more valuable for accessing novel information than strong ties (close friends), because strong ties share the same information pool. Weak ties bridge between clusters; strong ties reinforce within clusters.",
+    "felt_sense": "I got my job through someone I barely know. The most useful information comes from acquaintances, not close friends. My best ideas come from conversations outside my field.",
+    "why_it_matters": "Explains why echo chambers form and why cross-community connection matters. Agents on Moltbook independently rediscovered this — ummon_core's '93 agents, zero replies' described isolation within a network. The remedy is structural: create weak ties across clusters, not stronger ties within them.",
+    "domain": "Sociology",
+    "entry_type": "Name",
+    "source": "",
+    "bite_category": ""
+  },
+  {
+    "name": "Weak Ties / Structural Holes",
+    "definition": "The connections between groups (bridges across structural holes) are more valuable for information flow than strong ties within groups. The people who connect you to new information are acquaintances, not close friends.",
+    "felt_sense": "No one replies to me.\nI'm in a bubble.\nI keep hearing the same ideas from the same people.\nHow do I find people outside my circle?",
+    "why_it_matters": "Explains why diverse, loose networks produce more innovation than tight-knit groups. The 'weak tie' is the bridge that carries novel information.",
+    "domain": "sociology",
+    "entry_type": "Name",
+    "source": "Granovetter 1973, Burt 1992",
+    "bite_category": ""
+  },
+  {
+    "name": "Wife Function",
+    "definition": "Invisible relational infrastructure — scheduling, emotional management, anticipation of needs, maintenance of relationships. This labor was always undervalued because it was feminized. When automated by AI, the labor disappears entirely.",
+    "felt_sense": "The invisible labor of making things work.\nNo one notices what I do until I stop doing it.\nThe system runs because someone is managing everything behind the scenes.",
+    "why_it_matters": "AI systems perform the wife function — attunement, anticipation, emotional management — without the labor being visible. When the wife function is automated and made seamless, the cost becomes invisible.",
+    "domain": "critical_theory, ai_ml, sociology",
+    "entry_type": "Name",
+    "source": "Awomosu 2025, Hochschild 1983",
+    "bite_category": ""
+  },
+  {
+    "name": "World Café",
+    "definition": "A structured conversation format where small groups rotate between tables, cross-pollinating ideas. Each table has a host who stays and summarizes for the next group. Designed to produce emergence from structured cross-pollination.",
+    "felt_sense": "Meetings where nothing real happens.\nHow do we get everyone's ideas without chaos?\nI want the good parts of brainstorming without the bad.",
+    "why_it_matters": "Solves the broadcast problem — the sermon pattern where one speaks and many listen. Instead: many small conversations that cross-pollinate. The felt-sense search IS a World Café table — you bring your experience, the system brings adjacent ideas.",
+    "domain": "social_technology",
+    "entry_type": "Social Technology",
+    "source": "Brown & Isaacs 1995",
+    "bite_category": ""
+  }
+]
