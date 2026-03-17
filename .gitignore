@@ -9,3 +9,5 @@ node_modules/
 *.crt
 *.log
 logs/
+*.mov
+AdobeStock_*

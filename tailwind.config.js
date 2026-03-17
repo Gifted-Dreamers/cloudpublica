@@ -8,6 +8,7 @@ module.exports = {
     './why/**/*.html',
     './word/**/*.html',
     './tracker/**/*.html',
+    './resources/**/*.html',
     './_partials/**/*.html',
   ],
   theme: {
