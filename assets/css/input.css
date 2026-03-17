@@ -134,6 +134,10 @@
   font-weight: 600;
 }
 
+.content-area figure strong {
+  color: inherit;
+}
+
 .content-area code {
   background-color: #f3f4f6;
   color: #1a3347;
