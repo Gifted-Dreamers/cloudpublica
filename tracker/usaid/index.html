@@ -133,8 +133,10 @@
       </div>
 
       <div id="programs-section" class="hidden">
-        <h3 class="text-white/70 text-xs font-mono uppercase tracking-widest mb-4">FY2024 Top USAID Awards — Programs at Risk</h3>
+        <h3 class="text-white/50 text-xs font-mono uppercase tracking-widest mb-2">What Was Cut</h3>
+        <p class="text-white/30 text-sm mb-4">FY2024 awards (before cuts) vs FY2025 — programs that disappeared from top awards</p>
         <div id="programs-list" class="space-y-2"></div>
+        <a href="https://www.usaspending.gov/agency/agency-for-international-development" target="_blank" rel="noopener" class="text-white/20 hover:text-[#38c1e0] text-xs font-mono mt-3 block transition-colors">Source: USAspending.gov API — Agency 072, top awards by amount</a>
       </div>
     </section>
 
@@ -253,56 +255,76 @@
           document.getElementById('funding-drop').classList.remove('hidden');
         }
 
-        /* Top awards by program — show FY2024 to reveal what was cut */
+        /* Compare FY2024 vs FY2025 programs — show what was cut */
         var awards24 = fd.FY2024 && fd.FY2024.awards;
+        var awards25 = fd.FY2025 && fd.FY2025.awards;
         if (awards24 && awards24.length) {
           document.getElementById('programs-section').classList.remove('hidden');
           var list = document.getElementById('programs-list');
+
+          /* Build lookup of FY2025 programs by name */
+          var fy25lookup = {};
+          if (awards25) {
+            awards25.forEach(function(a) {
+              var prog = a.program || '';
+              if (prog && prog !== 'Unspecified') {
+                if (!fy25lookup[prog]) fy25lookup[prog] = 0;
+                fy25lookup[prog] += a.amount || 0;
+              }
+            });
+          }
+
           awards24.slice(0, 8).forEach(function(a) {
             if (!a.amount) return;
+            var prog = a.program || 'Unspecified';
+            var fy25amount = fy25lookup[prog] || 0;
+            var isCut = fy25amount === 0;
+            var changeText = '';
+            if (isCut) {
+              changeText = 'CUT';
+            } else {
+              var pctChange = ((fy25amount - a.amount) / a.amount * 100).toFixed(0);
+              changeText = pctChange + '%';
+            }
+
             var row = document.createElement('div');
-            row.className = 'data-card p-3 flex justify-between items-center gap-4';
-            var left = document.createElement('div');
-            left.className = 'flex-1 min-w-0';
+            row.className = 'data-card p-3 gap-3';
+            if (isCut) row.style.borderColor = 'rgba(248,113,113,0.2)';
+
+            /* Top line: program name + FY2024 amount */
+            var topLine = document.createElement('div');
+            topLine.className = 'flex justify-between items-center mb-1';
             var nameSpan = document.createElement('div');
-            nameSpan.className = 'text-white/90 text-sm truncate';
-            nameSpan.textContent = a.program || 'Unspecified';
+            nameSpan.className = 'text-white/80 text-sm truncate flex-1';
+            nameSpan.textContent = prog;
+            var amt24 = document.createElement('span');
+            amt24.className = 'text-white font-mono text-sm flex-shrink-0 ml-2';
+            amt24.textContent = fmt(a.amount);
+            topLine.appendChild(nameSpan);
+            topLine.appendChild(amt24);
+
+            /* Bottom line: recipient + status */
+            var botLine = document.createElement('div');
+            botLine.className = 'flex justify-between items-center';
             var recipSpan = document.createElement('div');
-            recipSpan.className = 'text-white/60 text-xs truncate';
+            recipSpan.className = 'text-white/30 text-xs truncate flex-1';
             recipSpan.textContent = a.recipient || '';
-            left.appendChild(nameSpan);
-            left.appendChild(recipSpan);
-            var amtSpan = document.createElement('span');
-            amtSpan.className = 'text-white font-mono text-sm flex-shrink-0';
-            amtSpan.textContent = fmt(a.amount);
-            row.appendChild(left);
-            row.appendChild(amtSpan);
+            var statusSpan = document.createElement('span');
+            if (isCut) {
+              statusSpan.className = 'source-pill bg-red-900/50 text-red-400 flex-shrink-0 ml-2';
+              statusSpan.textContent = 'NOT IN FY2025';
+            } else {
+              var isDown = fy25amount < a.amount;
+              statusSpan.className = 'text-xs font-mono flex-shrink-0 ml-2 ' + (isDown ? 'text-red-400' : 'text-emerald-400');
+              statusSpan.textContent = 'FY25: ' + fmt(fy25amount) + ' (' + changeText + ')';
+            }
+            botLine.appendChild(recipSpan);
+            botLine.appendChild(statusSpan);
+
+            row.appendChild(topLine);
+            row.appendChild(botLine);
             list.appendChild(row);
           });
-        }
-        /* Also show programs_FY data if available (fallback) */
-        if (!awards24) {
-          for (var pk of Object.keys(fd)) {
-            if (pk.startsWith('programs_FY') && fd[pk].programs && fd[pk].programs.length) {
-              document.getElementById('programs-section').classList.remove('hidden');
-              var plist = document.getElementById('programs-list');
-              fd[pk].programs.slice(0, 5).forEach(function(p) {
-                if (!p.obligated) return;
-                var prow = document.createElement('div');
-                prow.className = 'data-card p-3 flex justify-between items-center';
-                var pname = document.createElement('span');
-                pname.className = 'text-white/90 text-sm';
-                pname.textContent = p.name || 'Unspecified';
-                var pamt = document.createElement('span');
-                pamt.className = 'text-white font-mono text-sm';
-                pamt.textContent = fmt(p.obligated);
-                prow.appendChild(pname);
-                prow.appendChild(pamt);
-                plist.appendChild(prow);
-              });
-              break;
-            }
-          }
         }
 
         /* WHO indicators */
