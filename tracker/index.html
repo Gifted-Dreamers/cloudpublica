@@ -17,31 +17,69 @@
 
   <!-- build:nav -->
 
-  <main class="max-w-5xl mx-auto px-4 py-16">
-    <h1 class="text-3xl md:text-4xl font-bold text-[#1a3347] mb-4">Live Trackers</h1>
-    <p class="text-[#5a7a8f] text-lg mb-12 max-w-2xl">Automated data pipelines monitoring the real-world impact of policy decisions. Updated every 6 hours from government APIs, WHO, and open-source intelligence tools.</p>
+  <!-- Hero -->
+  <section class="relative overflow-hidden pt-24 pb-16">
+    <div class="absolute inset-0">
+      <img src="/assets/img/hero-tracker.png" alt="" class="w-full h-full object-cover" loading="eager">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0a0f14]/85 via-[#0a0f14]/70 to-[#0a0f14]/90"></div>
+    </div>
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 50%, rgba(56,193,224,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 30%, rgba(248,113,113,0.06) 0%, transparent 40%);"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-4">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+        </span>
+        <span class="text-red-400 text-xs font-mono uppercase tracking-widest">Live Data</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">Live Trackers</h1>
+      <p class="text-white/60 text-lg md:text-xl max-w-2xl">Automated data pipelines monitoring the real-world impact of policy decisions. Updated every 6 hours from government APIs, WHO, and open-source intelligence.</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="bg-[#1a3347] border-b border-[#233d52]">
+    <div class="max-w-5xl mx-auto px-4 py-2">
+      <ol class="flex items-center space-x-2 text-sm text-white/40">
+        <li><a href="/" class="hover:text-[#38c1e0] transition-colors">Home</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li class="text-white font-medium">Trackers</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 py-12">
 
     <div class="grid md:grid-cols-2 gap-6">
 
       <!-- USAID Tracker -->
-      <a href="/tracker/usaid/" class="block bg-white rounded-xl border border-gray-200 hover:border-[#38c1e0] hover:shadow-lg transition-all p-6 group">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="text-2xl">&#x1F6A8;</span>
-          <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Live</span>
-        </div>
-        <h2 class="text-xl font-bold text-[#1a3347] group-hover:text-[#206795] transition-colors mb-2">USAID Impact Tracker</h2>
-        <p class="text-[#5a7a8f] text-sm leading-relaxed mb-4">14 million projected preventable deaths by 2030. Tracking real USAID funding data from USAspending.gov alongside WHO mortality indicators across 20 priority countries.</p>
-        <div class="flex flex-wrap gap-2 text-xs">
-          <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded">USAspending.gov</span>
-          <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded">WHO GHO</span>
-          <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded">GDELT</span>
-          <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded">The Lancet</span>
+      <a href="/tracker/usaid/" class="block bg-white rounded-xl border border-gray-200 hover:border-red-300 hover:shadow-xl transition-all overflow-hidden group">
+        <div class="h-2 bg-gradient-to-r from-red-500 via-red-400 to-orange-400"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+            </span>
+            <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Live</span>
+          </div>
+          <h2 class="text-xl font-bold text-[#1a3347] group-hover:text-red-700 transition-colors mb-2">USAID Impact Tracker</h2>
+          <p class="text-[#5a7a8f] text-sm leading-relaxed mb-4">14 million projected preventable deaths by 2030. Tracking real USAID funding data from USAspending.gov alongside WHO mortality indicators across 20 priority countries.</p>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded">USAspending.gov</span>
+            <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded">WHO GHO</span>
+            <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded">GDELT</span>
+            <span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded">The Lancet</span>
+          </div>
         </div>
       </a>
 
       <!-- Placeholder for future trackers -->
       <div class="bg-white/50 rounded-xl border border-dashed border-gray-300 p-6 flex flex-col items-center justify-center text-center min-h-[200px]">
-        <p class="text-[#5a7a8f] text-sm">More trackers coming soon</p>
+        <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3">
+          <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </div>
+        <p class="text-[#5a7a8f] text-sm font-medium">More trackers coming soon</p>
         <p class="text-gray-400 text-xs mt-1">ICE enforcement, federal contract spending, AI governance legislation</p>
       </div>
 

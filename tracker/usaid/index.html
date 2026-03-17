@@ -61,24 +61,41 @@
 
   <!-- build:nav -->
 
+  <!-- Breadcrumb -->
+  <nav aria-label="Breadcrumb" class="sticky top-[72px] z-40 bg-[#0d1319] border-b border-white/10">
+    <div class="max-w-5xl mx-auto px-4 py-2">
+      <ol class="flex items-center space-x-2 text-sm text-white/40">
+        <li><a href="/" class="hover:text-[#38c1e0] transition-colors">Home</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li><a href="/tracker/" class="hover:text-[#38c1e0] transition-colors">Trackers</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li class="text-white/70 font-medium">USAID Impact</li>
+      </ol>
+    </div>
+  </nav>
+
   <main>
     <!-- HERO / COUNTER SECTION -->
-    <section class="min-h-[70vh] flex flex-col items-center justify-center px-4 py-16">
-      <div id="live-time" class="text-white/40 font-mono text-sm mb-8 tracking-widest"></div>
+    <section class="relative min-h-[70vh] flex flex-col items-center justify-center px-4 py-16">
+      <div class="absolute inset-0">
+        <img src="/assets/img/hero-usaid.png" alt="" class="w-full h-full object-cover opacity-30" loading="eager">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0a0f14]/60 via-transparent to-[#0a0f14]/90"></div>
+      </div>
+      <div id="live-time" class="relative z-10 text-white/40 font-mono text-sm mb-8 tracking-widest"></div>
 
-      <div class="text-center mb-6">
+      <div class="relative z-10 text-center mb-6">
         <div id="death-counter" class="font-mono font-bold text-[clamp(3rem,12vw,8rem)] leading-none tracking-tight"></div>
         <div class="progress-track w-full max-w-lg mx-auto mt-4">
           <div id="progress-bar" class="progress-fill" style="width: 0%"></div>
         </div>
       </div>
 
-      <p class="text-white/60 text-lg md:text-xl font-light max-w-2xl text-center mt-4">
+      <p class="relative z-10 text-white/60 text-lg md:text-xl font-light max-w-2xl text-center mt-4">
         Projected preventable deaths from <span class="text-red-400 font-medium">USAID defunding</span>
       </p>
-      <p class="text-white/30 text-sm mt-2 font-mono">14,000,000 by January 1, 2030</p>
+      <p class="relative z-10 text-white/30 text-sm mt-2 font-mono">14,000,000 by January 1, 2030</p>
 
-      <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)01186-9/fulltext" target="_blank" rel="noopener" class="mt-6 text-white/40 hover:text-[#38c1e0] text-xs font-mono transition-colors">
+      <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)01186-9/fulltext" target="_blank" rel="noopener" class="relative z-10 mt-6 text-white/40 hover:text-[#38c1e0] text-xs font-mono transition-colors">
         Source: Cavalcanti et al., The Lancet, 2025
       </a>
     </section>
