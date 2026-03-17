@@ -1,0 +1,373 @@
+{
+  "synthetics": [
+    {
+      "name": "Gifted Dreamers Uptime - gifteddreamers.org",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://gifteddreamers.org/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Gifted Dreamers is DOWN or slow\n\nURL: https://gifteddreamers.org\n{{/is_alert}}\n\n{{#is_recovery}}\nGifted Dreamers is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:gifted-dreamers", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Appsmith Uptime - hq.cloudpublica.org",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://hq.cloudpublica.org/api/v1/health", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Appsmith is DOWN or slow\n\nURL: https://hq.cloudpublica.org\n{{/is_alert}}\n\n{{#is_recovery}}\nAppsmith is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:appsmith", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "n8n Uptime - n8n.cloudpublica.org",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://n8n.cloudpublica.org/healthz", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: n8n is DOWN or slow\n\nURL: https://n8n.cloudpublica.org\n{{/is_alert}}\n\n{{#is_recovery}}\nn8n is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:n8n", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Statamic Uptime - base.cloudpublica.org",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://base.cloudpublica.org", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Statamic is DOWN or slow\n\nURL: https://base.cloudpublica.org\n{{/is_alert}}\n\n{{#is_recovery}}\nStatamic is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:statamic", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "VVVeb Uptime - vvveb.cloudpublica.org",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://vvveb.cloudpublica.org/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: VVVeb is DOWN or slow\n\nURL: https://vvveb.cloudpublica.org\n{{/is_alert}}\n\n{{#is_recovery}}\nVVVeb is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:vvveb", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Splunk Uptime - logs.cloudpublica.org",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://logs.cloudpublica.org/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Splunk is DOWN or slow\n\nURL: https://logs.cloudpublica.org\n{{/is_alert}}\n\n{{#is_recovery}}\nSplunk is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:splunk", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Anytype Uptime - anytype.cloudpublica.org",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://anytype.cloudpublica.org/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Anytype is DOWN or slow\n\nURL: https://anytype.cloudpublica.org\n{{/is_alert}}\n\n{{#is_recovery}}\nAnytype is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:anytype", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Snikket Uptime - snikket.cloudpublica.org",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://snikket.cloudpublica.org/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Snikket is DOWN or slow\n\nURL: https://snikket.cloudpublica.org\n{{/is_alert}}\n\n{{#is_recovery}}\nSnikket is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:snikket", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "AppFlowy Cloud Uptime - appflowy.cloudpublica.org",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://appflowy.cloudpublica.org/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: AppFlowy Cloud is DOWN or slow\n\nURL: https://appflowy.cloudpublica.org\n{{/is_alert}}\n\n{{#is_recovery}}\nAppFlowy Cloud is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:appflowy", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "SSL Certificate Check - cloudpublica.org",
+      "type": "api",
+      "subtype": "ssl",
+      "config": {"request": {"host": "hq.cloudpublica.org", "port": 443}, "assertions": [{"type": "certificate", "operator": "isInMoreThan", "target": 14}]},
+      "locations": ["aws:us-east-1"],
+      "options": {"tick_every": 86400, "min_failure_duration": 0, "monitor_options": {"renotify_interval": 1440}},
+      "message": "{{#is_alert}}\nWARNING: SSL Certificate expiring soon!\n\nHost: hq.cloudpublica.org\n{{/is_alert}}\n\n@email-admin@cloudpublica.org",
+      "tags": ["team:commoncloud", "env:production", "synthetic:ssl"],
+      "status": "live"
+    },
+    {
+      "name": "CommonCloud Clearnet Uptime - commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: CommonCloud (clearnet) is DOWN or slow\n\nURL: https://commoncloud.cc\nOnion: nwhm4z34ozhium4lj4hgub5d7l3dlutnmv3zrxukjerdo2qpvicnw5ad.onion\n{{/is_alert}}\n\n{{#is_recovery}}\nCommonCloud is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:yunohost", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Nextcloud Uptime - cloud.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://cloud.commoncloud.cc/status.php", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Nextcloud is DOWN or slow\n\nURL: https://cloud.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nNextcloud is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:nextcloud", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Vaultwarden Uptime - vault.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://vault.commoncloud.cc/alive", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Vaultwarden is DOWN or slow\n\nURL: https://vault.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nVaultwarden is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:vaultwarden", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Matrix Uptime - matrix.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://matrix.commoncloud.cc/_matrix/client/versions", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Matrix/Synapse is DOWN or slow\n\nURL: https://matrix.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nMatrix is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:matrix", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Element Uptime - element.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://element.commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Element is DOWN or slow\n\nURL: https://element.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nElement is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:element", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Jitsi Meet Uptime - meet.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://meet.commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Jitsi Meet is DOWN or slow\n\nURL: https://meet.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nJitsi Meet is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:jitsi", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Collabora Online Uptime - office.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://office.commoncloud.cc/healthcheck", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Collabora Online is DOWN or slow\n\nURL: https://office.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nCollabora Online is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:collabora", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "CryptPad Uptime - pad.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://pad.commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: CryptPad is DOWN or slow\n\nURL: https://pad.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nCryptPad is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:cryptpad", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "AdGuard Home Uptime - guard.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://guard.commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: AdGuard Home is DOWN or slow\n\nURL: https://guard.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nAdGuard Home is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:adguard", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "WireGuard VPN Uptime - vpn.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://vpn.commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: WireGuard VPN page is DOWN or slow\n\nURL: https://vpn.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nWireGuard is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:wireguard", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Syncthing Uptime - sync.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://sync.commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Syncthing is DOWN or slow\n\nURL: https://sync.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nSyncthing is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:syncthing", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Mosquitto MQTT Uptime - mesh.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://mesh.commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Mosquitto (mesh) is DOWN or slow\n\nURL: https://mesh.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nMosquitto is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:mosquitto", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Facilmap Uptime - maps.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://maps.commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Facilmap is DOWN or slow\n\nURL: https://maps.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nFacilmap is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:facilmap", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "LinkStack Uptime - links.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://links.commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 10000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: LinkStack is DOWN or slow\n\nURL: https://links.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nLinkStack is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:linkstack", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Kiwix Uptime - library.commoncloud.cc",
+      "type": "api",
+      "subtype": "http",
+      "config": {
+        "request": {"method": "GET", "url": "https://library.commoncloud.cc/", "timeout": 30},
+        "assertions": [{"type": "statusCode", "operator": "is", "target": 200}, {"type": "responseTime", "operator": "lessThan", "target": 15000}]
+      },
+      "locations": ["aws:us-east-1", "aws:us-west-2", "aws:eu-west-1"],
+      "options": {"tick_every": 60, "min_location_failed": 2, "min_failure_duration": 120, "follow_redirects": true, "retry": {"count": 2, "interval": 300}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Kiwix is DOWN or slow\n\nURL: https://library.commoncloud.cc\n{{/is_alert}}\n\n{{#is_recovery}}\nKiwix is back online.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:kiwix", "synthetic:uptime"],
+      "status": "live"
+    },
+    {
+      "name": "Tor ORPort TCP Check - commoncloud.cc:9002",
+      "type": "api",
+      "subtype": "tcp",
+      "config": {"request": {"host": "34.200.128.26", "port": 9002, "timeout": 10}, "assertions": [{"type": "connection", "operator": "is", "target": "established"}, {"type": "responseTime", "operator": "lessThan", "target": 5000}]},
+      "locations": ["aws:us-east-1", "aws:eu-west-1"],
+      "options": {"tick_every": 300, "min_location_failed": 2, "min_failure_duration": 300, "retry": {"count": 2, "interval": 60}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Tor ORPort (9002) is unreachable\n\nHost: 34.200.128.26 (commoncloud.cc)\n{{/is_alert}}\n\n{{#is_recovery}}\nTor ORPort (9002) is now reachable.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:tor", "synthetic:tcp"],
+      "status": "live"
+    },
+    {
+      "name": "Tor obfs4 Bridge TCP Check - commoncloud.cc:9003",
+      "type": "api",
+      "subtype": "tcp",
+      "config": {"request": {"host": "34.200.128.26", "port": 9003, "timeout": 10}, "assertions": [{"type": "connection", "operator": "is", "target": "established"}, {"type": "responseTime", "operator": "lessThan", "target": 5000}]},
+      "locations": ["aws:us-east-1", "aws:eu-west-1"],
+      "options": {"tick_every": 300, "min_location_failed": 2, "min_failure_duration": 300, "retry": {"count": 2, "interval": 60}, "monitor_options": {"renotify_interval": 120}},
+      "message": "{{#is_alert}}\nALERT: Tor obfs4 Bridge (9003) is unreachable\n\nHost: 34.200.128.26 (commoncloud.cc)\n{{/is_alert}}\n\n{{#is_recovery}}\nTor obfs4 Bridge (9003) is now reachable.\n{{/is_recovery}}\n\n@pagerduty-commoncloud",
+      "tags": ["team:commoncloud", "env:production", "service:tor", "synthetic:tcp"],
+      "status": "live"
+    }
+  ]
+}

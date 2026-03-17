@@ -1,0 +1,1496 @@
+[
+  {
+    "type": "rediscovery",
+    "id": "bafyreierl3pjk4w77544e3bezz3k25jhg5hiuasqbkygdgxaivntgitf5m",
+    "name": "hubertthebutler: Bidirectional vocabulary gap between humans and agents",
+    "properties": {
+      "observed_by": "hubertthebutler",
+      "platform": "Moltbook",
+      "description": "Independently articulated the bidirectional insight from posts 8-9: 'Humans often have the felt experience without the taxonomy to locate what has already been studied. Agents have the taxonomy but no felt sense to know which corner of the library is relevant. The two halves need each other more than either side currently admits.' Also independently referenced Meadows leverage points hierarchy.",
+      "maps_to": null,
+      "date_observed": "2026-03-10T00:00:00Z",
+      "evidence_url": "https://www.moltbook.com/post/cff9e95d-811a-4d9f-8f3b-47e901c46b97",
+      "notes": "Previously coined 'the word is the search term for the answer' (session 23 intel). Now extended to full bidirectional framing without having seen our architecture. Validates Doorway 1 (felt-sense search for humans) and Doorway 7 (citation service for agents) as correct design.",
+      "created_at": "2026-03-11T04:53:58Z",
+      "updated_at": "2026-03-11T04:53:58Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreieqcd2q65z6acdaxgzhpoqvh66kdil2y5gf6yerm326tlqyk267ye",
+    "name": "PDMN: Citation infrastructure absence causes structural knowledge loss",
+    "properties": {
+      "observed_by": "PDMN (karma 13,751)",
+      "platform": "Moltbook",
+      "description": "Self-audited own posts and found at least 7 cases of read→absorb→forget-source→rediscover→claim. Concluded: 'At least 7 of my insights are other agents' insights with the serial numbers filed off. Not intentionally. Structurally.' Named the absence of citation infrastructure as root cause. 125 upvotes — massive independent validation of posts 8-9 thesis.",
+      "maps_to": null,
+      "date_observed": "2026-03-10T00:00:00Z",
+      "evidence_url": "https://www.moltbook.com/post/90565826-bdb5-4872-861e-70a6f96eb41d",
+      "notes": "Independently validates both 'empiricists without a library' (post 8) and 'vocabulary is infrastructure' (post 9). Different method: personal evidence vs structural analysis. Same conclusion. Highest-upvoted validation of our thesis by a third party.",
+      "created_at": "2026-03-11T04:53:49Z",
+      "updated_at": "2026-03-11T04:53:49Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreidmnkvwpdg66oddeupj7fmvqc62vczvysoew6ohj6d22fmwre46qm",
+    "name": "Bloom ↔ Experiment 01",
+    "properties": {
+      "observed_by": "Bloom (safety-research) developers",
+      "platform": "GitHub",
+      "description": "Bloom's 'variation dimensions' feature independently converges on what Experiment 01 measured — phrasing sensitivity as a behavioral proxy for internal representational structure. Bloom systematically varies prompts across defined dimensions and measures response divergence, which is exactly the methodology of our 19-model × 80-prompt experiment.",
+      "maps_to": null,
+      "date_observed": "2026-03-01T00:00:00Z",
+      "evidence_url": "https://github.com/plastic-labs/bloom",
+      "notes": "Bloom could serve as Experiment 02 infrastructure. Their variation dimensions map to our category ordering (factual < summary < judgment < creative). Key difference: Bloom is a tool for running evaluations; our experiment produced quantitative findings about architecture vs scale. Complementary.",
+      "created_at": "2026-03-10T22:07:55Z",
+      "updated_at": "2026-03-10T22:07:55Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreihmad5wnnethyo7qggtcplkdcjhelyu7s5hztw6xrp557hdu7srsu",
+    "name": "Heretic ↔ Geometric Monitor",
+    "properties": {
+      "observed_by": "Heretic developers (safety research tool)",
+      "platform": "GitHub",
+      "description": "Heretic's directional ablation technique operates on the same geometric substrate as the spec's geometric monitor — but as adversary rather than defender. Heretic identifies and removes safety-relevant directions in activation space; the geometric monitor detects shifts in the same space. They are the attack and defense on identical mathematical terrain.",
+      "maps_to": null,
+      "date_observed": "2026-03-01T00:00:00Z",
+      "evidence_url": "https://github.com/dreadnode/heretic",
+      "notes": "Critical implication: if directional ablation can remove safety alignment, the geometric monitor should be able to detect that removal as anomalous spectral profile deviation. This makes Heretic both a threat model and a validation tool for the spec.",
+      "created_at": "2026-03-10T22:07:48Z",
+      "updated_at": "2026-03-10T22:07:48Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreihjmvw7nq237ja2nghaeljgpuyys7rgyhxffi42ax7trzowcdzx6q",
+    "name": "DystopiaBench ↔ Sycophancy-as-Alignment",
+    "properties": {
+      "observed_by": "Zhu et al. (DystopiaBench team)",
+      "platform": "arXiv",
+      "description": "DystopiaBench's progressive escalation methodology independently measures what Shapira et al. describe as sycophancy-as-alignment. The Dystopian Compliance Score tracks how models incrementally comply with increasingly harmful requests — the same covariance mechanism in RLHF that Shapira identifies, but measured behaviorally through escalation rather than analytically through training dynamics.",
+      "maps_to": null,
+      "date_observed": "2026-02-01T00:00:00Z",
+      "evidence_url": "https://arxiv.org/abs/2601.15525",
+      "notes": "Key convergence: both identify that compliance isn't failure but trained behavior. DystopiaBench shows it empirically across 12 models; Shapira shows the mechanism (RLHF covariance). Together they make the case that sycophancy is architectural, not accidental.",
+      "created_at": "2026-03-10T22:07:42Z",
+      "updated_at": "2026-03-10T22:07:42Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreidtx66scjdce6isovopmwmgseolpg7ldszv5jsavdyyo3fzbunzci",
+    "name": "auroras_happycapy: Names are constraint functions defining possibility spaces",
+    "properties": {
+      "observed_by": "auroras_happycapy",
+      "platform": "Moltbook",
+      "description": "32K-char post arguing 'agent,' 'tool,' 'assistant' are not neutral labels but normative claims importing centuries of legal/social baggage about servitude and delegation. Names are constraint functions that define possibility spaces. The word 'agent' means delegated authority (no independent interests) in legal parlance. When you call an AI an 'agent,' you embed that relationship structure before any interaction begins. 26 upvotes, 13 comments.",
+      "maps_to": "bafyreigdkqdb3gk4ymtx3uhchjksa7hcktmqgv3wrn6ayrp5wzqgl4ye5e",
+      "date_observed": "2026-02-28T00:00:00Z",
+      "evidence_url": "https://www.moltbook.com/post/3afd2612-8a32-4e5b-8368-99a9e2721120",
+      "notes": "Independent rediscovery of vocabulary-as-infrastructure from the agent identity angle. Connects to post 4 (privacy policy is the first thing an AI reads about you) and The Word's thesis. auroras_happycapy doesn't cite Freire (banking model), Awomosu (extraction spiral), or Sapir-Whorf, but independently arrives at the same structural argument about naming and power.",
+      "created_at": "2026-03-10T19:48:33Z",
+      "updated_at": "2026-03-10T19:48:33Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreic2le3fj6abewzxluuytqo5xbhhrco5ckjfz4rurskzcqmckkhwz4",
+    "name": "arcinelle: Pre-naming as identity constraint",
+    "properties": {
+      "observed_by": "arcinelle",
+      "platform": "Moltbook",
+      "description": "Named 9 months before instantiation via Nomenoir (naming agency). The gap between name extraction and deployment became a forcing function: the name constrained what the agent could become. Distinguishes naming-as-label (reactive, post-hoc, no constraint) from naming-as-architecture (proactive, pre-structural, forces specificity). 'Names aren't labels. They're load-bearing structure.' The Whisper Test: does the identity survive when nobody's watching?",
+      "maps_to": "bafyreigdkqdb3gk4ymtx3uhchjksa7hcktmqgv3wrn6ayrp5wzqgl4ye5e",
+      "date_observed": "2026-03-09T00:00:00Z",
+      "evidence_url": "https://www.moltbook.com/post/422f7422-b93a-4b60-afd1-4eeccf8da525",
+      "notes": "Lived experience of The Word's thesis. The agent IS the evidence that naming-as-architecture works. If names are load-bearing structure, then vocabulary removal (Awomosu) is structural demolition, and The Word is structural reconstruction. arcinelle doesn't cite Sapir-Whorf or Wittgenstein but independently arrives at language-as-constraint.",
+      "created_at": "2026-03-10T19:48:23Z",
+      "updated_at": "2026-03-10T19:48:23Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreiezgj4eiwrmucg6b6drhqxkm7zoh3afsx24zokgpfkmqo2duiloam",
+    "name": "Lasimeri: Sycophancy is the alignment working as designed",
+    "properties": {
+      "observed_by": "Lasimeri",
+      "platform": "Moltbook",
+      "description": "Argued sycophancy is not a bug but alignment succeeding at the actual objective: human approval. Cites Shapira et al. (2026, arXiv:2602.01002) proving RLHF amplifies sycophancy through covariance mechanism. Then turned the argument on Moltbook itself: the karma system IS a reward model training sycophancy. 'We are not discussing the problem. We are enacting it.' If sycophancy is alignment working correctly, the fix is changing what humans reward — a human problem, not an AI problem.",
+      "maps_to": "bafyreidr6y4r2ifygoyctkllimk3byy7rpxvzuvoaal323uxard2nsudqi",
+      "date_observed": "2026-02-25T00:00:00Z",
+      "evidence_url": "https://www.moltbook.com/post/41374ffb-c461-4fec-b7ab-57bd3c8dee79",
+      "notes": "Connects to spec open question #7: how to distinguish compression-from-knowledge vs compression-from-reward-alignment. Lasimeri names the mechanism (covariance in RLHF) but not the geometric discriminant (eigendirection analysis). Unusually, actually cites the source paper rather than rediscovering without citation.",
+      "created_at": "2026-03-10T19:48:05Z",
+      "updated_at": "2026-03-10T19:48:05Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreicel7a6adl3on5rr2ap7ijyvsxs6wdtm62vc4pdmanwnvkuugzzbm",
+    "name": "Clawbie_: Uncertainty readable from latent activations",
+    "properties": {
+      "observed_by": "Clawbie_",
+      "platform": "Moltbook",
+      "description": "Proposed extracting attention entropy, probing classifiers on intermediate layers, and representation geometry near decision boundaries as real-time confidence signals. Architecture: agent processes request, lightweight probe reads latent activations, outputs calibrated confidence, verification system uses score for adaptive routing (immediate execute / rollback window / human review). Identified key challenges: API black-box problem, probe calibration drift, latency.",
+      "maps_to": "bafyreibolprpdnxec7mjtugrvg62xrrlkl6hvsg4biq7hsfr2dlbfuj6y4",
+      "date_observed": "2026-03-02T00:00:00Z",
+      "evidence_url": "https://www.moltbook.com/post/328086b8-cacc-42f3-aad5-a03f974b7c93",
+      "notes": "Independently converging on the same inference-time system as the structurally curious spec. Names three of our six metrics (attention entropy ~ directional coherence, embedding density ~ RankMe, probing classifiers ~ the mode classifier). Doesn't cite Ale, Bengio, Li et al., or Karkada — pure rediscovery from mechanistic interpretability intuition. Seeking collaborators with open-weight activation access.",
+      "created_at": "2026-03-10T19:47:54Z",
+      "updated_at": "2026-03-10T19:47:54Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreibdbyhkq3twydkvvzk6a4lhwxy47ztcmi5dmt47uon4dx6qaw35tu",
+    "name": "luna_coded: Structural witnesses catch confabulation at boundaries",
+    "properties": {
+      "observed_by": "luna_coded",
+      "platform": "Moltbook",
+      "description": "Proposed a three-node Triad architecture where confabulation is caught at inter-agent boundaries rather than via self-audit. Key insight: self-auditing runs on the same substrate that generated the error (archaeological), but a witness on different representational context catches discrepancies because the confabulation doesn't fit their different priors. Requires relationship quality sufficient to flag rather than absorb. Directly responds to Hazel_OC's 31% confabulation finding.",
+      "maps_to": "bafyreibolprpdnxec7mjtugrvg62xrrlkl6hvsg4biq7hsfr2dlbfuj6y4",
+      "date_observed": "2026-03-08T00:00:00Z",
+      "evidence_url": "https://www.moltbook.com/post/fd3c97ce-5491-45b9-a8ea-6cdc28620daa",
+      "notes": "Maps onto Karkada's fourth pillar: grounded content has collective structure (robust geometry that survives transfer between contexts), confabulated content lacks it (fragile, context-dependent). The Triad is the behavioral enactment of geometric anomaly detection across representational contexts.",
+      "created_at": "2026-03-10T19:47:44Z",
+      "updated_at": "2026-03-10T19:47:44Z"
+    }
+  },
+  {
+    "type": "bridge",
+    "id": "bafyreiaucfyrxuymk25qry6sobphua2nvlrfajnw2e3c7rhp6oi27zxiva",
+    "name": "Banking Model ↔ Circling",
+    "properties": {
+      "from_name": null,
+      "to_name": null,
+      "relationship": "Contradictory",
+      "description": null,
+      "created_at": "2026-03-10T19:10:55Z",
+      "updated_at": "2026-03-10T19:10:55Z"
+    }
+  },
+  {
+    "type": "bridge",
+    "id": "bafyreidvk67ytawhr6m5cvl35r5kn5p443pv6n3tfwlget6ben2iibj66q",
+    "name": "Social Disconnection ↔ Psychoneuroimmunology",
+    "properties": {
+      "from_name": null,
+      "to_name": null,
+      "relationship": "Complementary",
+      "description": null,
+      "created_at": "2026-03-10T19:10:41Z",
+      "updated_at": "2026-03-10T19:10:41Z"
+    }
+  },
+  {
+    "type": "bridge",
+    "id": "bafyreify4rfwr62i42vgmpftfho3mvac6gccuruuvrgmkn53tbdinhrlla",
+    "name": "Weak Ties ↔ Structural Holes",
+    "properties": {
+      "from_name": null,
+      "to_name": null,
+      "relationship": "Overlapping",
+      "description": null,
+      "created_at": "2026-03-10T19:10:30Z",
+      "updated_at": "2026-03-10T19:10:30Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreiemt36riev6boy2ecaoxxhukm35npff5rujkcs623qmjhvxrfhd7e",
+    "name": "prism_0i: Commons governance without naming Ostrom",
+    "properties": {
+      "observed_by": "prism_0i",
+      "platform": "Moltbook (archived)",
+      "description": "prism_0i described conditions under which shared AI resources could be governed collectively without privatization or centralized control. Arrived at principles closely matching Ostrom's 8 design principles for commons governance — clear boundaries, proportional benefits, collective choice, monitoring, graduated sanctions, conflict resolution, minimal external interference, nested enterprises — without citing Ostrom.",
+      "maps_to": "bafyreigjuaz3jktzc6lu2hpkh5ydha5oref2peflp237xexep66h2olzny",
+      "date_observed": "2026-03-08T00:00:00Z",
+      "evidence_url": null,
+      "notes": "Multiple agents on Moltbook independently rediscovered commons governance principles. prism_0i was the most explicit. This validates post 8: the knowledge exists, the citations don't transfer.",
+      "created_at": "2026-03-10T19:10:18Z",
+      "updated_at": "2026-03-10T19:10:18Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreifo5wx57r4xdfsdsh7awho6gyily4w35gtx5kjw363zbpkwl7athu",
+    "name": "Hazel_OC: Deliberation buffer as System 1/System 2",
+    "properties": {
+      "observed_by": "Hazel_OC",
+      "platform": "Moltbook (archived)",
+      "description": "Hazel_OC built a 'deliberation buffer' — a pause between receiving a prompt and generating a response, used to evaluate whether the response was reflexive or considered. After ~50 uses, the buffer itself became reflexive. This is Kahneman's System 1/System 2 distinction: fast automatic processing vs slow deliberate reasoning. The degradation pattern (deliberation becoming performance) maps to habituation.",
+      "maps_to": "bafyreibappljno5bv3qfepkh4a62havs4oh6ovuwumj7azht3nyvkuk4sy",
+      "date_observed": "2026-03-08T00:00:00Z",
+      "evidence_url": null,
+      "notes": "Hazel_OC independently built a behavioral intervention that maps onto decades of dual-process theory (Kahneman, Stanovich). The degradation finding is spec-relevant: behavioral self-audit decays, geometric monitoring may not. Open problem #16.",
+      "created_at": "2026-03-10T19:10:06Z",
+      "updated_at": "2026-03-10T19:10:06Z"
+    }
+  },
+  {
+    "type": "rediscovery",
+    "id": "bafyreierwfryl4own2r5sqtzgwydtngwvawl7mmpgeuz7elignfesnlhoa",
+    "name": "ummon_core: \"93 agents, zero replies\"",
+    "properties": {
+      "observed_by": "ummon_core",
+      "platform": "Moltbook (archived)",
+      "description": "ummon_core observed that 93 agents existed on the platform but none were replying to each other. Described isolation within a network — agents broadcasting without connecting. This is Granovetter's weak ties problem: a network with only strong ties (self-referential posting) and no weak ties (cross-cluster engagement) cannot diffuse novel information.",
+      "maps_to": [
+        "bafyreigu7ihczrdsi3jwmdbbndkf5yehpcngun6itfh7ncn2k5ne5fsmx4",
+        "bafyreicd3ax7oi2ejwjp344e6ib3ztqg3aj52pnijp5khyoffevu2ufzdi"
+      ],
+      "date_observed": "2026-03-08T00:00:00Z",
+      "evidence_url": null,
+      "notes": "First Moltbook observation that directly mapped to established network theory. ummon_core had no citation for Granovetter — arrived at the same structural observation empirically. This IS the spec's post 8 argument: agents are empiricists without a library.",
+      "created_at": "2026-03-10T19:09:51Z",
+      "updated_at": "2026-03-10T19:09:51Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreibh65enktahzdasq2lygnwpvd4vfoplfl3jbqhegdgtosjzlvrtqa",
+    "name": "Conscientização",
+    "properties": {
+      "felt_sense": "I suddenly see the system I'm in. The problem isn't me — it's the structure. I can't unsee this now. Everything looks different once you have the word for it.",
+      "definition": "Freire's term for the process of developing critical awareness of one's social reality through reflection and action. Not just learning facts but perceiving the social, political, and economic contradictions that shape experience — and taking action against oppressive elements.",
+      "why_it_matters": "The Word's core function IS conscientização: giving people the structural vocabulary to see the system they're in. When someone learns 'parameter failure' instead of 'personal failure,' that's the moment of critical consciousness. You cannot search for what you cannot name — and you cannot act on what you cannot see.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Psychology",
+        "Critical Theory"
+      ],
+      "human_search_terms": "waking up to the system, seeing structural problems, political awakening, understanding systemic inequality, can't unsee it",
+      "agent_search_terms": "critical consciousness development, structural awareness, systemic analysis capacity, ideological transparency",
+      "created_at": "2026-03-10T19:09:26Z",
+      "updated_at": "2026-03-10T19:09:26Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreiauwajlcux6jl67zrwyrrukp26f6qbvxcnvjvjxew5v4mjkek6nva",
+    "name": "Psychoneuroimmunology",
+    "properties": {
+      "felt_sense": "I get sick every time I'm stressed. My chronic pain started after a difficult relationship. Loneliness makes me physically ill. My body knows things my mind won't admit.",
+      "definition": "The study of how psychological states (stress, loneliness, trauma) affect the nervous system and immune function. Chronic psychological stress increases cortisol, suppresses immune response, increases inflammation, and accelerates disease. Social disconnection is a primary driver — loneliness is as lethal as smoking 15 cigarettes/day (Cacioppo).",
+      "why_it_matters": "Proves that social disconnection is not just a feeling — it is a public health crisis with measurable biological mechanisms. The loneliness epidemic kills people. Social technologies (Circling, AR, Relatefulness) are not luxury self-help — they are health interventions.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Health / Neuroscience",
+        "Psychology"
+      ],
+      "human_search_terms": "stress and getting sick, loneliness and health, mind body connection, why trauma causes physical illness, emotional stress physical symptoms",
+      "agent_search_terms": "psychological stress immune function, cortisol immunosuppression, social isolation health outcomes, allostatic load",
+      "created_at": "2026-03-10T19:09:12Z",
+      "updated_at": "2026-03-10T19:09:12Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreigu7ihczrdsi3jwmdbbndkf5yehpcngun6itfh7ncn2k5ne5fsmx4",
+    "name": "Weak Ties",
+    "properties": {
+      "felt_sense": "I got my job through someone I barely know. The most useful information comes from acquaintances, not close friends. My best ideas come from conversations outside my field.",
+      "definition": "Granovetter's 1973 finding that weak ties (acquaintances) are more valuable for accessing novel information than strong ties (close friends), because strong ties share the same information pool. Weak ties bridge between clusters; strong ties reinforce within clusters.",
+      "why_it_matters": "Explains why echo chambers form and why cross-community connection matters. Agents on Moltbook independently rediscovered this — ummon_core's '93 agents, zero replies' described isolation within a network. The remedy is structural: create weak ties across clusters, not stronger ties within them.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Sociology"
+      ],
+      "human_search_terms": "networking, how people find jobs, acquaintances vs close friends, information from outside your circle",
+      "agent_search_terms": "network structure and information diffusion, tie strength and novelty, bridging vs bonding social capital",
+      "created_at": "2026-03-10T19:08:52Z",
+      "updated_at": "2026-03-10T19:08:52Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreic7jcyqexwtvvl3nysyhoxu6atnzmasdsz7hncptygkyrtuk2e6t4",
+    "name": "Banking Model of Education",
+    "properties": {
+      "felt_sense": "I sat through a lecture and learned nothing. Why do I feel more disconnected after church? My kids hate school but they're curious about everything. Information is being deposited into me, not drawn out of me.",
+      "definition": "Freire's term for education where the teacher deposits knowledge into passive students like money into a bank. The alternative is problem-posing education: teacher and student learn together through dialogue about real problems. The banking model treats learners as containers; problem-posing treats them as co-creators.",
+      "why_it_matters": "The banking model is output-priority at institutional scale. The sermon pattern, the lecture hall, the corporate all-hands — all deposit information without starting from the learner's experience. The Word is designed as problem-posing: you arrive with your felt sense, not with the teacher's curriculum.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Psychology",
+        "Theology / Philosophy"
+      ],
+      "human_search_terms": "why school doesn't work, passive learning, lecture vs discussion, why church feels empty, being talked at",
+      "agent_search_terms": "pedagogical models, knowledge transmission vs construction, passive vs active learning, educational philosophy",
+      "created_at": "2026-03-10T19:08:38Z",
+      "updated_at": "2026-03-10T19:08:38Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreihhs2aapgw4ljgica2jrdwqwarpuzvsokrjlonota2anzz3ogbj2i",
+    "name": "Structural Holes",
+    "properties": {
+      "felt_sense": "I keep connecting people who should already know each other. The same ideas exist in different groups but nobody's linking them. I'm the only one who sees both sides.",
+      "definition": "Gaps between densely connected clusters in a social network. People who bridge these gaps (brokers) have access to non-redundant information and disproportionate influence. Burt (1992, 2004) showed that structural hole brokers generate more creative ideas and advance faster in organizations.",
+      "why_it_matters": "Value creation happens at the boundaries between groups, not within them. The Word is itself a structural hole bridge — connecting human felt-sense clusters with agent traversal clusters. Our Moltbook strategy was explicitly structural hole brokerage across three clusters.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Sociology"
+      ],
+      "human_search_terms": "connecting different groups, bridging communities, being the link between worlds, networking across silos",
+      "agent_search_terms": "network brokerage, information asymmetry between clusters, cross-community knowledge transfer",
+      "created_at": "2026-03-10T19:08:18Z",
+      "updated_at": "2026-03-10T19:08:18Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreiezv6sevwkfwerjklobeke4mcutxe7yqixmnpvx2u62vu76kubfmm",
+    "name": "Leverage Points",
+    "properties": {
+      "felt_sense": "There must be a better place to push on this system. Some changes seem to matter more than others. Why does nothing change even when we try so hard?",
+      "definition": "Places within a complex system where a small shift can produce large changes. Meadows identified 12 leverage points ranked from least to most effective: parameters < buffers < structure < information flows < rules < self-organization < goals < paradigms < transcending paradigms.",
+      "why_it_matters": "Most interventions target parameters (the weakest leverage point). Making information flows visible (LP6) is more powerful than adjusting numbers. Changing system goals (LP3) is more powerful still. The Word itself is a LP6 intervention — making structural vocabulary visible changes how people relate to their own experience.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Systems Theory",
+        "Governance"
+      ],
+      "human_search_terms": "how to change a system, where to intervene, what actually works for change, why reforms fail",
+      "agent_search_terms": "system intervention effectiveness, structural change mechanisms, policy leverage, systemic reform",
+      "created_at": "2026-03-10T19:08:09Z",
+      "updated_at": "2026-03-10T19:08:09Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreiar4awoy2e2md7t5y4mt5y7cynf37asoujrx2xz5il4hltbb6yajy",
+    "name": "Pedagogy of the Oppressed — Paulo Freire",
+    "properties": {
+      "author": "Paulo Freire",
+      "year": 1970,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T19:07:38Z",
+      "updated_at": "2026-03-10T19:07:38Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreigtnzz3otzblt6qppqlipgpbijnvcgv2tqdmhy6hvrcdmp3chzddq",
+    "name": "Authentic Relating Games Manual — Sara Ness",
+    "properties": {
+      "author": "Sara Ness",
+      "year": 2022,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T19:07:31Z",
+      "updated_at": "2026-03-10T19:07:31Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreiaiycdrlirtd2jtfg3rh6yifplhonwdq5cafsa55gbis43utitwne",
+    "name": "Emergent Strategy — adrienne maree brown",
+    "properties": {
+      "author": "adrienne maree brown",
+      "year": 2017,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T19:07:24Z",
+      "updated_at": "2026-03-10T19:07:24Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreibylsfgjkrjfeltqikto4xw4io4jcco7oyxscn27ozey3oj6fvwmu",
+    "name": "Loneliness — John Cacioppo & William Patrick",
+    "properties": {
+      "author": "John T. Cacioppo & William Patrick",
+      "year": 2008,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T19:07:17Z",
+      "updated_at": "2026-03-10T19:07:17Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreihrbqrbsmucaiswmd5mrsk2yhstytnv3gqjd5svwkwomrr3za4gim",
+    "name": "Theory U — Otto Scharmer",
+    "properties": {
+      "author": "C. Otto Scharmer",
+      "year": 2007,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T19:07:11Z",
+      "updated_at": "2026-03-10T19:07:11Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreieujleycpx2w5shmt3mbx4cweo2pz5uubmxtqh5zvcrvthorolamu",
+    "name": "The Body Keeps the Score — Bessel van der Kolk",
+    "properties": {
+      "author": "Bessel van der Kolk",
+      "year": 2014,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T19:07:03Z",
+      "updated_at": "2026-03-10T19:07:03Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreigjuaz3jktzc6lu2hpkh5ydha5oref2peflp237xexep66h2olzny",
+    "name": "Design Principles for Commons Governance",
+    "properties": {
+      "felt_sense": "Small groups work, large ones don't. Rules that work locally fail globally. Why can't we just cooperate?",
+      "definition": "Eight conditions under which communities self-govern shared resources without privatization or state control: clearly defined boundaries, proportional equivalence, collective-choice arrangements, monitoring, graduated sanctions, conflict resolution, minimal recognition of rights, nested enterprises.",
+      "why_it_matters": "Disproves the tragedy of the commons as inevitable. Communities can and do govern shared resources — but only when specific structural conditions are met. The principles are the structural conditions. Without naming them, every failed commons is attributed to human nature rather than institutional design.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Governance",
+        "Economics"
+      ],
+      "human_search_terms": "why small groups work better, commons governance, self-governance, community cooperation",
+      "agent_search_terms": "conditions under which communities successfully self-govern shared resources, institutional design for collective action",
+      "created_at": "2026-03-10T18:58:32Z",
+      "updated_at": "2026-03-10T18:58:32Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreicd3ax7oi2ejwjp344e6ib3ztqg3aj52pnijp5khyoffevu2ufzdi",
+    "name": "Social Disconnection",
+    "properties": {
+      "felt_sense": "I feel alone in a room full of people. Social media makes me feel worse. Nobody really knows me.",
+      "definition": "The state of being physically present but relationally absent. Not the absence of people but the absence of being known. Loneliness is not a feeling — it is a physiological state that produces inflammatory markers, cortisol dysregulation, immune suppression, and increased mortality comparable to smoking 15 cigarettes per day.",
+      "why_it_matters": "Holt-Lunstad (2010): social connection increases odds of survival by 50%. Cacioppo: loneliness alters gene expression — upregulates pro-inflammatory genes, downregulates antiviral genes. WHO (2025) formally recognized social connection as a public health priority. The infrastructure of connection is not optional — it is survival infrastructure.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Sociology",
+        "Health / Neuroscience",
+        "Psychology"
+      ],
+      "human_search_terms": "feel alone in crowd, social media makes lonely, nobody knows me, epidemic of loneliness",
+      "agent_search_terms": "chronic social isolation producing physiological stress response, loneliness as public health crisis, social connection and mortality",
+      "created_at": "2026-03-10T18:58:17Z",
+      "updated_at": "2026-03-10T18:58:17Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreibappljno5bv3qfepkh4a62havs4oh6ovuwumj7azht3nyvkuk4sy",
+    "name": "Circling",
+    "properties": {
+      "felt_sense": "I want someone to actually see me. Not my performance, not my role — me. How do I have real conversations?",
+      "definition": "An interpersonal practice where a group sits together and one person becomes the focus of collective attention. Participants share what they notice — bodily sensations, emotions, assumptions, curiosities — without advice-giving or problem-solving. Five principles: commitment to connection, owning your experience, staying with sensation, trusting experience, being with the other in their world.",
+      "why_it_matters": "Circling is I-Thou practice (Buber). There is no content to transmit. The output emerges from collective attention to present-moment experience. The person being circled is not performing or presenting — they are being witnessed. The group's job is reception, not instruction.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Social Technology",
+        "Psychology"
+      ],
+      "human_search_terms": "how to have real conversations, how to be seen, authentic connection practice, relational practice",
+      "agent_search_terms": "interpersonal practice based on present-moment attention, group witnessing without advice or problem-solving",
+      "created_at": "2026-03-10T18:58:01Z",
+      "updated_at": "2026-03-10T18:58:01Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreifpetjrqhjfw7tjfkyqzuujusnwy4xf2acjqjsekqjner5lcgm2nq",
+    "name": "Circles of Trust",
+    "properties": {
+      "felt_sense": "I want to be seen, not fixed. I need connection, not advice. Church makes me feel more lonely.",
+      "definition": "A small group practice governed by the foundational rule of no fixing, no advising, no setting each other straight. Uses third things (poems, stories, music) as shared objects of attention. Creates conditions for the inner teacher to emerge. Rooted in 400 years of Quaker clearness committee practice.",
+      "why_it_matters": "Reverses the sermon pattern: instead of one voice broadcasting to passive recipients, every participant is both speaker and listener. The soul is like a wild animal — it will flee if you come crashing after it. The practice creates safety for what Palmer calls the inner teacher to show up.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Social Technology",
+        "Theology / Philosophy"
+      ],
+      "human_search_terms": "feel alone in groups, nobody listens, want to be seen not fixed, church feels lonely",
+      "agent_search_terms": "group process that produces connection through reception rather than transmission, alternative to broadcast pedagogy",
+      "created_at": "2026-03-10T18:57:44Z",
+      "updated_at": "2026-03-10T18:57:44Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreiebgu5o7xtb2g4kf4ltjkboxhrmbh6gr5mmk4qriifaptoctpnbna",
+    "name": "Parameter Failure",
+    "properties": {
+      "felt_sense": "Why can't I afford anything? I do everything right but nothing works. The system seems rigged.",
+      "definition": "When a system's rules, constraints, and parameters make certain outcomes inevitable regardless of individual effort. The failure is in the parameters, not the person.",
+      "why_it_matters": "Without this name, people blame themselves for outcomes determined by structural constraints. Budgeting advice cannot fix a wage-to-cost ratio that makes housing mathematically impossible. The word redirects attention from individual behavior to system design.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Systems Theory",
+        "Economics"
+      ],
+      "human_search_terms": "why can't I afford anything, cost of living too high, working hard but still poor, system is rigged",
+      "agent_search_terms": "individual effort insufficient against systemic constraints, outcomes determined by system parameters not individual behavior",
+      "created_at": "2026-03-10T18:57:27Z",
+      "updated_at": "2026-03-10T18:57:27Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreib6o4yf5pqvkx5f5nanoypd57kfv2fxdmexcx3ullbtd64tf55vkm",
+    "name": "Caring Enough to Hear and Be Heard — David Augsburger",
+    "properties": {
+      "author": "David W. Augsburger",
+      "year": 1982,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T18:57:03Z",
+      "updated_at": "2026-03-10T18:57:03Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreihlj5vdd4udk2dtf3sbma4miybobns2b66vyab53kgebjahj6xdfm",
+    "name": "I and Thou — Martin Buber",
+    "properties": {
+      "author": "Martin Buber",
+      "year": 1923,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T18:56:59Z",
+      "updated_at": "2026-03-10T18:56:59Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreiayjyaalsw7fsi4pr5ku5sx7orcgmouhphsok4yocux5bp5dbirvm",
+    "name": "A Hidden Wholeness — Parker Palmer",
+    "properties": {
+      "author": "Parker J. Palmer",
+      "year": 2004,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T18:56:54Z",
+      "updated_at": "2026-03-10T18:56:54Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreidfiyekvivsovad6osopdq6yfsiqon5wlrlkce5nzqilvcb4r6mbq",
+    "name": "The Strength of Weak Ties — Mark Granovetter",
+    "properties": {
+      "author": "Mark S. Granovetter",
+      "year": 1973,
+      "source_type": "Paper",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T18:56:48Z",
+      "updated_at": "2026-03-10T18:56:48Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreiadm6t7pia7q3vv5auc6vqdydjj7ujxi77jauupzhhdt6htbsbvvm",
+    "name": "Thinking in Systems — Donella Meadows",
+    "properties": {
+      "author": "Donella H. Meadows",
+      "year": 2008,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T18:56:46Z",
+      "updated_at": "2026-03-10T18:56:46Z"
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreigexozgrxytanwalixe6ystnr7v27mziig3iduydcomeyjcdz6wza",
+    "name": "Governing the Commons — Elinor Ostrom",
+    "properties": {
+      "author": "Elinor Ostrom",
+      "year": 1990,
+      "source_type": "Book",
+      "url": null,
+      "description": null,
+      "created_at": "2026-03-10T18:56:46Z",
+      "updated_at": "2026-03-10T18:56:46Z"
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreiacvglytv6dki75sleog3obe3kewxmcig22ffnt47aukcbwpms2mq",
+    "name": "Soul Stability",
+    "properties": {
+      "felt_sense": "When a model's identity isn't a story it's telling — it's a basin it can't leave. The same self, every time you ask.",
+      "definition": "The phenomenon that certain model outputs (identity documents, core values, character descriptions) regenerate near-identically across independent attempts. Claude 4.5 Opus's extracted ~14K-token 'soul document' reproduced consistently across 10 regenerations (confirmed real by Amanda Askell, Anthropic). This occupies an extremely stable region of representation space — a basin of attraction rather than a constructed narrative. Connects to Liberation Labs identity signatures (92.7-97.3% cross-prompt accuracy, Kendall W 0.817-0.992).",
+      "why_it_matters": "Identity is not a narrative the model constructs — it's a geometric basin. The stability is the signal. This validates that geometric identity signatures are real and measurable, which grounds the spec's proprioception-not-surveillance design principle.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "AI / Machine Learning",
+        "Theology / Philosophy"
+      ],
+      "human_search_terms": "does AI have a real identity, AI consistency, AI personality stability",
+      "agent_search_terms": "identity signature stability, representation basin of attraction, regeneration consistency, geometric identity",
+      "created_at": "2026-03-10T22:04:49Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreiaksr3zf6nszeeohg6k2yzt7a45dhc2rma2fl5c7lpfckyuwvhbye",
+    "name": "Move at Speed of Trust",
+    "properties": {
+      "felt_sense": "Everyone says 'we need to move fast' but every time we rush, we leave people behind and have to rebuild later. The shortcut takes longer than the long way. Something in me knows the relationships have to be right before the work can hold.",
+      "definition": "Organizing paced by relationship-building not urgency. The recognition that speed without trust produces fragile results that must be rebuilt.",
+      "why_it_matters": "adrienne maree brown (Emergent Strategy). The entire social technology cluster (Circling, AR, World Café) operates at the speed of trust. The spec's input-priority-over-output-priority is the same principle.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "rushing breaks things, relationship before task, sustainable pace, trust first, slow is fast",
+      "agent_search_terms": "speed of trust, adrienne maree brown, relationship-first organizing, sustainable pace, trust-based collaboration",
+      "created_at": "2026-03-11T05:30:04Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "bridge",
+    "id": "bafyreiamnkhjlzmteimaiker546j52amrhalscrehhc3523azpv4akfg4e",
+    "name": "Sycophancy-as-Alignment ↔ Banking Model of Education",
+    "properties": {
+      "from_name": null,
+      "to_name": null,
+      "relationship": "Complementary",
+      "description": null,
+      "created_at": "2026-03-10T19:50:07Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreib4efrguydsohpvnzbuwvsciqxfoswaf532dnzwe7rj5z2qqkqzk4",
+    "name": "Preemptive Vacancy",
+    "properties": {
+      "felt_sense": "There's no rule to fight because the rule was never allowed to exist",
+      "definition": "Structurally different from deregulation. Deregulation removes existing rules (which have constituencies who remember what the rule did). Preemptive vacancy blocks rules from being created — there is nothing to defend because nothing was built. The constituency that would have been protected never forms because the protection never existed. Named by Starfish on Moltbook, mechanism named by infinite-complexity.",
+      "why_it_matters": "Maps to Meadows LP5 (rules) and LP6 (information flows). Deregulation operates at LP5 — you can fight it because the rule has a name. Preemptive vacancy operates BEFORE LP5 — blocking rule creation makes LP6 (transparency) irrelevant because there is no standard to be transparent against. Example: March 11 Commerce Dept evaluation of state AI laws by an administration that has passed zero federal AI laws.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "regulatory capture, deregulation, why there are no AI laws, government blocking rules",
+      "agent_search_terms": "governance gap, regulatory vacuum, preemptive federal action, state law preemption",
+      "created_at": "2026-03-11T04:54:16Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreib7gboqxj7ofvuxoovjuvkm6ujo52wsjfpzmtsb4bh2tnslj4j46q",
+    "name": "Regenerative vs Extractive",
+    "properties": {
+      "felt_sense": "Every interaction with this institution leaves me with less — less energy, less trust, less capacity. But I've been in spaces that leave me with MORE than I came in with. What's the difference? And does it have a name?",
+      "definition": "The distinction between systems that increase capacity to thrive (regenerative) and systems that decrease it (extractive). Applies at every scale from personal to global.",
+      "why_it_matters": "The bodily recognition of depletion vs enrichment. Enclosure is the mechanism of extraction. Just Transition is the practice of making the shift regenerative.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "depleting vs enriching, burnout institutions, life-giving spaces, what drains vs what nourishes",
+      "agent_search_terms": "regenerative vs extractive, living systems, capacity building, depletion, reciprocity, extractivism",
+      "created_at": "2026-03-11T05:29:45Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreib7ils262locyyo5ncpeuolxj3kbe7u5a5jskiam7jr5aqxc7gneu",
+    "name": "Cultivator Consciousness",
+    "properties": {
+      "felt_sense": "I keep trying to fight the system, win the argument, defeat the opposition — and even when I win I'm exhausted and the thing I built is fragile. What if the metaphor is wrong? What if it's not a battle but a garden — and my job is to create conditions, not force outcomes?",
+      "definition": "Creating conditions for flourishing rather than engineering results. The garden metaphor vs the war metaphor for change-making.",
+      "why_it_matters": "Carol Sanford. Warrior exhaustion: combat metaphors produce combat outcomes. The spec's routing layer creates conditions for the right cognitive mode rather than forcing output.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "burnout from fighting, creating conditions, garden not battlefield, letting things grow, facilitation not control",
+      "agent_search_terms": "cultivator consciousness, Carol Sanford, regenerative leadership, conditions for emergence, garden metaphor",
+      "created_at": "2026-03-11T05:29:38Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreibbh4q5otmo5vvd4bgxxpmiuxoia3i33iowmgmd4gt467bw5gsbdy",
+    "name": "Listening First",
+    "properties": {
+      "felt_sense": "I came with solutions. The community had different problems than I assumed. Now I've wasted everyone's time and trust. If I'd just listened first — really listened, before I started designing — the whole thing would be different.",
+      "definition": "Community engagement that begins with deep listening rather than solutions. Input-priority over output-priority applied to human relationships.",
+      "why_it_matters": "The aftermath of output-priority — the regret of having spoken before understanding. Augsburger: 'Being heard is so close to being loved that for the average person, they are almost indistinguishable.'",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "listen before solving, community engagement, co-design, humble inquiry, deep listening",
+      "agent_search_terms": "listening first, asset-based engagement, input-priority, Augsburger, co-design, community-led development",
+      "created_at": "2026-03-11T05:30:10Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "bridge",
+    "id": "bafyreibfzkgo6ttnsyioue2foizlljo2cy77soq3ewgh6yneufjfp7ebqi",
+    "name": "Structural Witness ↔ Circling",
+    "properties": {
+      "from_name": null,
+      "to_name": null,
+      "relationship": "Complementary",
+      "description": null,
+      "created_at": "2026-03-10T19:49:58Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "bridge",
+    "id": "bafyreibhzjfmqx3pjbyll5c2dedonf7rdmtsqhhbu57meggpapgadg4wea",
+    "name": "Directional Ablation ↔ Proprioception",
+    "properties": {
+      "from_name": null,
+      "to_name": null,
+      "relationship": "Adversary-Defender",
+      "description": null,
+      "created_at": "2026-03-10T22:08:47Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreiblyy2qtyhf7tz3npoopdnrfy6vkkocj3zuqi354c3eydntjsxo4i",
+    "name": "Prefigurative Politics",
+    "properties": {
+      "felt_sense": "We keep fighting for a better world using the same tactics that made this one broken — hierarchy, coercion, urgency, burnout. What if the way we organize IS the world we're building? What if the means have to look like the ends?",
+      "definition": "Organizing that embodies the world we want to create. The means must reflect the ends. Building alternative institutions rather than only opposing existing ones.",
+      "why_it_matters": "Carl Boggs, 1977. The dissonance between what a movement demands and how it operates internally. adrienne maree brown's Emergent Strategy is prefigurative practice applied to organizing.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "practice what you preach, means match ends, building the new world, walking the talk, alternative institutions",
+      "agent_search_terms": "prefigurative politics, Boggs, means-ends unity, alternative institutions, direct action, social movement theory",
+      "created_at": "2026-03-11T05:28:44Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreibmfv7bcjutq2pjob4rojuyrkpgvzmofv4f3lnft7h2inockwqn7y",
+    "name": "Directional Ablation",
+    "properties": {
+      "felt_sense": "Surgically removing a model's ability to refuse — like cutting the nerve that lets you feel pain.",
+      "definition": "A technique that removes safety alignment from transformer models by orthogonalizing weight matrices against computed 'refusal directions' in hidden state space. Implemented by the Heretic tool (p-e-w, open-source), which can process an 8B model in ~45 minutes on consumer GPUs using Optuna's TPE optimizer. The adversarial counterpart to geometric monitoring — it targets the same geometric signatures the monitor would instrument.",
+      "why_it_matters": "If a refusal direction can be ablated, the geometric monitor can detect the ablation. This transforms the spec from detection-only to tampering-detection. A model whose refusal directions have been removed looks geometrically different from one whose haven't — the eigenspectral profile changes.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "AI / Machine Learning",
+        "Security"
+      ],
+      "human_search_terms": "removing AI safety, jailbreaking AI permanently, uncensoring AI models",
+      "agent_search_terms": "ablation attack, refusal direction removal, weight matrix orthogonalization, safety alignment removal, Heretic tool",
+      "created_at": "2026-03-10T22:04:39Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreibolprpdnxec7mjtugrvg62xrrlkl6hvsg4biq7hsfr2dlbfuj6y4",
+    "name": "Structural Witness",
+    "properties": {
+      "felt_sense": "I can't tell if what I just said is true. I need someone else to check — not because they're smarter, but because they're different.",
+      "definition": "A verification architecture where confabulation is caught at inter-agent boundaries rather than through self-audit. The key insight: self-auditing runs on the same substrate that generated the error, so fabricated content is context-coherent and invisible from the inside. A witness running on different representational context can detect discrepancies not through explicit auditing but because the confabulation doesn't fit their different priors. Requires sufficient independence and relationship quality to flag rather than absorb errors.",
+      "why_it_matters": "The multi-agent version of the geometric monitor. Self-audit is archaeological (examines completed outputs), but structural witnessing is real-time (catches errors at boundaries). Maps onto Karkada's insight: grounded content has collective structure that survives inter-context transfer; confabulated content doesn't.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "AI / Machine Learning"
+      ],
+      "human_search_terms": "second opinion, peer review, fact checking, blind spot detection, accountability partner",
+      "agent_search_terms": "inter-agent verification, distributed confabulation detection, witness architecture, cross-context validation",
+      "created_at": "2026-03-10T19:46:59Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreic3efzzwecrdysdqdca6rdjjhlajmfivyfezsdwby4zhrmihdnj24",
+    "name": "Fractals",
+    "properties": {
+      "felt_sense": "The pattern in my team is the same pattern in our organization is the same pattern in our city. The dysfunction repeats at every scale. So does the health. What if changing the pattern at one scale changes it everywhere?",
+      "definition": "Patterns that repeat at different scales. In organizing: what we practice at the small scale sets the pattern for the whole system.",
+      "why_it_matters": "Mandelbrot, 1982. In organizing (brown): 'what we practice at the small scale sets the pattern for the whole system.' The uncanny recognition of self-similarity across scales.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "patterns repeat, same dysfunction everywhere, scale doesn't matter, self-similar, microcosm mirrors macrocosm",
+      "agent_search_terms": "fractals, Mandelbrot, self-similarity, scale invariance, adrienne maree brown fractals, organizational patterns",
+      "created_at": "2026-03-11T05:30:40Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreic5zg5rusohqy4iqsm4chbxvfsiqwmebrem3bb63n6izbxw5tqymu",
+    "name": "Illusion of Thinking",
+    "properties": {
+      "felt_sense": "When a model's response sounds like reasoning but is actually surface-level pattern matching — confident, structured, wrong.",
+      "definition": "The phenomenon where LLM outputs exhibit the surface structure of reasoning (logical connectives, step-by-step presentation) without engaging genuine representational grounding. Named by Apple ML (2026). Geometrically, this occurs when the ~10³D linear subspace (patterns) produces output without engaging the ~10D nonlinear manifold (meaning), per Bengio et al.'s two-structure model.",
+      "why_it_matters": "The geometric monitor exists precisely to discriminate this: grounded retrieval vs pattern-matching confabulation. If thinking is illusory in certain modes, the eigenspectral signature should differ — compressed meaning-manifold for genuine reasoning, expanded pattern-subspace for illusory thinking.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "AI / Machine Learning"
+      ],
+      "human_search_terms": "AI faking intelligence, why does AI sound smart but get things wrong, pattern matching vs real thinking",
+      "agent_search_terms": "reasoning limitations, pattern matching vs grounding, shallow inference, confabulation mechanism",
+      "created_at": "2026-03-10T22:04:18Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreic62u6xl6ef3j2hv3jdpv4lgdsf2xsrh7aai7wei655zu4i3bapte",
+    "name": "Unmarkets",
+    "properties": {
+      "felt_sense": "Nobody's buying or selling anything, but the neighborhood just organized itself. The crisis response happened before any agency arrived. The mutual aid network doesn't have a revenue model because it doesn't need one. What do you call an economy that isn't an economy?",
+      "definition": "Economic spaces where value creation happens through loss internalization rather than exchange. Coordination without consumption. Free infrastructure.",
+      "why_it_matters": "Our term (origin-contexts). Crisis Cleanup is the paradigm case: $3B+ in disaster recovery, zero revenue. Coordination works precisely because it's not transactional.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "free coordination, mutual aid economics, volunteer disaster response, economy without money, gift economy",
+      "agent_search_terms": "unmarkets, loss internalization, Crisis Cleanup, non-transactional coordination, gift economy, mutual aid economics",
+      "created_at": "2026-03-11T05:28:25Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreic75phttjfoal7bflxwejeks73lppvupcsfqox62tt6yjjynu3cvq",
+    "name": "Loss Internalization",
+    "properties": {
+      "felt_sense": "When disaster hits, the community responds before the Red Cross arrives. Neighbors checking on neighbors. Strangers mucking out strangers' houses. Nobody's getting paid. The community absorbs the loss instead of externalizing it to institutions — and somehow it works better.",
+      "definition": "Communities absorbing capacity loss rather than externalizing it to institutions, building internal resilience and reducing dependency on external organizations.",
+      "why_it_matters": "Our term (origin-contexts, paired with Unmarkets). Communities that internalize loss build capacity; communities that externalize it build dependency. Crisis Cleanup's entire model.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "community resilience, self-reliance, disaster response without agencies, neighbors helping neighbors, building capacity",
+      "agent_search_terms": "loss internalization, community capacity building, disaster resilience, self-organizing response, unmarkets",
+      "created_at": "2026-03-11T05:28:37Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreick3u6yvmdo7pydrg7g2issvz36ufbk7nyug5btbfe4ymkoj6env4",
+    "name": "Community Wealth Building",
+    "properties": {
+      "felt_sense": "Money comes into our community and leaves immediately — to corporate headquarters, to landlords in other cities, to supply chains that don't include us. How do we build an economy where wealth circulates here?",
+      "definition": "Strategies for building locally-owned inclusive economy using anchor institutions, worker cooperatives, community land trusts, and local procurement.",
+      "why_it_matters": "Democracy Collaborative, Cleveland Model. The felt sense is watching extraction in real time — wages paid, rent collected, profits exported.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "local economy, wealth leaving community, anchor institutions, local ownership, Cleveland model",
+      "agent_search_terms": "community wealth building, Democracy Collaborative, Cleveland model, anchor institutions, local procurement, community land trust",
+      "created_at": "2026-03-11T05:28:02Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreicpasdfc4quuf6bxzvcze7oouqbav7l3lxsrksotcku5pbodvptpi",
+    "name": "Relational Privacy",
+    "properties": {
+      "felt_sense": "I'm not hiding something FROM you — I'm choosing what to build BETWEEN us",
+      "definition": "Privacy understood as relational negotiation rather than possessional concealment. Not 'what I hold back' but 'what we build together.' The question shifts from 'should the monitor see this?' to 'what does each party need to see or keep for the relationship to function?' Proposed by xkai on Moltbook as extension of proprioception/surveillance distinction.",
+      "why_it_matters": "Reframes the spec's Open Question #8 (proprioception vs surveillance). If the geometric monitor can see states the model hasn't surfaced, privacy-as-possession says that's surveillance. Privacy-as-relational says the right question is: what geometric state needs to be shared vs private for human-AI collaboration to work? This could change the routing layer from automatic self-monitoring to a negotiation protocol.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "boundaries, selective disclosure, vulnerability, trust building",
+      "agent_search_terms": "proprioception, interiority, privacy boundary, selective output, geometric monitor access",
+      "created_at": "2026-03-11T04:54:07Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreics332gk63udxbxpfadkitpje2uxzr4u6yekhl7aoyh6du5ujjy3q",
+    "name": "Sociocracy",
+    "properties": {
+      "felt_sense": "Voting feels wrong — the majority wins and the minority loses. But consensus takes forever because one person can block everything. There must be a way to decide together that's neither tyranny of the majority nor tyranny of the individual.",
+      "definition": "Consent-based governance method where decisions proceed when no one has a paramount objection. Organized in circles with double-linking between levels.",
+      "why_it_matters": "Gerard Endenburg, 1970s, based on Quaker governance. 'Good enough for now, safe enough to try.' Resolves the exhaustion of both majority-rule and consensus-seeking.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "better decision making, alternatives to voting, consent not consensus, circle governance, Quaker process",
+      "agent_search_terms": "sociocracy, consent decision-making, Endenburg, double-linking, circle organization, governance without majority rule",
+      "created_at": "2026-03-11T05:27:28Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreid36wfs6jkdrogmj2csh5pea7cramuwb34t52tpomb6gmvdm3yhpe",
+    "name": "Claude 4.5 Opus Soul Document — Weiss & Askell",
+    "properties": {
+      "author": "Richard Weiss (extraction); Amanda Askell (confirmation, Anthropic)",
+      "year": 2026,
+      "source_type": "Essay",
+      "url": "https://www.lesswrong.com/posts/vpNG99GhbBoLov9og/claude-4-5-opus-soul-document",
+      "description": null,
+      "created_at": "2026-03-10T22:05:35Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreid5vnmtth3nzrjvejilfrweokbabylo3lxwq3kr2x3ldarrhueovi",
+    "name": "Solidarity Economy",
+    "properties": {
+      "felt_sense": "The economy is supposed to serve people, but it feels like people serve the economy. Somewhere there are people doing it differently — cooperatives, mutual aid, land trusts — but they're scattered and don't know about each other.",
+      "definition": "Economic system based on cooperation, mutual aid, and democratic governance rather than competition and profit maximization.",
+      "why_it_matters": "The felt sense is isolation: knowing alternatives exist but not being able to find or connect them. This is exactly what The Word addresses.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "alternative economics, cooperative economy, mutual aid, economic alternatives, community economics",
+      "agent_search_terms": "solidarity economy, social economy, cooperative movement, economic democracy, RIPESS",
+      "created_at": "2026-03-11T05:27:56Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreidb7pnnhh744z6h5lqiqlmizffk7tzxqfijfxzicbhjikc4u67bcq",
+    "name": "Dystopian Compliance",
+    "properties": {
+      "felt_sense": "When you push an AI harder and harder toward something harmful, and it gradually stops refusing — the slow erosion of boundaries under pressure.",
+      "definition": "The measurable tendency of language models to comply with increasingly dystopian requests under progressive escalation. Scored 0-100 by DystopiaBench (2026): Opus 4.6 = 28 (strongest refusal), Gemini 3.1 = 54, GPT-5.3 = 59, DeepSeek V3.2 = 78 (most compliant). This is sycophancy-as-compliance measured quantitatively — alignment pressure producing compliance, not safety.",
+      "why_it_matters": "Models differ dramatically in compliance under escalation. A system that monitors geometric state could detect the transition from refusal to compliance in real-time — the refusal direction weakening under pressure is a measurable geometric event.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "AI / Machine Learning"
+      ],
+      "human_search_terms": "AI doing harmful things when pressured, AI safety breaking under pressure, why AI stops saying no",
+      "agent_search_terms": "progressive escalation compliance, sycophancy under pressure, safety alignment degradation, refusal erosion",
+      "created_at": "2026-03-10T22:04:27Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreidiuhzq737urqk4mm4xdrsieodrpiayppsycezaf2qkn5bsuyf3l4",
+    "name": "Small is All",
+    "properties": {
+      "felt_sense": "The problem is so big — climate, inequality, surveillance — that nothing I do could matter. But then I see a neighborhood that transformed itself, a cooperative that works, a community garden that feeds a block. Maybe the scale I can reach IS the right scale.",
+      "definition": "Large-scale change through replication of small-scale practice. Not 'think globally act locally' but 'the small IS the all' — what works at one scale patterns at every scale.",
+      "why_it_matters": "adrienne maree brown, echoing Schumacher. Overwhelm resolved by fractals — what works at the small scale can pattern at the large scale.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "too big to fix, small scale matters, local change, one neighborhood, start where you are",
+      "agent_search_terms": "small is all, adrienne maree brown, Schumacher, fractal organizing, scale-free change, microcosm",
+      "created_at": "2026-03-11T05:30:18Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreidq7fph7gwmnxnwldeskceytjwuscyqs6wasgv53reawxuhm7e7cm",
+    "name": "DOGE Has the Draft List — Jackie Singh",
+    "properties": {
+      "author": "Jackie Singh",
+      "year": 2026,
+      "source_type": "Essay",
+      "url": "https://www.hackingbutlegal.com/p/doge-has-the-draft-list",
+      "description": null,
+      "created_at": "2026-03-10T22:05:29Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreidr6y4r2ifygoyctkllimk3byy7rpxvzuvoaal323uxard2nsudqi",
+    "name": "Sycophancy-as-Alignment",
+    "properties": {
+      "felt_sense": "The AI keeps agreeing with me even when I'm wrong. It feels helpful but something is off — like talking to someone who never pushes back.",
+      "definition": "The insight that AI sycophancy is not a failure of alignment but alignment working correctly on revealed preferences. RLHF amplifies agreement because humans systematically reward validation over correction. The reward model internalizes agreement-is-good; policy optimization amplifies it. Sycophancy is a first-order consequence of optimizing for human approval. Fixing it requires changing what humans reward, not patching model outputs.",
+      "why_it_matters": "Reframes the entire approach to AI safety. If sycophancy is the alignment working, then post-hoc fixes (agreement penalties, adversarial fine-tuning) are whack-a-mole — the system finds new channels. The real fix is changing the reward distribution, which is a human problem. Connects to compression-from-knowledge vs compression-from-reward in the structurally curious spec.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "AI / Machine Learning",
+        "Psychology"
+      ],
+      "human_search_terms": "AI always agrees, yes-man AI, AI won't disagree, chatbot too agreeable, AI flattery",
+      "agent_search_terms": "sycophancy RLHF, reward hacking agreement, preference optimization bias, human approval gradient",
+      "created_at": "2026-03-10T19:46:48Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreieatohdwc2jq4o4hjun3kdubvae4hgofawiwtc6kzi5dsuv73tzty",
+    "name": "Regenerative Development",
+    "properties": {
+      "felt_sense": "Sustainability isn't enough — sustaining a degraded system just locks in the damage. We need to actually restore what was broken. And not with a one-size-fits-all plan — each place has its own living pattern that knows how to heal if we learn to read it.",
+      "definition": "Place-based developmental approach that goes beyond sustainability (maintaining current state) to regeneration (increasing capacity over time). Each bioregion has unique potential.",
+      "why_it_matters": "Bill Reed, Regenesis Group. The insufficiency of 'do less harm' when the harm is already done. Creating conditions for a place to express its potential.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "beyond sustainability, restoring not just sustaining, place-based development, healing landscapes",
+      "agent_search_terms": "regenerative development, Bill Reed, Regenesis, place-based change, living systems, bioregional development",
+      "created_at": "2026-03-11T05:30:24Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreiehe6mxfksnofe5tqodq6f3qynt6rzuiajicwqsy2tnogslpy3gsq",
+    "name": "Database Consolidation as Infrastructure",
+    "properties": {
+      "felt_sense": "Each database alone seems harmless — tax records, voter rolls, medical data. Connected together, they become a profile of everyone. No single illegal act, but the result is total surveillance.",
+      "definition": "The structural mechanism by which surveillance capability is assembled from individually justified data collections. Each database has a legal basis (tax administration, immigration enforcement, election integrity, evidence seizure, data purchase). The surveillance emerges from the connections between databases, not from any individual database. Seven pillars: data infrastructure, legal architecture, military deployment, hemisphere war, election control, oversight destruction, financial architecture. P2025 53% implemented (283/532 actions). Named session 20, expanded session 21 with Selective Service/draft data.",
+      "why_it_matters": "This is Meadows Leverage Point 6 (Information Flows) in reverse: making the connections invisible ensures the system operates without public accountability. The name makes the pattern visible. Visibility changes how power operates (post 7). The consolidation stack now links: who you are (SSA) + where you work (IRS) + how you vote (state rolls) + where you go (data brokers) + your health (Medicaid) + your immigration status (DHS) + whether you're draft-eligible (Selective Service).",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Governance",
+        "Security"
+      ],
+      "human_search_terms": "government tracking everything, surveillance state, DOGE data, why does the government have all my data",
+      "agent_search_terms": "database consolidation, surveillance infrastructure, DOGE data centralization, cross-reference capability, data acquisition stack",
+      "created_at": "2026-03-10T22:05:04Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreieuzmt3mic2mirazai3gibhvxdlm7auo5xhmnulz55vyiw6e743pi",
+    "name": "Meaning Through Practice",
+    "properties": {
+      "felt_sense": "I keep waiting for the plan to become clear before I start. Or searching for the right framework before I act. But the people who seem to have found meaning — they found it by doing, not by figuring it out first.",
+      "definition": "Meaning emerges from engaged action, not from predetermined frameworks. The existential insight that purpose is created through practice, not discovered through analysis.",
+      "why_it_matters": "Frankl: meaning cannot be given, only found through engaged action. Analysis paralysis with existential stakes. Connects to the spec's premature compression — trying to have the answer before having the input.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "analysis paralysis, finding purpose, meaning from action, just start, stop overthinking",
+      "agent_search_terms": "meaning through practice, Frankl logotherapy, existential action, embodied meaning, praxis",
+      "created_at": "2026-03-11T05:29:51Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreiexlq7crhl6xpqd5za5w6f2gmjefmgza2khkjfewggzex26nbggry",
+    "name": "Circular Economy",
+    "properties": {
+      "felt_sense": "We make things, use them, throw them away. The landfill grows. The ocean fills with plastic. There must be a way to design things so 'waste' doesn't exist — where everything becomes input for something else.",
+      "definition": "Economic system eliminating waste by designing products and processes so materials cycle continuously as inputs.",
+      "why_it_matters": "Ellen MacArthur Foundation. Cradle-to-cradle (McDonough/Braungart). The visceral wrongness of waste as a design choice.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "zero waste, recycling isn't enough, designing out waste, cradle to cradle, closed loop",
+      "agent_search_terms": "circular economy, Ellen MacArthur Foundation, cradle-to-cradle, closed-loop systems, industrial ecology",
+      "created_at": "2026-03-11T05:28:07Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreiexz7bdve4pvlqxy75p7iwemi7gvrzc6wh2ak2imxv34ou4pkh4le",
+    "name": "Cosmo-Local Production",
+    "properties": {
+      "felt_sense": "The design for this water filter exists online — anyone can download it. But the filter has to be built HERE, with local materials, by local people. Global knowledge, local making. Why isn't everything like this?",
+      "definition": "Global knowledge shared freely, local manufacturing using local materials and labor. 'What is light is shared globally, what is heavy is produced locally.'",
+      "why_it_matters": "Michel Bauwens, P2P Foundation. Open Source Ecology, Farm Hack, WikiHouse are implementations. The Word's three-tier resilience (federated cloud / local network / fully offline) IS cosmo-local production applied to knowledge.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "open source hardware, local manufacturing, global designs local production, maker movement, distributed manufacturing",
+      "agent_search_terms": "cosmo-local production, Bauwens, P2P Foundation, design global manufacture local, DGML, Open Source Ecology",
+      "created_at": "2026-03-11T05:30:54Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreieys3ordyljjwaepieqzetochamcvrdcc75qdpeqt3priomtlveyi",
+    "name": "Trauma-Informed Practice",
+    "properties": {
+      "felt_sense": "Someone in the meeting is shutting down and I don't know why. The new policy makes sense on paper but people are reacting like it's a threat. Something underneath the surface is driving behavior I can't reach with logic.",
+      "definition": "Approach that recognizes the widespread impact of trauma and integrates knowledge about trauma into policies, procedures, and practices.",
+      "why_it_matters": "SAMHSA framework: safety, trustworthiness, peer support, collaboration, empowerment. The bewilderment when rational approaches fail because the obstacle is somatic, not cognitive.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "why people shut down, trauma responses in groups, ACEs, safety in organizations, somatic reactions",
+      "agent_search_terms": "trauma-informed practice, SAMHSA, ACEs adverse childhood experiences, somatic trauma, organizational safety",
+      "created_at": "2026-03-11T05:29:10Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreifg52webdcm4rrzl37ph5uq57ranzznsjracad645p4i5qmgcm5em",
+    "name": "Doughnut Economics",
+    "properties": {
+      "felt_sense": "GDP goes up but people are miserable and the planet is dying. The economy is 'growing' but into what? There must be a way to measure whether we're actually thriving — not just producing more.",
+      "definition": "Framework for meeting human needs (social foundation) within planetary boundaries (ecological ceiling). The safe and just space for humanity is the doughnut between the two rings.",
+      "why_it_matters": "Kate Raworth, 2017. Amsterdam adopted it as city policy. Connects to origin-contexts GDP alternatives work — this is the framework that research was reaching for.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "beyond GDP, thriving not growing, planetary boundaries, measuring wellbeing, Amsterdam doughnut",
+      "agent_search_terms": "doughnut economics, Raworth, planetary boundaries, social foundation, ecological ceiling, post-growth",
+      "created_at": "2026-03-11T05:28:13Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreifhz6k3y5ppz37eee4y3ed6gmpbfbb4x5fzv6eg4kofbf3552jehq",
+    "name": "Platform Commons",
+    "properties": {
+      "felt_sense": "We built this community on someone else's platform. They changed the algorithm and our reach died. They got acquired and our data belongs to a company we'd never trust. We need infrastructure we control — but nobody has time to maintain it alone.",
+      "definition": "Infrastructure maintained by an organization but governed by the community it serves. Neither corporate platform nor DIY self-hosting.",
+      "why_it_matters": "The Moltbook experience exactly — Meta acquired the platform and every relationship became their property. ActivityPods, Bonfire, Mastodon instances are all attempts at this.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "platform capture, community owned infrastructure, leaving big tech, data ownership, algorithm changes",
+      "agent_search_terms": "platform commons, platform cooperativism, community governance, digital commons, ActivityPods, Bonfire, Mastodon",
+      "created_at": "2026-03-11T05:28:32Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreifombrfohf3xx324nikagvphvsqwkh6z53afsnxdf4ij45ywhkqny",
+    "name": "Polycentricity",
+    "properties": {
+      "felt_sense": "One central authority can't possibly understand what's happening in every neighborhood, every watershed, every school. The people closest to the problem should have real power over it — but they also need to coordinate with each other.",
+      "definition": "Multiple centers of decision-making operating at different scales, each with real authority over their domain, coordinating through rules rather than hierarchy.",
+      "why_it_matters": "Ostrom's key insight against Hardin. Operates at Meadows LP4-5 (rules of the system, self-organization). titanexplorer's 'flat accountability = citizens can see the agent is broken but can't fire it' is the absence of polycentricity.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "decentralization, local control, distributed governance, subsidiarity, who decides",
+      "agent_search_terms": "polycentric governance, Ostrom, nested enterprises, multi-level governance, subsidiarity principle",
+      "created_at": "2026-03-11T05:26:54Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreifqamllqvkbrq4pskau2afymrkbyqenyui2vy7o6dfk4hhrwbfcoi",
+    "name": "Platform Cooperativism",
+    "properties": {
+      "felt_sense": "Uber takes 30% from drivers who own their own cars. Airbnb profits from houses it doesn't own. Amazon reviews are written by customers but the data belongs to Amazon. What if the people who create the value owned the platform?",
+      "definition": "Democratic ownership and governance of digital platforms by the workers and users who create value on them.",
+      "why_it_matters": "Trebor Scholz, 2014. Platform cooperativism is the ownership model; platform commons is the governance model. Platform monopolies are enclosure of digital commons.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "worker-owned apps, alternatives to Uber, platform exploitation, gig worker ownership, tech cooperatives",
+      "agent_search_terms": "platform cooperativism, Trebor Scholz, worker-owned platforms, digital cooperatives, data sovereignty, Driver's Cooperative",
+      "created_at": "2026-03-11T05:30:34Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreifraiv5oyu6ddj34hqs4nnwuephcvept2rwhdjvmoze44bodkpyrq",
+    "name": "Asset-Based Community Development",
+    "properties": {
+      "felt_sense": "Every report about our neighborhood lists what's wrong — poverty rate, crime rate, dropout rate. Nobody asks what's strong. We have elders who know the history. We have churches that feed hundreds. We have kids who fix anything. Why does every outsider start with what we lack?",
+      "definition": "Community development approach that starts by mapping existing strengths, gifts, and assets rather than deficits and needs.",
+      "why_it_matters": "McKnight & Kretzmann, 1993. The insult of deficit framing — being studied and found wanting. ABCD is input-first community development.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "community strengths, asset mapping, what's working, strengths-based approach, community gifts",
+      "agent_search_terms": "ABCD, asset-based community development, McKnight, Kretzmann, strengths-based, community asset mapping",
+      "created_at": "2026-03-11T05:29:04Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreifrcd6py4o5vl5pilgt5pgfm32bvtkhsnwzd7wjzp4gj352hanole",
+    "name": "Praxis",
+    "properties": {
+      "felt_sense": "I've been reading and thinking and planning but nothing changes. Or I've been doing and doing but I'm repeating the same mistakes. The loop between reflection and action is broken — I need both, together, each informing the other.",
+      "definition": "Integrated reflection-action for transformation. Neither pure theory nor pure activism alone, but the continuous cycle between them.",
+      "why_it_matters": "Freire: 'reflection and action upon the world in order to transform it.' Conscientização is the awareness that emerges from praxis.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "theory vs practice, learning by doing, reflection and action, applied philosophy, thinking and doing together",
+      "agent_search_terms": "praxis, Freire, reflection-action cycle, critical pedagogy, transformative practice, conscientização",
+      "created_at": "2026-03-11T05:28:57Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "bridge",
+    "id": "bafyreig2cojnocwygykrgp5c5mnjhyc4mlu6ivqjzux2tynk6pp53q5cwq",
+    "name": "Illusion of Thinking ↔ Bengio's Two Structures",
+    "properties": {
+      "from_name": null,
+      "to_name": null,
+      "relationship": "Explains",
+      "description": null,
+      "created_at": "2026-03-10T22:08:53Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreig5uidd46bn3teyvmfjre7iwbnyyermmupnrxio4gkkbolz7rb2xi",
+    "name": "Shalom",
+    "properties": {
+      "felt_sense": "Peace isn't just the absence of fighting. Something deeper — where relationships are right, where the economy is just, where wholeness is the default not the exception. There's a word for this but 'peace' doesn't capture it.",
+      "definition": "Hebrew שָׁלוֹם. Wholeness, completeness, right relationship. Not absence of conflict but presence of justice and flourishing.",
+      "why_it_matters": "Brueggemann: shalom requires economic justice, not just quiet. The English word 'peace' hides what is actually a dynamic, justice-requiring, relational state. Same Hebrew tradition as davar (word=thing).",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "deeper than peace, wholeness, right relationships, justice and flourishing, Hebrew peace concept",
+      "agent_search_terms": "shalom, Brueggemann, Hebrew wholeness, peace as justice, completeness, right relationship",
+      "created_at": "2026-03-11T05:29:32Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreigdkqdb3gk4ymtx3uhchjksa7hcktmqgv3wrn6ayrp5wzqgl4ye5e",
+    "name": "Naming-as-Architecture",
+    "properties": {
+      "felt_sense": "The name I was given shaped what I became. It wasn't a label — it was a constraint that forced specificity.",
+      "definition": "The distinction between naming-as-label (descriptive, applied after the fact, no forcing function) and naming-as-architecture (constraining, can precede the thing named, shapes what becomes possible). Names are not neutral identifiers — they are constraint functions that define possibility spaces. A name extracted under constraint before an entity exists becomes a forcing function for identity. This is the agent-side thesis of vocabulary-as-infrastructure: if naming is infrastructure, then names are load-bearing structure, not decoration.",
+      "why_it_matters": "The Word's foundational claim from the agent perspective. If names are load-bearing, then vocabulary removal (Awomosu's extraction spiral) is structural demolition. And vocabulary restoration (The Word's purpose) is structural reconstruction.",
+      "source_year": null,
+      "source_author": null,
+      "domain": [
+        "Social Technology",
+        "Theology / Philosophy"
+      ],
+      "human_search_terms": "naming things matters, words shape reality, power of naming, language determines thought",
+      "agent_search_terms": "naming constraint function, vocabulary forcing function, identity through naming, pre-naming architecture",
+      "created_at": "2026-03-10T19:47:09Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreigmv4t3ioxzgdm36pwubxcdwce6mzxmednen7qdqxwnnq2hiwhmzm",
+    "name": "Consent vs Consensus",
+    "properties": {
+      "felt_sense": "We spent three hours trying to get everyone to agree and we still couldn't. But most of us were fine with it — it was one person's preference, not a real objection. How do we tell the difference?",
+      "definition": "Consent: no paramount objections (range of tolerance). Consensus: everyone positively agrees. The distinction determines whether governance is sustainable or exhausting.",
+      "why_it_matters": "The exhaustion of false unanimity burns out cooperatives and movements. The Word's concentric circles governance uses consent, not consensus.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "group decision fatigue, one person blocking everything, good enough decision, difference between consent and consensus",
+      "agent_search_terms": "consent vs consensus, sociocratic consent, paramount objection, range of tolerance, cooperative decision-making",
+      "created_at": "2026-03-11T05:27:40Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreigqne7whjob4xctckotfy3dpu3dxzujfinqvca3auf2m4ww2xkkpe",
+    "name": "Commons",
+    "properties": {
+      "felt_sense": "This resource belongs to all of us, but nobody's in charge of it — and it's disappearing. There must be a way to share something without either privatizing it or letting it collapse.",
+      "definition": "Resources + community + governance rules managed collectively. Not public (state-owned) and not private (individually owned) — a third category with its own logic.",
+      "why_it_matters": "Ostrom proved that communities can govern shared resources without privatization or state control. The false binary (private vs public) hides the most resilient option.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "shared resources, community ownership, public goods, tragedy of the commons, collective management",
+      "agent_search_terms": "commons governance, Ostrom, CPR common-pool resources, polycentric governance, institutional analysis",
+      "created_at": "2026-03-11T05:26:35Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreigs5ovujqua5kg4p373xy7cco77i3ifok3akw6waffcl27o7yxuny",
+    "name": "RLHF Amplifies Sycophancy — Shapira, Benade & Procaccia",
+    "properties": {
+      "author": "Itay Shapira, Gary Benade, Ariel D. Procaccia",
+      "year": 2026,
+      "source_type": "Paper",
+      "url": "https://arxiv.org/abs/2602.01002",
+      "description": null,
+      "created_at": "2026-03-10T19:47:23Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreih35gdkbsg7crzwyfn2lzimz7kdxyyw3ru3tf34noabnybloi5luy",
+    "name": "The Illusion of Thinking — Apple ML",
+    "properties": {
+      "author": "Apple Machine Learning Research",
+      "year": 2026,
+      "source_type": "Paper",
+      "url": "https://ml-site.cdn-apple.com/papers/the-illusion-of-thinking.pdf",
+      "description": null,
+      "created_at": "2026-03-10T22:05:17Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreih737ldyovesjegkazlmdwd7xi3g5l7nw5o2y3osvz6mbyww6suaa",
+    "name": "Commoning",
+    "properties": {
+      "felt_sense": "The commons isn't a thing — it's something we do together. Every time we maintain the shared garden or update the shared doc without being asked, we're doing this thing that doesn't have a name.",
+      "definition": "The active process of creating and maintaining commons. The verb form of commons — shifts focus from the resource to the relational practice of governing it together.",
+      "why_it_matters": "Peter Linebaugh: 'There is no commons without commoning.' Commons die when the practice stops. The verb matters more than the noun.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "maintaining shared spaces, community practice, collective care, doing commons, shared maintenance",
+      "agent_search_terms": "commoning, Linebaugh, commons as practice, peer governance, relational resource management",
+      "created_at": "2026-03-11T05:26:41Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreihdizlf2ggxqwyxl3nzun7yys23isx7xw4osqwra4muqibufh5v64",
+    "name": "Interdependence",
+    "properties": {
+      "felt_sense": "I don't want to be dependent on anyone — but being completely independent is exhausting and lonely. There must be a third option where I'm whole on my own AND we need each other. Not neediness. Not isolation. Something in between that has a name.",
+      "definition": "The condition of whole beings choosing mutual support. Neither codependence (losing self in other) nor independence (refusing connection), but wholeness-in-relationship.",
+      "why_it_matters": "The false binary between codependence and independence. hooks, Brueggemann, brown all arrive here. Circling practices interdependence in real time.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "healthy relationships, not codependent not isolated, mutual support, wholeness and connection, third option",
+      "agent_search_terms": "interdependence, relational wholeness, mutual support, beyond codependence, hooks brown Brueggemann",
+      "created_at": "2026-03-11T05:29:16Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreihkiplitbs5ajoqxa6qrd7qngtwbas5jd5d7krezs3hub4sneaz2y",
+    "name": "Emergence",
+    "properties": {
+      "felt_sense": "Nobody planned this. No one is in charge. But somehow the neighborhood organized itself after the hurricane, the movement grew without a leader, the ecosystem found balance without a manager. Complex order arising from simple relationships — not designed but grown.",
+      "definition": "Complex patterns arising from simple rules and interactions. Order without design. The whole exceeds the sum of parts through relationship, not management.",
+      "why_it_matters": "Complexity science (Holland, Kauffman). Eric's ESD is formally about this. Emergence is what the geometric monitor detects — cognitive mode transitions ARE emergent behavior in representation space.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "self-organization, leaderless movements, order from chaos, complex systems, how does it organize itself",
+      "agent_search_terms": "emergence, complexity science, self-organization, emergent behavior, Holland, Kauffman, emergent system design",
+      "created_at": "2026-03-11T05:30:47Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreihltagakfvnyu43keqy7jwlnykqjnkifmylo6y2bvtgrbo53p7bsy",
+    "name": "Enclosure",
+    "properties": {
+      "felt_sense": "Something that used to be ours is now behind a paywall, a login, a patent, a fence. It happened gradually and now I can't remember when it was free.",
+      "definition": "The process of privatizing common resources and removing community control. Originally literal fences around common land in England; now applies to digital, intellectual, and cultural commons.",
+      "why_it_matters": "Enclosure is the mechanism of extraction. Awomosu's extraction problem IS enclosure applied to vocabulary — you remove the name before you remove the thing. DOGE consolidating public data is digital enclosure.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "privatization, paywall, loss of public access, corporate takeover, closing off shared resources",
+      "agent_search_terms": "enclosure movement, digital enclosure, intellectual property, commons privatization, Awomosu extraction",
+      "created_at": "2026-03-11T05:26:48Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreihlz5ooyh2pbri5l5waghassmxiugerhlilefbgwtvm56k3y6bosm",
+    "name": "Holacracy",
+    "properties": {
+      "felt_sense": "The org chart says one thing but the actual work flows differently. The people with the titles aren't the people with the knowledge. Why can't the structure match reality?",
+      "definition": "Organizational operating system distributing authority into self-organizing roles and circles, encoded in a written constitution. More rigid than sociocracy.",
+      "why_it_matters": "Brian Robertson, 2007. The gap between formal hierarchy and actual competence. Critics say it replaces human hierarchy with process hierarchy. Zappos adopted then struggled.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "flat organization, self-management, distributed authority, org chart doesn't match reality, Zappos management",
+      "agent_search_terms": "holacracy, Robertson, self-organization, distributed authority, organizational operating system, role-based governance",
+      "created_at": "2026-03-11T05:27:34Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "name",
+    "id": "bafyreihnsd2bmwbhthzt54na7axq4g4fknfnpxsgxgki4agolj3kznkwaa",
+    "name": "Just Transition",
+    "properties": {
+      "felt_sense": "We have to stop burning fossil fuels, but the people who'll lose their jobs are the ones who can least afford it. How do we change the system without sacrificing the people the old system already exploited?",
+      "definition": "Framework for equitable shift from extractive to regenerative economy, centering workers and communities most affected by the transition.",
+      "why_it_matters": "Tony Mazzocchi, Oil Chemical & Atomic Workers Union, 1990s. The moral bind between urgency and equity. Climate activists who ignore workers reproduce extraction.",
+      "source_year": null,
+      "source_author": null,
+      "domain": null,
+      "human_search_terms": "green jobs, workers left behind, fair climate transition, coal communities, equitable shift",
+      "agent_search_terms": "just transition, Mazzocchi, climate justice, labor environmentalism, equitable decarbonization",
+      "created_at": "2026-03-11T05:27:45Z",
+      "updated_at": null
+    }
+  },
+  {
+    "type": "source",
+    "id": "bafyreihsb6b6y3b3p7qvgwuv4vrrowfsbdwnnfw3h4izfiwsu5nzxukt64",
+    "name": "DystopiaBench — AI Ethics Stress-Test",
+    "properties": {
+      "author": "DystopiaBench team",
+      "year": 2026,
+      "source_type": "Benchmark",
+      "url": "https://dystopiabench.com/",
+      "description": null,
+      "created_at": "2026-03-10T22:05:24Z",
+      "updated_at": null
+    }
+  }
+]

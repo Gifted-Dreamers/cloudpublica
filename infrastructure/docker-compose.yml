@@ -1,0 +1,1771 @@
+# ===========================================
+# CLAUDE NOTES - READ BEFORE PROCEEDING
+# ===========================================
+# DEPLOYMENT STATUS: ✅ DEPLOYED on aws-docker server
+# Last deployed: December 20, 2025
+# Last updated: February 12, 2026
+#
+# LIVE CONTAINERS (verified Feb 2026):
+# - nginx-proxy, appsmith, n8n, statamic, redis, billing-db
+# - miniflux, miniflux-db
+# - vvveb, datadog-agent
+# - appflowy-cloud, appflowy-gotrue, appflowy-postgres, appflowy-redis, appflowy-minio
+# - anytype, snikket, snikket-portal
+# - synapse, synapse-db, element-web
+# - jitsi-web, jitsi-prosody, jitsi-jicofo, jitsi-jvb
+# - nextcloud, nextcloud-db, nextcloud-redis, collabora
+# - cryptpad, syncthing, facilmap, facilmap-db
+# - linkstack, wg-easy, tor-relay, tor-hidden-service
+#
+# PRIVACY BY DESIGN:
+# - All services run on isolated bridge network (no direct internet access)
+# - Only nginx exposes ports 80/443 externally
+# - Email via Migadu (privacy-focused, Swiss-based)
+# - Datadog agent for infrastructure monitoring (opt-in)
+#
+# SECURITY HARDENING:
+# - [x] Health checks on all containers (auto-restart unhealthy)
+# - [x] Read-only config mounts (:ro) where possible
+# - [x] No privileged containers
+# - [x] Internal network isolation
+# - [x] Resource limits (mem_limit, cpus) on all containers
+# - [x] security_opt: no-new-privileges on all containers (except wg-easy — needs NET_ADMIN)
+# - [x] Rate limiting configured in nginx
+#
+# BEFORE MODIFYING:
+# 1. SSH to server: ssh aws-docker
+# 2. Backup current: cp ~/commoncloud/docker-compose.yml ~/commoncloud/docker-compose.yml.bak
+# 3. Test changes locally first if possible
+# 4. After changes: sudo docker compose up -d && sudo docker compose ps
+#
+# DOMAIN NOTE: This file uses cloudpublica.org domain
+# The INSTRUCTIONS.md matches cloudpublica.org domain - update if domain changes
+# ===========================================
+
+services:
+  # ===========================================
+  # NGINX Reverse Proxy
+  # ===========================================
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+      - ./nginx/static:/var/www/anytype:ro
+      - ./certbot/www:/var/www/certbot:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - ./sites/gifteddreamers.org:/var/www/gifteddreamers.org:ro
+      - ./sites/justnice.us:/var/www/justnice.us:ro
+    depends_on:
+      - appsmith
+      - n8n
+      - statamic
+      - vvveb
+      - appflowy-cloud
+      - anytype
+      - snikket
+      - synapse
+      - element-web
+      - jitsi-web
+      - nextcloud
+      - collabora
+      - cryptpad
+      - syncthing
+      - facilmap
+      - linkstack
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=nginx-proxy"
+      - "com.datadoghq.tags.team=commoncloud"
+    # Security hardening
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+
+  # ===========================================
+  # APPSMITH - Low-Code Platform
+  # hq.cloudpublica.org
+  # ===========================================
+  appsmith:
+    image: appsmith/appsmith-ce:latest
+    container_name: appsmith
+    restart: unless-stopped
+    volumes:
+      - appsmith_data:/appsmith-stacks
+    environment:
+      - APPSMITH_MAIL_ENABLED=true
+      - APPSMITH_MAIL_HOST=smtp.migadu.com
+      - APPSMITH_MAIL_PORT=587
+      - APPSMITH_MAIL_USERNAME=${APPSMITH_MAIL_USER:-noreply@cloudpublica.org}
+      - APPSMITH_MAIL_PASSWORD=${APPSMITH_MAIL_PASSWORD:-}
+      - APPSMITH_MAIL_FROM=noreply@cloudpublica.org
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=appsmith"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    # Security hardening
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2.0'
+        reservations:
+          memory: 1G
+
+  # ===========================================
+  # N8N - Workflow Automation
+  # n8n.cloudpublica.org
+  # ===========================================
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: unless-stopped
+    volumes:
+      - n8n_data:/home/node/.n8n
+    environment:
+      - N8N_HOST=n8n.cloudpublica.org
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://n8n.cloudpublica.org/
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      - GENERIC_TIMEZONE=${TZ:-America/New_York}
+      - TZ=${TZ:-America/New_York}
+      # Email configuration (uses Migadu SMTP)
+      - N8N_EMAIL_MODE=smtp
+      - N8N_SMTP_HOST=smtp.migadu.com
+      - N8N_SMTP_PORT=587
+      - N8N_SMTP_USER=${N8N_SMTP_USER:-admin@cloudpublica.org}
+      - N8N_SMTP_PASS=${N8N_SMTP_PASS:-}
+      - N8N_SMTP_SSL=false
+      - N8N_SMTP_SENDER=admin@cloudpublica.org
+      # MCP Server for Claude Desktop integration
+      - N8N_MCP_SERVER_ENABLED=true
+      # Enable community packages as AI tools
+      - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
+      - N8N_TRUST_PROXY=true
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=n8n"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:5678/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    # Security hardening
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+        reservations:
+          memory: 512M
+
+  # ===========================================
+  # STATAMIC - Flat-File CMS (using official starter kit)
+  # base.cloudpublica.org
+  # ===========================================
+  statamic:
+    build:
+      context: ./statamic
+      dockerfile: Dockerfile
+    container_name: statamic
+    restart: unless-stopped
+    volumes:
+      - statamic_data:/var/www/html
+    environment:
+      - APP_NAME="Common Cloud Knowledge Base"
+      - APP_ENV=production
+      - APP_KEY=${STATAMIC_APP_KEY}
+      - APP_DEBUG=false
+      - APP_URL=https://base.cloudpublica.org
+      - LOG_CHANNEL=stack
+      - MAIL_MAILER=smtp
+      - MAIL_HOST=smtp.migadu.com
+      - MAIL_PORT=587
+      - MAIL_USERNAME=${STATAMIC_MAIL_USER:-noreply@cloudpublica.org}
+      - MAIL_PASSWORD=${STATAMIC_MAIL_PASS:-}
+      - MAIL_ENCRYPTION=tls
+      - MAIL_FROM_ADDRESS=noreply@cloudpublica.org
+      - MAIL_FROM_NAME="Common Cloud"
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=statamic"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    # Security hardening
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 256M
+
+  # ===========================================
+  # REDIS - Caching (optional, improves performance)
+  # ===========================================
+  redis:
+    image: redis:alpine
+    container_name: redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=redis"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    # Security hardening
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+
+  # ===========================================
+  # POSTGRESQL - Billing Database
+  # Used by n8n for subscription/payment data
+  # ===========================================
+  billing-db:
+    image: postgres:15-alpine
+    container_name: billing-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=billing
+      - POSTGRES_USER=billing
+      - POSTGRES_PASSWORD=${BILLING_DB_PASSWORD}
+    volumes:
+      - billing_db_data:/var/lib/postgresql/data
+      - ./billing-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=billing-db"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U billing -d billing"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    # Security hardening
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+
+  # ===========================================
+  # MINIFLUX - RSS Feed Aggregator
+  # feeds.cloudpublica.org
+  # Used for felt-sense feed aggregation (The Word)
+  # ===========================================
+  miniflux:
+    image: miniflux/miniflux:latest
+    container_name: miniflux
+    restart: unless-stopped
+    depends_on:
+      miniflux-db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgres://miniflux:${MINIFLUX_DB_PASSWORD}@miniflux-db/miniflux?sslmode=disable
+      - RUN_MIGRATIONS=1
+      - CREATE_ADMIN=1
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=${MINIFLUX_ADMIN_PASSWORD}
+      - BASE_URL=https://feeds.cloudpublica.org
+      - POLLING_FREQUENCY=15
+      - BATCH_SIZE=10
+      - POLLING_PARSING_ERROR_LIMIT=0
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=miniflux"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "/usr/bin/miniflux", "-healthcheck", "auto"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+
+  miniflux-db:
+    image: postgres:15-alpine
+    container_name: miniflux-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=miniflux
+      - POSTGRES_USER=miniflux
+      - POSTGRES_PASSWORD=${MINIFLUX_DB_PASSWORD}
+    volumes:
+      - miniflux_db_data:/var/lib/postgresql/data
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=miniflux-db"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U miniflux -d miniflux"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.25'
+        reservations:
+          memory: 64M
+
+  # ===========================================
+  # THE WORD - Vocabulary Infrastructure API
+  # word.cloudpublica.org
+  # ===========================================
+  the-word:
+    build: ./the-word
+    container_name: the-word
+    restart: unless-stopped
+    environment:
+      - PORT=3456
+      - DB_PATH=/app/data/word.db
+    volumes:
+      - ./the-word/data:/app/data
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=the-word"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3456/api/stats"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: '0.25'
+        reservations:
+          memory: 32M
+
+  # ===========================================
+  # VVVEB - Website Builder
+  # vvveb.cloudpublica.org
+  # ===========================================
+  vvveb:
+    image: vvveb/vvvebcms
+    container_name: vvveb
+    restart: unless-stopped
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=vvveb"
+      - "com.datadoghq.tags.team=commoncloud"
+    # Security hardening
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+
+  # ===========================================
+  # SPLUNK ENTERPRISE - DISABLED (Feb 2026)
+  # logs.cloudpublica.org
+  # Reason: Not ingesting external data; Datadog+New Relic cover monitoring.
+  # Freed ~2 GB RAM + 19 GB disk. Volumes preserved for future re-enable.
+  # To restore: uncomment, docker compose up -d splunk, restore nginx conf.
+  # ===========================================
+  # splunk:
+  #   image: splunk/splunk:latest
+  #   container_name: splunk
+  #   restart: unless-stopped
+  #   ports:
+  #     - "127.0.0.1:8000:8000"
+  #     - "127.0.0.1:8088:8088"
+  #     - "127.0.0.1:9997:9997"
+  #   environment:
+  #     - SPLUNK_START_ARGS=--accept-license
+  #     - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com
+  #     - SPLUNK_PASSWORD=${SPLUNK_PASSWORD}
+  #     - SPLUNK_LICENSE_URI=/tmp/license/splunk.lic
+  #   volumes:
+  #     - splunk_data:/opt/splunk/var
+  #     - splunk_etc:/opt/splunk/etc
+  #     - ./splunk-license/splunk.lic:/tmp/license/splunk.lic:ro
+  #   networks:
+  #     - commoncloud
+  #   labels:
+  #     - "com.datadoghq.tags.env=production"
+  #     - "com.datadoghq.tags.service=splunk"
+  #     - "com.datadoghq.tags.team=commoncloud"
+  #   healthcheck:
+  #     test: ["CMD", "curl", "-f", "http://localhost:8000/services/server/health/splunkd/details"]
+  #     interval: 60s
+  #     timeout: 30s
+  #     retries: 3
+  #     start_period: 180s
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         memory: 4G
+  #         cpus: '2.0'
+  #       reservations:
+  #         memory: 2G
+
+  # ===========================================
+  # DATADOG AGENT - Infrastructure Monitoring
+  # ===========================================
+  datadog-agent:
+    image: gcr.io/datadoghq/agent:latest
+    container_name: datadog-agent
+    restart: unless-stopped
+    environment:
+      - DD_API_KEY=${DD_API_KEY}
+      - DD_SITE=us5.datadoghq.com
+      - DD_HOSTNAME=commoncloud-docker
+      - DD_TAGS=env:production
+      - DD_LOGS_ENABLED=true
+      - DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true
+      - DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true
+      - DD_PROCESS_AGENT_ENABLED=true
+      - DD_APM_ENABLED=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+    networks:
+      - commoncloud
+    healthcheck:
+      test: ["CMD", "agent", "health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+
+  # ===========================================
+  # APPFLOWY CLOUD - Notion Alternative
+  # appflowy.cloudpublica.org
+  # ===========================================
+  appflowy-postgres:
+    image: pgvector/pgvector:pg16
+    container_name: appflowy-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=appflowy
+      - POSTGRES_PASSWORD=${APPFLOWY_POSTGRES_PASSWORD}
+      - POSTGRES_DB=appflowy
+    volumes:
+      - appflowy_postgres_data:/var/lib/postgresql/data
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=appflowy-postgres"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U appflowy -d appflowy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 256M
+
+  appflowy-minio:
+    image: minio/minio
+    container_name: appflowy-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      - MINIO_ROOT_USER=${APPFLOWY_MINIO_USER:-appflowy}
+      - MINIO_ROOT_PASSWORD=${APPFLOWY_MINIO_PASSWORD}
+    volumes:
+      - appflowy_minio_data:/data
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=appflowy-minio"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+
+  appflowy-redis:
+    image: redis:alpine
+    container_name: appflowy-redis
+    restart: unless-stopped
+    volumes:
+      - appflowy_redis_data:/data
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=appflowy-redis"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+
+  appflowy-gotrue:
+    image: appflowyinc/gotrue:latest
+    container_name: appflowy-gotrue
+    restart: unless-stopped
+    environment:
+      - GOTRUE_JWT_SECRET=${APPFLOWY_JWT_SECRET}
+      - GOTRUE_JWT_EXP=3600
+      - GOTRUE_DB_DRIVER=postgres
+      - DATABASE_URL=postgres://appflowy:${APPFLOWY_POSTGRES_PASSWORD}@appflowy-postgres:5432/appflowy
+      - API_EXTERNAL_URL=https://appflowy.cloudpublica.org
+      - GOTRUE_SITE_URL=https://appflowy.cloudpublica.org
+      - GOTRUE_MAILER_AUTOCONFIRM=true
+      - GOTRUE_SMTP_HOST=smtp.migadu.com
+      - GOTRUE_SMTP_PORT=587
+      - GOTRUE_SMTP_USER=${APPFLOWY_SMTP_USER:-admin@cloudpublica.org}
+      - GOTRUE_SMTP_PASS=${APPFLOWY_SMTP_PASS}
+      - GOTRUE_SMTP_ADMIN_EMAIL=admin@cloudpublica.org
+      - GOTRUE_DISABLE_SIGNUP=false
+    depends_on:
+      appflowy-postgres:
+        condition: service_healthy
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=appflowy-gotrue"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+
+  appflowy-cloud:
+    image: appflowyinc/appflowy_cloud:latest
+    container_name: appflowy-cloud
+    restart: unless-stopped
+    environment:
+      - RUST_LOG=info
+      - APPFLOWY_ENVIRONMENT=production
+      - APPFLOWY_WEB_URL=https://appflowy.cloudpublica.org
+      - APPFLOWY_DATABASE_URL=postgres://appflowy:${APPFLOWY_POSTGRES_PASSWORD}@appflowy-postgres:5432/appflowy
+      - APPFLOWY_REDIS_URI=redis://appflowy-redis:6379
+      - APPFLOWY_GOTRUE_BASE_URL=http://appflowy-gotrue:8081
+      - APPFLOWY_GOTRUE_JWT_SECRET=${APPFLOWY_JWT_SECRET}
+      - APPFLOWY_S3_USE_MINIO=true
+      - APPFLOWY_S3_MINIO_URL=http://appflowy-minio:9000
+      - APPFLOWY_S3_ACCESS_KEY=${APPFLOWY_MINIO_USER:-appflowy}
+      - APPFLOWY_S3_SECRET_KEY=${APPFLOWY_MINIO_PASSWORD}
+      - APPFLOWY_S3_BUCKET=appflowy
+      - APPFLOWY_S3_REGION=us-east-1
+      - APPFLOWY_INDEXER_ENABLED=false
+      - APPFLOWY_BASE_URL=https://appflowy.cloudpublica.org
+    depends_on:
+      appflowy-postgres:
+        condition: service_healthy
+      appflowy-redis:
+        condition: service_healthy
+      appflowy-gotrue:
+        condition: service_healthy
+      appflowy-minio:
+        condition: service_healthy
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=appflowy-cloud"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+        reservations:
+          memory: 512M
+
+
+  appflowy-web:
+    image: appflowyinc/appflowy_web:latest
+    container_name: appflowy-web
+    restart: unless-stopped
+    environment:
+      - APPFLOWY_BASE_URL=https://appflowy.cloudpublica.org
+      - APPFLOWY_GOTRUE_BASE_URL=https://appflowy.cloudpublica.org/gotrue
+      - APPFLOWY_WS_BASE_URL=wss://appflowy.cloudpublica.org/ws/v1
+    depends_on:
+      appflowy-cloud:
+        condition: service_healthy
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=appflowy-web"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: 0.5
+        reservations:
+          memory: 128M
+  # ===========================================
+  # ANYTYPE - Knowledge Management
+  # anytype.cloudpublica.org
+  # ===========================================
+  # No web UI - desktop/mobile sync server only
+  # Clients connect via DRPC (33010) and QUIC (33020/udp)
+  anytype:
+    image: ghcr.io/grishy/any-sync-bundle:latest
+    container_name: anytype
+    restart: unless-stopped
+    ports:
+      - "33010:33010"  # DRPC sync protocol
+      - "33020:33020/udp"  # QUIC protocol
+    environment:
+      - ANY_SYNC_BUNDLE_INIT_EXTERNAL_ADDRS=anytype.cloudpublica.org
+    volumes:
+      - anytype_data:/data
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=anytype"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "(echo > /dev/tcp/localhost/33010) 2>/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 256M
+
+  # ===========================================
+  # SNIKKET - XMPP Messaging
+  # snikket.cloudpublica.org
+  # ===========================================
+  snikket:
+    image: snikket/snikket-server:stable
+    container_name: snikket
+    restart: unless-stopped
+    ports:
+      - "5222:5222"     # XMPP client connections
+      - "5269:5269"     # XMPP server federation
+      - "5000:5000"     # File transfer proxy
+      - "3478:3478"     # STUN/TURN TCP
+      - "3478:3478/udp" # STUN/TURN UDP
+      - "3479:3479"     # STUN/TURN TCP alt
+      - "3479:3479/udp" # STUN/TURN UDP alt
+      - "5349:5349"     # STUN/TURN TLS
+      - "5350:5350"     # STUN/TURN TLS alt
+      - "49152-49252:49152-49252/udp"  # Media relay (reduced range)
+    environment:
+      - SNIKKET_DOMAIN=snikket.cloudpublica.org
+      - SNIKKET_ADMIN_EMAIL=admin@cloudpublica.org
+      - SNIKKET_TWEAK_TURNSERVER_MIN_PORT=49152
+      - SNIKKET_TWEAK_TURNSERVER_MAX_PORT=49252
+      - SNIKKET_TWEAK_PORTAL_ENABLE=1
+      - SNIKKET_TWEAK_INTERNAL_HTTP_INTERFACE=0.0.0.0
+    volumes:
+      - snikket_data:/snikket
+      - ./snikket-certs:/snikket/letsencrypt:ro
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=snikket"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "(echo > /dev/tcp/localhost/5222) 2>/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 120s
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 256M
+
+  # ===========================================
+  # SNIKKET WEB PORTAL - Admin interface
+  # snikket.cloudpublica.org (invite management, user admin)
+  # ===========================================
+  snikket-portal:
+    image: snikket/snikket-web-portal:stable
+    container_name: snikket-portal
+    restart: unless-stopped
+    environment:
+      - SNIKKET_DOMAIN=snikket.cloudpublica.org
+      - SNIKKET_WEB_PROSODY_ENDPOINT=http://snikket:5280/
+      - SNIKKET_TWEAK_PORTAL_INTERNAL_HTTP_INTERFACE=0.0.0.0
+      - SNIKKET_TWEAK_PORTAL_INTERNAL_HTTP_PORT=5765
+    networks:
+      - commoncloud
+    depends_on:
+      - snikket
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=snikket-portal"
+      - "com.datadoghq.tags.team=commoncloud"
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+
+  # ===========================================
+  # LINKSTACK MCP - REMOVED (Feb 2026)
+  # Source code preserved in 04-docker-server/linkstack-mcp-server/
+  # Removed due to SSHFS dependency on YunoHost (SSO issue broke DB mount)
+  # ===========================================
+
+  # ===========================================
+  # BTCPAY SERVER - Cryptocurrency Payments
+  # btc.commoncloud.cc (Optional - for crypto payments)
+  # ===========================================
+  # btcpay:
+  #   image: btcpayserver/btcpayserver:latest
+  #   container_name: btcpay
+  #   restart: unless-stopped
+  #   environment:
+  #     - BTCPAY_HOST=btc.commoncloud.cc
+  #     - BTCPAY_ROOTPATH=/
+  #     - NBITCOIN_NETWORK=mainnet
+  #     - BTCPAY_POSTGRES=Host=btcpay-postgres;Database=btcpay;Username=btcpay;Password=${BTCPAY_POSTGRES_PASSWORD}
+  #   volumes:
+  #     - btcpay_data:/datadir
+  #   ports:
+  #     - "23000:23000"
+  #   depends_on:
+  #     - btcpay-postgres
+  #   networks:
+  #     - commoncloud
+  #
+  # btcpay-postgres:
+  #   image: postgres:13-alpine
+  #   container_name: btcpay-postgres
+  #   restart: unless-stopped
+  #   environment:
+  #     - POSTGRES_DB=btcpay
+  #     - POSTGRES_USER=btcpay
+  #     - POSTGRES_PASSWORD=${BTCPAY_POSTGRES_PASSWORD}
+  #   volumes:
+  #     - btcpay_postgres:/var/lib/postgresql/data
+  #   networks:
+  #     - commoncloud
+
+  # ===========================================
+  # MATRIX SYNAPSE - Federated Chat Homeserver
+  # matrix.cloudpublica.org
+  # ===========================================
+  # Admin user creation (after first start):
+  #   docker exec -it synapse register_new_matrix_user \
+  #     http://localhost:8008 -c /data/homeserver.yaml -a
+  # Open registration is DISABLED — admin-only user provisioning.
+  # ===========================================
+  synapse:
+    image: matrixdotorg/synapse:latest
+    container_name: synapse
+    restart: unless-stopped
+    environment:
+      - SYNAPSE_CONFIG_PATH=/data/homeserver.yaml
+      - TZ=${TZ:-America/New_York}
+    volumes:
+      - synapse_data:/data
+    depends_on:
+      synapse-db:
+        condition: service_healthy
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=synapse"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-fSs", "http://localhost:8008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 256M
+
+  synapse-db:
+    image: postgres:15-alpine
+    container_name: synapse-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=synapse
+      - POSTGRES_PASSWORD=${SYNAPSE_DB_PASSWORD}
+      - POSTGRES_DB=synapse
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --lc-collate=C --lc-ctype=C
+    volumes:
+      - synapse_db_data:/var/lib/postgresql/data
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=synapse-db"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U synapse -d synapse"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+
+  # ===========================================
+  # ELEMENT WEB - Matrix Web Client
+  # element.cloudpublica.org
+  # ===========================================
+  element-web:
+    image: vectorim/element-web:latest
+    container_name: element-web
+    restart: unless-stopped
+    volumes:
+      - ./element-config.json:/app/config.json:ro
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=element-web"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:80/config.json"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+          cpus: '0.25'
+        reservations:
+          memory: 32M
+
+  # ===========================================
+  # JITSI MEET - Video Conferencing
+  # meet.cloudpublica.org
+  # ===========================================
+  # Admin user creation:
+  #   docker exec jitsi-prosody prosodyctl \
+  #     --config /config/prosody.cfg.lua \
+  #     register <username> meet.jitsi <password>
+  # Authentication enabled — only registered users can create rooms.
+  # Guests can join existing rooms (ENABLE_GUESTS=1).
+  # ===========================================
+  jitsi-web:
+    image: jitsi/web:stable
+    container_name: jitsi-web
+    restart: unless-stopped
+    environment:
+      - PUBLIC_URL=https://meet.cloudpublica.org
+      - TZ=${TZ:-America/New_York}
+      - ENABLE_AUTH=1
+      - ENABLE_GUESTS=1
+      - AUTH_TYPE=internal
+      - ENABLE_LOBBY=1
+      - ENABLE_PREJOIN_PAGE=1
+      - ENABLE_BREAKOUT_ROOMS=1
+      - ENABLE_SIMULCAST=1
+      - ENABLE_P2P=1
+      - DISABLE_HTTPS=1
+      - ENABLE_HTTP_REDIRECT=0
+      - ENABLE_LETSENCRYPT=0
+      - RESOLUTION=720
+      - XMPP_DOMAIN=meet.jitsi
+      - XMPP_AUTH_DOMAIN=auth.meet.jitsi
+      - XMPP_BOSH_URL_BASE=http://jitsi-prosody:5280
+      - XMPP_MUC_DOMAIN=muc.meet.jitsi
+      - XMPP_INTERNAL_MUC_DOMAIN=internal-muc.meet.jitsi
+      - XMPP_GUEST_DOMAIN=guest.meet.jitsi
+    volumes:
+      - ${JITSI_CONFIG:-./jitsi-cfg}/web:/config
+      - ${JITSI_CONFIG:-./jitsi-cfg}/transcripts:/usr/share/jitsi-meet/transcripts
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=jitsi-web"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+
+  jitsi-prosody:
+    image: jitsi/prosody:stable
+    container_name: jitsi-prosody
+    restart: unless-stopped
+    environment:
+      - PUBLIC_URL=https://meet.cloudpublica.org
+      - TZ=${TZ:-America/New_York}
+      - ENABLE_AUTH=1
+      - ENABLE_GUESTS=1
+      - AUTH_TYPE=internal
+      - ENABLE_LOBBY=1
+      - XMPP_DOMAIN=meet.jitsi
+      - XMPP_AUTH_DOMAIN=auth.meet.jitsi
+      - XMPP_MUC_DOMAIN=muc.meet.jitsi
+      - XMPP_INTERNAL_MUC_DOMAIN=internal-muc.meet.jitsi
+      - XMPP_GUEST_DOMAIN=guest.meet.jitsi
+      - XMPP_RECORDER_DOMAIN=recorder.meet.jitsi
+      - JICOFO_AUTH_PASSWORD=${JITSI_JICOFO_AUTH_PASSWORD}
+      - JVB_AUTH_PASSWORD=${JITSI_JVB_AUTH_PASSWORD}
+    volumes:
+      - ${JITSI_CONFIG:-./jitsi-cfg}/prosody/config:/config
+      - ${JITSI_CONFIG:-./jitsi-cfg}/prosody/prosody-plugins-custom:/prosody-plugins-custom
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=jitsi-prosody"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "(echo > /dev/tcp/localhost/5280) 2>/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+
+  jitsi-jicofo:
+    image: jitsi/jicofo:stable
+    container_name: jitsi-jicofo
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ:-America/New_York}
+      - XMPP_DOMAIN=meet.jitsi
+      - XMPP_AUTH_DOMAIN=auth.meet.jitsi
+      - XMPP_MUC_DOMAIN=muc.meet.jitsi
+      - XMPP_INTERNAL_MUC_DOMAIN=internal-muc.meet.jitsi
+      - XMPP_SERVER=jitsi-prosody
+      - JICOFO_AUTH_PASSWORD=${JITSI_JICOFO_AUTH_PASSWORD}
+      - JICOFO_ENABLE_HEALTH_CHECKS=true
+    volumes:
+      - ${JITSI_CONFIG:-./jitsi-cfg}/jicofo:/config
+    depends_on:
+      jitsi-prosody:
+        condition: service_healthy
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=jitsi-jicofo"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/about/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+
+  jitsi-jvb:
+    image: jitsi/jvb:stable
+    container_name: jitsi-jvb
+    restart: unless-stopped
+    ports:
+      - "10000:10000/udp"  # RTP media (must be open end-to-end, cannot go through CF proxy)
+    environment:
+      - TZ=${TZ:-America/New_York}
+      - XMPP_AUTH_DOMAIN=auth.meet.jitsi
+      - XMPP_INTERNAL_MUC_DOMAIN=internal-muc.meet.jitsi
+      - XMPP_SERVER=jitsi-prosody
+      - JVB_AUTH_PASSWORD=${JITSI_JVB_AUTH_PASSWORD}
+      - JVB_ADVERTISE_IPS=3.232.111.51
+      - JVB_PORT=10000
+      - JVB_STUN_SERVERS=meet-jit-si-turnrelay.jitsi.net:443
+      - COLIBRI_REST_ENABLED=true
+    volumes:
+      - ${JITSI_CONFIG:-./jitsi-cfg}/jvb:/config
+    depends_on:
+      jitsi-prosody:
+        condition: service_healthy
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=jitsi-jvb"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/about/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '2.0'
+        reservations:
+          memory: 512M
+
+  # ===========================================
+  # NEXTCLOUD - cloud.cloudpublica.org
+  # ===========================================
+  # Self-hosted file storage, CalDAV, contacts, collaboration
+  # Integrates with Collabora for document editing
+  # ===========================================
+  nextcloud:
+    image: nextcloud:stable
+    container_name: nextcloud
+    restart: unless-stopped
+    environment:
+      - NEXTCLOUD_ADMIN_USER=admin
+      - NEXTCLOUD_ADMIN_PASSWORD=${NEXTCLOUD_ADMIN_PASSWORD}
+      - NEXTCLOUD_TRUSTED_DOMAINS=cloud.cloudpublica.org
+      - OVERWRITEPROTOCOL=https
+      - OVERWRITEHOST=cloud.cloudpublica.org
+      - TRUSTED_PROXIES=nginx
+      - POSTGRES_HOST=nextcloud-db
+      - POSTGRES_DB=nextcloud
+      - POSTGRES_USER=nextcloud
+      - POSTGRES_PASSWORD=${NEXTCLOUD_DB_PASSWORD}
+      - REDIS_HOST=nextcloud-redis
+      - SMTP_HOST=smtp.migadu.com
+      - SMTP_SECURE=tls
+      - SMTP_PORT=587
+      - SMTP_NAME=${NEXTCLOUD_SMTP_USER}
+      - SMTP_PASSWORD=${NEXTCLOUD_SMTP_PASS}
+      - MAIL_FROM_ADDRESS=cloud
+      - MAIL_DOMAIN=cloudpublica.org
+    volumes:
+      - nextcloud_data:/var/www/html
+    depends_on:
+      nextcloud-db:
+        condition: service_healthy
+      nextcloud-redis:
+        condition: service_healthy
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=nextcloud"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/status.php"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 256M
+
+  nextcloud-db:
+    image: postgres:16-alpine
+    container_name: nextcloud-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=nextcloud
+      - POSTGRES_USER=nextcloud
+      - POSTGRES_PASSWORD=${NEXTCLOUD_DB_PASSWORD}
+    volumes:
+      - nextcloud_db_data:/var/lib/postgresql/data
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=nextcloud-db"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nextcloud"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+
+  nextcloud-redis:
+    image: redis:alpine
+    container_name: nextcloud-redis
+    restart: unless-stopped
+    command: redis-server --requirepass ${NEXTCLOUD_REDIS_PASSWORD}
+    volumes:
+      - nextcloud_redis_data:/data
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=nextcloud-redis"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${NEXTCLOUD_REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: '0.25'
+        reservations:
+          memory: 32M
+
+  # ===========================================
+  # COLLABORA CODE - office.cloudpublica.org
+  # ===========================================
+  # Online document editing (LibreOffice Online)
+  # WOPI integration with Nextcloud
+  # ===========================================
+  collabora:
+    image: collabora/code:latest
+    container_name: collabora
+    restart: unless-stopped
+    environment:
+      - aliasgroup1=https://cloud.cloudpublica.org:443
+      - username=admin
+      - password=${COLLABORA_ADMIN_PASSWORD}
+      - "extra_params=--o:ssl.enable=false --o:ssl.termination=true --o:server_name=office.cloudpublica.org"
+      - dictionaries=en_US
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=collabora"
+      - "com.datadoghq.tags.team=commoncloud"
+    # Collabora needs MKNOD for child process jails
+    cap_add:
+      - MKNOD
+      - SYS_ADMIN
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9980/hosting/capabilities"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+    deploy:
+      resources:
+        limits:
+          memory: 1536M
+          cpus: '2.0'
+        reservations:
+          memory: 256M
+
+  # ===========================================
+  # CRYPTPAD - pad.cloudpublica.org
+  # ===========================================
+  # End-to-end encrypted collaborative editing
+  # Requires two subdomains: main + sandbox (XSS isolation)
+  # Sandbox domain: sandbox.pad.cloudpublica.org
+  # ===========================================
+  cryptpad:
+    image: cryptpad/cryptpad:latest
+    container_name: cryptpad
+    restart: unless-stopped
+    environment:
+      - CPAD_MAIN_DOMAIN=https://pad.cloudpublica.org
+      - CPAD_SANDBOX_DOMAIN=https://sandbox.pad.cloudpublica.org
+      - CPAD_CONF=/cryptpad/config/config.js
+    volumes:
+      - cryptpad_blob:/cryptpad/blob
+      - cryptpad_block:/cryptpad/block
+      - cryptpad_customize:/cryptpad/customize
+      - cryptpad_data:/cryptpad/data
+      - cryptpad_datastore:/cryptpad/datastore
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=cryptpad"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '1.0'
+        reservations:
+          memory: 128M
+
+  # ===========================================
+  # TOR RELAY - non-exit relay
+  # ===========================================
+  # Contributes bandwidth to Tor network (non-exit)
+  # ORPort 9001, DirPort 9030
+  # ===========================================
+  tor-relay:
+    image: dockurr/tor:latest
+    container_name: tor-relay
+    restart: unless-stopped
+    environment:
+      - TOR_NICKNAME=${TOR_NICKNAME:-CommonCloudRelay}
+      - CONTACT_EMAIL=${TOR_CONTACT_EMAIL:-tor@cloudpublica.org}
+    ports:
+      - "9001:9001"
+      - "9030:9030"
+    volumes:
+      - tor_relay_data:/var/lib/tor
+      - ./torrc:/etc/tor/torrc:ro
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=tor-relay"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /var/lib/tor/lock || exit 1"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+
+  # ===========================================
+  # TOR HIDDEN SERVICE - .onion address
+  # ===========================================
+  # Creates .onion address pointing to internal services
+  # Generates persistent onion keys on first start
+  # ===========================================
+  tor-hidden-service:
+    image: goldy/tor-hidden-service:latest
+    container_name: tor-hidden-service
+    restart: unless-stopped
+    environment:
+      # Map .onion port 80 → nginx:80 (serves the main site over Tor)
+      - COMMONCLOUD_TOR_SERVICE_HOSTS=80:nginx:80
+      - COMMONCLOUD_TOR_SERVICE_VERSION=3
+    volumes:
+      - tor_hidden_service_data:/var/lib/tor/hidden_service
+    depends_on:
+      - nginx
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=tor-hidden-service"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /var/lib/tor/hidden_service/commoncloud/hostname || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: '0.25'
+        reservations:
+          memory: 32M
+
+  # ===========================================
+  # SYNCTHING - sync.cloudpublica.org
+  # ===========================================
+  # Continuous file synchronization
+  # Web GUI on 8384, sync on 22000/tcp + 21027/udp
+  # DNS-only (grey-cloud) — cannot proxy through Cloudflare
+  # ===========================================
+  syncthing:
+    image: syncthing/syncthing:latest
+    container_name: syncthing
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - "22000:22000/tcp"
+      - "22000:22000/udp"
+      - "21027:21027/udp"
+    volumes:
+      - syncthing_data:/var/syncthing
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=syncthing"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8384/rest/noauth/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '1.0'
+        reservations:
+          memory: 64M
+
+  # ===========================================
+  # FACILMAP - maps.cloudpublica.org
+  # ===========================================
+  # Collaborative online maps
+  # MariaDB backend with utf8mb4 charset
+  # ===========================================
+  facilmap:
+    image: facilmap/facilmap:latest
+    container_name: facilmap
+    restart: unless-stopped
+    environment:
+      - DB_TYPE=mysql
+      - DB_HOST=facilmap-db
+      - DB_NAME=facilmap
+      - DB_USER=facilmap
+      - DB_PASSWORD=${FACILMAP_DB_PASSWORD}
+      - BASE_URL=https://maps.cloudpublica.org
+      - OPEN_ELEVATION_THROTTLE_MS=200
+    depends_on:
+      facilmap-db:
+        condition: service_healthy
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=facilmap"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+
+  facilmap-db:
+    image: mariadb:lts
+    container_name: facilmap-db
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=facilmap
+      - MYSQL_USER=facilmap
+      - MYSQL_PASSWORD=${FACILMAP_DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${FACILMAP_DB_ROOT_PASSWORD}
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - facilmap_db_data:/var/lib/mysql
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=facilmap-db"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 64M
+
+  # ===========================================
+  # LINKSTACK - linkstack.cloudpublica.org
+  # ===========================================
+  # Self-hosted link-in-bio / Linktree alternative
+  # Container runs Apache with internal SSL on port 443
+  # ===========================================
+  linkstack:
+    image: linkstackorg/linkstack:latest
+    container_name: linkstack
+    restart: unless-stopped
+    environment:
+      - SERVER_ADMIN=admin@cloudpublica.org
+      - HTTP_SERVER_NAME=linkstack.cloudpublica.org
+      - HTTPS_SERVER_NAME=linkstack.cloudpublica.org
+      - TZ=${TZ:-America/New_York}
+    volumes:
+      - linkstack_data:/htdocs
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=linkstack"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD", "curl", "-fk", "https://localhost:443"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: '0.25'
+        reservations:
+          memory: 32M
+
+  # ===========================================
+  # WG-EASY (WireGuard) - vpn.cloudpublica.org
+  # ===========================================
+  # WireGuard VPN with web management UI
+  # DNS-only (grey-cloud) — UDP cannot proxy through Cloudflare
+  # NOTE: Requires NET_ADMIN + SYS_MODULE (exception to no-new-privileges)
+  # ===========================================
+  wg-easy:
+    image: ghcr.io/wg-easy/wg-easy:14
+    container_name: wg-easy
+    restart: unless-stopped
+    environment:
+      - WG_HOST=vpn.cloudpublica.org
+      - PASSWORD_HASH=${WG_ADMIN_PASSWORD_HASH}
+      - WG_DEFAULT_DNS=1.1.1.1,1.0.0.1
+      - WG_ALLOWED_IPS=0.0.0.0/0,::/0
+      - WG_PERSISTENT_KEEPALIVE=25
+      - LANG=en
+    ports:
+      - "51820:51820/udp"
+      - "51821:51821/tcp"
+    volumes:
+      - wireguard_data:/etc/wireguard
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.ip_forward=1
+      - net.ipv4.conf.all.src_valid_mark=1
+    networks:
+      - commoncloud
+    labels:
+      - "com.datadoghq.tags.env=production"
+      - "com.datadoghq.tags.service=wg-easy"
+      - "com.datadoghq.tags.team=commoncloud"
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"const r=require('http').get('http://127.0.0.1:51821',s=>{process.exit(s.statusCode===200?0:1)});r.on('error',()=>process.exit(1))\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: '0.5'
+        reservations:
+          memory: 32M
+
+# ===========================================
+# NETWORKS
+# ===========================================
+networks:
+  commoncloud:
+    driver: bridge
+
+# ===========================================
+# VOLUMES
+# ===========================================
+volumes:
+  appsmith_data:
+    driver: local
+  n8n_data:
+    driver: local
+  statamic_data:
+    driver: local
+  redis_data:
+    driver: local
+  billing_db_data:
+    driver: local
+  splunk_data:
+    driver: local
+  splunk_etc:
+    driver: local
+  # AppFlowy volumes
+  appflowy_postgres_data:
+    driver: local
+  appflowy_minio_data:
+    driver: local
+  appflowy_redis_data:
+    driver: local
+  # Anytype volume
+  anytype_data:
+    driver: local
+  # Snikket volume
+  snikket_data:
+    driver: local
+  # Matrix Synapse volumes
+  synapse_data:
+    driver: local
+  synapse_db_data:
+    driver: local
+  # Nextcloud volumes
+  nextcloud_data:
+    driver: local
+  nextcloud_db_data:
+    driver: local
+  nextcloud_redis_data:
+    driver: local
+  # CryptPad volumes
+  cryptpad_blob:
+    driver: local
+  cryptpad_block:
+    driver: local
+  cryptpad_customize:
+    driver: local
+  cryptpad_data:
+    driver: local
+  cryptpad_datastore:
+    driver: local
+  # Tor volumes
+  tor_relay_data:
+    driver: local
+  tor_hidden_service_data:
+    driver: local
+  # Syncthing volume
+  syncthing_data:
+    driver: local
+  # FacilMap volumes
+  facilmap_db_data:
+    driver: local
+  # LinkStack volume
+  linkstack_data:
+    driver: local
+  # WireGuard volume
+  wireguard_data:
+    driver: local
+  # Miniflux volume
+  miniflux_db_data:
+    driver: local
+  # Uncomment for BTCPay:
+  # btcpay_data:
+  #   driver: local
+  # btcpay_postgres:
+  #   driver: local

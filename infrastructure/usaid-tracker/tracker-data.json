@@ -1,0 +1,1506 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-17T00:21:22.574804+00:00",
+    "generated_by": "CloudPublica USAID Impact Tracker Pipeline v1",
+    "update_frequency": "every 6 hours",
+    "methodology": "Lancet projections (Cavalcanti et al. 2025) + real-time data from USAspending, WHO GHO, GDELT"
+  },
+  "counter": {
+    "projected_deaths_today": 1437123,
+    "projected_deaths_2030": 14000000,
+    "projected_child_deaths_2030": 4500000,
+    "deaths_prevented_2001_2021": 91000000,
+    "funding_cut_percent": 83,
+    "methodology_note": "Linear interpolation of Lancet projection. Actual impact may differ."
+  },
+  "lancet": {
+    "total_prevented_2001_2021": 91000000,
+    "children_prevented_2001_2021": 30000000,
+    "projected_additional_deaths_by_2030": 14000000,
+    "projected_child_deaths_by_2030": 4500000,
+    "child_deaths_per_year": 700000,
+    "funding_cut_percent": 83,
+    "disease_reduction_lost": {
+      "hiv_aids": {
+        "reduction_percent": 74,
+        "label": "HIV/AIDS"
+      },
+      "malaria": {
+        "reduction_percent": 53,
+        "label": "Malaria"
+      },
+      "tropical_diseases": {
+        "reduction_percent": 51,
+        "label": "Tropical Diseases"
+      },
+      "tuberculosis": {
+        "reduction_percent": null,
+        "label": "Tuberculosis"
+      },
+      "maternal_perinatal": {
+        "reduction_percent": null,
+        "label": "Maternal/Perinatal"
+      }
+    },
+    "source": "Cavalcanti et al., Lancet 2025, SSRN 5239038",
+    "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5239038",
+    "lancet_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)01186-9/fulltext",
+    "n_countries": 133
+  },
+  "funding": {
+    "source": "USAspending.gov API v2",
+    "agency": "Agency for International Development (USAID)",
+    "data": {
+      "FY2024": {
+        "total_awards": 10,
+        "top_awards_amount": 14404217684.84,
+        "source_url": "https://www.usaspending.gov/agency/agency-for-international-development?fy=2024",
+        "awards": [
+          {
+            "program": "HIV/AIDS (PEPFAR Supply Chain)",
+            "recipient": "CHEMONICS INTERNATIONAL, INC.",
+            "amount": 6723916684.79,
+            "description": "IGF::CL::IGF - GHSC IDIQ - HIV/AIDS TO",
+            "start_date": "2015-04-20",
+            "award_id": "AIDOAATO1500007"
+          },
+          {
+            "program": "Malaria Prevention & Treatment",
+            "recipient": "CHEMONICS INTERNATIONAL, INC.",
+            "amount": 2925878093.79,
+            "description": "IGF::CL::IGF - GHSC IDIQ - MALARIA TASK ORDER",
+            "start_date": "2015-04-20",
+            "award_id": "AIDOAATO1500009"
+          },
+          {
+            "program": "Overseas Contract (Undisclosed)",
+            "recipient": "DOMESTIC AWARDEES (UNDISCLOSED)",
+            "amount": 919999999.93,
+            "description": "OVERSEAS CONTRACT",
+            "start_date": "2018-07-01",
+            "award_id": "72012118C00003"
+          },
+          {
+            "program": "Reproductive Health / Family Planning",
+            "recipient": "CHEMONICS INTERNATIONAL, INC.",
+            "amount": 816088160.67,
+            "description": "IGF::CL::IGF - GHSC IDIQ - PRH TASK ORDER",
+            "start_date": "2015-04-20",
+            "award_id": "AIDOAATO1500010"
+          },
+          {
+            "program": "Strategic Technical & Procurement Assistance",
+            "recipient": "DOMESTIC AWARDEES (UNDISCLOSED)",
+            "amount": 723296171.07,
+            "description": "THE PRINCIPAL PURPOSE OF THIS CONTRACT IS TO PROVIDE STRATEGIC TECHNICAL AND PROCUREMENT ASSISTANCE TO THE GOVERNMENT OF UKRAINE (GOU), FOCUSING ON ENHANCING THE RESILIENCE, RELIABILITY, AFFORDABILITY",
+            "start_date": "2024-04-01",
+            "award_id": "72012124C00003"
+          },
+          {
+            "program": "Reproductive Health / Family Planning",
+            "recipient": "JOHN SNOW, INCORPORATED",
+            "amount": 578879546.11,
+            "description": "GH/PRH - 3057, NEW TO#5 (COMMODITIES AND PUBLIC HEALTH SUPPLIES) AND ADD INCREMENTAL FUNDS.",
+            "start_date": "2010-09-30",
+            "award_id": "AIDOAATO1000066"
+          },
+          {
+            "program": "HIV/AIDS (PEPFAR Supply Chain)",
+            "recipient": "REMOTE MEDICINE INC.",
+            "amount": 486003213.0,
+            "description": "IGF::CL::IGF THIS TASK ORDER IS FOR THE PROCUREMENT AND SUPPLY OF HIV RAPID TEST KITS (RTKS).",
+            "start_date": "2015-02-27",
+            "award_id": "AIDOAATO1500004"
+          },
+          {
+            "program": "IT Operations & Maintenance",
+            "recipient": "NTT DATA FEDERAL SERVICES, INC.",
+            "amount": 470511408.97,
+            "description": "THIS IS TO ESTABLISH FUNDING FOR THE NEW O&M CONTRACT IN THE AMOUNT OF  $4,254,495.93 FROM MAY 1, 2019 - JULY 31, 2019.",
+            "start_date": "2019-05-01",
+            "award_id": "72MC1019M00011"
+          },
+          {
+            "program": "Global Health Programs",
+            "recipient": "CREDENCE MANAGEMENT SOLUTIONS LIMITED LIABILITY COMPANY",
+            "amount": 398914054.5,
+            "description": "THE PURPOSE OF GHTASC IS TO PROMOTE EFFECTIVE GLOBAL HEALTH PROGRAMMING AND ADVANCE THE MISSION OF THE U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT, BUREAU FOR GLOBAL HEALTH THROUGH INSTITUTIONAL SUPPORT",
+            "start_date": "2021-09-28",
+            "award_id": "7200AA21N00004"
+          },
+          {
+            "program": "Feed the Future / Food Security",
+            "recipient": "DAI GLOBAL LLC",
+            "amount": 360730352.01,
+            "description": "IN PARTNERSHIP WITH PROSPER AFRICA, FEED THE FUTURE, AND OTHER INITIATIVES, THE USAID AFRICA BUREAU, AFRICA REGIONAL MISSIONS, AND THE MIDDLE EAST BUREAU ARE JOINTLY ESTABLISHING THE PROSPER AFRICA TR",
+            "start_date": "2021-09-25",
+            "award_id": "7200AA21C00056"
+          }
+        ]
+      },
+      "FY2025": {
+        "total_awards": 10,
+        "top_awards_amount": 2933936806.29,
+        "source_url": "https://www.usaspending.gov/agency/agency-for-international-development?fy=2025",
+        "awards": [
+          {
+            "program": "Strategic Technical & Procurement Assistance",
+            "recipient": "DOMESTIC AWARDEES (UNDISCLOSED)",
+            "amount": 723296171.07,
+            "description": "THE PRINCIPAL PURPOSE OF THIS CONTRACT IS TO PROVIDE STRATEGIC TECHNICAL AND PROCUREMENT ASSISTANCE TO THE GOVERNMENT OF UKRAINE (GOU), FOCUSING ON ENHANCING THE RESILIENCE, RELIABILITY, AFFORDABILITY",
+            "start_date": "2024-04-01",
+            "award_id": "72012124C00003"
+          },
+          {
+            "program": "HIV/AIDS (PEPFAR Supply Chain)",
+            "recipient": "REMOTE MEDICINE INC.",
+            "amount": 486003213.0,
+            "description": "IGF::CL::IGF THIS TASK ORDER IS FOR THE PROCUREMENT AND SUPPLY OF HIV RAPID TEST KITS (RTKS).",
+            "start_date": "2015-02-27",
+            "award_id": "AIDOAATO1500004"
+          },
+          {
+            "program": "Feed the Future / Food Security",
+            "recipient": "DAI GLOBAL LLC",
+            "amount": 360730352.01,
+            "description": "IN PARTNERSHIP WITH PROSPER AFRICA, FEED THE FUTURE, AND OTHER INITIATIVES, THE USAID AFRICA BUREAU, AFRICA REGIONAL MISSIONS, AND THE MIDDLE EAST BUREAU ARE JOINTLY ESTABLISHING THE PROSPER AFRICA TR",
+            "start_date": "2021-09-25",
+            "award_id": "7200AA21C00056"
+          },
+          {
+            "program": "Humanitarian Assistance",
+            "recipient": "CREDENCE MANAGEMENT SOLUTIONS LIMITED LIABILITY COMPANY",
+            "amount": 243928778.38,
+            "description": "THE TASK ORDER IS AWARDED FOR THE IMPLEMENTATION OF THE USAID/BHA PROGRAM ENTITLED BUREAU FOR HUMANITARIAN ASSISTANCE SUPPORT CONTRACT (BHASC).  THE PURPOSE OF THE TASK ORDER IS TO PROVIDE OPERATIONAL",
+            "start_date": "2023-10-23",
+            "award_id": "7200AA24N00001"
+          },
+          {
+            "program": "HIV/AIDS (PEPFAR Supply Chain)",
+            "recipient": "ABT GLOBAL LLC",
+            "amount": 239552897.0,
+            "description": "EFFICIENCIES FOR CLINICAL HIV OUTCOMES (ECHO) ACTIVITY IN MOZAMBIQUE",
+            "start_date": "2019-04-18",
+            "award_id": "72065619C00008"
+          },
+          {
+            "program": "Infectious Disease Detection",
+            "recipient": "FAMILY HEALTH INTERNATIONAL",
+            "amount": 233471964.75,
+            "description": "STRENGTHENING INFECTIOUS DISEASE DETECTION SYSTEM (STRIDES) ACTIVITY",
+            "start_date": "2024-10-01",
+            "award_id": "7200AA24C00092"
+          },
+          {
+            "program": "FOREIGN ASSISTANCE PROGRAM",
+            "recipient": "ARD, INC.",
+            "amount": 189226318.93,
+            "description": "FOREIGN ASSISTANCE PROGRAM",
+            "start_date": "2005-10-27",
+            "award_id": "AID514C000600300"
+          },
+          {
+            "program": "Overseas Contract (Undisclosed)",
+            "recipient": "DOMESTIC AWARDEES (UNDISCLOSED)",
+            "amount": 182410000.0,
+            "description": "OVERSEAS CONTRACT",
+            "start_date": "2020-05-18",
+            "award_id": "72012120C00002"
+          },
+          {
+            "program": "Development Finance",
+            "recipient": "DAI GLOBAL LLC",
+            "amount": 168677909.04,
+            "description": "IGF::CL::IGF EXPANDING USE OF BLENDED FINANCE SOLUTIONS TO SUPPORT USAID PRIORITIES (BAA)",
+            "start_date": "2017-09-28",
+            "award_id": "AIDOAAC1700090"
+          },
+          {
+            "program": "LEAP GLOBAL",
+            "recipient": "GLOBAL SOLUTIONS VENTURES, LLC",
+            "amount": 106639202.11,
+            "description": "LEAP GLOBAL",
+            "start_date": "2023-09-20",
+            "award_id": "7200AA23M00003"
+          }
+        ]
+      },
+      "FY2026": {
+        "total_awards": 0,
+        "error": "API returned no results"
+      },
+      "programs_FY2024": {
+        "total_obligated": 25328611237.93,
+        "program_count": 20,
+        "programs": [
+          {
+            "name": "",
+            "obligated": 7780765205.91,
+            "gross_outlay": 6390386017.74
+          },
+          {
+            "name": "",
+            "obligated": 7729475429.78,
+            "gross_outlay": 8938564230.17
+          },
+          {
+            "name": "",
+            "obligated": 4378189320.76,
+            "gross_outlay": 3548076219.36
+          },
+          {
+            "name": "",
+            "obligated": 1780964751.11,
+            "gross_outlay": 1842587868.63
+          },
+          {
+            "name": "",
+            "obligated": 1075456697.86,
+            "gross_outlay": 639668989.39
+          },
+          {
+            "name": "",
+            "obligated": 916081758.25,
+            "gross_outlay": 776195688.39
+          },
+          {
+            "name": "",
+            "obligated": 828832475.75,
+            "gross_outlay": 633733198.79
+          },
+          {
+            "name": "",
+            "obligated": 267929789.82,
+            "gross_outlay": 267978355.7
+          },
+          {
+            "name": "",
+            "obligated": 130324144.73,
+            "gross_outlay": 178053524.97
+          },
+          {
+            "name": "",
+            "obligated": 103037178.21,
+            "gross_outlay": 99420979.75
+          }
+        ]
+      },
+      "programs_FY2025": {
+        "total_obligated": 15843937846.25,
+        "program_count": 20,
+        "programs": [
+          {
+            "name": "",
+            "obligated": 7105290813.77,
+            "gross_outlay": 8912636592.39
+          },
+          {
+            "name": "",
+            "obligated": 2524509611.12,
+            "gross_outlay": 5765194768.67
+          },
+          {
+            "name": "",
+            "obligated": 1469838119.43,
+            "gross_outlay": 1621599423.91
+          },
+          {
+            "name": "",
+            "obligated": 1468395458.9,
+            "gross_outlay": 529721284.24
+          },
+          {
+            "name": "",
+            "obligated": 1066997178.06,
+            "gross_outlay": 1011924125.49
+          },
+          {
+            "name": "",
+            "obligated": 951796385.44,
+            "gross_outlay": 740432938.02
+          },
+          {
+            "name": "",
+            "obligated": 859855772.92,
+            "gross_outlay": 2570658595.95
+          },
+          {
+            "name": "",
+            "obligated": 96148321.56,
+            "gross_outlay": 96840787.09
+          },
+          {
+            "name": "",
+            "obligated": 87728469.02,
+            "gross_outlay": 72831415.37
+          },
+          {
+            "name": "",
+            "obligated": 70661204.59,
+            "gross_outlay": 106434524.84
+          }
+        ]
+      },
+      "budgetary_resources": {
+        "toptier_code": "072",
+        "agency_data_by_year": [
+          {
+            "fiscal_year": 2026,
+            "agency_budgetary_resources": 19187904379.52,
+            "agency_total_obligated": 3399637628.11,
+            "agency_total_outlayed": 3712415452.84,
+            "total_budgetary_resources": 13286077276206.8,
+            "agency_obligation_by_period": [
+              {
+                "period": 2,
+                "obligated": 889535460.49
+              },
+              {
+                "period": 3,
+                "obligated": 4313133347.28
+              },
+              {
+                "period": 4,
+                "obligated": 3399637628.11
+              }
+            ]
+          },
+          {
+            "fiscal_year": 2025,
+            "agency_budgetary_resources": 30515120984.18,
+            "agency_total_obligated": 15844167462.19,
+            "agency_total_outlayed": 21685530208.91,
+            "total_budgetary_resources": 13263700405307.76,
+            "agency_obligation_by_period": [
+              {
+                "period": 2,
+                "obligated": 3483294331.53
+              },
+              {
+                "period": 3,
+                "obligated": 6268243627.23
+              },
+              {
+                "period": 4,
+                "obligated": 8684314081.4
+              },
+              {
+                "period": 5,
+                "obligated": 9130320235.7
+              },
+              {
+                "period": 6,
+                "obligated": 9429772444.17
+              },
+              {
+                "period": 7,
+                "obligated": 9712620610.38
+              },
+              {
+                "period": 8,
+                "obligated": 9722912712.92
+              },
+              {
+                "period": 9,
+                "obligated": 10843253363.42
+              },
+              {
+                "period": 10,
+                "obligated": 11518365895.96
+              },
+              {
+                "period": 11,
+                "obligated": 12128225323.61
+              },
+              {
+                "period": 12,
+                "obligated": 15844167462.19
+              }
+            ]
+          },
+          {
+            "fiscal_year": 2024,
+            "agency_budgetary_resources": 44198584719.89,
+            "agency_total_obligated": 25338242649.5,
+            "agency_total_outlayed": 23658529362.57,
+            "total_budgetary_resources": 12248550270454.0,
+            "agency_obligation_by_period": [
+              {
+                "period": 2,
+                "obligated": 809130411.59
+              },
+              {
+                "period": 3,
+                "obligated": 2184913464.14
+              },
+              {
+                "period": 4,
+                "obligated": 2743295681.97
+              },
+              {
+                "period": 5,
+                "obligated": 3281272968.53
+              },
+              {
+                "period": 6,
+                "obligated": 4254738213.94
+              },
+              {
+                "period": 7,
+                "obligated": 5534793858.91
+              },
+              {
+                "period": 8,
+                "obligated": 6702353427.44
+              },
+              {
+                "period": 9,
+                "obligated": 7953122125.4
+              },
+              {
+                "period": 10,
+                "obligated": 15126683158.14
+              },
+              {
+                "period": 11,
+                "obligated": 18529074767.6
+              },
+              {
+                "period": 12,
+                "obligated": 25338242649.5
+              }
+            ]
+          },
+          {
+            "fiscal_year": 2023,
+            "agency_budgetary_resources": 50093539489.94,
+            "agency_total_obligated": 38178688874.98,
+            "agency_total_outlayed": 37866618395.24,
+            "total_budgetary_resources": 11889863708699.81,
+            "agency_obligation_by_period": [
+              {
+                "period": 2,
+                "obligated": 6661328062.66
+              },
+              {
+                "period": 3,
+                "obligated": 9047037690.19
+              },
+              {
+                "period": 4,
+                "obligated": 9581482570.63
+              },
+              {
+                "period": 5,
+                "obligated": 12837968920.76
+              },
+              {
+                "period": 6,
+                "obligated": 16134751271.18
+              },
+              {
+                "period": 7,
+                "obligated": 18015565724.94
+              },
+              {
+                "period": 8,
+                "obligated": 20966150277.97
+              },
+              {
+                "period": 9,
+                "obligated": 23714078472.1
+              },
+              {
+                "period": 10,
+                "obligated": 26484776098.69
+              },
+              {
+                "period": 11,
+                "obligated": 30601692341.35
+              },
+              {
+                "period": 12,
+                "obligated": 38178688874.98
+              }
+            ]
+          },
+          {
+            "fiscal_year": 2022,
+            "agency_budgetary_resources": 47756185617.98,
+            "agency_total_obligated": 32760502077.38,
+            "agency_total_outlayed": 30593146752.18,
+            "total_budgetary_resources": 11409814941613.59,
+            "agency_obligation_by_period": [
+              {
+                "period": 2,
+                "obligated": 707600278.32
+              },
+              {
+                "period": 3,
+                "obligated": 2091927178.47
+              },
+              {
+                "period": 4,
+                "obligated": 2971339505.91
+              },
+              {
+                "period": 5,
+                "obligated": 3688836456.54
+              },
+              {
+                "period": 6,
+                "obligated": 4969215386.36
+              },
+              {
+                "period": 7,
+                "obligated": 6902034892.19
+              },
+              {
+                "period": 8,
+                "obligated": 10367333585.84
+              },
+              {
+                "period": 9,
+                "obligated": 13767599200.24
+              },
+              {
+                "period": 10,
+                "obligated": 20102214581.18
+              },
+              {
+                "period": 11,
+                "obligated": 26781857306.59
+              },
+              {
+                "period": 12,
+                "obligated": 32760502077.38
+              }
+            ]
+          },
+          {
+            "fiscal_year": 2021,
+            "agency_budgetary_resources": 37454527805.2,
+            "agency_total_obligated": 23656313423.65,
+            "agency_total_outlayed": 18680205515.6,
+            "total_budgetary_resources": 12219096866505.09,
+            "agency_obligation_by_period": [
+              {
+                "period": 3,
+                "obligated": 1364290368.89
+              },
+              {
+                "period": 6,
+                "obligated": 4454218920.33
+              },
+              {
+                "period": 9,
+                "obligated": 8891996760.53
+              },
+              {
+                "period": 12,
+                "obligated": 23656313423.65
+              }
+            ]
+          },
+          {
+            "fiscal_year": 2020,
+            "agency_budgetary_resources": 26410453436.17,
+            "agency_total_obligated": 16840551990.67,
+            "agency_total_outlayed": 15049380897.63,
+            "total_budgetary_resources": 11461079028211.95,
+            "agency_obligation_by_period": [
+              {
+                "period": 3,
+                "obligated": 1542349527.03
+              },
+              {
+                "period": 6,
+                "obligated": 3652896809.88
+              },
+              {
+                "period": 9,
+                "obligated": 9419172419.66
+              },
+              {
+                "period": 12,
+                "obligated": 16840551990.67
+              }
+            ]
+          },
+          {
+            "fiscal_year": 2019,
+            "agency_budgetary_resources": 26568727072.79,
+            "agency_total_obligated": 16056798953.39,
+            "agency_total_outlayed": 14509409170.73,
+            "total_budgetary_resources": 7985842464180.6,
+            "agency_obligation_by_period": [
+              {
+                "period": 3,
+                "obligated": 1646467980.38
+              },
+              {
+                "period": 6,
+                "obligated": 3406967729.52
+              },
+              {
+                "period": 9,
+                "obligated": 7272811094.81
+              },
+              {
+                "period": 12,
+                "obligated": 16056798953.39
+              }
+            ]
+          },
+          {
+            "fiscal_year": 2018,
+            "agency_budgetary_resources": 26690480562.24,
+            "agency_total_obligated": 15496083148.39,
+            "agency_total_outlayed": 13798711113.98,
+            "total_budgetary_resources": 7593875408547.67,
+            "agency_obligation_by_period": [
+              {
+                "period": 3,
+                "obligated": 1221455966.41
+              },
+              {
+                "period": 6,
+                "obligated": 4120792820.89
+              },
+              {
+                "period": 9,
+                "obligated": 7325384381.97
+              },
+              {
+                "period": 12,
+                "obligated": 15496083148.39
+              }
+            ]
+          },
+          {
+            "fiscal_year": 2017,
+            "agency_budgetary_resources": 25840260189.58,
+            "agency_total_obligated": 14827850524.38,
+            "agency_total_outlayed": 13614423699.52,
+            "total_budgetary_resources": 7158037155046.72,
+            "agency_obligation_by_period": [
+              {
+                "period": 6,
+                "obligated": 6092955752.98
+              },
+              {
+                "period": 9,
+                "obligated": 8588288617.89
+              },
+              {
+                "period": 12,
+                "obligated": 14827850524.38
+              }
+            ]
+          }
+        ],
+        "messages": []
+      },
+      "agency_overview": {
+        "fiscal_year": 2026,
+        "toptier_code": "072",
+        "name": "Agency for International Development",
+        "abbreviation": "USAID",
+        "agency_id": 801,
+        "icon_filename": "USAID.jpg",
+        "mission": "We partner to end extreme poverty and promote resilient, democratic societies while advancing our security and prosperity.",
+        "website": "https://www.usaid.gov/",
+        "congressional_justification_url": "https://www.usaid.gov/cj",
+        "about_agency_data": null,
+        "subtier_agency_count": 1,
+        "def_codes": [
+          {
+            "code": "3",
+            "public_law": "Emergency P.L. 117-103",
+            "title": "Consolidated Appropriations Act, 2022",
+            "urls": "http://www.govinfo.gov/content/pkg/PLAW-117publ103/pdf/PLAW-117publ103.pdf",
+            "disaster": null
+          },
+          {
+            "code": "6",
+            "public_law": "Emergency P.L. 117-128",
+            "title": "Additional Ukraine Supplemental Appropriations Act, 2022",
+            "urls": "http://www.govinfo.gov/content/pkg/PLAW-117publ128/pdf/PLAW-117publ128.pdf",
+            "disaster": null
+          },
+          {
+            "code": "AAB",
+            "public_law": "Emergency P.L. 117-328",
+            "title": "Consolidated Appropriations Act, 2023",
+            "urls": "http://www.govinfo.gov/content/pkg/PLAW-117publ328/pdf/PLAW-117publ328.pdf",
+            "disaster": null
+          },
+          {
+            "code": "AAJ",
+            "public_law": "Emergency P.L. 118-50",
+            "title": "An act making emergency supplemental appropriations for the fiscal year ending September 30, 2024, and for other purposes.",
+            "urls": "http://www.govinfo.gov/content/pkg/PLAW-118publ50/pdf/PLAW-118publ50.pdf",
+            "disaster": null
+          },
+          {
+            "code": "L",
+            "public_law": "Emergency P.L. 116-123",
+            "title": "Coronavirus Preparedness and Response Supplemental Appropriations Act, 2020",
+            "urls": "http://www.govinfo.gov/content/pkg/PLAW-116publ123/pdf/PLAW-116publ123.pdf",
+            "disaster": "covid_19"
+          },
+          {
+            "code": "N",
+            "public_law": "Emergency P.L. 116-136",
+            "title": "Coronavirus Aid, Relief, and Economic Security Act or the CARES Act",
+            "urls": "http://www.govinfo.gov/content/pkg/PLAW-116publ136/pdf/PLAW-116publ136.pdf",
+            "disaster": "covid_19"
+          },
+          {
+            "code": "Q",
+            "public_law": "Not Designated Nonemergency/Emergency/Disaster/Wildfire Suppression",
+            "title": "Not Designated Nonemergency/Emergency/Disaster/Wildfire Suppression",
+            "urls": null,
+            "disaster": null
+          },
+          {
+            "code": "R",
+            "public_law": "Emergency P.L. 116-260",
+            "title": "Consolidated Appropriations Act, 2021",
+            "urls": "http://www.govinfo.gov/content/pkg/PLAW-116publ260/pdf/PLAW-116publ260.pdf",
+            "disaster": null
+          },
+          {
+            "code": "V",
+            "public_law": "Non-emergency P.L. 117-2",
+            "title": "American Rescue Plan Act of 2021",
+            "urls": "http://www.govinfo.gov/content/pkg/PLAW-117publ2/pdf/PLAW-117publ2.pdf",
+            "disaster": "covid_19"
+          },
+          {
+            "code": "X",
+            "public_law": "Emergency P.L. 117-43",
+            "title": "Extending Government Funding and Delivering Emergency Assistance Act",
+            "urls": "http://www.govinfo.gov/content/pkg/PLAW-117publ43/pdf/PLAW-117publ43.pdf",
+            "disaster": null
+          }
+        ],
+        "messages": []
+      }
+    }
+  },
+  "health_indicators": {
+    "source": "WHO Global Health Observatory OData API",
+    "priority_countries": [
+      "AFG",
+      "ETH",
+      "NGA",
+      "COD",
+      "KEN",
+      "UGA",
+      "TZA",
+      "MOZ",
+      "ZMB",
+      "MWI",
+      "ZWE",
+      "HTI",
+      "BGD",
+      "PAK",
+      "IND",
+      "GHA",
+      "SSD",
+      "SOM",
+      "MLI",
+      "NER"
+    ],
+    "indicators": {
+      "under5_mortality_rate": {
+        "label": "Under-5 Mortality Rate (per 1000 live births)",
+        "indicator_code": "MDG_0000000001",
+        "total_records": 500,
+        "priority_country_records": 37,
+        "by_year": {
+          "2023": {
+            "n_countries": 37,
+            "mean": 46.39801177054054,
+            "values": [
+              {
+                "country": "UGA",
+                "value": 24.532640614
+              },
+              {
+                "country": "NER",
+                "value": 67.361473972
+              },
+              {
+                "country": "KEN",
+                "value": 34.725511519
+              },
+              {
+                "country": "SSD",
+                "value": 72.61607316
+              },
+              {
+                "country": "COD",
+                "value": 44.471651143
+              }
+            ]
+          }
+        },
+        "latest_year": 2023
+      },
+      "maternal_mortality_ratio": {
+        "label": "Maternal Mortality Ratio (per 100k live births)",
+        "indicator_code": "MDG_0000000026",
+        "total_records": 500,
+        "priority_country_records": 48,
+        "by_year": {
+          "2023": {
+            "n_countries": 20,
+            "mean": 329.750940308,
+            "values": [
+              {
+                "country": "COD",
+                "value": 427.0455049
+              },
+              {
+                "country": "ETH",
+                "value": 194.936852
+              },
+              {
+                "country": "ZMB",
+                "value": 85.4503666
+              },
+              {
+                "country": "HTI",
+                "value": 327.5638327
+              },
+              {
+                "country": "NGA",
+                "value": 992.8292085
+              }
+            ]
+          },
+          "2022": {
+            "n_countries": 20,
+            "mean": 338.0600378825,
+            "values": [
+              {
+                "country": "PAK",
+                "value": 160.0928917
+              },
+              {
+                "country": "GHA",
+                "value": 239.0838812
+              },
+              {
+                "country": "NGA",
+                "value": 1016.336736
+              },
+              {
+                "country": "IND",
+                "value": 89.64524763
+              },
+              {
+                "country": "ZMB",
+                "value": 89.4511926
+              }
+            ]
+          },
+          "2021": {
+            "n_countries": 8,
+            "mean": 378.6554559375,
+            "values": [
+              {
+                "country": "ZMB",
+                "value": 140.1435797
+              },
+              {
+                "country": "NER",
+                "value": 396.3054456
+              },
+              {
+                "country": "MLI",
+                "value": 414.5671469
+              },
+              {
+                "country": "MOZ",
+                "value": 160.5831627
+              },
+              {
+                "country": "SSD",
+                "value": 749.2421991
+              }
+            ]
+          }
+        },
+        "latest_year": 2023
+      },
+      "hiv_deaths": {
+        "label": "HIV/AIDS Deaths (number)",
+        "indicator_code": "HIV_0000000006",
+        "total_records": 500,
+        "priority_country_records": 49,
+        "by_year": {
+          "2024": {
+            "n_countries": 19,
+            "mean": 15492.631578947368,
+            "values": [
+              {
+                "country": "MLI",
+                "value": 3200.0
+              },
+              {
+                "country": "MWI",
+                "value": 14000.0
+              },
+              {
+                "country": "GHA",
+                "value": 13000.0
+              },
+              {
+                "country": "PAK",
+                "value": 14000.0
+              },
+              {
+                "country": "ZWE",
+                "value": 17000.0
+              }
+            ]
+          },
+          "2023": {
+            "n_countries": 18,
+            "mean": 15210.0,
+            "values": [
+              {
+                "country": "ZMB",
+                "value": 17000.0
+              },
+              {
+                "country": "GHA",
+                "value": 13000.0
+              },
+              {
+                "country": "NER",
+                "value": 1000.0
+              },
+              {
+                "country": "AFG",
+                "value": 590.0
+              },
+              {
+                "country": "TZA",
+                "value": 27000.0
+              }
+            ]
+          },
+          "2022": {
+            "n_countries": 9,
+            "mean": 17923.333333333332,
+            "values": [
+              {
+                "country": "NGA",
+                "value": 51000.0
+              },
+              {
+                "country": "GHA",
+                "value": 13000.0
+              },
+              {
+                "country": "UGA",
+                "value": 22000.0
+              },
+              {
+                "country": "MWI",
+                "value": 15000.0
+              },
+              {
+                "country": "NER",
+                "value": 1100.0
+              }
+            ]
+          }
+        },
+        "latest_year": 2024
+      },
+      "malaria_deaths": {
+        "label": "Malaria Deaths (estimated number)",
+        "indicator_code": "MALARIA_EST_DEATHS",
+        "total_records": 500,
+        "priority_country_records": 87,
+        "by_year": {
+          "2024": {
+            "n_countries": 20,
+            "mean": 22054.5,
+            "values": [
+              {
+                "country": "ZMB",
+                "value": 8682.0
+              },
+              {
+                "country": "KEN",
+                "value": 11656.0
+              },
+              {
+                "country": "MWI",
+                "value": 7501.0
+              },
+              {
+                "country": "TZA",
+                "value": 26062.0
+              },
+              {
+                "country": "IND",
+                "value": 3431.0
+              }
+            ]
+          },
+          "2023": {
+            "n_countries": 20,
+            "mean": 21883.95,
+            "values": [
+              {
+                "country": "ETH",
+                "value": 18567.0
+              },
+              {
+                "country": "ZWE",
+                "value": 1627.0
+              },
+              {
+                "country": "HTI",
+                "value": 60.0
+              },
+              {
+                "country": "AFG",
+                "value": 202.0
+              },
+              {
+                "country": "TZA",
+                "value": 25540.0
+              }
+            ]
+          },
+          "2022": {
+            "n_countries": 20,
+            "mean": 21878.65,
+            "values": [
+              {
+                "country": "TZA",
+                "value": 25499.0
+              },
+              {
+                "country": "ZMB",
+                "value": 8834.0
+              },
+              {
+                "country": "ETH",
+                "value": 10570.0
+              },
+              {
+                "country": "MLI",
+                "value": 14277.0
+              },
+              {
+                "country": "COD",
+                "value": 70024.0
+              }
+            ]
+          },
+          "2021": {
+            "n_countries": 20,
+            "mean": 21857.95,
+            "values": [
+              {
+                "country": "BGD",
+                "value": 16.0
+              },
+              {
+                "country": "AFG",
+                "value": 91.0
+              },
+              {
+                "country": "SOM",
+                "value": 2447.0
+              },
+              {
+                "country": "GHA",
+                "value": 11373.0
+              },
+              {
+                "country": "KEN",
+                "value": 11669.0
+              }
+            ]
+          },
+          "2020": {
+            "n_countries": 7,
+            "mean": 21416.285714285714,
+            "values": [
+              {
+                "country": "KEN",
+                "value": 11384.0
+              },
+              {
+                "country": "ETH",
+                "value": 9424.0
+              },
+              {
+                "country": "MWI",
+                "value": 7423.0
+              },
+              {
+                "country": "NER",
+                "value": 35694.0
+              },
+              {
+                "country": "ZMB",
+                "value": 8556.0
+              }
+            ]
+          }
+        },
+        "latest_year": 2024
+      },
+      "tb_incidence": {
+        "label": "TB Incidence (per 100k)",
+        "indicator_code": "MDG_0000000020",
+        "total_records": 500,
+        "priority_country_records": 51,
+        "by_year": {
+          "2024": {
+            "n_countries": 20,
+            "mean": 202.4,
+            "values": [
+              {
+                "country": "MWI",
+                "value": 113.0
+              },
+              {
+                "country": "NGA",
+                "value": 219.0
+              },
+              {
+                "country": "ZWE",
+                "value": 203.0
+              },
+              {
+                "country": "SSD",
+                "value": 320.0
+              },
+              {
+                "country": "UGA",
+                "value": 197.0
+              }
+            ]
+          },
+          "2023": {
+            "n_countries": 20,
+            "mean": 206.5,
+            "values": [
+              {
+                "country": "MLI",
+                "value": 52.0
+              },
+              {
+                "country": "TZA",
+                "value": 183.0
+              },
+              {
+                "country": "SOM",
+                "value": 157.0
+              },
+              {
+                "country": "MOZ",
+                "value": 361.0
+              },
+              {
+                "country": "ZWE",
+                "value": 209.0
+              }
+            ]
+          },
+          "2022": {
+            "n_countries": 11,
+            "mean": 242.1818181818182,
+            "values": [
+              {
+                "country": "NGA",
+                "value": 219.0
+              },
+              {
+                "country": "ZMB",
+                "value": 295.0
+              },
+              {
+                "country": "COD",
+                "value": 392.0
+              },
+              {
+                "country": "NER",
+                "value": 81.0
+              },
+              {
+                "country": "MLI",
+                "value": 53.0
+              }
+            ]
+          }
+        },
+        "latest_year": 2024
+      },
+      "malaria_incidence": {
+        "label": "Malaria Incidence (per 1000 at risk)",
+        "indicator_code": "MALARIA_EST_INCIDENCE",
+        "total_records": 500,
+        "priority_country_records": 86,
+        "by_year": {
+          "2024": {
+            "n_countries": 20,
+            "mean": 163.96112199060002,
+            "values": [
+              {
+                "country": "IND",
+                "value": 1.480563143
+              },
+              {
+                "country": "SSD",
+                "value": 254.0781492
+              },
+              {
+                "country": "KEN",
+                "value": 74.1683085
+              },
+              {
+                "country": "AFG",
+                "value": 17.76269535
+              },
+              {
+                "country": "MWI",
+                "value": 294.5279965
+              }
+            ]
+          },
+          "2023": {
+            "n_countries": 20,
+            "mean": 165.5258161898,
+            "values": [
+              {
+                "country": "NGA",
+                "value": 298.9976001
+              },
+              {
+                "country": "TZA",
+                "value": 138.4507573
+              },
+              {
+                "country": "MLI",
+                "value": 346.2195915
+              },
+              {
+                "country": "BGD",
+                "value": 1.102654564
+              },
+              {
+                "country": "MWI",
+                "value": 291.0135392
+              }
+            ]
+          },
+          "2022": {
+            "n_countries": 20,
+            "mean": 162.4981402926,
+            "values": [
+              {
+                "country": "UGA",
+                "value": 266.5834318
+              },
+              {
+                "country": "TZA",
+                "value": 132.3930445
+              },
+              {
+                "country": "BGD",
+                "value": 1.229878145
+              },
+              {
+                "country": "MOZ",
+                "value": 304.5014421
+              },
+              {
+                "country": "COD",
+                "value": 327.9426594
+              }
+            ]
+          },
+          "2021": {
+            "n_countries": 20,
+            "mean": 162.1652048468,
+            "values": [
+              {
+                "country": "NER",
+                "value": 304.176622
+              },
+              {
+                "country": "TZA",
+                "value": 133.3293979
+              },
+              {
+                "country": "KEN",
+                "value": 88.68703596
+              },
+              {
+                "country": "MOZ",
+                "value": 312.4499019
+              },
+              {
+                "country": "ETH",
+                "value": 45.55933568
+              }
+            ]
+          },
+          "2020": {
+            "n_countries": 6,
+            "mean": 125.9990074995,
+            "values": [
+              {
+                "country": "ZWE",
+                "value": 94.29687221
+              },
+              {
+                "country": "NGA",
+                "value": 304.3687915
+              },
+              {
+                "country": "ETH",
+                "value": 52.28211767
+              },
+              {
+                "country": "KEN",
+                "value": 84.99876851
+              },
+              {
+                "country": "GHA",
+                "value": 219.6265037
+              }
+            ]
+          }
+        },
+        "latest_year": 2024
+      }
+    }
+  },
+  "news_coverage": {
+    "source": "GDELT Project API",
+    "timespan": "30 days",
+    "data": {
+      "usaid_defunding": {
+        "query": "USAID defunding health",
+        "count": 0,
+        "error": "HTTP Error 429: Too Many Requests"
+      },
+      "pepfar_cuts": {
+        "query": "PEPFAR funding cuts HIV",
+        "count": 0,
+        "error": "HTTP Error 429: Too Many Requests"
+      },
+      "malaria_cuts": {
+        "query": "malaria aid cuts Africa",
+        "count": 0,
+        "error": "HTTP Error 429: Too Many Requests"
+      },
+      "maternal_cuts": {
+        "query": "maternal mortality aid cuts",
+        "count": 10,
+        "articles": [
+          {
+            "title": "Ghana : International Women Day - Why Ghana Must Invest More in Women Reproductive Health",
+            "url": "https://allafrica.com/stories/202603100259.html",
+            "date": "20260310T123000Z",
+            "domain": "allafrica.com"
+          },
+          {
+            "title": "Parir sin morir , una deuda pendiente con millones de mujeres en el mundo",
+            "url": "https://www.elmostrador.cl/braga/2026/03/07/parir-sin-morir-una-deuda-pendiente-con-millones-de-mujeres-en-el-mundo/",
+            "date": "20260307T064500Z",
+            "domain": "elmostrador.cl"
+          },
+          {
+            "title": "Can Sierra Leone keep its mothers alive ? ",
+            "url": "https://www.fullerproject.org/editions/motherhood/sierra-leone-mothers-us-aid-cuts-health/",
+            "date": "20260304T213000Z",
+            "domain": "fullerproject.org"
+          },
+          {
+            "title": "Cuba under siege battles U . S . oil blockade",
+            "url": "https://www.peoplesworld.org/article/cuba-under-siege-battles-u-s-oil-blockade/",
+            "date": "20260303T231500Z",
+            "domain": "peoplesworld.org"
+          },
+          {
+            "title": "Cuba under siege battles U . S . oil blockade",
+            "url": "https://peoplesworld.org/article/cuba-under-siege-battles-u-s-oil-blockade/",
+            "date": "20260303T213000Z",
+            "domain": "peoplesworld.org"
+          },
+          {
+            "title": "  Maximum pressure : How Washington is squeezing Cuba energy lifeline - The Press Project - \u0395\u03b9\u03b4\u03ae\u03c3\u03b5\u03b9\u03c2 , \u0391\u03bd\u03b1\u03bb\u03cd\u03c3\u03b5\u03b9\u03c2 , \u03a1\u03b1\u03b4\u03b9\u03cc\u03c6\u03c9\u03bd\u03bf , \u03a4\u03b7\u03bb\u03b5\u03cc\u03c1\u03b1\u03c3\u03b7",
+            "url": "https://thepressproject.gr/maximum-pressure-how-washington-is-squeezing-cubas-energy-lifeline/",
+            "date": "20260227T060000Z",
+            "domain": "thepressproject.gr"
+          },
+          {
+            "title": "Congo and US agree to $1 . 2 billion health partnership - Daily Sitka Sentinel",
+            "url": "http://www.sitkasentinel.com/stories/congo-and-us-agree-to-12-billion-health-partnership,121612",
+            "date": "20260227T043000Z",
+            "domain": "sitkasentinel.com"
+          },
+          {
+            "title": "Congo and US agree to $1 . 2 billion health partnership",
+            "url": "https://mynorthwest.com/world/congo-and-us-agree-to-1-2-billion-health-partnership/4209209",
+            "date": "20260227T034500Z",
+            "domain": "mynorthwest.com"
+          },
+          {
+            "title": "Congo and US agree to $1 . 2 billion health partnership",
+            "url": "https://www.local10.com/health/2026/02/26/congo-and-us-agree-to-12-billion-health-partnership/",
+            "date": "20260227T024500Z",
+            "domain": "local10.com"
+          },
+          {
+            "title": "Congo and US agree to $1 . 2 billion health partnership",
+            "url": "https://abcnews.com/Health/wireStory/congo-us-agree-12-billion-health-partnership-130546593",
+            "date": "20260227T020000Z",
+            "domain": "abcnews.com"
+          }
+        ]
+      }
+    }
+  },
+  "sources": [
+    {
+      "name": "Lancet Study",
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)01186-9/fulltext",
+      "description": "Cavalcanti et al. 2025 \u2014 14M projected deaths by 2030"
+    },
+    {
+      "name": "UCLA Press Release",
+      "url": "https://ph.ucla.edu/news-events/news/research-finds-more-14-million-preventable-deaths-2030-if-usaid-defunding"
+    },
+    {
+      "name": "USAspending.gov",
+      "url": "https://www.usaspending.gov/agency/agency-for-international-development",
+      "description": "Federal spending transparency"
+    },
+    {
+      "name": "WHO GHO",
+      "url": "https://www.who.int/data/gho",
+      "description": "Global health indicators"
+    },
+    {
+      "name": "GDELT Project",
+      "url": "https://www.gdeltproject.org/",
+      "description": "Global news monitoring"
+    }
+  ]
+}

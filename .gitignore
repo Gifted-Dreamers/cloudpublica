@@ -1,3 +1,11 @@
 dist/
 node_modules/
 .DS_Store
+.wrangler/
+._*
+.env
+*.pem
+*.key
+*.crt
+*.log
+logs/
