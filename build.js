@@ -27,6 +27,8 @@ function walkDir(dir) {
     if (entry.isDirectory()) {
       if (!skipDirs.has(entry.name)) results.push(...walkDir(fullPath));
     } else {
+      if (/\.(mov|mp4|avi|mkv)$/i.test(entry.name)) continue;
+      if (/^AdobeStock_/i.test(entry.name)) continue;
       results.push(fullPath);
     }
   }
