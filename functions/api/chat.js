@@ -200,7 +200,19 @@ export async function onRequestPost(context) {
   };
 
   try {
+    // Debug: check env vars exist
+    const hasKey = !!env.AWS_ACCESS_KEY_ID;
+    const hasSecret = !!env.AWS_SECRET_ACCESS_KEY;
+    const hasKV = !!env.CHAT_SESSIONS;
+    const hasRegion = !!env.AWS_REGION;
+
     const body = await request.json();
+
+    if (body.debug === true) {
+      return new Response(JSON.stringify({ hasKey, hasSecret, hasKV, hasRegion, region: env.AWS_REGION || "not set" }),
+        { headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+
     const message = body.message;
     const sessionId = body.sessionId;
 
