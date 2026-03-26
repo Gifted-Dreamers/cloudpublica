@@ -271,21 +271,32 @@ export async function onRequestPost(context) {
       "accept": "application/json",
     };
 
-    const sigHeaders = await signRequest(
-      "POST", bedrockUrl, reqHeaders, bedrockBody,
-      env.AWS_ACCESS_KEY_ID, env.AWS_SECRET_ACCESS_KEY, region, "bedrock"
-    );
+    let sigHeaders;
+    try {
+      sigHeaders = await signRequest(
+        "POST", bedrockUrl, reqHeaders, bedrockBody,
+        env.AWS_ACCESS_KEY_ID, env.AWS_SECRET_ACCESS_KEY, region, "bedrock"
+      );
+    } catch (signErr) {
+      return new Response(JSON.stringify({ error: "Signing failed", detail: signErr.message }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
 
-    const bedrockResp = await fetch(bedrockUrl, {
-      method: "POST",
-      headers: { ...reqHeaders, ...sigHeaders },
-      body: bedrockBody,
-    });
+    let bedrockResp;
+    try {
+      bedrockResp = await fetch(bedrockUrl, {
+        method: "POST",
+        headers: { ...reqHeaders, ...sigHeaders },
+        body: bedrockBody,
+      });
+    } catch (fetchErr) {
+      return new Response(JSON.stringify({ error: "Bedrock fetch failed", detail: fetchErr.message }),
+        { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
 
     if (!bedrockResp.ok) {
       const errText = await bedrockResp.text();
-      console.error("Bedrock error:", bedrockResp.status, errText);
-      return new Response(JSON.stringify({ error: "AI service error" }),
+      return new Response(JSON.stringify({ error: "Bedrock error", status: bedrockResp.status, detail: errText.slice(0, 500) }),
         { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
