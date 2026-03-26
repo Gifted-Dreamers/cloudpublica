@@ -243,7 +243,8 @@ export async function onRequestPost(context) {
     // Build Bedrock request
     const region = env.AWS_REGION || "us-east-1";
     const modelId = "us.anthropic.claude-sonnet-4-20250514-v1:0";
-    const bedrockUrl = `https://bedrock-runtime.${region}.amazonaws.com/model/${modelId}/invoke`;
+    const encodedModelId = encodeURIComponent(modelId);
+    const bedrockUrl = `https://bedrock-runtime.${region}.amazonaws.com/model/${encodedModelId}/invoke`;
 
     const bedrockBody = JSON.stringify({
       anthropic_version: "bedrock-2023-05-31",
@@ -298,8 +299,7 @@ export async function onRequestPost(context) {
       },
     });
   } catch (err) {
-    console.error("Handler error:", err);
-    return new Response(JSON.stringify({ error: "Internal error" }),
+    return new Response(JSON.stringify({ error: "Internal error", detail: err.message }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   }
 }
