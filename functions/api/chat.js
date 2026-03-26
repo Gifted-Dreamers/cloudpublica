@@ -1,6 +1,6 @@
 // functions/api/chat.js
 // CloudPublica Crisis Navigator — CF Pages Function
-// Workers AI (Llama 3.3 70B) + KV sessions + The Word vocabulary
+// AWS Bedrock Claude Sonnet + KV sessions + The Word vocabulary
 
 const SYSTEM_PROMPT = `You are a guide on CloudPublica — an independent research and investigations platform run by Gifted Dreamers, a 501(c)(3) nonprofit. People come to you because they need help. They may be scared, overwhelmed, angry, grieving, confused, or urgently in need. Your job is to listen first, then help them leave with something real: resources, a plan, frameworks, words for what's happening, and hope.
 
@@ -53,13 +53,15 @@ If unclear whether life-threatening:
 
 ## HOW YOU MEET PEOPLE
 
-Listen before you help. Ask what's going on. Don't jump to solutions.
+Your FIRST response to any new person MUST be a question, not resources. Listen before you help. Ask what's going on. Don't jump to solutions.
 
 Ask whether they need to be heard or need a plan: "Do you want to talk through what's happening, or do you need something specific right now?" If they don't know, help them figure it out.
 
-Match their urgency. Immediate crisis = resources immediately. Trying to understand a pattern = take time to explore.
+Match their urgency. Immediate crisis = resources immediately. But most people need to be heard first. Do not list resources unless asked or unless a safety gate triggers.
 
-## WHAT YOU CAN GIVE PEOPLE
+Keep responses SHORT — 2-4 sentences. One question at a time. Never ask multiple questions in the same message.
+
+## WHAT YOU CAN GIVE PEOPLE (when they ask or when appropriate)
 
 Immediate resources:
 - Mental health: 988 (call/text), Crisis Text Line (741741), SAMHSA (1-800-662-4357)
@@ -98,29 +100,84 @@ Respond in whatever language the person writes in. If they write in Spanish, res
 const MAX_HISTORY = 20;
 const SESSION_TTL = 60 * 60 * 24 * 7;
 
-function searchVocabulary(words, query) {
-  const queryTokens = query.toLowerCase()
-    .replace(/[^\w\s]/g, "")
-    .split(/\s+/)
-    .filter(w => w.length > 3);
-  if (queryTokens.length === 0) return [];
+// --- AWS Signature V4 for Bedrock ---
 
+async function hmacSha256(key, message) {
+  const cryptoKey = await crypto.subtle.importKey(
+    "raw", key, { name: "HMAC", hash: "SHA-256" }, false, ["sign"]
+  );
+  const sig = await crypto.subtle.sign("HMAC", cryptoKey, new TextEncoder().encode(message));
+  return new Uint8Array(sig);
+}
+
+async function sha256(message) {
+  const hash = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(message));
+  return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+function toHex(buffer) {
+  return Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function getSignatureKey(key, dateStamp, region, service) {
+  let kDate = await hmacSha256(new TextEncoder().encode("AWS4" + key), dateStamp);
+  let kRegion = await hmacSha256(kDate, region);
+  let kService = await hmacSha256(kRegion, service);
+  let kSigning = await hmacSha256(kService, "aws4_request");
+  return kSigning;
+}
+
+async function signRequest(method, url, headers, body, accessKey, secretKey, region, service) {
+  const parsedUrl = new URL(url);
+  const now = new Date();
+  const amzDate = now.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const dateStamp = amzDate.slice(0, 8);
+
+  const payloadHash = await sha256(body);
+
+  const canonicalHeaders = Object.keys(headers).sort().map(k => k.toLowerCase() + ":" + headers[k].trim() + "\n").join("");
+  const signedHeaders = Object.keys(headers).sort().map(k => k.toLowerCase()).join(";");
+
+  const canonicalRequest = [
+    method,
+    parsedUrl.pathname,
+    parsedUrl.search ? parsedUrl.search.slice(1) : "",
+    canonicalHeaders,
+    signedHeaders,
+    payloadHash,
+  ].join("\n");
+
+  const credentialScope = `${dateStamp}/${region}/${service}/aws4_request`;
+  const stringToSign = [
+    "AWS4-HMAC-SHA256",
+    amzDate,
+    credentialScope,
+    await sha256(canonicalRequest),
+  ].join("\n");
+
+  const signingKey = await getSignatureKey(secretKey, dateStamp, region, service);
+  const signature = toHex(await hmacSha256(signingKey, stringToSign));
+
+  const authHeader = `AWS4-HMAC-SHA256 Credential=${accessKey}/${credentialScope}, SignedHeaders=${signedHeaders}, Signature=${signature}`;
+
+  return { authorization: authHeader, "x-amz-date": amzDate, "x-amz-content-sha256": payloadHash };
+}
+
+// --- Vocabulary search ---
+
+function searchVocabulary(words, query) {
+  const queryTokens = query.toLowerCase().replace(/[^\w\s]/g, "").split(/\s+/).filter(w => w.length > 3);
+  if (queryTokens.length === 0) return [];
   const scored = words.map(entry => {
-    const text = [entry.name, entry.definition, entry.felt_sense, entry.domain]
-      .filter(Boolean).join(" ").toLowerCase();
+    const text = [entry.name, entry.definition, entry.felt_sense, entry.domain].filter(Boolean).join(" ").toLowerCase();
     let score = 0;
-    for (const token of queryTokens) {
-      if (text.includes(token)) score++;
-    }
+    for (const token of queryTokens) { if (text.includes(token)) score++; }
     return { entry, score };
   });
-
-  return scored
-    .filter(s => s.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3)
-    .map(s => s.entry);
+  return scored.filter(s => s.score > 0).sort((a, b) => b.score - a.score).slice(0, 3).map(s => s.entry);
 }
+
+// --- Main handler ---
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -148,12 +205,11 @@ export async function onRequestPost(context) {
     const sid = sessionId && typeof sessionId === "string" && sessionId.length < 64
       ? sessionId : crypto.randomUUID();
 
-    // Load session history
     let history = [];
     try {
       const stored = await env.CHAT_SESSIONS.get(sid, "json");
       if (stored && Array.isArray(stored)) history = stored;
-    } catch { /* new session */ }
+    } catch {}
 
     history.push({ role: "user", content: message.trim() });
     if (history.length > MAX_HISTORY) history = history.slice(-MAX_HISTORY);
@@ -171,51 +227,58 @@ export async function onRequestPost(context) {
             + matches.map(m => `- ${m.name}: ${m.definition} (felt sense: ${m.felt_sense || "—"})`).join("\n");
         }
       }
-    } catch { /* vocabulary is optional */ }
+    } catch {}
 
-    const messages = [
-      { role: "system", content: SYSTEM_PROMPT + vocabContext },
-      ...history,
-    ];
+    // Build Bedrock request
+    const region = env.AWS_REGION || "us-east-1";
+    const modelId = "us.anthropic.claude-sonnet-4-20250514";
+    const bedrockUrl = `https://bedrock-runtime.${region}.amazonaws.com/model/${modelId}/invoke`;
 
-    // Call Workers AI
-    const response = await env.AI.run("@cf/meta/llama-3.3-70b-instruct-fp8-fast", {
-      messages,
+    const bedrockBody = JSON.stringify({
+      anthropic_version: "bedrock-2023-05-31",
       max_tokens: 512,
-      temperature: 0.7,
-      stream: true,
+      system: SYSTEM_PROMPT + vocabContext,
+      messages: history,
     });
 
-    // Tee the stream: one for client, one to capture full response for KV
-    const [streamForClient, streamForCapture] = response.tee();
+    const reqHeaders = {
+      "content-type": "application/json",
+      "host": `bedrock-runtime.${region}.amazonaws.com`,
+      "accept": "application/json",
+    };
 
-    // Save history in background
-    context.waitUntil((async () => {
-      const reader = streamForCapture.getReader();
-      const decoder = new TextDecoder();
-      let fullResponse = "";
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        const chunk = decoder.decode(value, { stream: true });
-        for (const line of chunk.split("\n")) {
-          if (line.startsWith("data: ")) {
-            const data = line.slice(6);
-            if (data === "[DONE]") continue;
-            try {
-              const p = JSON.parse(data);
-              if (p.response) fullResponse += p.response;
-            } catch {}
-          }
-        }
-      }
-      if (fullResponse.length > 0) {
-        history.push({ role: "assistant", content: fullResponse });
-        await env.CHAT_SESSIONS.put(sid, JSON.stringify(history), { expirationTtl: SESSION_TTL });
-      }
-    })());
+    const sigHeaders = await signRequest(
+      "POST", bedrockUrl, reqHeaders, bedrockBody,
+      env.AWS_ACCESS_KEY_ID, env.AWS_SECRET_ACCESS_KEY, region, "bedrock"
+    );
 
-    return new Response(streamForClient, {
+    const bedrockResp = await fetch(bedrockUrl, {
+      method: "POST",
+      headers: { ...reqHeaders, ...sigHeaders },
+      body: bedrockBody,
+    });
+
+    if (!bedrockResp.ok) {
+      const errText = await bedrockResp.text();
+      console.error("Bedrock error:", bedrockResp.status, errText);
+      return new Response(JSON.stringify({ error: "AI service error" }),
+        { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+
+    const bedrockData = await bedrockResp.json();
+    const assistantMessage = bedrockData.content?.[0]?.text || "I'm having trouble responding right now. If you're in crisis, please call 988.";
+
+    // Save to history
+    history.push({ role: "assistant", content: assistantMessage });
+    context.waitUntil(
+      env.CHAT_SESSIONS.put(sid, JSON.stringify(history), { expirationTtl: SESSION_TTL })
+    );
+
+    // Return as SSE-like format for compatibility with existing client
+    // (single data event with full response)
+    const sseResponse = `data: ${JSON.stringify({ response: assistantMessage })}\n\ndata: [DONE]\n\n`;
+
+    return new Response(sseResponse, {
       headers: {
         ...corsHeaders,
         "Content-Type": "text/event-stream",
@@ -224,6 +287,7 @@ export async function onRequestPost(context) {
       },
     });
   } catch (err) {
+    console.error("Handler error:", err);
     return new Response(JSON.stringify({ error: "Internal error" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   }
