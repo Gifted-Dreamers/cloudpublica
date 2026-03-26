@@ -1,0 +1,9 @@
+name = "cloudpublica-site"
+compatibility_date = "2024-09-23"
+
+[ai]
+binding = "AI"
+
+[[kv_namespaces]]
+binding = "CHAT_SESSIONS"
+id = "b2d7cd50bebf4e9ca9e7d6f8d93bfb8a"

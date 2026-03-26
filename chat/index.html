@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talk — CloudPublica</title>
+  <meta name="description" content="Find resources, name what you're feeling, and connect with what's happening. An AI guide backed by independent research.">
+  <meta property="og:title" content="Talk — CloudPublica">
+  <meta property="og:description" content="Find resources, frameworks, and words for what you're going through.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- build:config {"nav":"talk"} -->
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans min-h-screen flex flex-col">
+  <!-- build:nav -->
+
+  <main class="flex-1 flex flex-col max-w-3xl mx-auto w-full px-4 py-6">
+    <div class="mb-4">
+      <h1 class="text-2xl font-bold tracking-tight text-gray-900">Talk</h1>
+      <p class="text-sm text-gray-500 mt-1">
+        Find resources, name what you're feeling, and connect with what's happening.
+        Backed by <a href="/word/" class="text-[#38c1e0] hover:underline">The Word</a>
+        and <a href="/article/" class="text-[#38c1e0] hover:underline">CloudPublica investigations</a>.
+      </p>
+    </div>
+
+    <div id="chat-messages" class="flex-1 overflow-y-auto space-y-4 pb-4 min-h-[300px] max-h-[calc(100vh-280px)]">
+      <div class="flex justify-start">
+        <div class="bg-white border border-gray-200 rounded-xl px-4 py-3 max-w-[85%] shadow-sm">
+          <p class="text-gray-700 text-sm leading-relaxed">Hey. I'm an AI guide backed by independent research and a living vocabulary of 158+ named concepts.</p>
+          <p class="text-gray-700 text-sm leading-relaxed mt-2">I can help you find resources, understand what's happening, and put words to things that are hard to name. What's going on?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 pt-4 mt-auto">
+      <form id="chat-form" class="flex gap-3">
+        <textarea id="chat-input" rows="2" placeholder="What's going on?"
+          class="flex-1 resize-none rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#38c1e0] focus:ring-1 focus:ring-[#38c1e0] bg-white"
+          maxlength="2000"></textarea>
+        <button type="submit" id="chat-send"
+          class="self-end px-5 py-3 bg-[#0f2027] text-white rounded-xl text-sm font-medium hover:bg-[#1a3347] transition-colors disabled:opacity-40 disabled:cursor-not-allowed">Send</button>
+      </form>
+      <div class="flex justify-between items-center mt-2 gap-4">
+        <p class="text-xs text-gray-400">
+          Powered by open-source AI. No data collected. Conversations expire in 7 days.
+          <a href="/research/connecting-isolated-voices.html" class="text-[#38c1e0] hover:underline">You're not alone.</a>
+        </p>
+        <div class="flex gap-3 shrink-0">
+          <button id="chat-export" class="text-xs text-gray-400 hover:text-gray-600 transition-colors">Save</button>
+          <button id="chat-clear" class="text-xs text-gray-400 hover:text-gray-600 transition-colors">New</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- build:footer -->
+  <!-- build:scripts -->
+  <script src="/assets/js/chat-widget.js"></script>
+</body>
+</html>
