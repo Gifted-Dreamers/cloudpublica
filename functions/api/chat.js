@@ -237,20 +237,8 @@ export async function onRequestPost(context) {
     history.push({ role: "user", content: message.trim() });
     if (history.length > MAX_HISTORY) history = history.slice(-MAX_HISTORY);
 
-    // Vocabulary lookup
+    // Vocabulary lookup — DISABLED temporarily for debugging
     let vocabContext = "";
-    try {
-      const wordsUrl = new URL("/assets/data/words.json", request.url);
-      const wordsResp = await fetch(wordsUrl.toString());
-      if (wordsResp.ok) {
-        const words = await wordsResp.json();
-        const matches = searchVocabulary(words, message);
-        if (matches.length > 0) {
-          vocabContext = "\n\nPotentially relevant vocabulary (only mention if genuinely fitting):\n"
-            + matches.map(m => `- ${m.name}: ${m.definition} (felt sense: ${m.felt_sense || "—"})`).join("\n");
-        }
-      }
-    } catch {}
 
     // Build Bedrock request
     const region = env.AWS_REGION || "us-east-1";
