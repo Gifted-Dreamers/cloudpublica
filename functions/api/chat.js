@@ -242,7 +242,7 @@ export async function onRequestPost(context) {
 
     // Build Bedrock request
     const region = env.AWS_REGION || "us-east-1";
-    const modelId = "us.anthropic.claude-sonnet-4-20250514";
+    const modelId = "us.anthropic.claude-sonnet-4-20250514-v1:0";
     const bedrockUrl = `https://bedrock-runtime.${region}.amazonaws.com/model/${modelId}/invoke`;
 
     const bedrockBody = JSON.stringify({
