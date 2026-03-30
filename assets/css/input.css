@@ -181,3 +181,285 @@
 .key-finding p:last-child {
   margin-bottom: 0;
 }
+
+/* ─── Pullquote ─── */
+.pullquote {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a3347;
+  border-left: 4px solid #206795;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  background-color: #f0f7fa;
+  border-radius: 0 0.5rem 0.5rem 0;
+  line-height: 1.6;
+}
+
+/* ─── Practice cards (connecting-isolated-voices) ─── */
+.practice-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.practice-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a3347;
+  margin-bottom: 0.25rem;
+}
+
+.practice-research {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.practice-explain {
+  color: #374151;
+  line-height: 1.75;
+}
+
+/* ─── Feeling cards (naming-what-you-feel) ─── */
+.feeling-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.feeling-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.feeling-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #206795;
+  margin-bottom: 0.5rem;
+}
+
+.feeling-explain {
+  color: #374151;
+  line-height: 1.75;
+}
+
+/* ─── Search example cards (vocabulary-is-infrastructure) ─── */
+.search-example {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.search-query {
+  font-weight: 600;
+  color: #1a3347;
+  margin-bottom: 0.5rem;
+}
+
+.search-gets {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.search-needed {
+  font-weight: 700;
+  color: #206795;
+  margin-bottom: 0.5rem;
+}
+
+.search-explain {
+  color: #374151;
+  line-height: 1.75;
+}
+
+/* ─── Tool cards (open-source-transparency-tools) ─── */
+.tool-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.tool-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a3347;
+  margin-bottom: 0.25rem;
+}
+
+.tool-url {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.tool-url a {
+  color: #206795;
+}
+
+.tool-desc {
+  color: #374151;
+  line-height: 1.75;
+}
+
+/* ─── Category headers (open-source-transparency-tools) ─── */
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.category-header h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.category-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* ─── BITE cards (psychology-of-authoritarian-control) ─── */
+.bite-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.bite-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a3347;
+  margin-bottom: 0.5rem;
+}
+
+.bite-desc {
+  color: #374151;
+  line-height: 1.75;
+}
+
+/* ─── Risk levels (ai-chat-legal-risks) ─── */
+.risk-critical {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 4px solid #dc2626;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 1.5rem 0;
+}
+
+.risk-high {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-left: 4px solid #d97706;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 1.5rem 0;
+}
+
+.risk-low {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #16a34a;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 1.5rem 0;
+}
+
+/* ─── Footnotes ─── */
+.footnotes-section {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.footnotes-section ol {
+  padding-left: 1.5rem;
+}
+
+.footnotes-section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.fn-ref {
+  color: #206795;
+  text-decoration: none;
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.fn-back {
+  color: #206795;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-left: 0.25rem;
+}
+
+/* ─── Table wrap (responsive) ─── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.table-wrap table {
+  margin: 0;
+}
+
+/* ─── Timeline table (what-you-can-do-before-monday) ─── */
+.timeline-table {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+/* ─── Source list (anti-surveillance) ─── */
+.source-list {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.source-list h4 {
+  color: #1a3347;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.source-list ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.source-list li {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
